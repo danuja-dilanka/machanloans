@@ -6,7 +6,7 @@ class Member extends BaseController{
     
     //REDIRECT TO LIST VIEW
     public function index(){
-        redirect('member/member_list');
+        redirect()->route('member/mem_list');
     }
     
      //CREATE/ UPDATE VIEW
