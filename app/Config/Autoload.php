@@ -80,7 +80,15 @@ class Autoload extends AutoloadConfig
      * @phpstan-var list<string>
      */
     public $files = [];
-
+    
+    public $libraries = [
+        'encryption',
+        'database',
+        'form_validation',
+        'email',
+        'User_agent'
+    ];
+    
     /**
      * -------------------------------------------------------------------
      * Helpers
@@ -93,5 +101,5 @@ class Autoload extends AutoloadConfig
      * @var string[]
      * @phpstan-var list<string>
      */
-    public $helpers = [];
+    public $helpers = ['template', 'fields', 'form' ,'url', 'lng'];
 }

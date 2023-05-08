@@ -32,10 +32,17 @@ $routes->set404Override();
 $routes->get('/', 'Auth::index');
 $routes->get('/auth/(:any)', 'Auth::$1');
 
+//HOME CONTROLLER
 $routes->get('home', 'Home::index');
 $routes->get('home/(:any)', 'Home::$1');
 $routes->get('home/(:any)/(:any)', 'Home::$1/$2');
 $routes->get('home/(:any)/(:any)/(:any)', 'Home::$1/$2/$3');
+
+//MEMBER CONTROLLER
+$routes->get('member', 'Member::index');
+$routes->get('member/(:any)', 'Member::$1');
+$routes->get('member/(:any)/(:any)', 'Member::$1/$2');
+$routes->get('member/(:any)/(:any)/(:any)', 'Member::$1/$2/$3');
 
 /*
  * --------------------------------------------------------------------
