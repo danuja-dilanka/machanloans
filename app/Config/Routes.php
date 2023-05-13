@@ -29,20 +29,20 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Auth::index');
-$routes->get('/auth/(:any)', 'Auth::$1');
+$routes->match(['get', 'post'], '/', 'Auth::index');
+$routes->match(['get', 'post'], '/auth/(:any)', 'Auth::$1');
 
 //HOME CONTROLLER
-$routes->get('home', 'Home::index');
-$routes->get('home/(:any)', 'Home::$1');
-$routes->get('home/(:any)/(:any)', 'Home::$1/$2');
-$routes->get('home/(:any)/(:any)/(:any)', 'Home::$1/$2/$3');
+$routes->match(['get', 'post'], 'home', 'Home::index');
+$routes->match(['get', 'post'], 'home/(:any)', 'Home::$1');
+$routes->match(['get', 'post'], 'home/(:any)/(:any)', 'Home::$1/$2');
+$routes->match(['get', 'post'], 'home/(:any)/(:any)/(:any)', 'Home::$1/$2/$3');
 
 //MEMBER CONTROLLER
-$routes->get('member', 'Member::index');
-$routes->get('member/(:any)', 'Member::$1');
-$routes->get('member/(:any)/(:any)', 'Member::$1/$2');
-$routes->get('member/(:any)/(:any)/(:any)', 'Member::$1/$2/$3');
+$routes->match(['get', 'post'], 'member', 'Member::index');
+$routes->match(['get', 'post'], 'member/(:any)', 'Member::$1');
+$routes->match(['get', 'post'], 'member/(:any)/(:any)', 'Member::$1/$2');
+$routes->match(['get', 'post'], 'member/(:any)/(:any)/(:any)', 'Member::$1/$2/$3');
 
 /*
  * --------------------------------------------------------------------

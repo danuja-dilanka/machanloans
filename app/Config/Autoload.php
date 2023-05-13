@@ -84,7 +84,7 @@ class Autoload extends AutoloadConfig
     public $libraries = [
         'encryption',
         'database',
-        'form_validation',
+        'validation',
         'email',
         'User_agent'
     ];
