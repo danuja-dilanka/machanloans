@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/default-css.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/styles.css?v=1.3">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/responsive.css?v=1.0">
+        <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/jquery.toast.css">
 
         <!-- Modernizr -->
         <script src="<?= base_url() ?>public/assets/js/vendor/modernizr-3.6.0.min.js"></script>    

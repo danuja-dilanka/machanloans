@@ -28,14 +28,24 @@ class Member extends BaseController {
         ];
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
-            $password = $post_data["password"];
-            $login_email = $post_data["login_email"];
-            $client_login = $post_data["client_login"];
+            $password = $login_email = null;
+            $client_login = 0;
             $user_model = model('User_model');
 
-            unset($post_data["password"]);
-            unset($post_data["login_email"]);
-            unset($post_data["client_login"]);
+            if (isset($post_data["password"])) {
+                $password = $post_data["password"];
+                unset($post_data["password"]);
+            }
+            if (isset($post_data["login_email"])) {
+                $login_email = $post_data["login_email"];
+                unset($post_data["login_email"]);
+            }
+            if (isset($post_data["client_login"])) {
+                $post_data["client_login"] = $client_login = 1;
+            }else{
+                $post_data["client_login"] = 0;
+            }
+            
             if ($req_id != "") {
                 $data = $this->thisModel->get_data(decode($req_id));
                 if (isset($data->id)) {
@@ -48,7 +58,7 @@ class Member extends BaseController {
                                     "name" => $post_data["first_name"] . " " . $post_data["last_name"],
                                     "email" => $login_email,
                                     "rel_type" => "member",
-                                    "rel_id" => $user_det[0]->id,
+                                    "rel_id" => $data->id,
                                     "password" => password_hash($password, PASSWORD_DEFAULT),
                                     "status" => $post_data["status"]
                                 ]);
@@ -59,6 +69,7 @@ class Member extends BaseController {
                                 $user_model->delete_data(0, ["rel_id" => $data->id, "rel_type" => "member"]);
                             }
                         }
+                        session()->setFlashdata('notify', 'Successfully Updated');
                         return redirect()->to(base_url('member/mem/' . $req_id));
                     } else {
                         return redirect()->to(base_url('member/mem/' . $req_id));
@@ -82,6 +93,8 @@ class Member extends BaseController {
                             ]);
                         }
                     }
+
+                    session()->setFlashdata('notify', 'Successfully Inserted');
                     return redirect()->to(base_url('member/mem') . "/" . encode($insert_id));
                 } else {
                     return redirect()->to(base_url('member/mem'));

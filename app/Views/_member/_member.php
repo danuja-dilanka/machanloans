@@ -61,7 +61,7 @@
                 <div class="card-header">
                     <div class="togglebutton">
                         <h4 class="header-title d-flex align-items-center">Login Details&nbsp;&nbsp;
-                            <input type="checkbox" id="client_login" value="1" name="client_login" data-parsley-multiple="client_login">
+                            <input type="checkbox" id="client_login" value="1" name="client_login" data-parsley-multiple="client_login" <?= isset($data) && $data->client_login == 1 ? "checked" : null ?>>
                         </h4>
                     </div>
                 </div>
