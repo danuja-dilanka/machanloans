@@ -44,6 +44,12 @@ $routes->match(['get', 'post'], 'member/(:any)', 'Member::$1');
 $routes->match(['get', 'post'], 'member/(:any)/(:any)', 'Member::$1/$2');
 $routes->match(['get', 'post'], 'member/(:any)/(:any)/(:any)', 'Member::$1/$2/$3');
 
+//LOAN CONTROLLER
+$routes->match(['get', 'post'], 'loan', 'Loan::index');
+$routes->match(['get', 'post'], 'loan/(:any)', 'Loan::$1');
+$routes->match(['get', 'post'], 'loan/(:any)/(:any)', 'Loan::$1/$2');
+$routes->match(['get', 'post'], 'loan/(:any)/(:any)/(:any)', 'Loan::$1/$2/$3');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
