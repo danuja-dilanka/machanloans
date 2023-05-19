@@ -6,8 +6,13 @@ if (!function_exists('has_permission')) {
         $auth = model('Auth_model');
 
         $user_type = $auth->get_user_type(decode(session()->ml_user_type));
-        if (isset($user_type->id) && $user_type->utype == "admin") {
-            return true;
+        if (isset($user_type->id)) {
+            if ($user_type->utype == "admin") {
+                return true;
+            }
+            $user_type = $user_type->id;
+        } else {
+            return false;
         }
 
         $access = $auth->get_utype_access($user_type, $module, $action);
