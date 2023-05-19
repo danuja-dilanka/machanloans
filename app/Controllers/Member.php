@@ -7,11 +7,11 @@ class Member extends BaseController {
     private $thisModel;
 
     public function __construct() {
-        
+
         if (!already_logined()) {
             return redirect()->route('login');
         }
-        
+
         $this->thisModel = model('Member_model');
     }
 
@@ -65,6 +65,7 @@ class Member extends BaseController {
                                     "email" => $login_email,
                                     "rel_type" => "member",
                                     "rel_id" => $data->id,
+                                    "utype" => 2,
                                     "password" => password_hash($password, PASSWORD_DEFAULT),
                                     "status" => $post_data["status"]
                                 ]);
@@ -94,6 +95,7 @@ class Member extends BaseController {
                                 "email" => $login_email,
                                 "rel_type" => "member",
                                 "rel_id" => $insert_id,
+                                "utype" => 2,
                                 "password" => password_hash($password, PASSWORD_DEFAULT),
                                 "status" => $post_data["status"]
                             ]);
