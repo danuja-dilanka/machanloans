@@ -4,17 +4,23 @@ namespace App\Controllers;
 
 class Member extends BaseController {
 
-    public $validation;
-    public $thisModel;
+    private $thisModel;
 
     public function __construct() {
-        $this->validation = \Config\Services::validation();
+        
+        if (!already_logined()) {
+            return redirect()->route('login');
+        }
+        
         $this->thisModel = model('Member_model');
     }
 
     //REDIRECT TO LIST VIEW
     public function index() {
-        redirect()->route('member/mem_list');
+        if (!has_permission("member", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+        return redirect()->route('member/mem_list');
     }
 
     //CREATE/ UPDATE VIEW
@@ -42,11 +48,11 @@ class Member extends BaseController {
             }
             if (isset($post_data["client_login"])) {
                 $post_data["client_login"] = $client_login = 1;
-            }else{
+            } else {
                 $post_data["client_login"] = 0;
             }
-            
-            if ($req_id != "") {
+
+            if ($req_id != "" && has_permission("member", "edit")) {
                 $data = $this->thisModel->get_data(decode($req_id));
                 if (isset($data->id)) {
                     $result = $this->thisModel->update_data($post_data, $data->id);
@@ -77,7 +83,7 @@ class Member extends BaseController {
                 } else {
                     return redirect()->to(base_url('member/mem'));
                 }
-            } else {
+            } else if (has_permission("member", "add")) {
                 $insert_id = $this->thisModel->add_data($post_data);
                 if ($insert_id > 0) {
                     if ($client_login) {
@@ -102,20 +108,26 @@ class Member extends BaseController {
             }
         }
 
-        if ($req_id != "") {
+        if ($req_id != "" && has_permission("member", "edit")) {
             $data = $this->thisModel->get_data(decode($req_id));
             if (isset($data->id)) {
                 return view('_member/_member', ["data" => $data]);
             } else {
                 return redirect()->to(base_url('member/mem'));
             }
-        } else {
+        } else if (has_permission("member", "add")) {
             return view('_member/_member');
+        } else {
+            session()->setFlashdata('notify', 'error||Access Denied!');
+            return redirect()->to(base_url('dashboard'));
         }
     }
 
     //LIST VIEW
     public function mem_list() {
+        if (!has_permission("member", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
         return view('_member/_list');
     }
 

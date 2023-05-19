@@ -10,16 +10,21 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <?= render_input('loan_name', 'Group Name', isset($data) ? $data->loan_name : '', 'text', ['required' => true]); ?>
+                                <?= render_input('group_name', 'Group Name', isset($data) ? $data->group_name : '', 'text', ['required' => true]); ?>
                             </div>
                             <div class="col-md-6">
-                                <?= render_input('last_amount', 'Member limit', isset($data) ? $data->last_amount : '', 'text', ['required' => true]); ?>
+                                <?= render_input('member_limit', 'Member limit', isset($data) ? $data->member_limit : '', 'text', ['required' => true]); ?>
                             </div>
                             <div class="col-md-6">
-                                <?php echo render_select('vehicle', [], array('id', 'veh_num'), 'Select Vehicle', isset($data) ? $fuel_det->vehicle : '', [], array(), '', '', false); ?>
+                                <div class="form-group">
+                                    <lable for="member">Select Member</lable>
+                                    <select class="form-control selectpicker" name="member[]" multiple="">
+                                        
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <?= render_custom_select("int_rate_per", ["Loan Group", "Seettu"], "Group Type", isset($data) ? $data->int_rate_per : '', 'required="true"') ?>
+                                <?= render_custom_select("group_type", ["Loan Group", "Seettu"], "Group Type", isset($data) ? $data->group_type : '', 'required="true"') ?>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">

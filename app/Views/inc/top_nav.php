@@ -38,7 +38,7 @@
                             <a class="dropdown-item" href="https://machan.quicksoft.lk/profile/change_password"><i class="ti-exchange-vertical text-muted mr-2"></i>&nbsp;Change Password</a>
                             <a class="dropdown-item" href="https://machan.quicksoft.lk/admin/administration/general_settings"><i class="ti-settings text-muted mr-2"></i>&nbsp;System Settings</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="https://machan.quicksoft.lk/logout"><i class="ti-power-off text-muted mr-2"></i>&nbsp;Logout</a>
+                            <a class="dropdown-item" href="<?= base_url("logout") ?>"><i class="ti-power-off text-muted mr-2"></i>&nbsp;Logout</a>
                         </div>
                     </div>
                 </li>

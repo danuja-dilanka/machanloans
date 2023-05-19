@@ -23,18 +23,22 @@
     <script src="<?= base_url() ?>public/plugins/tinymce/tinymce.min.js"></script>
     <script src="<?= base_url() ?>public/plugins/parsleyjs/parsley.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/jquery.toast.js"></script>
+    <script src="<?= base_url() ?>public/assets/js/bootstrap-select.min.js"></script>
 
     <!-- App js -->
     <script src="<?= base_url() ?>public/assets/js/scripts.js?v=1.1"></script>
 
-    <?php if ($notify = session()->getFlashdata('notify')) { ?>
+    <?php if ($notify = session()->getFlashdata('notify')) { 
+        $alert = explode("||", $notify);
+        ?>
+        <!-- NOTIDICATION -->
         <script type="text/javascript">
             $.toast({
                 heading: 'Alert',
                 text: "<?= $notify ?>",
                 position: 'bottom-right',
                 showHideTransition: 'slide',
-                icon: 'success'
+                icon: '<?= count($alert) > 1 ? $alert[0] : 'success' ?>'
             });
         </script>
     <?php } ?>

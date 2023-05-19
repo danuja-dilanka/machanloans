@@ -4,17 +4,23 @@ namespace App\Controllers;
 
 class Loan extends BaseController {
 
-    public $validation;
-    public $thisModel;
+    private $thisModel;
 
     public function __construct() {
-        $this->validation = \Config\Services::validation();
+        
+        if (!already_logined()) {
+            return redirect()->route('login');
+        }
+        
         $this->thisModel = model('Loan_model');
     }
 
     //REDIRECT TO LIST VIEW
     public function index() {
-        redirect()->route('loan/loan_pro_list');
+        if (!has_permission("loan_pro", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+        return redirect()->route('loan/loan_pro_list');
     }
 
     //CREATE/ UPDATE VIEW
@@ -30,14 +36,14 @@ class Loan extends BaseController {
             'description' => 'required',
             'term' => 'required|'
         ];
-        
+
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
 
-            if ($req_id != "") {
-                $data = $this->thisModel->get_data(decode($req_id));
+            if ($req_id != "" && has_permission("loan_pro", "edit")) {
+                $data = $this->thisModel->get_pro_data(decode($req_id));
                 if (isset($data->id)) {
-                    $result = $this->thisModel->update_data($post_data, $data->id);
+                    $result = $this->thisModel->update_pro_data($post_data, $data->id);
                     if ($result) {
                         session()->setFlashdata('notify', 'Successfully Updated');
                         return redirect()->to(base_url('loan/loan_pro/' . $req_id));
@@ -45,8 +51,8 @@ class Loan extends BaseController {
                 } else {
                     return redirect()->to(base_url('loan/loan_pro'));
                 }
-            } else {
-                $insert_id = $this->thisModel->add_data($post_data);
+            } else if (has_permission("loan_pro", "add")) {
+                $insert_id = $this->thisModel->add_pro_data($post_data);
                 if ($insert_id > 0) {
                     session()->setFlashdata('notify', 'Successfully Inserted');
                     return redirect()->to(base_url('loan/loan_pro') . "/" . encode($insert_id));
@@ -56,21 +62,122 @@ class Loan extends BaseController {
             }
         }
 
-        if ($req_id != "") {
-            $data = $this->thisModel->get_data(decode($req_id));
+        if ($req_id != "" && has_permission("loan_pro", "edit")) {
+            $data = $this->thisModel->get_pro_data(decode($req_id));
             if (isset($data->id)) {
                 return view('_loan/_loan_product/_loan_pro', ["data" => $data, "title" => "Update Loan Product"]);
             } else {
                 return redirect()->to(base_url('loan/loan_pro'));
             }
-        } else {
+        } else if (has_permission("loan_pro", "add")) {
             return view('_loan/_loan_product/_loan_pro', ["title" => "New Loan Product"]);
+        } else {
+            session()->setFlashdata('notify', 'error||Access Denied!');
+            return redirect()->to(base_url('dashboard'));
         }
+    }
+
+    //DELETE LOAN PRODUCT
+    public function del_loan_pro($req_id = "") {
+
+        if ($req_id != "" && has_permission("loan_pro", "delete")) {
+            $data = $this->thisModel->get_pro_data(decode($req_id));
+            if (isset($data->id)) {
+                $result = $this->thisModel->delete_pro_data($data->id);
+                if ($result) {
+                    session()->setFlashdata('notify', 'Successfully Deleted');
+                }
+            }
+        }
+
+        return redirect()->to(base_url('loan/loan_pro_list'));
     }
 
     //LIST VIEW
     public function loan_pro_list() {
+        if (!has_permission("loan_pro", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
         return view('_loan/_loan_product/_list');
+    }
+
+    //CREATE/ UPDATE VIEW GROUP
+    public function loan_group($req_id = "") {
+        $rules = [
+            'loan_name' => 'required',
+            'last_amount' => 'required',
+            'int_rate' => 'required',
+            'int_rate_per' => 'required|numeric',
+            'term_per' => 'required|numeric',
+            'late_time_penl' => 'required',
+            'status' => 'required|numeric',
+            'description' => 'required',
+            'term' => 'required|'
+        ];
+
+        if ($this->request->is('post') && $this->validate($rules)) {
+            $post_data = $this->request->getPost();
+
+            if ($req_id != "" && has_permission("group_data", "edit")) {
+                $data = $this->thisModel->get_group_data(decode($req_id));
+                if (isset($data->id)) {
+                    $result = $this->thisModel->update_group_data($post_data, $data->id);
+                    if ($result) {
+                        session()->setFlashdata('notify', 'Successfully Updated');
+                        return redirect()->to(base_url('loan/loan_pro/' . $req_id));
+                    }
+                } else {
+                    return redirect()->to(base_url('loan/loan_group'));
+                }
+            } else if (has_permission("group_data", "add")) {
+                $insert_id = $this->thisModel->add_group_data($post_data);
+                if ($insert_id > 0) {
+                    session()->setFlashdata('notify', 'Successfully Inserted');
+                    return redirect()->to(base_url('loan/loan_group') . "/" . encode($insert_id));
+                } else {
+                    return redirect()->to(base_url('loan/loan_group'));
+                }
+            }
+        }
+
+        if ($req_id != "" && has_permission("group_data", "edit")) {
+            $data = $this->thisModel->get_group_data(decode($req_id));
+            if (isset($data->id)) {
+                return view('_loan/_loan_group/_loan_grp', ["data" => $data, "title" => "Update Loan Group"]);
+            } else {
+                return redirect()->to(base_url('loan/loan_group'));
+            }
+        } else if (has_permission("group_data", "add")) {
+            return view('_loan/_loan_group/_loan_grp', ["title" => "New Loan Group"]);
+        } else {
+            session()->setFlashdata('notify', 'error||Access Denied!');
+            return redirect()->to(base_url('dashboard'));
+        }
+    }
+
+    //DELETE GROUP DATA
+    public function del_group_data($req_id = "") {
+
+        if ($req_id != "" && has_permission("group_data", "delete")) {
+            $data = $this->thisModel->get_group_data(decode($req_id));
+            if (isset($data->id)) {
+                $result = $this->thisModel->delete_group_data($data->id);
+                if ($result) {
+                    session()->setFlashdata('notify', 'Successfully Deleted');
+                }
+            }
+        }
+
+        return redirect()->to(base_url('loan/loan_group_list'));
+    }
+
+    //LIST VIEW GROUP
+    public function loan_group_list() {
+        if (!has_permission("group_data", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+        
+        return view('_loan/_loan_group/_list');
     }
 
 }

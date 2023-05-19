@@ -4,8 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- CSRF Token -->
-        <meta name="csrf-token" content="QTxkgS0AiLTeee6Np8jYAb9jQyk62gJir7iWjoiJ">
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/file_1677691710.png">
 
@@ -30,51 +28,50 @@
                                 <div class="card-body">
                                     <img class="logo" src="<?= base_url() ?>public/uploads/media/logo.png">
                                     <h5 class="text-center py-4">Login To Your Account</h5> 
-                                    <form method="POST" class="form-signin" action="">
-                                        <input type="hidden" name="_token" value="QTxkgS0AiLTeee6Np8jYAb9jQyk62gJir7iWjoiJ">
-                                        <div class="form-group row">
-                                            <div class="col-md-12">
-                                                <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email" required="" autofocus="">
-                                            </div>
+                                    <?php if (count(validation_errors()) > 0) { ?>
+                                        <div class="alert alert-danger">
+                                            <?= validation_list_errors() ?>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-12">	
-                                                <input id="password" type="password" class="form-control" name="password" placeholder="Password" required="">
-                                            </div>
+                                    <?php } ?>
+                                    <?= form_open_multipart(base_url("login"), array('data-parsley-validate' => 'true')); ?>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">
+                                            <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email" required="" autofocus="">
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-md-12">
-                                                <input type="hidden" name="g-recaptcha-response" id="recaptcha" value="">
-                                            </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-md-12">	
+                                            <input id="password" type="password" class="form-control" name="password" placeholder="Password" required="">
                                         </div>
-                                        <div class="text-center">
-                                            <div class="custom-control custom-checkbox mb-3">
-                                                <input type="checkbox" name="remember" class="custom-control-input" id="remember">
-                                                <label class="custom-control-label" for="remember">Remember Me</label>
-                                            </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="custom-control custom-checkbox mb-3">
+                                            <input type="checkbox" name="remember" class="custom-control-input" id="remember">
+                                            <label class="custom-control-label" for="remember">Remember Me</label>
                                         </div>
-                                        <div class="form-group row mb-0">
-                                            <div class="col-md-12">
-                                                <button type="submit" class="btn btn-primary btn-block">
-                                                    Login
-                                                </button>
-                                            </div>
+                                    </div>
+                                    <div class="form-group row mb-0">
+                                        <div class="col-md-12">
+                                            <button type="submit" class="btn btn-primary btn-block">
+                                                Login
+                                            </button>
                                         </div>
-                                        <div class="form-group row mt-3">
-                                            <div class="col-md-12">
-                                                <a class="btn-link" href="https://machan.quicksoft.lk/password/reset">
-                                                    Forgot Password?
-                                                </a>
-                                            </div>
+                                    </div>
+                                    <div class="form-group row mt-3">
+                                        <div class="col-md-12">
+                                            <a class="btn-link" href="https://machan.quicksoft.lk/password/reset">
+                                                Forgot Password?
+                                            </a>
                                         </div>
-                                        <div class="form-group row mt-3">
-                                            <div class="col-md-12">
-                                                <a href="https://machan.quicksoft.lk/loan-application" class="btn btn-primary btn-block">
-                                                    Loan Application
-                                                </a>						
-                                            </div>
+                                    </div>
+                                    <div class="form-group row mt-3">
+                                        <div class="col-md-12">
+                                            <a href="https://machan.quicksoft.lk/loan-application" class="btn btn-primary btn-block">
+                                                Loan Application
+                                            </a>						
                                         </div>
-                                    </form>
+                                    </div>
+                                    <?= form_close(); ?>
                                 </div>
                             </div>
                         </div>
