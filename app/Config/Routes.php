@@ -55,6 +55,19 @@ $routes->match(['get', 'post'], 'loan/(:any)', 'Loan::$1');
 $routes->match(['get', 'post'], 'loan/(:any)/(:any)', 'Loan::$1/$2');
 $routes->match(['get', 'post'], 'loan/(:any)/(:any)/(:any)', 'Loan::$1/$2/$3');
 
+//WEB PUBLIC CONTROLLER
+$routes->match(['get', 'post'], '/loan_application', 'Web::loan_application');
+$routes->match(['get', 'post'], '/loan_application/(:any)', 'Web::loan_application/$1');
+$routes->match(['get', 'post'], '/loan_application/(:any)/(:any)', 'Web::loan_application/$1/$2');
+$routes->match(['get', 'post'], '/loan_check/(:any)', 'Web::loan_check/$1');
+
+$routes->match(['get', 'post'], '/web/(:any)', 'Web::$1');
+$routes->match(['get', 'post'], '/web/(:any)/(:any)', 'Web::$1/$2');
+$routes->match(['get', 'post'], '/web/(:any)/(:any)/(:any)', 'Web::$1/$2/$3');
+
+//DATA TABLE AJAX CALL
+$routes->match(['get', 'post'], '/get_ajax_data/(:any)', 'View_data::$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
