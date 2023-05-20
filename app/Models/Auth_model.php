@@ -11,7 +11,7 @@ class Auth_model extends Model {
         $result = $this->db->table(DB_PREFIX . 'utype_access a');
         $result->select('a.*');
         $result->join(DB_PREFIX . 'module b', 'a.module = b.id');
-        $access = $result->where(["a.utype" => $utype, "b.module" => $module, "b.action" => $action])->get()->getRow();
+        $access = $result->where(["a.utype" => $utype, "b.module" => $module, "b.action" => $action, "b.status" => 1])->get()->getRow();
         if (isset($access->id)) {
             return true;
         }
@@ -24,7 +24,7 @@ class Auth_model extends Model {
         $result = $this->db->table(DB_PREFIX . 'user_access a');
         $result->select('a.*');
         $result->join(DB_PREFIX . 'module b', 'a.module = b.id');
-        $access = $result->where(["a.user" => $user, "b.module" => $module, "b.action" => $action])->get()->getRow();
+        $access = $result->where(["a.user" => $user, "b.module" => $module, "b.action" => $action, "b.status" => 1])->get()->getRow();
         if (isset($access->id)) {
             return true;
         }

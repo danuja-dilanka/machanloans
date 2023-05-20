@@ -14,15 +14,12 @@ if (!function_exists('has_permission')) {
         } else {
             return false;
         }
-
+        
         $access = $auth->get_utype_access($user_type, $module, $action);
         if ($access) {
             return true;
         } else {
-            $access = $auth->get_user_access(decode(session()->ml_user), $module, $action);
-            if ($access) {
-                return true;
-            }
+            return $auth->get_user_access(decode(session()->ml_user), $module, $action);
         }
 
         return false;

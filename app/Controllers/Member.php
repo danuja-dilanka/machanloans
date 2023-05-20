@@ -128,9 +128,25 @@ class Member extends BaseController {
     //LIST VIEW
     public function mem_list() {
         if (!has_permission("member", "view")) {
+            session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));
         }
-        return view('_member/_list');
+        return view('_member/_list', ['title' => "View Members"]);
+    }
+
+    //DELETE VIEW
+    public function del_mem($req_id = "") {
+        if (!has_permission("member", "delete")) {
+            session()->setFlashdata('notify', 'error||Access Denied!');
+            return redirect()->to(base_url('dashboard'));
+        }else{
+            $result = $this->thisModel->delete_data(decode($req_id));
+            if($result){
+                session()->setFlashdata('notify', 'Deleted Successfully!');
+            }
+        }
+        
+        return redirect()->to(base_url('member/mem_list'));
     }
 
 }

@@ -16,10 +16,9 @@ function is_mobile() {
     return false;
 }
 
-function create_link($link_class, $link_meth, $link_text, $link_style_class = "btn btn-success", $link_attr = "") {
-    $link_meth = strpos($link_meth, "/") > 0 ? explode("/", $link_meth)[0] : $link_meth;
-    if (has_permission($link_class, $link_meth)) {
-        return '<a href="' . base_url(_DIR_PREFIX . '/' . $link_class . "/" . $link_meth) . '" class="' . $link_style_class . '" ' . $link_attr . '>' . $link_text . '</a>';
+function create_link($link_class, $link_meth, $action, $link_text = "+ Add New", $link_style_class = "btn btn-sm btn-success", $link_attr = "") {
+    if (has_permission($link_class, $action)) {
+        return '<a href="' . base_url($link_class . "/" . $link_meth) . '" class="' . $link_style_class . '" ' . $link_attr . '>' . $link_text . '</a>';
     }
 }
 

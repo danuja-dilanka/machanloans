@@ -1,3 +1,11 @@
+function isMobile() {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true;
+    }
+
+    return false;
+}
+
 (function ($) {
     "use strict";
 
@@ -1363,3 +1371,27 @@ function alert_box(alert_text) {
     });
 
 }
+
+$('.selectpicker').selectpicker();
+
+$(document).on('click', ".confirm_red_btn", function () {
+    var ele = $(this);
+    $.confirm({
+        title: ele.data('callback') != undefined ? "Confirm Your Action" : 'Confirm Delete!',
+        type: 'red',
+        draggable: true,
+        animation: 'zoom',
+        animationSpeed: 200,
+        content: ele.data('callback') != undefined ? "Your Action Can't Be Revoked" : "Your Data Can't Be Recovered",
+        buttons: {
+            confirm: function () {
+                if (ele.data('callback') != undefined) {
+                    eval(ele.data('callback') + "('" + ele.data('id') + "');");
+                } else {
+                    window.location.href = ele.data('id');
+                }
+            },
+            cancel: function () {}
+        }
+    });
+});

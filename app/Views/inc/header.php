@@ -8,10 +8,7 @@
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/file_1677691710.png">
-
-        <!-- DataTables -->
-        <link href="<?= base_url() ?>public/plugins/datatable/datatables.min.css" rel="stylesheet" type="text/css"> 
-
+        
         <link href="<?= base_url() ?>public/plugins/dropify/css/dropify.min.css" rel="stylesheet">
         <link href="<?= base_url() ?>public/plugins/sweet-alert2/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
         <link href="<?= base_url() ?>public/plugins/animate/animate.css" rel="stylesheet" type="text/css">
@@ -32,6 +29,10 @@
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/responsive.css?v=1.0">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/jquery.toast.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/jquery-confirm.min.css">
+        
+        <!-- DATATABLE CSS -->
+        <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/datatables.min.css">
 
         <!-- Modernizr -->
         <script src="<?= base_url() ?>public/assets/js/vendor/modernizr-3.6.0.min.js"></script>    
