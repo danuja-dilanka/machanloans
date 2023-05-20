@@ -44,7 +44,7 @@
                                     <?php } ?>
                                     <div class="form-group row">
                                         <div class="col-md-12">
-                                            <input name="nic" id="text" placeholder="<?= $lng == 'si' ? "හැදුනුම්පත් අංකය" : "Enter NIC" ?>" type="text" class="form-control" minlength="10" maxlength="10" required><br>
+                                            <input name="nic" id="text" placeholder="<?= $lng == 'si' ? "හැදුනුම්පත් අංකය" : "Enter NIC" ?>" type="text" class="form-control" minlength="10" maxlength="12" required><br>
                                             <button type="submit" class="btn btn-primary btn-lg btn-block"><?= $lng == 'si' ? "තහවුරු කරන්න" : "Submit" ?></button>
                                         </div>
                                     </div>

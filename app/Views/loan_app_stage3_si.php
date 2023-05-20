@@ -41,188 +41,189 @@
 
                                     </div>
                                     <img alt="plans" src="https://machan.quicksoft.lk/public/uploads/media/plans.png" width="100%" style="width:100%">
-                                    <form method="post" class="validate" autocomplete="off" action="https://machan.quicksoft.lk/loan-application" enctype="multipart/form-data" novalidate="">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">
-                                                        ලබා ගැනීමට බලාපොරොත්තු වන ණය සැලසුම. <br>
-                                                        <span>(නිද- ඔබ ලබා ගන්නේ රු. 20,000/= මුදලක් මාස දෙකෙන් සති පතා ගෙවීමට නම් එහිදී ණය  සැලසුම ලෙස ඔබ සටහන් කල යුත්තේ D 4 ලෙසය.</span>
-                                                        <span class="required"> *</span></label>
-                                                    <select class="form-control" name="loan_type" required="">
-                                                        <option value="6">A-1</option>
-                                                        <option value="7">B-2</option>
-                                                        <option value="8">C-2</option>
-                                                        <option value="9">D-3</option>
-                                                        <option value="10">D-4</option>
-                                                        <option value="11">E-3</option>
-                                                        <option value="12">E-4</option>
-                                                        <option value="13">E-5</option>
-                                                        <option value="14">F-3</option>
-                                                        <option value="15">F-4</option>
-                                                        <option value="16">F-5</option>
-                                                        <option value="17">F-6</option>
-                                                        <option value="18">G-3</option>
-                                                        <option value="19">G-4</option>
-                                                        <option value="20">G-5</option>
-                                                        <option value="21">G-6</option>
-                                                        <option value="23">H-4</option>
-                                                        <option value="24">H-3</option>
-                                                        <option value="25">H-6</option>
-                                                        <option value="26">H-5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">ණය ගෙවීමේ ක්‍රමය<span class="required"> *</span></label>
-                                                    <select class="form-control" name="payment_method" required="">
-                                                        <option value="0" selected="">මාසික</option>
-                                                        <option value="1">සති</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">නම<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="name" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">වාසගම සහිත නම<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="full_name" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">උපන් දිනය<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="birthday" value="" placeholder="YYYY-MM-DD" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">විද්‍යුත් තැපෑල<span class="required"> *</span></label>
-                                                    <input type="email" class="form-control" name="email" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">හැදුනුම්පතේ සහිත ලිපිනය<span class="required"> *</span></label>
-                                                    <textarea class="form-control" name="residential_address" rows="4" required=""></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">වර්ථමාන පදිංචි ලිපිනය<span class="required"> *</span></label>
-                                                    <textarea class="form-control" name="current_address" rows="4" required=""></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">රැකියාව හෝ ව්‍යාපාරය<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="employment" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">රැකියා හෝ ව්‍යාපාර ස්තානයේ ලිපිනය<span class="required"> *</span></label>
-                                                    <textarea class="form-control" name="employment_address" rows="4" required=""></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">දුරකතන අංකය<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="phone" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">වට්ස් ඇප් අංකය<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="whatsapp" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">ජාතික හැදුනුම්පත් අංකය<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="nic" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">විවාහක අවිවාහක බව<span class="required"> *</span></label>
-                                                    <select class="form-control" name="marital_status" required="">
-                                                        <option value="0" selected="">අවිවාහක</option>
-                                                        <option value="1">විවාහක</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">මචං සීට්ටු හා රැදී සිටි කාලය</label>
-                                                    <input type="text" class="form-control" name="membership_age" value="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">රැදී සිටි සමූහයන්ගේ නම්</label>
-                                                    <input type="text" class="form-control" name="memberships" value="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">මුදල් බැර කල යුතු බැංකු ගිණුම් තොරතුරු
-                                                        (ලබා දී ඇති හැදුනුම්පතේ සදහන් නමට ඇති ගිණුමක් විය යුතුයි)
-                                                        නම
-                                                        ගිණුම් අංකය
-                                                        බැංකුව
-                                                        ශාඛාව<span class="required"> *</span></label>
-                                                    <textarea class="form-control" name="bank_details" rows="4" required=""></textarea>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">ජාතික හැදුනුම්පතෙහි ජායාරූපයක් (2MB)<span class="required"> *</span></label>
-                                                    <input type="file" class="dropify" name="uploads[nic_front]" multiple="false" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="control-label">ජාතික හැදුනුම්පතෙහි ජායාරූපයක් (2MB)<span class="required"> *</span></label>
-                                                    <input type="file" class="dropify" name="uploads[nic_front]" multiple="false" required="">
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <button type="submit" class="btn btn-primary">Next</button>
-                                                </div>
+                                    <?= form_open_multipart(base_url("web/request_loan/$lng"), array('data-parsley-validate' => 'true')); ?>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">
+                                                    ලබා ගැනීමට බලාපොරොත්තු වන ණය සැලසුම. <br>
+                                                    <span>(නිද- ඔබ ලබා ගන්නේ රු. 20,000/= මුදලක් මාස දෙකෙන් සති පතා ගෙවීමට නම් එහිදී ණය  සැලසුම ලෙස ඔබ සටහන් කල යුත්තේ D 4 ලෙසය.</span>
+                                                    <span class="required"> *</span></label>
+                                                <select class="form-control" name="loan_type" required="">
+                                                    <option value="6">A-1</option>
+                                                    <option value="7">B-2</option>
+                                                    <option value="8">C-2</option>
+                                                    <option value="9">D-3</option>
+                                                    <option value="10">D-4</option>
+                                                    <option value="11">E-3</option>
+                                                    <option value="12">E-4</option>
+                                                    <option value="13">E-5</option>
+                                                    <option value="14">F-3</option>
+                                                    <option value="15">F-4</option>
+                                                    <option value="16">F-5</option>
+                                                    <option value="17">F-6</option>
+                                                    <option value="18">G-3</option>
+                                                    <option value="19">G-4</option>
+                                                    <option value="20">G-5</option>
+                                                    <option value="21">G-6</option>
+                                                    <option value="23">H-4</option>
+                                                    <option value="24">H-3</option>
+                                                    <option value="25">H-6</option>
+                                                    <option value="26">H-5</option>
+                                                </select>
                                             </div>
                                         </div>
-                                    </form>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">ණය ගෙවීමේ ක්‍රමය<span class="required"> *</span></label>
+                                                <select class="form-control" name="payment_method" required="">
+                                                    <option value="0" selected="">මාසික</option>
+                                                    <option value="1">සති</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">නම<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="name" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">වාසගම සහිත නම<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="full_name" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">උපන් දිනය<span class="required"> *</span></label>
+                                                <input type="date" class="form-control" name="birthday" value="" placeholder="YYYY-MM-DD" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">විද්‍යුත් තැපෑල<span class="required"> *</span></label>
+                                                <input type="email" class="form-control" name="email" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">හැදුනුම්පතේ සහිත ලිපිනය<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="residential_address" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">වර්ථමාන පදිංචි ලිපිනය<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="current_address" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">රැකියාව හෝ ව්‍යාපාරය<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="employment" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">රැකියා හෝ ව්‍යාපාර ස්තානයේ ලිපිනය<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="employment_address" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">දුරකතන අංකය<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="phone" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">වට්ස් ඇප් අංකය<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="whatsapp" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">ජාතික හැදුනුම්පත් අංකය<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="nic" value="" minlength="10" maxlength="12" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">විවාහක අවිවාහක බව<span class="required"> *</span></label>
+                                                <select class="form-control" name="marital_status" required="">
+                                                    <option value="0" selected="">අවිවාහක</option>
+                                                    <option value="1">විවාහක</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">මචං සීට්ටු හා රැදී සිටි කාලය</label>
+                                                <input type="text" class="form-control" name="membership_age" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">රැදී සිටි සමූහයන්ගේ නම්</label>
+                                                <input type="text" class="form-control" name="memberships" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">මුදල් බැර කල යුතු බැංකු ගිණුම් තොරතුරු
+                                                    (ලබා දී ඇති හැදුනුම්පතේ සදහන් නමට ඇති ගිණුමක් විය යුතුයි)
+                                                    නම
+                                                    ගිණුම් අංකය
+                                                    බැංකුව
+                                                    ශාඛාව<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="bank_details" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">ජාතික හැදුනුම්පතෙහි ජායාරූපයක් (2MB)<span class="required"> *</span></label>
+                                                <input type="file" class="dropify" name="nic_front" multiple="false" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">ජාතික හැදුනුම්පතෙහි ජායාරූපයක් (2MB)<span class="required"> *</span></label>
+                                                <input type="file" class="dropify" name="nic_back" multiple="false" required="">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <hr>
+                                                <button type="submit" class="btn btn-primary">තහවුරු කරන්න</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?= form_close(); ?>
                                 </div>
                             </div>
                         </div>

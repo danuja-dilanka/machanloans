@@ -50,190 +50,191 @@
                                         </p>
                                     </div>
                                     <img alt="plans" src="https://machan.quicksoft.lk/public/uploads/media/plans.png" width="100%" style="width:100%">
-                                    <form method="post" class="validate" autocomplete="off" action="https://machan.quicksoft.lk/loan-application" enctype="multipart/form-data" novalidate="">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Loan plan to be availed. < />
-                                                        <span>(Sleep- If you are getting Rs. 20,000/= to be paid weekly for two months then you should write D 4 as the loan plan. *</span>
-                                                        <span class="required"> *</span></label>
-                                                    <select class="form-control" name="loan_type" required="">
-                                                        <option value="6">A-1</option>
-                                                        <option value="7">B-2</option>
-                                                        <option value="8">C-2</option>
-                                                        <option value="9">D-3</option>
-                                                        <option value="10">D-4</option>
-                                                        <option value="11">E-3</option>
-                                                        <option value="12">E-4</option>
-                                                        <option value="13">E-5</option>
-                                                        <option value="14">F-3</option>
-                                                        <option value="15">F-4</option>
-                                                        <option value="16">F-5</option>
-                                                        <option value="17">F-6</option>
-                                                        <option value="18">G-3</option>
-                                                        <option value="19">G-4</option>
-                                                        <option value="20">G-5</option>
-                                                        <option value="21">G-6</option>
-                                                        <option value="23">H-4</option>
-                                                        <option value="24">H-3</option>
-                                                        <option value="25">H-6</option>
-                                                        <option value="26">H-5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Loan Repayment Method *<span class="required"> *</span></label>
-                                                    <select class="form-control" name="payment_method" required="">
-                                                        <option value="0" selected="">Months</option>
-                                                        <option value="1">Week</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Name <span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="name" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Name with Surname<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="full_name" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Date of Birth<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="birthday" value="" placeholder="YYYY-MM-DD" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Email <span class="required"> *</span></label>
-                                                    <input type="email" class="form-control" name="email" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Address on ID<span class="required"> *</span></label>
-                                                    <textarea class="form-control" name="residential_address" rows="4" required=""></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Current Residential Address<span class="required"> *</span></label>
-                                                    <textarea class="form-control" name="current_address" rows="4" required=""></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Job or business<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="employment" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Address of place of employment or business<span class="required"> *</span></label>
-                                                    <textarea class="form-control" name="employment_address" rows="4" required=""></textarea>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Phone number<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="phone" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Whatsapp Number<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="whatsapp" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">National Identity Card Number<span class="required"> *</span></label>
-                                                    <input type="text" class="form-control" name="nic" value="" required="">
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Married Unmarried<span class="required"> *</span></label>
-                                                    <select class="form-control" name="marital_status" required="">
-                                                        <option value="0" selected="">Unmarried</option>
-                                                        <option value="1">Married</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label class="control-label">Time to sit up and wait/label>
-                                                        <input type="text" class="form-control" name="membership_age" value="">
-                                                        </div>
-                                                        </div>
-
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Names of the crowd</label>
-                                                                <input type="text" class="form-control" name="memberships" value="">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Bank account details to which the money should be credited 
-                                                                    (must be an account in the name of the ID card provided) 
-                                                                    Name Account Number Bank Branch<span class="required"> *</span></label>
-                                                                <textarea class="form-control" name="bank_details" rows="4" required=""></textarea>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label class="control-label">A photograph of the National Identity Card (2MB) (2MB)<span class="required"> *</span></label>
-                                                                <input type="file" class="dropify" name="uploads[nic_front]" multiple="false" required="">
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label class="control-label">A photograph of the National Identity Card (2MB)<span class="required"> *</span></label>
-                                                                <input type="file" class="dropify" name="uploads[nic_front]" multiple="false" required="">
-                                                            </div>
-                                                        </div>
-
-
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="form-group">
-                                                            <button type="submit" class="btn btn-primary">Next</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                </form>
+                                    <?= form_open_multipart(base_url("web/request_loan/$lng"), array('data-parsley-validate' => 'true')); ?>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Loan plan to be availed. < />
+                                                    <span>(Sleep- If you are getting Rs. 20,000/= to be paid weekly for two months then you should write D 4 as the loan plan. *</span>
+                                                    <span class="required"> *</span></label>
+                                                <select class="form-control" name="loan_type" required="">
+                                                    <option value="6">A-1</option>
+                                                    <option value="7">B-2</option>
+                                                    <option value="8">C-2</option>
+                                                    <option value="9">D-3</option>
+                                                    <option value="10">D-4</option>
+                                                    <option value="11">E-3</option>
+                                                    <option value="12">E-4</option>
+                                                    <option value="13">E-5</option>
+                                                    <option value="14">F-3</option>
+                                                    <option value="15">F-4</option>
+                                                    <option value="16">F-5</option>
+                                                    <option value="17">F-6</option>
+                                                    <option value="18">G-3</option>
+                                                    <option value="19">G-4</option>
+                                                    <option value="20">G-5</option>
+                                                    <option value="21">G-6</option>
+                                                    <option value="23">H-4</option>
+                                                    <option value="24">H-3</option>
+                                                    <option value="25">H-6</option>
+                                                    <option value="26">H-5</option>
+                                                </select>
                                             </div>
                                         </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Loan Repayment Method *<span class="required"> *</span></label>
+                                                <select class="form-control" name="payment_method" required="">
+                                                    <option value="0" selected="">Months</option>
+                                                    <option value="1">Week</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Name <span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="name" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Name with Surname<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="full_name" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Date of Birth<span class="required"> *</span></label>
+                                                <input type="date" class="form-control" name="birthday" value="" placeholder="YYYY-MM-DD" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Email <span class="required"> *</span></label>
+                                                <input type="email" class="form-control" name="email" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Address on ID<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="residential_address" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Current Residential Address<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="current_address" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Job or business<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="employment" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Address of place of employment or business<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="employment_address" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Phone number<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="phone" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Whatsapp Number<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="whatsapp" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">National Identity Card Number<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="nic" value="" minlength="10" maxlength="12" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Married Unmarried<span class="required"> *</span></label>
+                                                <select class="form-control" name="marital_status" required="">
+                                                    <option value="0" selected="">Unmarried</option>
+                                                    <option value="1">Married</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Time to sit up and wait</label>
+                                                <input type="text" class="form-control" name="membership_age" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Names of the crowd</label>
+                                                <input type="text" class="form-control" name="memberships" value="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Bank account details to which the money should be credited 
+                                                    (must be an account in the name of the ID card provided) 
+                                                    Name Account Number Bank Branch<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="bank_details" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">A photograph of the National Identity Card (2MB) (2MB)<span class="required"> *</span></label>
+                                                <input type="file" class="dropify" name="nic_front" multiple="false" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">A photograph of the National Identity Card (2MB)<span class="required"> *</span></label>
+                                                <input type="file" class="dropify" name="nic_back" multiple="false" required="">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">Next</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?= form_close(); ?>
                                 </div>
                             </div>
                         </div>
-                        </main>
                     </div>
-                    </body>
-                    </html>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

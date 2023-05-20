@@ -42,13 +42,47 @@ class Web extends BaseController {
                 return view('loan_app_stage2', ['lng' => $lng, 'prev_loan' => $avoid_data]);
             } else {
                 if ($lng == "si") {
-                    return view('loan_app_stage3_si');
+                    return view('loan_app_stage3_si', ['lng' => $lng]);
                 } else {
-                    return view('loan_app_stage3_eng');
+                    return view('loan_app_stage3_eng', ['lng' => $lng]);
                 }
             }
         } else {
             Services::validation()->setError('wrong_cre', "Invalid NIC");
+            return redirect()->to(base_url("loan_application/$lng"));
+        }
+    }
+
+    public function request_loan($lng = "eng") {
+
+        $rules = [
+            'nic' => 'trim|required|min_length[10]|max_length[12]',
+            'loan_type' => 'trim|required|numeric',
+            'payment_method' => 'trim|required|numeric',
+            'name' => 'trim|required',
+            'full_name' => 'trim|required',
+            'birthday' => 'trim|required',
+            'email' => 'trim|required|valid_email',
+            'residential_address' => 'trim|required',
+            'current_address' => 'trim|required',
+            'employment' => 'trim|required',
+            'employment_address' => 'trim|required',
+            'phone' => 'trim|required|min_length[9]|max_length[10]',
+            'whatsapp' => 'trim|required|min_length[9]|max_length[10]',
+            'marital_status' => 'trim|required|numeric',
+            'memberships' => 'trim|required',
+            'bank_details' => 'trim|required'
+        ];
+
+        if ($this->request->is('post') && $this->validate($rules)) {
+            $post_data = $this->request->getPost();
+            $insert_id = $this->thisModel->add_loan_req_data($post_data);
+            if ($insert_id > 0) {
+                return view('loan_app_stage4', ['lng' => $lng]);
+            } else {
+                return redirect()->to(base_url("loan_application/$lng"));
+            }
+        } else {
             return redirect()->to(base_url("loan_application/$lng"));
         }
     }
