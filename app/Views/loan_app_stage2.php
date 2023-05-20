@@ -36,9 +36,9 @@
                                     <?php } ?>
                                     <?php if (isset($prev_loan->id)) { ?>
                                         <div class="alert alert-danger">
-                                            <p>You Currently Have Loan</p>
+                                            <p>Please Pay Your Loan</p>
                                             <ul>
-                                                <li>Due Amount : LKR. <?= number_format($prev_loan->id - $prev_loan->id, 2, ".", ",") ?></li>
+                                                <li>Due Amount : LKR. <?= number_format($prev_loan->last_amount - $prev_loan->paid_total, 2, ".", ",") ?></li>
                                             </ul>
                                         </div>
                                     <?php } ?>
