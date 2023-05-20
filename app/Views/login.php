@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="form-group row mt-3">
                                         <div class="col-md-12">
-                                            <a href="https://machan.quicksoft.lk/loan-application" class="btn btn-primary btn-block">
+                                            <a href="<?= base_url("loan_application") ?>" class="btn btn-primary btn-block">
                                                 Loan Application
                                             </a>						
                                         </div>
