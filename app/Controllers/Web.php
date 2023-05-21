@@ -104,12 +104,6 @@ class Web extends BaseController {
         $ph->sendCORSHeaders();
 
         if ($result = $ph->handleUpload()) {
-//            $new_file_name = md5(mt_rand() . time()) . $ph->file_ext;
-//            if (file_exists($up_path . $result->file["name"])) {
-//                $result->file["name"] = "asdasd";
-//            }
-
-            $result["name"] = "asdasd.jpg";
             die(json_encode(array(
                 'OK' => 1,
                 'info' => $result
