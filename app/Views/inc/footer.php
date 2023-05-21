@@ -39,7 +39,7 @@
         <script type="text/javascript">
             $.toast({
                 heading: 'Alert',
-                text: "<?= $notify ?>",
+                text: "<?= count($alert) > 1 ? $alert[1] : $notify ?>",
                 position: 'bottom-right',
                 showHideTransition: 'slide',
                 icon: '<?= count($alert) > 1 ? $alert[0] : 'success' ?>'

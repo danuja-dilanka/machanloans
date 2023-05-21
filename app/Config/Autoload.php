@@ -86,7 +86,8 @@ class Autoload extends AutoloadConfig
         'database',
         'validation',
         'email',
-        'User_agent'
+        'User_agent',
+        'PluploadHandler'
     ];
     
     /**
@@ -101,5 +102,5 @@ class Autoload extends AutoloadConfig
      * @var string[]
      * @phpstan-var list<string>
      */
-    public $helpers = ['general', 'template', 'fields', 'form' ,'url', 'lng', 'access'];
+    public $helpers = ['general', 'template', 'fields', 'form' ,'url', 'lng', 'access', 'upload_helper'];
 }

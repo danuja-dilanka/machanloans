@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Config\Services;
+use App\Libraries\PluploadHandler;
 
 class Web extends BaseController {
 
@@ -84,6 +85,43 @@ class Web extends BaseController {
             }
         } else {
             return redirect()->to(base_url("loan_application/$lng"));
+        }
+    }
+
+    public function upload($type = 0) {
+        if ($type == 0) {
+            $up_path = 'public/images/loan_req/nic/front/';
+        } else {
+            $up_path = 'public/images/loan_req/nic/back/';
+        }
+
+        $ph = new PluploadHandler(array(
+            'target_dir' => $up_path,
+            'allow_extensions' => 'jpg,jpeg,png'
+        ));
+
+        $ph->sendNoCacheHeaders();
+        $ph->sendCORSHeaders();
+
+        if ($result = $ph->handleUpload()) {
+//            $new_file_name = md5(mt_rand() . time()) . $ph->file_ext;
+//            if (file_exists($up_path . $result->file["name"])) {
+//                $result->file["name"] = "asdasd";
+//            }
+
+            $result["name"] = "asdasd.jpg";
+            die(json_encode(array(
+                'OK' => 1,
+                'info' => $result
+            )));
+        } else {
+            die(json_encode(array(
+                'OK' => 0,
+                'error' => array(
+                    'code' => $ph->getErrorCode(),
+                    'message' => $ph->getErrorMessage()
+                )
+            )));
         }
     }
 
