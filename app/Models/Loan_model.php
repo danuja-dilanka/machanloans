@@ -120,8 +120,9 @@ class Loan_model extends Model {
     //GET LOAN REQUEST
     public function get_loan_req_data($id = 0, $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'loan_request a');
-        $result->select('a.*,b.last_amount');
+        $result->select('a.*,b.last_amount,b.loan_name AS loan_product, CONCAT(c.first_name, c.last_name) AS mem_name, c.id AS mem_no');
         $result->join(DB_PREFIX . 'loan_product b', 'a.loan_type = b.id');
+        $result->join(DB_PREFIX . 'member c', 'a.member = c.id', 'left');
         if ($id > 0) {
             return $result->where(["a.id" => $id])->get()->getRow();
         } else {
@@ -136,7 +137,7 @@ class Loan_model extends Model {
     //GET LOAN REQUEST BY -> where
     public function get_loan_req_data_by($where = []) {
         $result = $this->db->table(DB_PREFIX . 'loan_request a');
-        $result->select('a.*,b.last_amount');
+        $result->select('a.*,b.last_amount,b.loan_name AS loan_product');
         $result->join(DB_PREFIX . 'loan_product b', 'a.loan_type = b.id');
         $result->where($where);
         return $result->get()->getResult();
