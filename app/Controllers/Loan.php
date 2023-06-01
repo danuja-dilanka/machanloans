@@ -250,6 +250,22 @@ class Loan extends BaseController {
         return redirect()->to(base_url('loan/loan_list'));
     }
 
+    //DELETE LOAN DATA
+    public function loan_approve($req_id = "") {
+
+        if ($req_id != "" && has_permission("loan", "edit")) {
+            $data = $this->thisModel->get_loan_req_data(decode($req_id));
+            if (isset($data->id)) {
+                $result = $this->thisModel->update_loan_req_data(["status" => 1], $data->id);
+                if ($result) {
+                    session()->setFlashdata('notify', 'Successfully Approved');
+                }
+            }
+        }
+
+        return redirect()->to(base_url('loan/loan_list'));
+    }
+
     //LIST VIEW LOAN
     public function loan_list() {
         if (!has_permission("loan", "view")) {
