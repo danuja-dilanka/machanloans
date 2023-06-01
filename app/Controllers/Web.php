@@ -79,6 +79,25 @@ class Web extends BaseController {
             $post_data = $this->request->getPost();
             $insert_id = $this->thisModel->add_loan_req_data($post_data);
             if ($insert_id > 0) {
+                
+                /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION*/
+                
+                $Member_model = model('Member_model');
+                if (!isset($Member_model->get_mem_data_by(["nic" => $post_data["nic"]])->id)) {
+                    $name = explode(" ", $post_data["full_name"]);
+                    $Member_model->add_data([
+                        "first_name" => $name[0],
+                        "last_name" => count($name) > 1 ? $name[count($name) - 1] : "",
+                        "birthday" => $post_data["birthday"],
+                        "email" => $post_data["email"],
+                        "mobile" => $post_data["phone"],
+                        "address" => $post_data["current_address"],
+                        "nic" => $post_data["nic"],
+                    ]);
+                }
+                
+                /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
+                
                 return view('loan_app_stage4', ['lng' => $lng]);
             } else {
                 return redirect()->to(base_url("loan_application/$lng"));

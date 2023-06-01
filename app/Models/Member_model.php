@@ -39,6 +39,13 @@ class Member_model extends Model {
             }
         }
     }
+    //GET MEMBERS BY -> where
+    public function get_mem_data_by($where = []) {
+        $result = $this->db->table(DB_PREFIX . 'member');
+        $result->select('*');
+        $result->where($where);
+        return $result->get()->getResult();
+    }
 
     public function update_data($data, $id) {
         return $this->db->table(DB_PREFIX . 'member')->update($data, ["id" => $id]);
