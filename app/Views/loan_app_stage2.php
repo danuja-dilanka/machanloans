@@ -36,7 +36,7 @@
                                     <?php } ?>
                                     <?php if (isset($prev_loan->id)) { ?>
                                         <div class="alert alert-danger">
-                                            <p>Please Pay Your Loan</p>
+                                            <p>Please Pay Previous Loans</p>
                                             <table class="table" style="width:100%">
                                                 <thead>
                                                     <tr>
