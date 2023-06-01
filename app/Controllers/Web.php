@@ -33,8 +33,8 @@ class Web extends BaseController {
             foreach ($available_loans as $key => $value) {
                 if ($value->status == 1) {
                     $avoid_data = $this->thisModel->get_loan_pay_data_summary(['loan' => $value->id]);
-                    $avoid_data["p_periods"] = $value->loan_period - $value->paid_period;
-                    $avoid_data["p_charge"] = round($value->last_amount / $value->paid_period);
+                    $avoid_data->p_periods = $value->loan_period - $value->paid_period;
+                    $avoid_data->p_charge = round($value->last_amount / $value->paid_period);
                     $avoid_data->loan_amount = $value->last_amount;
                     $avoid_data->id = $value->id;
                     break;
