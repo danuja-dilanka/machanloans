@@ -287,6 +287,6 @@ $(document).ready(function () {
 
     if ($("#dt_tb").length > 0) {
         var common_action = $("#dt_tb").data("action");
-        load_data(BASE_URL + 'View_data/' + common_action);
+        load_data(BASE_URL + 'get_ajax_data/' + common_action);
     }
 });
