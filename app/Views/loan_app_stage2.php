@@ -37,9 +37,23 @@
                                     <?php if (isset($prev_loan->id)) { ?>
                                         <div class="alert alert-danger">
                                             <p>Please Pay Your Loan</p>
-                                            <ul>
-                                                <li>Due Amount : LKR. <?= number_format($prev_loan->last_amount - $prev_loan->paid_total, 2, ".", ",") ?></li>
-                                            </ul>
+                                            <table class="table" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width:5%">#</th>
+                                                        <th style="width:70%">Description</th>
+                                                        <th style="width:25%">Amount</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php for ($i = 0; $i < $prev_loan->p_periods; $i++) { ?>
+                                                        <tr>
+                                                            <td><?= $i +1 ?></td>
+                                                            <td><?= $prev_loan->p_charge ?></td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     <?php } ?>
                                     <div class="form-group row">
