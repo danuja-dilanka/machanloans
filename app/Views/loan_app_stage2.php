@@ -52,7 +52,7 @@
                                                         <tr>
                                                             <td><?= $i +1 ?></td>
                                                             <td><?= $p_periods++ ?></td>
-                                                            <td><?= $prev_loan->p_charge ?></td>
+                                                            <td>LKR. <?= number_format($prev_loan->p_charge, 2, ".", ",") ?></td>
                                                         </tr>
                                                     <?php } ?>
                                                 </tbody>
