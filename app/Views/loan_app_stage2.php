@@ -46,9 +46,12 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php for ($i = 0; $i < $prev_loan->p_periods; $i++) { ?>
+                                                    <?php 
+                                                    $p_periods = $prev_loan->p_periods;
+                                                    for ($i = 0; $i < $prev_loan->p_periods; $i++) { ?>
                                                         <tr>
                                                             <td><?= $i +1 ?></td>
+                                                            <td><?= $p_periods++ ?></td>
                                                             <td><?= $prev_loan->p_charge ?></td>
                                                         </tr>
                                                     <?php } ?>
