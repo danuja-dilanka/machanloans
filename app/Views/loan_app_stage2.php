@@ -39,8 +39,8 @@
                                             <table class="table" style="width:100%">
                                                 <thead>
                                                     <tr>
-                                                        <th style="width:10%">#</th>
-                                                        <th style="width:60%"><?= $lng == 'si' ? "විස්තර" : "Please Pay Your Previous Loans" ?></th>
+                                                        <th style="width:20%">#</th>
+                                                        <th style="width:50%"><?= $lng == 'si' ? "විස්තර" : "Please Pay Your Previous Loans" ?></th>
                                                         <th style="width:30%"><?= $lng == 'si' ? "වටිනාකම" : "Amount" ?></th>
                                                     </tr>
                                                 </thead>
@@ -61,8 +61,8 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                        <th style="width:10%"></th>
-                                                        <th style="width:60%;text-align:right"><?= $lng == 'si' ? "මුලු වටිනාකම" : "Total" ?></th>
+                                                        <th style="width:20%"></th>
+                                                        <th style="width:50%;text-align:right"><?= $lng == 'si' ? "මුලු වටිනාකම" : "Total" ?></th>
                                                         <th style="width:30%" id="total_amount">LKR. 0.00</th>
                                                     </tr>
                                                 </tfoot>
