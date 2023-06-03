@@ -35,13 +35,13 @@
                                     <?php } ?>
                                     <?php if (isset($prev_loan->id)) { ?>
                                         <div class="alert alert-danger">
-                                            <p>Please Pay Previous Loans</p>
+                                            <p class="text-center"><?= $lng == 'si' ? "මුලු වටිනාකම" : "Please Pay Your Previous Loans" ?></p>
                                             <table class="table" style="width:100%">
                                                 <thead>
                                                     <tr>
                                                         <th style="width:5%">#</th>
-                                                        <th style="width:70%">Description</th>
-                                                        <th style="width:25%">Amount</th>
+                                                        <th style="width:70%"><?= $lng == 'si' ? "විස්තර" : "Please Pay Your Previous Loans" ?></th>
+                                                        <th style="width:25%"><?= $lng == 'si' ? "වටිනාකම" : "Amount" ?></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
@@ -69,7 +69,7 @@
                                             </table>
                                         </div>
                                         <div class="col-md-12">
-                                            <div class="col-md-12">
+                                            <div class="col-md-12 mb-2">
                                                 <?= $prev_loan->loan_details->bank_details ?> 
                                             </div>
                                             <div class="col-md-12">
