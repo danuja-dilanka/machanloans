@@ -39,9 +39,9 @@
                                             <table class="table" style="width:100%">
                                                 <thead>
                                                     <tr>
-                                                        <th style="width:5%">#</th>
-                                                        <th style="width:70%"><?= $lng == 'si' ? "විස්තර" : "Please Pay Your Previous Loans" ?></th>
-                                                        <th style="width:25%"><?= $lng == 'si' ? "වටිනාකම" : "Amount" ?></th>
+                                                        <th style="width:10%">#</th>
+                                                        <th style="width:60%"><?= $lng == 'si' ? "විස්තර" : "Please Pay Your Previous Loans" ?></th>
+                                                        <th style="width:30%"><?= $lng == 'si' ? "වටිනාකම" : "Amount" ?></th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
