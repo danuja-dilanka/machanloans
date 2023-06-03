@@ -76,7 +76,7 @@
                                             <div class="col-md-12 mb-2">
                                                 <div class="form-group text-center">
                                                     <label class="control-label"><?= $lng == 'si' ? "ගෙවීම් සාක්ෂි" : "Payment Proof" ?> (20MB)<span class="required"> *</span></label><br>
-                                                    <img id="nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                    <img id="bank_slip" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                     <div style="font: 13px Verdana; background: #eee; color: #333">
                                                         <div id="filelist"></div><br>
                                                         <div id="file_container" style="position: relative;">

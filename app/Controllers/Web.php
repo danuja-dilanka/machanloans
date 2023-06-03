@@ -140,7 +140,7 @@ class Web extends BaseController {
         } else if ($type == 1) {
             $up_path = 'public/images/loan_req/nic/back/';
         } else if ($type == 2) {
-            $up_path = 'public/images/loan_proof/';
+            $up_path = 'public/images/loan_req/loan_proof/';
         }
 
         $ph = new PluploadHandler(array(
