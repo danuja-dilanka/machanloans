@@ -61,14 +61,17 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                        <th style="width:5%">#</th>
-                                                        <th style="width:70%"><?= $lng == 'si' ? "මුලු වටිනාකම" : "Total" ?></th>
+                                                        <th style="width:5%"></th>
+                                                        <th style="width:70%;text-align:right"><?= $lng == 'si' ? "මුලු වටිනාකම" : "Total" ?></th>
                                                         <th style="width:25%" id="total_amount">LKR. 0.00</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
                                         </div>
                                         <div class="col-sm-12">
+                                            <div class="col-md-6">
+                                                <?= $member->bank_details ?> 
+                                            </div>
                                             <div class="col-md-6">
                                                 <div class="form-group text-center">
                                                     <label class="control-label"><?= $lng == 'si' ? "ගෙවීම් සාක්ෂි" : "Payment Proof" ?> (20MB)<span class="required"> *</span></label><br>

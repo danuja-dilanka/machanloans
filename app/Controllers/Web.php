@@ -28,7 +28,8 @@ class Web extends BaseController {
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {
-            $available_loans = $this->thisModel->get_loan_req_data_by(['nic' => $this->request->getPost("nic")]);
+            $nic = $this->request->getPost("nic");
+            $available_loans = $this->thisModel->get_loan_req_data_by(['nic' => $nic]);
             $avoid_data = [];
             foreach ($available_loans as $key => $value) {
                 if ($value->status == 1) {
@@ -42,7 +43,11 @@ class Web extends BaseController {
             }
 
             if (isset($avoid_data->id)) {
-                return view('loan_app_stage2', ['lng' => $lng, 'prev_loan' => $avoid_data]);
+                $member = model('Member_model')->get_mem_data_by(['nic' => $nic]);
+                if (!isset($member[0]->id)) {
+                    $member = $member[0];
+                }
+                return view('loan_app_stage2', ['lng' => $lng, 'prev_loan' => $avoid_data, 'member' => $member]);
             } else {
                 if ($lng == "si") {
                     return view('loan_app_stage3_si', ['lng' => $lng]);
@@ -81,9 +86,9 @@ class Web extends BaseController {
             $post_data = $this->request->getPost();
             $insert_id = $this->thisModel->add_loan_req_data($post_data);
             if ($insert_id > 0) {
-                
-                /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION*/
-                
+
+                /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION */
+
                 $Member_model = model('Member_model');
                 if (!isset($Member_model->get_mem_data_by(["nic" => $post_data["nic"]])->id)) {
                     $name = explode(" ", $post_data["full_name"]);
@@ -97,9 +102,9 @@ class Web extends BaseController {
                         "nic" => $post_data["nic"],
                     ]);
                 }
-                
+
                 /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
-                
+
                 return view('loan_app_stage4', ['lng' => $lng]);
             } else {
                 return redirect()->to(base_url("loan_application/$lng"));
