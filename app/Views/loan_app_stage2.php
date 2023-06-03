@@ -70,7 +70,7 @@
                                         </div>
                                         <div class="col-sm-12">
                                             <div class="col-md-6">
-                                                <?= $member->bank_details ?> 
+                                                <?= isset($member->bank_details) ?? $member->bank_details ?> 
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group text-center">
