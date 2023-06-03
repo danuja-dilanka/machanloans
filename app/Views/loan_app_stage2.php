@@ -61,9 +61,9 @@
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                        <th style="width:5%"></th>
-                                                        <th style="width:70%;text-align:right"><?= $lng == 'si' ? "මුලු වටිනාකම" : "Total" ?></th>
-                                                        <th style="width:25%" id="total_amount">LKR. 0.00</th>
+                                                        <th style="width:10%"></th>
+                                                        <th style="width:60%;text-align:right"><?= $lng == 'si' ? "මුලු වටිනාකම" : "Total" ?></th>
+                                                        <th style="width:30%" id="total_amount">LKR. 0.00</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
