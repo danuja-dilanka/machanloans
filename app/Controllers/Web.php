@@ -47,12 +47,12 @@ class Web extends BaseController {
                 $member = model('Member_model')->get_mem_data_by(['nic' => $nic]);
                 if (!isset($member[0])) {
                     $member = null;
-                }else{
+                } else {
                     $member = $member[0];
                 }
-                
+
                 $post_data = $this->request->getPost();
-                if(isset($post_data["p_periods"]) && isset($member->id) && isset($avoid_data->loan_details->id) && isset($post_data["bank_slip"])){
+                if (isset($post_data["p_periods"]) && isset($member->id) && isset($avoid_data->loan_details->id) && isset($post_data["bank_slip"])) {
                     $p_periods = $this->request->getPost("p_periods");
                     foreach ($p_periods as $key => $value) {
                         $this->thisModel->add_loan_pay_data([
@@ -65,9 +65,11 @@ class Web extends BaseController {
                             "loan_proof" => $post_data["bank_slip"]
                         ]);
                     }
+                    
+                    return view('loan_app_waiting', ['lng' => $lng]);
+                } else {
+                    return view('loan_app_stage2', ['lng' => $lng, 'prev_loan' => $avoid_data, 'member' => $member]);
                 }
-                
-                return view('loan_app_stage2', ['lng' => $lng, 'prev_loan' => $avoid_data, 'member' => $member]);
             } else {
                 if ($lng == "si") {
                     return view('loan_app_stage3_si', ['lng' => $lng]);
