@@ -85,7 +85,7 @@
                                                         </div><br>
                                                     </div>
                                                     <input type="hidden" name="total_amount">
-                                                    <input type="hidden" name="nic" value="<?= isset($member->nic) ?? $member->nic ?>">
+                                                    <input type="hidden" name="nic" value="<?= isset($member->nic) ? $member->nic : "" ?>" required>
                                                     <input type="hidden" id="bank_slip" class="dropify" name="bank_slip" multiple="false" required="">
                                                 </div>
                                             </div>
