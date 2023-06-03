@@ -68,9 +68,9 @@
                                                 </tfoot>
                                             </table>
                                         </div>
-                                        <div class="col-sm-12">
+                                        <div class="col-md-12">
                                             <div class="col-md-6">
-                                                <?= isset($member->bank_details) ?? $member->bank_details ?> 
+                                                <?= $prev_loan->loan_details->bank_details ?> 
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group text-center">
