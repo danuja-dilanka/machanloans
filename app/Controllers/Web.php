@@ -112,8 +112,10 @@ class Web extends BaseController {
     public function upload($type = 0) {
         if ($type == 0) {
             $up_path = 'public/images/loan_req/nic/front/';
-        } else {
+        } else if ($type == 1) {
             $up_path = 'public/images/loan_req/nic/back/';
+        } else if ($type == 2) {
+            $up_path = 'public/images/loan_proof/';
         }
 
         $ph = new PluploadHandler(array(

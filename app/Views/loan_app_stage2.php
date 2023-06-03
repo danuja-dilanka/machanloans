@@ -45,26 +45,54 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <?php 
+                                                    <?php
                                                     $p_periods = $prev_loan->p_periods;
-                                                    for ($i = 0; $i < $prev_loan->p_periods; $i++) { ?>
+                                                    for ($i = 0; $i < $prev_loan->p_periods; $i++) {
+                                                        ?>
                                                         <tr>
-                                                            <td><?= $i +1 ?>&nbsp;<input type="checkbox" name="p_periods[]" /></td>
+                                                            <td><?= $i + 1 ?>&nbsp;
+                                                                <input type="checkbox" name="p_periods[]" data-val="<?= $prev_loan->p_charge ?>" class="loan_check"/>
+                                                                <input type="hidden" name="p_periods_val[]" value="<?= $prev_loan->p_charge ?>" readonly=""/>
+                                                            </td>
                                                             <td>Loan Period <?= $p_periods++ ?></td>
                                                             <td>LKR. <?= number_format($prev_loan->p_charge, 2, ".", ",") ?></td>
                                                         </tr>
                                                     <?php } ?>
                                                 </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th style="width:5%">#</th>
+                                                        <th style="width:70%"><?= $lng == 'si' ? "මුලු වටිනාකම" : "Total" ?></th>
+                                                        <th style="width:25%" id="total_amount">LKR. 0.00</th>
+                                                    </tr>
+                                                </tfoot>
                                             </table>
                                         </div>
-                                    <?php } ?>
-                                    <h5 class="text-center py-4"><?= $lng == 'si' ? "හැදුනුම්පත් අංකය" : "Enter NIC" ?></h5> 
-                                    <div class="form-group row">
-                                        <div class="col-md-12">
-                                            <input name="nic" id="text" placeholder="<?= $lng == 'si' ? "හැදුනුම්පත් අංකය" : "Enter NIC" ?>" type="text" class="form-control" minlength="10" maxlength="12" required><br>
-                                            <button type="submit" class="btn btn-primary btn-lg btn-block"><?= $lng == 'si' ? "තහවුරු කරන්න" : "Submit" ?></button>
+                                        <div class="col-sm-12">
+                                            <div class="col-md-6">
+                                                <div class="form-group text-center">
+                                                    <label class="control-label"><?= $lng == 'si' ? "ගෙවීම් සාක්ෂි" : "Payment Proof" ?> (20MB)<span class="required"> *</span></label><br>
+                                                    <img id="nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                    <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                        <div id="filelist"></div><br>
+                                                        <div id="file_container" style="position: relative;">
+                                                            <a class="btn btn-sm btn-default" id="pickfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">Select</a> 
+                                                            <a class="btn btn-sm btn-primary" id="uploadfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        </div><br>
+                                                    </div>
+                                                    <input type="hidden" id="nic_front" class="dropify" name="nic_front" multiple="false" required="">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    <?php } else { ?>
+                                        <h5 class="text-center py-4"><?= $lng == 'si' ? "හැදුනුම්පත් අංකය" : "Enter NIC" ?></h5> 
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <input name="nic" id="text" placeholder="<?= $lng == 'si' ? "මුළු මුදල" : "Enter NIC" ?>" type="text" class="form-control" minlength="10" maxlength="12" required><br>
+                                                <button type="submit" class="btn btn-primary btn-lg btn-block"><?= $lng == 'si' ? "තහවුරු කරන්න" : "Submit" ?></button>
+                                            </div>
+                                        </div>
+                                    <?php } ?> 
                                     <?= form_close(); ?>
                                 </div>
                             </div>
@@ -73,5 +101,11 @@
                 </div>
             </main>
         </div>
+        <script>
+            var BASE_URL = '<?= base_url() ?>';
+        </script>
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
+        <script src="<?= base_url() ?>public/assets/js/loan_repay.js"></script>
     </body>
 </html>
