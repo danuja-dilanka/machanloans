@@ -80,11 +80,12 @@
                                                     <div style="font: 13px Verdana; background: #eee; color: #333">
                                                         <div id="filelist"></div><br>
                                                         <div id="file_container" style="position: relative;">
-                                                            <a class="btn btn-sm btn-default" id="pickfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">Select</a> 
+                                                            <a class="btn btn-sm btn-default" id="pickfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_proof") ?>" data-id="bank_slip">Select</a> 
                                                             <a class="btn btn-sm btn-primary" id="uploadfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                                         </div><br>
                                                     </div>
-                                                    <input type="hidden" id="nic_front" class="dropify" name="nic_front" multiple="false" required="">
+                                                    <input type="hidden" name="total_amount">
+                                                    <input type="hidden" id="bank_slip" class="dropify" name="bank_slip" multiple="false" required="">
                                                 </div>
                                             </div>
                                         </div>

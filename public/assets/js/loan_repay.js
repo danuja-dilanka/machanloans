@@ -68,5 +68,7 @@ function cal_loan_total() {
 }
 
 $(".loan_check").on('click', function () {
-    $("#total_amount").html("LKR. " + cal_loan_total());
+    var total = cal_loan_total();
+    $("#total_amount").html("LKR. " + total);
+    $("input[name='total_amount']").html("LKR. " + total);
 });
