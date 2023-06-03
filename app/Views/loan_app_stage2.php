@@ -69,10 +69,10 @@
                                             </table>
                                         </div>
                                         <div class="col-md-12">
-                                            <div class="col-md-6">
+                                            <div class="col-md-4">
                                                 <?= $prev_loan->loan_details->bank_details ?> 
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-8">
                                                 <div class="form-group text-center">
                                                     <label class="control-label"><?= $lng == 'si' ? "ගෙවීම් සාක්ෂි" : "Payment Proof" ?> (20MB)<span class="required"> *</span></label><br>
                                                     <img id="nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
