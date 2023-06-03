@@ -35,7 +35,7 @@
                                     <?php } ?>
                                     <?php if (isset($prev_loan->id)) { ?>
                                         <div class="alert alert-danger">
-                                            <p class="text-center"><?= $lng == 'si' ? "මුලු වටිනාකම" : "Please Pay Your Previous Loans" ?></p>
+                                            <p class="text-center"><?= $lng == 'si' ? "කරුණාකර ඔබගේ පෙර ණය ගෙවන්න" : "Please Pay Your Previous Loans" ?></p>
                                             <table class="table" style="width:100%">
                                                 <thead>
                                                     <tr>
@@ -54,7 +54,7 @@
                                                                 <input type="checkbox" name="p_periods[]" data-val="<?= $prev_loan->p_charge ?>" class="loan_check"/>
                                                                 <input type="hidden" name="p_periods_val[]" value="<?= $prev_loan->p_charge ?>" readonly=""/>
                                                             </td>
-                                                            <td>Loan Period <?= $p_periods++ ?></td>
+                                                            <td><?= $lng == 'si' ? "වාරිකය" : "Premium" ?> <?= $p_periods++ ?></td>
                                                             <td>LKR. <?= number_format($prev_loan->p_charge, 2, ".", ",") ?></td>
                                                         </tr>
                                                     <?php } ?>
