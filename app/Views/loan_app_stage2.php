@@ -48,11 +48,11 @@
                                                     <?php
                                                     $p_periods = $prev_loan->p_periods;
                                                     for ($i = 0; $i < $prev_loan->p_periods; $i++) {
+                                                        $loan_pre = $i + 1;
                                                         ?>
                                                         <tr>
-                                                            <td><?= $i + 1 ?>&nbsp;
-                                                                <input type="checkbox" name="p_periods[]" data-val="<?= $prev_loan->p_charge ?>" class="loan_check"/>
-                                                                <input type="hidden" name="p_periods_val[]" value="<?= $prev_loan->p_charge ?>" readonly=""/>
+                                                            <td><?= $loan_pre ?>&nbsp;
+                                                                <input type="checkbox" name="p_periods[]" data-val="<?= $prev_loan->p_charge ?>" value="<?= $loan_pre ?>" class="loan_check"/>
                                                             </td>
                                                             <td><?= $lng == 'si' ? "වාරිකය" : "Premium" ?> <?= $p_periods++ ?></td>
                                                             <td>LKR. <?= number_format($prev_loan->p_charge, 2, ".", ",") ?></td>
@@ -73,7 +73,7 @@
                                                 <p class="text-center"><?= $lng == 'si' ? "බැංකු තොරතුරු" : "Bank Details" ?></p>
                                                 <?= $prev_loan->loan_details->bank_details ?> 
                                             </div>
-                                            <div class="col-md-12">
+                                            <div class="col-md-12 mb-2">
                                                 <div class="form-group text-center">
                                                     <label class="control-label"><?= $lng == 'si' ? "ගෙවීම් සාක්ෂි" : "Payment Proof" ?> (20MB)<span class="required"> *</span></label><br>
                                                     <img id="nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
@@ -85,8 +85,12 @@
                                                         </div><br>
                                                     </div>
                                                     <input type="hidden" name="total_amount">
+                                                    <input type="hidden" name="nic" value="<?= isset($member->nic) ?? $member->nic ?>">
                                                     <input type="hidden" id="bank_slip" class="dropify" name="bank_slip" multiple="false" required="">
                                                 </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn btn-primary btn-lg btn-block"><?= $lng == 'si' ? "තහවුරු කරන්න" : "Submit" ?></button>
                                             </div>
                                         </div>
                                     <?php } else { ?>
