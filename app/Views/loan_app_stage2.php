@@ -70,6 +70,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="col-md-12 mb-2">
+                                                <p class="text-center"><?= $lng == 'si' ? "බැංකු තොරතුරු" : "Bank Details" ?></p>
                                                 <?= $prev_loan->loan_details->bank_details ?> 
                                             </div>
                                             <div class="col-md-12">
