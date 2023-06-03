@@ -44,7 +44,7 @@ class Web extends BaseController {
 
             if (isset($avoid_data->id)) {
                 $member = model('Member_model')->get_mem_data_by(['nic' => $nic]);
-                if (!isset($member[0]->id)) {
+                if (isset($member[0]->id)) {
                     $member = $member[0];
                 }
                 return view('loan_app_stage2', ['lng' => $lng, 'prev_loan' => $avoid_data, 'member' => $member]);
