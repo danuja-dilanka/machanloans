@@ -17,7 +17,7 @@ function is_mobile() {
 }
 
 function create_link($link_class, $link_meth, $action, $link_text = "+ Add New", $link_style_class = "btn btn-sm btn-success", $link_attr = "") {
-    if (has_permission($link_class, $action)) {
+    if (has_permission($action[0], $action[1])) {
         return '<a href="' . base_url($link_class . "/" . $link_meth) . '" class="' . $link_style_class . '" ' . $link_attr . '>' . $link_text . '</a>';
     }
 }

@@ -5,10 +5,10 @@
             <h3><?= $title ?></h3>
         </div>
         <div class="col-md-7">
-            
+
         </div>
         <div class="col-md-1">
-            <?= create_link("member", "mem", "add", "+ New", "h6") ?>
+            <?= create_link("member", "mem", ["member", "add"], "+ New", "h6") ?>
         </div>
     </div>
     <table id="dt_tb" class="table" data-action="members" style="width:100%">
