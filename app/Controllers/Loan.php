@@ -266,6 +266,15 @@ class Loan extends BaseController {
         return redirect()->to(base_url('loan/loan_list'));
     }
 
+    //LIST VIEW LOAN
+    public function loan_list() {
+        if (!has_permission("loan", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+        
+        return view('_loan/_loan_applications/_list', ["title" => "Loan Lists"]);
+    }
+
     //LOAN PAYMENT APPROVE
     public function loan_pay_approve($req_id = "") {
 
@@ -282,13 +291,13 @@ class Loan extends BaseController {
         return redirect()->to(base_url('loan/loan_list'));
     }
 
-    //LIST VIEW LOAN
-    public function loan_list() {
-        if (!has_permission("loan", "view")) {
+    //LIST VIEW LOAN PAYMENTS
+    public function loan_pay_list() {
+        if (!has_permission("loan_pay", "view")) {
             return redirect()->to(base_url('dashboard'));
         }
         
-        return view('_loan/_loan_applications/_list', ["title" => "Loan Lists"]);
+        return view('_loan/_loan_pay/_list', ["title" => "Loan Payments"]);
     }
 
 }
