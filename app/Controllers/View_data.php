@@ -73,7 +73,7 @@ class View_data extends BaseController {
     }
 
     public function loans_pay() {
-        if (!has_permission("loan", "view")) {
+        if (!has_permission("loan_pay", "view")) {
             die;
         }
         
@@ -98,9 +98,38 @@ class View_data extends BaseController {
                 "<a href='".base_url()."public/images/loan_req/loan_proof/".$value->loan_proof."' target='_blank'>View</a>",
                 number_format($value->total, 2, ".", ","),
                 $status_txt,
-//                (has_permission("loan", "edit") ? "<a href='".base_url("loan/loan/").$key_enc."' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "").
+//                (has_permission("loan_pay", "edit") ? "<a href='".base_url("loan/loan/").$key_enc."' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "").
                 (($value->status == 0 && has_permission("loan_pay", "edit")) ? "<a href='".base_url("loan/loan_pay_approve/").$key_enc."' class='btn btn-sm btn-primary'>Approve</a>&nbsp;" : "").
                 (has_permission("loan_pay", "delete") ? "<a href='#' data-id='".base_url("loan/del_loan_pay/").$key_enc."' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
+            ];
+        }
+
+        echo json_encode(["data" => $data]);
+    }
+
+    public function loans_pros() {
+        if (!has_permission("loan_pro", "view")) {
+            die;
+        }
+        
+        $data = [];
+        $loans = model('Loan_model')->get_pro_data();
+        foreach ($loans as $key => $value) {
+            
+            $key_enc = encode($value->id);
+            $data[] = [
+                $key + 1,
+                $value->loan_name,
+                number_format($value->last_amount, 2, ".", ","),
+                $value->int_rate,
+                $value->int_rate_per == 1 ? "Monthly" : "Yearly",
+                $value->term,
+                $value->term_per == 1 ? "Monthly" : "Yearly",
+                $value->late_time_penl,
+                $value->status == 1 ? "Active" : "Inactive",
+                $value->description,
+                (has_permission("loan_pro", "edit") ? "<a href='".base_url("loan/loan_pro/").$key_enc."' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "").
+                (has_permission("loan_pro", "delete") ? "<a href='#' data-id='".base_url("loan/del_loan_pro/").$key_enc."' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
             ];
         }
 
