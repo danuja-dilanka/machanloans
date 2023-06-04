@@ -61,7 +61,7 @@ class View_data extends BaseController {
                 $value->full_name,
                 $value->mem_no,
                 $value->loan_rel_date,
-                $value->last_amount,
+                number_format($value->last_amount, 2, ".", ","),
                 $status_txt,
 //                (has_permission("loan", "edit") ? "<a href='".base_url("loan/loan/").$key_enc."' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "").
                 ($value->status == 0 && has_permission("loan", "edit") ? "<a href='".base_url("loan/loan_approve/").$key_enc."' class='btn btn-sm btn-primary'>Approve</a>&nbsp;" : "").
@@ -92,11 +92,11 @@ class View_data extends BaseController {
                 $key + 1,
                 $value->loan_id,
                 $value->pay_date,
-                $value->last_amount,
+                number_format($value->last_amount, 2, ".", ","),
                 $value->int_rate,
-                $value->pen_amount,
+                number_format($value->pen_amount, 2, ".", ","),
                 "<a href='".base_url()."public/images/loan_req/loan_proof/".$value->loan_proof."' target='_blank'>View</a>",
-                $value->total,
+                number_format($value->total, 2, ".", ","),
                 $status_txt,
 //                (has_permission("loan", "edit") ? "<a href='".base_url("loan/loan/").$key_enc."' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "").
                 (($value->status == 0 && has_permission("loan_pay", "edit")) ? "<a href='".base_url("loan/loan_pay_approve/").$key_enc."' class='btn btn-sm btn-primary'>Approve</a>&nbsp;" : "").
