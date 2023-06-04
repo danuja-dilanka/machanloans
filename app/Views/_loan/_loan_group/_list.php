@@ -8,7 +8,7 @@
             
         </div>
         <div class="col-md-1">
-            <?php create_link("loan", "loan_group", ["group_data", "add"], "+ New", "h6") ?>
+            <?= create_link("loan", "loan_group", ["group_data", "add"], "+ New", "h6") ?>
         </div>
     </div>
     <table id="dt_tb" class="table" data-action="loan_groups" style="width:100%">
