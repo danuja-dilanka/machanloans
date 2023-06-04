@@ -52,6 +52,7 @@
     <script src="<?= base_url() ?>public/assets/js/dashboard.js?v=1.1"></script>
     
     <!-- DATATABLE JS -->
+    <script src="<?= base_url() ?>public/assets/js/jquery.sweet-modal.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/datatables/dataTables.responsive.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/datatables/dataTables.fixedHeader.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/datatables/pdfmake.min.js"></script>

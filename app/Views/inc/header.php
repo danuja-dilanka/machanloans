@@ -30,6 +30,7 @@
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/jquery.toast.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/bootstrap-select.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/jquery-confirm.min.css">
+        <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/jquery.sweet-modal.min.css">
         
         <!-- DATATABLE CSS -->
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/datatables.min.css">
