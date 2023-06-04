@@ -20,6 +20,7 @@
                 <th>Principal Amount</th>
                 <th>Interest</th>
                 <th>Late Penalties</th>
+                <th>Proof</th>
                 <th>Total Amount</th>
                 <th>Status</th>
                 <th class="dont_export">Action</th>
@@ -34,6 +35,7 @@
                 <th>Principal Amount</th>
                 <th>Interest</th>
                 <th>Late Penalties</th>
+                <th>Proof</th>
                 <th>Total Amount</th>
                 <th>Status</th>
                 <th class="dont_export">Action</th>

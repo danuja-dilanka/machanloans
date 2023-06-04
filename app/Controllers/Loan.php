@@ -300,4 +300,20 @@ class Loan extends BaseController {
         return view('_loan/_loan_pay/_list', ["title" => "Loan Payments"]);
     }
 
+    //DELETE LOAN PAYMENTS
+    public function del_loan_pay($req_id = "") {
+
+        if ($req_id != "" && has_permission("loan_pay", "delete")) {
+            $data = $this->thisModel->get_loan_req_data(decode($req_id));
+            if (isset($data->id)) {
+                $result = $this->thisModel->delete_loan_req_data($data->id);
+                if ($result) {
+                    session()->setFlashdata('notify', 'Successfully Deleted');
+                }
+            }
+        }
+
+        return redirect()->to(base_url('loan/loan_list'));
+    }
+
 }
