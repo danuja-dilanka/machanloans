@@ -20,7 +20,10 @@
                         <div class="col-md-6">
                             <?= render_input('last_name', 'Last Name', isset($data) ? $data->last_name : '', 'text', ['required' => true]); ?>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-3">
+                            <?= render_input('nic', 'NIC', isset($data) ? $data->nic : '', 'text', ['required' => true]); ?>
+                        </div>
+                        <div class="col-md-3">
                             <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
