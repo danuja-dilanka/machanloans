@@ -8,30 +8,28 @@
             
         </div>
         <div class="col-md-1">
-            <?php // create_link("member", "mem", "add", "+ New", "h6") ?>
+            <?php create_link("loan", "loan_group", "add", "+ New", "h6") ?>
         </div>
     </div>
-    <table id="dt_tb" class="table" data-action="loans" style="width:100%">
+    <table id="dt_tb" class="table" data-action="loan_groups" style="width:100%">
         <thead>
             <tr>
-                <th>Loan ID</th>
-                <th>Payment Date</th>
-                <th>Principal Amount</th>
-                <th>Interest</th>
-                <th>Late Penalties</th>
-                <th>Total Amount</th>
+                <th>#</th>
+                <th>Group Name</th>
+                <th>Member limit</th>
+                <th>Members</th>
+                <th>Group Type</th>
                 <th class="dont_export">Action</th>
             </tr>
         </thead>
         <tbody></tbody>
         <tfoot>
             <tr>
-                <th>Loan ID</th>
-                <th>Payment Date</th>
-                <th>Principal Amount</th>
-                <th>Interest</th>
-                <th>Late Penalties</th>
-                <th>Total Amount</th>
+                <th>#</th>
+                <th>Group Name</th>
+                <th>Member limit</th>
+                <th>Members</th>
+                <th>Group Type</th>
                 <th class="dont_export">Action</th>
             </tr>
         </tfoot>

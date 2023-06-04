@@ -97,6 +97,19 @@ class Loan_model extends Model {
         }
     }
 
+    //GET LOAN GROUP MEMBER BY GROUP
+    public function get_grp_members_by_group($group = 0, $result_type = 0) {
+        $result = $this->db->table(DB_PREFIX . 'loan_grp_mem a');
+        $result->select('a.*, CONACT(b.first_name, " ", b.last_name) AS member_name');
+        $result->join(DB_PREFIX . 'member b', 'a.member = b.id');
+        $result->where(["group" => $group]);
+        if ($result_type == 0) {
+            return $result->get()->getResult();
+        } else {
+            return $result->get()->getResultArray();
+        }
+    }
+
     //UPDATE LOAN GROUP MEMBER
     public function update_grp_mem_data($data, $id) {
         return $this->db->table(DB_PREFIX . 'loan_grp_mem')->update($data, ["id" => $id]);
@@ -210,4 +223,5 @@ class Loan_model extends Model {
             return $this->db->table(DB_PREFIX . 'loan_pay')->delete(["id" => $id]);
         }
     }
+
 }

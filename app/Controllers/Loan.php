@@ -177,7 +177,7 @@ class Loan extends BaseController {
             return redirect()->to(base_url('dashboard'));
         }
         
-        return view('_loan/_loan_group/_list');
+        return view('_loan/_loan_group/_list', ["title" => "Loan Groups"]);
     }
 
     //CREATE/ UPDATE VIEW LOAN
