@@ -34,7 +34,7 @@ class Loan extends BaseController {
             'late_time_penl' => 'required',
             'status' => 'required|numeric',
             'description' => 'required',
-            'term' => 'required|'
+            'term' => 'required'
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {

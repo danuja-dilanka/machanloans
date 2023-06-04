@@ -17,7 +17,7 @@ class Loan_model extends Model {
         $result = $this->db->table(DB_PREFIX . 'loan_product');
         $result->select('*');
         if ($id > 0) {
-            return $result->where(["a.id" => $id])->get()->getRow();
+            return $result->where(["id" => $id])->get()->getRow();
         } else {
             if ($result_type == 0) {
                 return $result->get()->getResult();
