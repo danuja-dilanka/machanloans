@@ -95,7 +95,7 @@ class View_data extends BaseController {
                 $value->last_amount,
                 $value->int_rate,
                 $value->pen_amount,
-                "<a href='".base_url("public/images/loan_req/loan_proof/").$value->loan_proof."' target='_blank'>View</a>",
+                "<a href='".base_url()."public/images/loan_req/loan_proof/".$value->loan_proof."' target='_blank'>View</a>",
                 $value->total,
                 $status_txt,
 //                (has_permission("loan", "edit") ? "<a href='".base_url("loan/loan/").$key_enc."' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "").
