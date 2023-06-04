@@ -98,7 +98,7 @@ class Loan extends BaseController {
         if (!has_permission("loan_pro", "view")) {
             return redirect()->to(base_url('dashboard'));
         }
-        return view('_loan/_loan_product/_list');
+        return view('_loan/_loan_product/_list', ["title" => "Loan Products"]);
     }
 
     //CREATE/ UPDATE VIEW GROUP
