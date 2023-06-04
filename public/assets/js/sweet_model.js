@@ -1,6 +1,6 @@
 var rating_template = "<div class='col-sm-12'><div class='col-sm-6'><input class'form-group' placeholder='Description'/></div></div>";
 var templates = {"rating": ["Ratings", rating_template]};
-
+//
 function get_template(type, key) {
     var mod_template = templates[type];
     mod_template[1] = mod_template[1].replace(/KEY/g, key);
