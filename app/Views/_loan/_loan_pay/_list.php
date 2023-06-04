@@ -14,24 +14,28 @@
     <table id="dt_tb" class="table" data-action="loans" style="width:100%">
         <thead>
             <tr>
+                <th>#</th>
                 <th>Loan ID</th>
                 <th>Payment Date</th>
                 <th>Principal Amount</th>
                 <th>Interest</th>
                 <th>Late Penalties</th>
                 <th>Total Amount</th>
+                <th>Status</th>
                 <th class="dont_export">Action</th>
             </tr>
         </thead>
         <tbody></tbody>
         <tfoot>
             <tr>
+                <th>#</th>
                 <th>Loan ID</th>
                 <th>Payment Date</th>
                 <th>Principal Amount</th>
                 <th>Interest</th>
                 <th>Late Penalties</th>
                 <th>Total Amount</th>
+                <th>Status</th>
                 <th class="dont_export">Action</th>
             </tr>
         </tfoot>

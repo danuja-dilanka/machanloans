@@ -250,13 +250,29 @@ class Loan extends BaseController {
         return redirect()->to(base_url('loan/loan_list'));
     }
 
-    //DELETE LOAN DATA
+    //LOAN APPROVE
     public function loan_approve($req_id = "") {
 
         if ($req_id != "" && has_permission("loan", "edit")) {
             $data = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($data->id)) {
-                $result = $this->thisModel->update_loan_req_data(["status" => 1], $data->id);
+                $result = $this->thisModel->update_loan_req_data(["status" => 1, 'action_by' => session()->ml_user], $data->id);
+                if ($result) {
+                    session()->setFlashdata('notify', 'Successfully Approved');
+                }
+            }
+        }
+
+        return redirect()->to(base_url('loan/loan_list'));
+    }
+
+    //LOAN PAYMENT APPROVE
+    public function loan_pay_approve($req_id = "") {
+
+        if ($req_id != "" && has_permission("loan_pay", "edit")) {
+            $data = $this->thisModel->get_loan_req_data(decode($req_id));
+            if (isset($data->id)) {
+                $result = $this->thisModel->update_loan_pay_data(["status" => 1, 'action_by' => session()->ml_user], $data->id);
                 if ($result) {
                     session()->setFlashdata('notify', 'Successfully Approved');
                 }

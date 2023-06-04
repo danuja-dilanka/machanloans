@@ -166,9 +166,11 @@ class Loan_model extends Model {
     //GET LOAN PAYMENT
     public function get_loan_pay_data($id = 0, $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'loan_pay');
-        $result->select('*');
+        $result->select('a.*, b.id AS loan_id, c.last_amount, c.int_rate, c.pen_amount');
+        $result->join(DB_PREFIX . 'loan_request b', 'a.loan = b.id');
+        $result->join(DB_PREFIX . 'loan_product c', 'b.loan_type = c.id');
         if ($id > 0) {
-            return $result->where(["id" => $id])->get()->getRow();
+            return $result->where(["a.id" => $id])->get()->getRow();
         } else {
             if ($result_type == 0) {
                 return $result->get()->getResult();
@@ -181,7 +183,8 @@ class Loan_model extends Model {
     //GET LOAN PAYMENT BY -> where
     public function get_loan_pay_data_by($where = []) {
         $result = $this->db->table(DB_PREFIX . 'loan_pay');
-        $result->select('*');
+        $result->select('a.*, b.id AS loan_id');
+        $result->join(DB_PREFIX . 'loan_request b', 'a.loan = b.id');
         $result->where($where);
         return $result->get()->getResult();
     }
