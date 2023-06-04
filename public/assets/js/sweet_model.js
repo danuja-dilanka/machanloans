@@ -8,7 +8,7 @@ function get_template(type, key) {
 }
 
 function open_rating(element) {
-    var template = get_template(element.data('type'), element.data('key'));
+    var template = get_template(element.getAttribute('data-type'), element.data('data-key'));
     $.sweetModal({
         title: template[0],
         content: template[1],
