@@ -165,7 +165,7 @@ class Loan_model extends Model {
 
     //GET LOAN PAYMENT
     public function get_loan_pay_data($id = 0, $result_type = 0) {
-        $result = $this->db->table(DB_PREFIX . 'loan_pay');
+        $result = $this->db->table(DB_PREFIX . 'loan_pay a');
         $result->select('a.*, b.id AS loan_id, c.last_amount, c.int_rate, c.pen_amount');
         $result->join(DB_PREFIX . 'loan_request b', 'a.loan = b.id');
         $result->join(DB_PREFIX . 'loan_product c', 'b.loan_type = c.id');
