@@ -304,9 +304,9 @@ class Loan extends BaseController {
     public function del_loan_pay($req_id = "") {
 
         if ($req_id != "" && has_permission("loan_pay", "delete")) {
-            $data = $this->thisModel->get_loan_req_data(decode($req_id));
+            $data = $this->thisModel->get_loan_pay_data(decode($req_id));
             if (isset($data->id)) {
-                $result = $this->thisModel->delete_loan_req_data($data->id);
+                $result = $this->thisModel->delete_loan_pay_data($data->id);
                 if ($result) {
                     session()->setFlashdata('notify', 'Successfully Deleted');
                 }
