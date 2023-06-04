@@ -11,7 +11,7 @@
             <?php // create_link("member", "mem", "add", "+ New", "h6") ?>
         </div>
     </div>
-    <table id="dt_tb" class="table" data-action="loans" style="width:100%">
+    <table id="dt_tb" class="table" data-action="loans_pay" style="width:100%">
         <thead>
             <tr>
                 <th>#</th>
