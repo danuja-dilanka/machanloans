@@ -89,7 +89,7 @@ class View_data extends BaseController {
             
             $key_enc = encode($value->id);
             $data[] = [
-                $key,
+                $key + 1,
                 $value->loan_id,
                 $value->pay_date,
                 $value->last_amount,
