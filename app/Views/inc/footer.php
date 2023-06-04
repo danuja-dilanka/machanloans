@@ -59,7 +59,7 @@
     <script src="<?= base_url() ?>public/assets/js/datatables/vfs_fonts.js"></script>
     <script src="<?= base_url() ?>public/assets/js/datatables/datatables.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/init_db.js"></script>
-    <script src="<?= base_url() ?>public/assets/js/sweet_model.js"></script>
+    <script src="<?= base_url() ?>public/assets/js/sweet_model.js?i=<?= mt_rand() ?>"></script>
 
     </body>
 </html>
