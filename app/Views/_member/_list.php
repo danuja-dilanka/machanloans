@@ -47,4 +47,9 @@
         </tfoot>
     </table>
 </div>
+
+<script>
+    var rating_template = "<?= view('js_templates/rating') ?>";
+</script>
+
 <?= view('inc/footer') ?>
