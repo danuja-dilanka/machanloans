@@ -26,7 +26,7 @@ function send_sms($to, $message) {
             "message" => $encoded,
             "mobile" => $mobile,
             "response" => $response,
-            "mess_id" => json_decode($response)["id"],
+            "mess_id" => json_decode($response)->id,
             "send_dt" => date("Y-m-d H:i:s")
         ]);
         
