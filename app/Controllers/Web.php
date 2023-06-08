@@ -14,7 +14,7 @@ class Web extends BaseController {
     }
     
     public function send_sms() {
-        send_sms("94761695904", "TEST RUN");
+        send_sms("94776636688", "TEST RUN");
     }
 
     public function loan_application($lng = "") {
