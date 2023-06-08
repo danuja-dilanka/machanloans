@@ -12,6 +12,10 @@ class Web extends BaseController {
     public function __construct() {
         $this->thisModel = model('Loan_model');
     }
+    
+    public function send_sms() {
+        send_sms("94761695904", "TEST RUN");
+    }
 
     public function loan_application($lng = "") {
         if ($lng == "") {
