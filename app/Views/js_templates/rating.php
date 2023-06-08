@@ -40,7 +40,7 @@
     /* SWEET ALERT ----------------end */
 </style>
 
-<div class='row'>
+<!--<div class='row'>
     <div class='col-sm-10'>
         <div class='rate'>
             <input type='radio' id='star5' name='rate' value='5' /><label for='star5' title='text'>5 stars</label>
@@ -56,4 +56,4 @@
     <div class='col-sm-12'>
         <textarea class='form-control' placeholder='Description'></textarea>
     </div>
-</div>
+</div>-->
