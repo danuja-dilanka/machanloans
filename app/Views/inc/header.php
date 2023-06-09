@@ -31,6 +31,8 @@
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/bootstrap-select.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/jquery-confirm.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/jquery.sweet-modal.min.css">
+        <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/searchPanes.dataTables.min.css">
+        <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/select.dataTables.min.css">
         
         <!-- DATATABLE CSS -->
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/datatables.min.css">
