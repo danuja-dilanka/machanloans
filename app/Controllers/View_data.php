@@ -166,4 +166,12 @@ class View_data extends BaseController {
         echo json_encode(["data" => $data]);
     }
 
+    public function transactions() {
+        if (!has_permission("report_transactions", "view")) {
+            die;
+        }
+
+        echo view('_table/_transaction');
+    }
+
 }
