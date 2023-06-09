@@ -159,7 +159,6 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
         fixedHeader: true,
 
         searchPanes: {
-            columns: [3,2,1],
             viewTotal: true
         },
 
@@ -218,6 +217,11 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
         $(dt_tb).DataTable().destroy();
         $(dt_tb).DataTable(options);
     }
+
+    $(dt_tb + ' tfoot th').each(function () {
+        var title = $(this).text();
+        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
+    });
 
     $(dt_tb).columns().every(function () {
         var that = this;
