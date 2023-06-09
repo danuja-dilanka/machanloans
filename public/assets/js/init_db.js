@@ -217,23 +217,6 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
         $(dt_tb).DataTable().destroy();
         $(dt_tb).DataTable(options);
     }
-
-    $(dt_tb + ' tfoot th').each(function () {
-        var title = $(this).text();
-        $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-    });
-
-    $(dt_tb).columns().every(function () {
-        var that = this;
-
-        $('input', this.footer()).on('keyup change', function () {
-            if (that.search() !== this.value) {
-                that
-                        .search(this.value)
-                        .draw();
-            }
-        });
-    });
 }
 
 $('.filter').on('change click dblclick select', function () {
