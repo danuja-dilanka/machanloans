@@ -61,6 +61,10 @@ $routes->match(['get', 'post'], '/loan_application/(:any)', 'Web::loan_applicati
 $routes->match(['get', 'post'], '/loan_application/(:any)/(:any)', 'Web::loan_application/$1/$2');
 $routes->match(['get', 'post'], '/loan_check/(:any)', 'Web::loan_check/$1');
 
+//REPORTS CONTROLLER
+$routes->match(['get', 'post'], '/report/(:any)', 'Reports::$1');
+$routes->match(['get', 'post'], '/report/(:any)/(:any)', 'Reports::$1/$2');
+
 $routes->match(['get', 'post'], '/web/(:any)', 'Web::$1');
 $routes->match(['get', 'post'], '/web/(:any)/(:any)', 'Web::$1/$2');
 $routes->match(['get', 'post'], '/web/(:any)/(:any)/(:any)', 'Web::$1/$2/$3');
