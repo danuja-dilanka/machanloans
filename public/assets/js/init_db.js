@@ -174,6 +174,7 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
             loadingIndicator: true
         },
 
+        dom: 'Plfrtip',
         buttons: [
             {
                 extend: 'copy',
