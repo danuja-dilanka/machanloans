@@ -155,7 +155,7 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
     var options = {
         responsive: true,
         processing: true,
-//        serverSide: true,
+        serverSide: true,
         fixedHeader: true,
 
         searchPanes: {
