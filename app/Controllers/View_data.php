@@ -171,7 +171,7 @@ class View_data extends BaseController {
             die;
         }
 
-        echo view('_table/_transaction');
+        view('_table/_transaction');
     }
 
 }
