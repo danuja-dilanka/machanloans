@@ -9,8 +9,8 @@ class Reports extends BaseController{
         
     }
     
-    #TRANSACTIONS
+    #TRANSACTION REPORT
     public function transactions(){
-        return view('_transaction/_list');
+        return view('_transaction/_list', ['title' => "Transaction Report"]);
     }
 }
