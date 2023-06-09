@@ -32,7 +32,7 @@ class View_data extends BaseController {
                 $value->address,
                 $value->photo,
                 (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "") .
-                ("<button type='button' onclick='open_rating(this)' data-key='".$key_enc."' data-type='rating' class='btn btn-sm btn-primary'>Rate</button>&nbsp;") .
+                ("<button type='button' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='btn btn-sm btn-primary'>Rate</button>&nbsp;") .
                 (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
             ];
         }
@@ -171,7 +171,13 @@ class View_data extends BaseController {
             die;
         }
 
-        view('_table/_transaction');
+        $data = [];
+        $loan_pays = model('Loan_model')->get_loan_pay_data();
+        foreach ($loan_pays as $key => $value) {
+            
+        }
+
+        echo json_encode(["data" => $data]);
     }
 
 }
