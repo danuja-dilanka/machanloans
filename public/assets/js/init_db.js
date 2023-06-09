@@ -159,6 +159,7 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
         fixedHeader: true,
 
         searchPanes: {
+            columns: [3,2,1],
             viewTotal: true
         },
 
