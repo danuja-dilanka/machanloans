@@ -158,9 +158,9 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
         serverSide: true,
         fixedHeader: true,
 
-        searchPanes: {
-            viewTotal: true
-        },
+//        searchPanes: {
+//            viewTotal: true
+//        },
 
         paging: true,
         pageLength: 10,
@@ -174,7 +174,7 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
             loadingIndicator: true
         },
 
-        dom: 'Plfrtip',
+        dom: 'Bfrtip',
         buttons: [
             {
                 extend: 'copy',
