@@ -158,10 +158,6 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
 //        serverSide: true,
         fixedHeader: true,
 
-//        searchPanes: {
-//            viewTotal: true
-//        },
-
         paging: true,
         pageLength: 10,
 
@@ -209,14 +205,14 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
         ]
     };
 
-
+    
 
     if (refreshDT == 0) {
         $(dt_tb).DataTable(options);
     } else {
         $(dt_tb).DataTable().destroy();
         $(dt_tb).DataTable(options);
-    }
+}
 }
 
 $('.filter').on('change click dblclick select', function () {
