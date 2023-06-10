@@ -24,7 +24,7 @@ class Reports extends BaseController {
             die;
         }
         
-        return view('_reports/_investors', ['title' => "Transaction Report"]);
+        return view('_reports/_investors', ['title' => "Investors Report"]);
     }
 
 }
