@@ -39,7 +39,7 @@ class Member_model extends Model {
             }
         }
     }
-    
+
     //GET MEMBERS BY -> where
     public function get_mem_data_by($where = []) {
         $result = $this->db->table(DB_PREFIX . 'member');
@@ -47,11 +47,14 @@ class Member_model extends Model {
         $result->where($where);
         return $result->get()->getResult();
     }
-    
+
     //GET NEXT MEMBERS NO
     public function get_nxt_mem_no() {
         $result = $this->db->query("SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'machanloans_db' AND TABLE_NAME = 'ml_member';");
-        return $result->result()[0]->AUTO_INCREMENT;
+        $array = $result->result();
+        foreach ($array as $value) {
+            return $value->AUTO_INCREMENT;
+        }
     }
 
     public function update_data($data, $id) {
