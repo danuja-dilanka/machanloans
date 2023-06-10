@@ -10,17 +10,17 @@
                 <div class="card-body">
                     <div class="row mb-3">
                         <div class="col-sm-4">
-                            <select class="form-control selectpicker  hide_or_show_sel" data-live-search="true" data-target="access_type">
+                            <select id="access_type" class="form-control selectpicker hide_or_show_sel" data-live-search="true" data-target="access_type">
                                 <option value="0">Select Access Type</option>
                                 <option value="1">User Wise</option>
                                 <option value="2">User Type Wise</option>
                             </select>
                         </div>
                         <div class="col-sm-4 custom_show" id="access_type1" style="display:none">
-                            <select class="form-control selectpicker selectpicker_ajax" name="users" data-live-search="true" data-clone="users"></select>
+                            <select id="users" class="form-control selectpicker selectpicker_ajax" name="users" data-live-search="true" data-clone="users"></select>
                         </div>
                         <div class="col-sm-4 hide custom_show" id="access_type2" style="display:none">
-                            <select class="form-control selectpicker selectpicker_ajax" name="user_types" data-live-search="true" data-clone="user_types"></select>
+                            <select id="user_types" class="form-control selectpicker selectpicker_ajax" name="user_types" data-live-search="true" data-clone="user_types"></select>
                         </div>
                     </div>
                     <div class="row">
@@ -36,13 +36,13 @@
                                     <div class="col-sm-3 row">
                                         <div class="col-sm-6">
                                             <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck<?= $key ?>">
+                                                <input data-id="<?= $value->id ?>" data-type="module_access" type="checkbox" data-module="0" class="custom-control-input _access" id="customCheck<?= $key ?>">
                                                 <label class="custom-control-label" for="customCheck<?= $key ?>"></label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="custom-control custom-switch">
-                                                <input type="checkbox" class="custom-control-input" id="customSwitch<?= $key ?>">
+                                                <input data-id="<?= $value->id ?>" data-type="module_status" type="checkbox" data-module="0" class="custom-control-input _switch" id="customSwitch<?= $key ?>">
                                                 <label class="custom-control-label" for="customSwitch<?= $key ?>"></label>
                                             </div>
                                         </div>
@@ -66,13 +66,13 @@
                                                     <td><?= ucwords($svalue->action) ?></td>
                                                     <td>
                                                         <div class="custom-control custom-switch">
-                                                            <input type="checkbox" class="custom-control-input" id="customSwitch<?= $key . "_" . $skey ?>">
+                                                            <input data-id="<?= $svalue->id ?>" data-type="module_action_access" data-module="<?= $value->id ?>" type="checkbox" class="custom-control-input _access" id="customSwitch<?= $key . "_" . $skey ?>">
                                                             <label class="custom-control-label" for="customSwitch<?= $key . "_" . $skey ?>"></label>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
-                                                            <input type="checkbox" class="custom-control-input" id="customCheck<?= $key . "_" . $skey ?>">
+                                                            <input data-id="<?= $svalue->id ?>" data-type="module_action_status" data-module="<?= $value->id ?>" type="checkbox" class="custom-control-input _switch" id="customCheck<?= $key . "_" . $skey ?>">
                                                             <label class="custom-control-label" for="customCheck<?= $key . "_" . $skey ?>"></label>
                                                         </div>
                                                     </td>
