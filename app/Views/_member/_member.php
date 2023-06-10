@@ -60,7 +60,7 @@
                             <?= render_input('rel_friend1', 'Name of non-relative friend 1', isset($data) ? $data->rel_friend1 : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_input('rel_friend2', 'Name of non-relative friend 1', isset($data) ? $data->rel_friend2 : '', 'text', ['required' => true]); ?>
+                            <?= render_input('rel_friend2', 'Name of non-relative friend 2', isset($data) ? $data->rel_friend2 : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-12">
                             <?= render_input('photo', 'Photo', '', 'file', []); ?>
