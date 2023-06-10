@@ -24,13 +24,13 @@
                             <?= render_input('nic', 'NIC', isset($data) ? $data->nic : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-3">
-                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : '', 'text', ['required' => true]); ?>
+                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : "MLM-" . model('Member_model')->get_nxt_mem_no(), 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('birthday', 'Birthday', isset($data) ? $data->birthday : '', 'date', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_input('business_name', 'Business Name', isset($data) ? $data->business_name : '', 'text', ['required' => true]); ?>
+                            <?= render_input('business_name', 'Business Name', isset($data) ? $data->business_name : '', 'text'); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('email', 'Email', isset($data) ? $data->email : '', 'email', ['required' => true]); ?>
