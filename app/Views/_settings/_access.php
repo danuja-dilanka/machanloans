@@ -42,7 +42,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="custom-control custom-switch">
-                                                <input data-id="<?= $value->id ?>" data-type="module_status" type="checkbox" data-action="all" data-module="<?= $value->code ?>" class="custom-control-input _switch" id="customSwitch<?= $key ?>">
+                                                <input data-id="<?= $value->id ?>" data-type="module_status" type="checkbox" data-action="all" data-module="<?= $value->code ?>" class="custom-control-input _switch" checked="" disabled="" id="customSwitch<?= $key ?>">
                                                 <label class="custom-control-label" for="customSwitch<?= $key ?>"></label>
                                             </div>
                                         </div>
@@ -66,7 +66,7 @@
                                                     <td><?= ucwords($svalue->action) ?></td>
                                                     <td>
                                                         <div class="custom-control custom-switch">
-                                                            <input data-id="<?= $svalue->id ?>" data-type="module_action_access" data-action="<?= $svalue->action ?>" data-module="<?= $value->code ?>" type="checkbox" class="custom-control-input _switch" id="customSwitch<?= $key . "_" . $skey ?>">
+                                                            <input data-id="<?= $svalue->id ?>" data-type="module_action_access" data-action="<?= $svalue->action ?>" data-module="<?= $value->code ?>" type="checkbox" checked="" disabled="" class="custom-control-input _switch" id="customSwitch<?= $key . "_" . $skey ?>">
                                                             <label class="custom-control-label" for="customSwitch<?= $key . "_" . $skey ?>"></label>
                                                         </div>
                                                     </td>
