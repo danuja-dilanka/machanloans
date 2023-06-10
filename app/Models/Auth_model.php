@@ -19,6 +19,28 @@ class Auth_model extends Model {
 
         return false;
     }
+    
+    //ADD USER ACCESS
+    public function add_user_access(array $data) {
+        $this->db->table(DB_PREFIX . 'user_access')->insert($data);
+        return $this->db->insertID();
+    }
+    
+    //ADD USER TYPE ACCESS
+    public function add_user_type_access(array $data) {
+        $this->db->table(DB_PREFIX . 'utype_access')->insert($data);
+        return $this->db->insertID();
+    }
+
+    //UPDATE USER ACCESS
+    public function update_user_access(array $data, int $id) {
+        return $this->db->table(DB_PREFIX . 'user_access')->update($data, ["id" => $id]);
+    }
+
+    //UPDATE USER TYPE ACCESS
+    public function update_user_type_access(array $data, int $id) {
+        return $this->db->table(DB_PREFIX . 'utype_access')->update($data, ["id" => $id]);
+    }
 
     //GET USER ACCESS
     public function get_user_access(int $user, string $module, string $action) {

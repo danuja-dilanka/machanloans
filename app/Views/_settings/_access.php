@@ -36,13 +36,13 @@
                                     <div class="col-sm-3 row">
                                         <div class="col-sm-6">
                                             <div class="custom-control custom-checkbox">
-                                                <input data-id="<?= $value->id ?>" data-type="module_access" type="checkbox" data-module="0" class="custom-control-input _access" id="customCheck<?= $key ?>">
+                                                <input data-id="<?= $value->id ?>" data-type="module_access" type="checkbox" data-action="all" data-module="<?= $value->code ?>" class="custom-control-input _access" id="customCheck<?= $key ?>">
                                                 <label class="custom-control-label" for="customCheck<?= $key ?>"></label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="custom-control custom-switch">
-                                                <input data-id="<?= $value->id ?>" data-type="module_status" type="checkbox" data-module="0" class="custom-control-input _switch" id="customSwitch<?= $key ?>">
+                                                <input data-id="<?= $value->id ?>" data-type="module_status" type="checkbox" data-action="all" data-module="<?= $value->code ?>" class="custom-control-input _switch" id="customSwitch<?= $key ?>">
                                                 <label class="custom-control-label" for="customSwitch<?= $key ?>"></label>
                                             </div>
                                         </div>
@@ -66,13 +66,13 @@
                                                     <td><?= ucwords($svalue->action) ?></td>
                                                     <td>
                                                         <div class="custom-control custom-switch">
-                                                            <input data-id="<?= $svalue->id ?>" data-type="module_action_access" data-module="<?= $value->id ?>" type="checkbox" class="custom-control-input _access" id="customSwitch<?= $key . "_" . $skey ?>">
+                                                            <input data-id="<?= $svalue->id ?>" data-type="module_action_access" data-action="<?= $svalue->action ?>" data-module="<?= $value->code ?>" type="checkbox" class="custom-control-input _switch" id="customSwitch<?= $key . "_" . $skey ?>">
                                                             <label class="custom-control-label" for="customSwitch<?= $key . "_" . $skey ?>"></label>
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="custom-control custom-checkbox">
-                                                            <input data-id="<?= $svalue->id ?>" data-type="module_action_status" data-module="<?= $value->id ?>" type="checkbox" class="custom-control-input _switch" id="customCheck<?= $key . "_" . $skey ?>">
+                                                            <input data-id="<?= $svalue->id ?>" data-type="module_action_status" data-action="<?= $svalue->action ?>" data-module="<?= $value->code ?>" type="checkbox" class="custom-control-input _access" id="customCheck<?= $key . "_" . $skey ?>">
                                                             <label class="custom-control-label" for="customCheck<?= $key . "_" . $skey ?>"></label>
                                                         </div>
                                                     </td>
@@ -90,5 +90,4 @@
     </div>
     <?= form_close(); ?>	
 </div>
-<script src="<?= base_url() ?>public/assets/js/settings.js"></script>
 <?= view('inc/footer') ?>

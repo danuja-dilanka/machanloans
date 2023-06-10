@@ -5,9 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="csrf-token" content="ud60emEjZnCcLQ0s7gPJPblE7XE7v1ofszjJVwa7">
-
         <!-- App favicon -->
-        <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/file_1677691710.png">
+        <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/logo.png">
         
         <link href="<?= base_url() ?>public/plugins/dropify/css/dropify.min.css" rel="stylesheet">
         <link href="<?= base_url() ?>public/plugins/sweet-alert2/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
