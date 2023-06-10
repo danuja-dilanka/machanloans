@@ -44,8 +44,23 @@
                         <div class="col-md-6">
                             <?= render_input('city', 'City', isset($data) ? $data->city : '', 'text', ['required' => true]); ?>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <?= render_textarea('address', 'Address', isset($data) ? $data->address : '', ['required' => true]); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <?= render_textarea('cred_address', 'Current Residential Address', isset($data) ? $data->cred_address : '', ['required' => true]); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <?= render_custom_select("job_or_business", ["Job", "Business"], "Job or business", isset($data) ? $data->job_or_business : '', 'required="true"') ?>
+                        </div>
+                        <div class="col-md-12">
+                            <?= render_textarea('working_address', 'Address of place of employment or business', isset($data) ? $data->working_address : '', ['required' => true]); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <?= render_input('rel_friend1', 'Name of non-relative friend 1', isset($data) ? $data->rel_friend1 : '', 'text', ['required' => true]); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <?= render_input('rel_friend2', 'Name of non-relative friend 1', isset($data) ? $data->rel_friend2 : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-12">
                             <?= render_input('photo', 'Photo', '', 'file', []); ?>
