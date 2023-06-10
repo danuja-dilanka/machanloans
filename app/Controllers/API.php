@@ -81,7 +81,7 @@ class API extends BaseController {
                 if ($module != "all") {
 
                     //CHECK ALREADY HAVE PERMISSION
-                    $row = $auth->get_user_access($user, $module, $action);
+                    $row = $auth->get_user_access($user, $module, $action, 1);
                     if (!isset($row->id)) {
                         $insert = $auth->add_user_access([
                             "user" => $user,
@@ -101,7 +101,7 @@ class API extends BaseController {
                     $actions = $setting->get_module_action_by(["module" => $id]);
                     foreach ($actions as $key => $value) {
                         //CHECK ALREADY HAVE PERMISSION
-                        $row = $auth->get_user_access($user, $module, $value->action);
+                        $row = $auth->get_user_access($user, $module, $value->action, 1);
                         if (!isset($row->id)) {
                             $insert = $auth->add_user_access([
                                 "user" => $user,
@@ -127,7 +127,7 @@ class API extends BaseController {
                 if ($module != "all") {
 
                     //CHECK ALREADY HAVE PERMISSION
-                    $row = $auth->get_utype_access($user_type, $module, $action);
+                    $row = $auth->get_utype_access($user_type, $module, $action, 1);
                     if (!isset($row->id)) {
                         $insert = $auth->add_user_type_access([
                             "utype" => $user_type,
@@ -147,7 +147,7 @@ class API extends BaseController {
                     $actions = $setting->get_module_action_by(["module" => $id]);
                     foreach ($actions as $key => $value) {
                         //CHECK ALREADY HAVE PERMISSION
-                        $row = $auth->get_utype_access($user_type, $module, $value->action);
+                        $row = $auth->get_utype_access($user_type, $module, $value->action, 1);
                         if (!isset($row->id)) {
                             $insert = $auth->add_user_type_access([
                                 "user" => $user,

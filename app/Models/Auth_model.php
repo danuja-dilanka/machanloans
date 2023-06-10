@@ -7,25 +7,31 @@ use CodeIgniter\Model;
 class Auth_model extends Model {
 
     //GET USER TYPE ACCESS
-    public function get_utype_access(int $utype, string $module, string $action) {
+    public function get_utype_access(int $utype, string $module, string $action, int $force = 0) {
         $result = $this->db->table(DB_PREFIX . 'utype_access a');
         $result->select('a.*');
         $result->join(DB_PREFIX . 'module_action b', 'a.module = b.id');
         $result->join(DB_PREFIX . 'module c', 'b.module = c.id');
-        $access = $result->where(["a.utype" => $utype, "c.code" => $module, "b.action" => $action, "b.status" => 1, "c.status" => 1])->get()->getRow();
-        if (isset($access->id)) {
-            return true;
+        $result->where(["a.utype" => $utype, "c.code" => $module, "b.action" => $action]);
+        if ($force == 0) {
+            $result->where(["b.status" => 1, "c.status" => 1]);
+            $access = $result->get()->getRow();
+            if (isset($access->id)) {
+                return true;
+            }
+
+            return false;
         }
 
-        return false;
+        return $result->get()->getRow();
     }
-    
+
     //ADD USER ACCESS
     public function add_user_access(array $data) {
         $this->db->table(DB_PREFIX . 'user_access')->insert($data);
         return $this->db->insertID();
     }
-    
+
     //ADD USER TYPE ACCESS
     public function add_user_type_access(array $data) {
         $this->db->table(DB_PREFIX . 'utype_access')->insert($data);
@@ -43,17 +49,23 @@ class Auth_model extends Model {
     }
 
     //GET USER ACCESS
-    public function get_user_access(int $user, string $module, string $action) {
+    public function get_user_access(int $user, string $module, string $action, int $force = 0) {
         $result = $this->db->table(DB_PREFIX . 'user_access a');
         $result->select('a.*');
         $result->join(DB_PREFIX . 'module_action b', 'a.module = b.id');
         $result->join(DB_PREFIX . 'module c', 'b.module = c.id');
-        $access = $result->where(["a.user" => $user, "c.code" => $module, "b.action" => $action, "b.status" => 1, "c.status" => 1])->get()->getRow();
-        if (isset($access->id)) {
-            return true;
+        $result->where(["a.user" => $user, "c.code" => $module, "b.action" => $action]);
+        if ($force == 0) {
+            $result->where(["b.status" => 1, "c.status" => 1]);
+            $access = $result->get()->getRow();
+            if (isset($access->id)) {
+                return true;
+            }
+
+            return false;
         }
 
-        return false;
+        return $result->get()->getRow();
     }
 
     //GET USERS
