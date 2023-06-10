@@ -77,7 +77,7 @@
                             <?= render_input('password', 'Password', '', 'password'); ?>
                         </div>
                         <div class="col-md-12">
-                            <?= render_custom_select("status", ["Active", "In Active"], "Status", isset($data) ? $data->status : '', 'required="true"') ?>
+                            <?= render_custom_select("status", ["Active", "In Active"], "Status", isset($data) ? $data->status : '') ?>
                         </div>
                     </div>
                 </div>
