@@ -195,7 +195,7 @@ class Loan_model extends Model {
 
     //GET LOAN PAYMENT BY -> where
     public function get_loan_pay_data_by($where = []) {
-        $result = $this->db->table(DB_PREFIX . 'loan_pay');
+        $result = $this->db->table(DB_PREFIX . 'loan_pay a');
         $result->select('a.*, b.id AS loan_id');
         $result->join(DB_PREFIX . 'loan_request b', 'a.loan = b.id');
         $result->where($where);

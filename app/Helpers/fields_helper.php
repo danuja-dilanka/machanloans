@@ -88,7 +88,7 @@ function render_input($name, $label = '', $value = '', $type = 'text', $input_at
 
     $input .= '<div class="form-group' . $form_group_class . '" ' . $_form_group_attr . '>';
     if ($label != '') {
-        $input .= '<label for="' . $name . '" class="control-label">' . $req_sys . _l($label, '', false) . '</label>';
+        $input .= '<label for="' . $name . '" class="control-label">' . _l($label, '', false) . '</label>';
     }
     $input .= '<input type="' . $type . '" id="' . $name . '" name="' . $name . '" placeholder="' . $label . '" class="form-control' . $input_class . '" ' . $_input_attrs . ' value="' . set_value($name, $value) . '">';
     $input .= '</div>';
@@ -261,7 +261,7 @@ function render_textarea($name, $label = '', $value = '', $textarea_attrs = [], 
     }
     $textarea .= '<div class="form-group' . $form_group_class . '" ' . $_form_group_attr . '>';
     if ($label != '') {
-        $textarea .= '<label for="' . $name . '" class="control-label">' . $req_sys . _l($label, '', false) . '</label>';
+        $textarea .= '<label for="' . $name . '" class="control-label">' . _l($label, '', false) . '</label>';
     }
 
     $v = clear_textarea_breaks($value);
@@ -338,7 +338,7 @@ function render_select($name, $options, $option_attrs = [], $label = '', $select
     }
     $select .= '<div class="form-group ' . $form_group_class . '" ' . $_form_group_attr . '>';
     if ($label != '') {
-        $select .= '<label for="' . $name . '" class="control-label">' . $req_sys . _l($label, '', false) . '</label>';
+        $select .= '<label for="' . $name . '" class="control-label">' . _l($label, '', false) . '</label>';
     }
     $select .= '<select id="' . $name . '" name="' . $name . '" class="form-control selectpicker ' . $select_class . '" ' . $_select_attrs . ' data-live-search="true">';
     if ($include_blank == true) {
@@ -443,7 +443,7 @@ if (!function_exists('custom_select')) {
         }
 
         $select = '<div class="form-group">';
-        $select .= '<label for="' . $name . '" class="control-label">' . $req_sys . $label . '</label>';
+        $select .= '<label for="' . $name . '" class="control-label">' . $label . '</label>';
         $select .= '<select id="' . $name . '" name="' . $name . '" class="form-control selectpicker" data-live-search="true" ' . $sel_attr . '>';
         foreach ($options as $key => $value) {
             $index = ($key + 1);

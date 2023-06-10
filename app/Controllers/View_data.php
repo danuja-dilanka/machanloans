@@ -180,4 +180,31 @@ class View_data extends BaseController {
         echo json_encode(["data" => $data]);
     }
 
+    public function invest_acc() {
+        if (!has_permission("invest_acc", "view")) {
+            die;
+        }
+
+        $data = [];
+        $invest_accs = model('Investment_model')->get_invest_acc_data();
+        foreach ($invest_accs as $key => $value) {
+            $key_enc = encode($value->id);
+            $data[] = [
+                $key + 1,
+                $value->investor_name,
+                $value->address,
+                $value->birthday,
+                $value->invest_time == 1 ? "Monthly" : "",
+                $value->phone,
+                $value->profit_perc . "%",
+                $value->status == 1 ? "Active" : "Inactive",
+                $value->bank_det,
+                (has_permission("invest_acc", "edit") ? "<a href='" . base_url("investment/invest_acc/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "") .
+                (has_permission("invest_acc", "delete") ? "<a href='#' data-id='" . base_url("investment/del_invest_acc/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
+            ];
+        }
+
+        echo json_encode(["data" => $data]);
+    }
+
 }
