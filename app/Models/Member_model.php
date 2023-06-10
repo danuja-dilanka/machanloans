@@ -51,7 +51,7 @@ class Member_model extends Model {
     //GET NEXT MEMBERS NO
     public function get_nxt_mem_no() {
         $result = $this->db->query("SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'machanloans_db' AND TABLE_NAME = 'ml_member';");
-        $array = $result->result();
+        return $result->getResult()[0]->AUTO_INCREMENT;
         foreach ($array as $value) {
             return $value->AUTO_INCREMENT;
         }
