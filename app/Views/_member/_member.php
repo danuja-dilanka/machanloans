@@ -24,7 +24,7 @@
                             <?= render_input('nic', 'NIC', isset($data) ? $data->nic : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-3">
-                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : "MLM-" . model('Member_model')->get_nxt_mem_no(), 'text', ['required' => true]); ?>
+                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : "MLM-" . model('Member_model')->get_nxt_mem_no(), 'text', ['required' => true, "readonly" => true]); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('birthday', 'Birthday', isset($data) ? $data->birthday : '', 'date', ['required' => true]); ?>
