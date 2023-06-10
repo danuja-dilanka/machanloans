@@ -17,7 +17,8 @@
         <link href="<?= base_url() ?>public/plugins/jquery-toast-plugin/jquery.toast.min.css" rel="stylesheet">
 
         <!-- App Css -->
-        <link rel="stylesheet" href="<?= base_url() ?>public/plugins/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/4.6.2_dist_css_bootstrap.min.css">
+        <!--<link rel="stylesheet" href="<?= base_url() ?>public/plugins/bootstrap/css/bootstrap.min.css">-->
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/fontawesome.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/themify-icons.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/plugins/metisMenu/metisMenu.css">

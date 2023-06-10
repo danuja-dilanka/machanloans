@@ -181,7 +181,7 @@ class View_data extends BaseController {
     }
 
     public function invest_acc() {
-        if (!has_permission("invest_acc", "view")) {
+        if (!has_permission("report_invest_acc", "view")) {
             die;
         }
 
