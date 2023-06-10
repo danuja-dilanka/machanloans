@@ -39,8 +39,7 @@ class Setting extends BaseController {
             'email' => 'required|valid_email',
             'name' => 'required',
             'utype' => 'required|numeric',
-            'status' => 'required|numeric',
-            'password' => 'required|min_length[7]'
+            'status' => 'required|numeric'
         ];
         $user_model = model('User_model');
 
@@ -104,6 +103,79 @@ class Setting extends BaseController {
         }
 
         return redirect()->to(base_url('setting/user_list'));
+    }
+
+    //USER ROLES LIST VIEW
+    public function user_role_list() {
+        if (!has_permission("user", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+        return view('_settings/_user_role/_list', ["title" => "Users"]);
+    }
+
+    //CREATE/ UPDATE VIEW USER ROLES
+    public function user_role($req_id = "") {
+        $rules = [
+            'utype' => 'required',
+            'status' => 'required|numeric'
+        ];
+        $user_model = model('User_model');
+
+        if ($this->request->is('post') && $this->validate($rules)) {
+            $post_data = $this->request->getPost();
+
+            if ($req_id != "" && has_permission("user_role", "edit")) {
+                $data = $user_model->get_user_types(decode($req_id));
+                if (isset($data->id)) {
+                    $result = $user_model->update_user_type($post_data, $data->id);
+                    if ($result) {
+                        session()->setFlashdata('notify', 'Successfully Updated');
+                        return redirect()->to(base_url('setting/user_role/' . $req_id));
+                    }
+                } else {
+                    return redirect()->to(base_url('setting/user_role'));
+                }
+            } else if (has_permission("user_role", "add")) {
+                $insert_id = $user_model->add_user_type($post_data);
+                if ($insert_id > 0) {
+                    session()->setFlashdata('notify', 'Successfully Inserted');
+                    return redirect()->to(base_url('setting/user_role') . "/" . encode($insert_id));
+                } else {
+                    return redirect()->to(base_url('setting/user_role'));
+                }
+            }
+        }
+
+        if ($req_id != "" && has_permission("user_role", "edit")) {
+            $data = $user_model->get_user_types(decode($req_id));
+            if (isset($data->id)) {
+                return view('_settings/_user_role/_user_role', ["data" => $data, "title" => "Update User Role"]);
+            } else {
+                return redirect()->to(base_url('setting/user_role'));
+            }
+        } else if (has_permission("user_role", "add")) {
+            return view('_settings/_user_role/_user_role', ["title" => "New User Role"]);
+        } else {
+            session()->setFlashdata('notify', 'error||Access Denied!');
+            return redirect()->to(base_url('dashboard'));
+        }
+    }
+
+    //DELETE USER ROLES
+    public function del_user_role($req_id = "") {
+
+        if ($req_id != "" && has_permission("user_role", "delete")) {
+            $user_model = model('User_model');
+            $data = $user_model->get_user_types(decode($req_id));
+            if (isset($data->id)) {
+                $result = $user_model->delete_user_type($data->id);
+                if ($result) {
+                    session()->setFlashdata('notify', 'Successfully Deleted');
+                }
+            }
+        }
+
+        return redirect()->to(base_url('setting/user_role_list'));
     }
 
 }
