@@ -12,16 +12,32 @@ class User_model extends Model {
     }
 
     public function get_data($id = 0, $result_type = 0) {
-        $result = $this->db->table(DB_PREFIX . 'user');
+        $result = $this->db->table(DB_PREFIX . 'user a');
+        $result->select('a.*, a.utype AS utype_id, b.utype AS utype');
+        $result->join(DB_PREFIX . 'user_type b', 'a.utype = b.id');
+        if ($id > 0) {
+            return $result->where(["a.id" => $id])->get()->getRow();
+        } else {
+            if($result_type == 0){
+                return $result->get()->getResult();
+            }else{
+                return $result->get()->getResultArray();
+            }
+            
+        }
+    }
+
+    public function get_user_types($id = 0, $result_type = 0) {
+        $result = $this->db->table(DB_PREFIX . 'user_type');
+        $result->select('*');
         if ($id > 0) {
             return $result->where(["id" => $id])->get()->getRow();
         } else {
-            if($result_type == 0){
-                return $result->where(["id" => $id])->get()->getResult();
-            }else{
-                return $result->where(["id" => $id])->get()->getResultArray();
+            if ($result_type == 0) {
+                return $result->get()->getResult();
+            } else {
+                return $result->get()->getResultArray();
             }
-            
         }
     }
 

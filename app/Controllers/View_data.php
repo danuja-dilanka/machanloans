@@ -207,4 +207,28 @@ class View_data extends BaseController {
         echo json_encode(["data" => $data]);
     }
 
+    //USER LIST
+    public function users() {
+        if (!has_permission("user", "view")) {
+            die;
+        }
+
+        $data = [];
+        $users = model('User_model')->get_data();
+        foreach ($users as $key => $value) {
+            $key_enc = encode($value->id);
+            $data[] = [
+                $key + 1,
+                $value->name,
+                $value->email,
+                $value->utype,
+                $value->status == 1 ? "Active" : "Inactive",
+                (has_permission("user", "edit") ? "<a href='" . base_url("setting/user/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "") .
+                (has_permission("user", "delete") ? "<a href='#' data-id='" . base_url("setting/del_user/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
+            ];
+        }
+
+        echo json_encode(["data" => $data]);
+    }
+
 }
