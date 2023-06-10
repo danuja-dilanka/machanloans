@@ -224,7 +224,7 @@ class View_data extends BaseController {
                 $value->utype_name,
                 $value->status == 1 ? "Active" : "Inactive",
                 (has_permission("user", "edit") ? "<a href='" . base_url("setting/user/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "") .
-                (has_permission("user", "delete") ? "<a href='#' data-id='" . base_url("setting/del_user/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
+                (has_permission("user", "delete") && $value->utype_name != "admin" ? "<a href='#' data-id='" . base_url("setting/del_user/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
             ];
         }
 
