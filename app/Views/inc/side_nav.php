@@ -1,6 +1,6 @@
 <div class="sidebar-menu">
     <div class="sidebar-header text-center">
-        <a href="https://machan.quicksoft.lk/dashboard">
+        <a href="<?= base_url("dashboard") ?>">
             <h4 class="text-white ml-1 d-inline-block">Machan Loans</h4>
         </a>	
     </div>
