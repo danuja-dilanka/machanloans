@@ -76,9 +76,9 @@ class Web extends BaseController {
                 }
             } else {
                 if ($lng == "si") {
-                    return view('loan_app_stage3_si', ['lng' => $lng]);
+                    return view('loan_app_stage3_si', ['lng' => $lng, 'products' => $this->thisModel->get_pro_data()]);
                 } else {
-                    return view('loan_app_stage3_eng', ['lng' => $lng]);
+                    return view('loan_app_stage3_eng', ['lng' => $lng, 'products' => $this->thisModel->get_pro_data()]);
                 }
             }
         } else {

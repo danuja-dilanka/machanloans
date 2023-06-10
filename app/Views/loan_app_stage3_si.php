@@ -50,26 +50,9 @@
                                                     <span>(නිද- ඔබ ලබා ගන්නේ රු. 20,000/= මුදලක් මාස දෙකෙන් සති පතා ගෙවීමට නම් එහිදී ණය  සැලසුම ලෙස ඔබ සටහන් කල යුත්තේ D 4 ලෙසය.</span>
                                                     <span class="required"> *</span></label>
                                                 <select class="form-control" name="loan_type" required="">
-                                                    <option value="6">A-1</option>
-                                                    <option value="7">B-2</option>
-                                                    <option value="8">C-2</option>
-                                                    <option value="9">D-3</option>
-                                                    <option value="10">D-4</option>
-                                                    <option value="11">E-3</option>
-                                                    <option value="12">E-4</option>
-                                                    <option value="13">E-5</option>
-                                                    <option value="14">F-3</option>
-                                                    <option value="15">F-4</option>
-                                                    <option value="16">F-5</option>
-                                                    <option value="17">F-6</option>
-                                                    <option value="18">G-3</option>
-                                                    <option value="19">G-4</option>
-                                                    <option value="20">G-5</option>
-                                                    <option value="21">G-6</option>
-                                                    <option value="23">H-4</option>
-                                                    <option value="24">H-3</option>
-                                                    <option value="25">H-6</option>
-                                                    <option value="26">H-5</option>
+                                                    <?php foreach ($products as $key => $value) { ?>
+                                                        <option value="<?= $value->id ?>"><?= $value->loan_name ?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
