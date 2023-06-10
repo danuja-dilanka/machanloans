@@ -444,7 +444,7 @@ if (!function_exists('custom_select')) {
 
         $select = '<div class="form-group">';
         $select .= '<label for="' . $name . '" class="control-label">' . $label . '</label>';
-        $select .= '<select id="' . $name . '" name="' . $name . '" class="form-control selectpicker" data-live-search="true" ' . $sel_attr . '>';
+        $select .= '<select id="' . $name . '" name="' . $name . '" class="form-control" data-live-search="true" ' . $sel_attr . '>';
         foreach ($options as $key => $value) {
             $index = ($key + 1);
             $select .= '<option value="' . $index . '" ' . ($selected == $index ? "selected" : null) . '>' . $value . '</option>';
