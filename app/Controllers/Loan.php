@@ -300,6 +300,60 @@ class Loan extends BaseController {
         return view('_loan/_loan_pay/_list', ["title" => "Loan Payments"]);
     }
 
+    //CREATE/ UPDATE VIEW GROUP
+    public function loan_pay($req_id = "") {
+        $rules = [
+            'pay_date' => 'required',
+            'loan' => 'required|numeric',
+            'loan_period' => 'required',
+            'pen_amount' => 'numeric',
+            'repay_amount' => 'required|numeric',
+            'total' => 'required|numeric'
+        ];
+
+        if ($this->request->is('post') && $this->validate($rules)) {
+            $post_data = $this->request->getPost();
+            $date_dt = explode("__", $post_data["loan_period"]);
+            $post_data["loan_period"] = $date_dt[0];
+            $post_data["due_pay_date"] = isset($date_dt[1]) ? $date_dt[1] : $post_data["pay_date"];
+
+            if ($req_id != "" && has_permission("loan_pay", "edit")) {
+                $data = $this->thisModel->get_loan_pay_data(decode($req_id));
+                if (isset($data->id)) {
+                    $result = $this->thisModel->update_loan_pay_data($post_data, $data->id);
+                    if ($result) {
+                        session()->setFlashdata('notify', 'Successfully Updated');
+                        return redirect()->to(base_url('loan/loan_pay/' . $req_id));
+                    }
+                } else {
+                    return redirect()->to(base_url('loan/loan_pay'));
+                }
+            } else if (has_permission("loan_pay", "add")) {
+                $insert_id = $this->thisModel->add_loan_pay_data($post_data);
+                if ($insert_id > 0) {
+                    session()->setFlashdata('notify', 'Successfully Inserted');
+                    return redirect()->to(base_url('loan/loan_pay') . "/" . encode($insert_id));
+                } else {
+                    return redirect()->to(base_url('loan/loan_pay'));
+                }
+            }
+        }
+
+        if ($req_id != "" && has_permission("loan_pay", "edit")) {
+            $data = $this->thisModel->get_loan_pay_data(decode($req_id));
+            if (isset($data->id)) {
+                return view('_loan/_loan_pay/_loan_pay', ["data" => $data, "title" => "Update Loan Payment"]);
+            } else {
+                return redirect()->to(base_url('loan/loan_pay'));
+            }
+        } else if (has_permission("loan_pay", "add")) {
+            return view('_loan/_loan_pay/_loan_pay', ["title" => "New Loan Payment"]);
+        } else {
+            session()->setFlashdata('notify', 'error||Access Denied!');
+            return redirect()->to(base_url('dashboard'));
+        }
+    }
+
     //DELETE LOAN PAYMENTS
     public function del_loan_pay($req_id = "") {
 
