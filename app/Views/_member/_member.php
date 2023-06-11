@@ -24,7 +24,7 @@
                             <?= render_input('nic', 'NIC', isset($data) ? $data->nic : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-3">
-                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : "MLM-" . model('Member_model')->get_nxt_mem_no(), 'text', ['required' => true, "readonly" => true]); ?>
+                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : "MLM-". 1, 'text', ['required' => true, "readonly" => true]); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('birthday', 'Birthday', isset($data) ? $data->birthday : '', 'date', ['required' => true]); ?>
@@ -56,11 +56,67 @@
                         <div class="col-md-12">
                             <?= render_textarea('working_address', 'Address of place of employment or business', isset($data) ? $data->working_address : '', ['required' => true]); ?>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <?= render_input('rel_friend1', 'Name of non-relative friend 1', isset($data) ? $data->rel_friend1 : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">Front photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
+                                <img id="rel_friend1_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist1"></div><br>
+                                    <div id="file_container1" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1f") ?>" data-id="rel_friend1_nic_front">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="rel_friend1_nic_front" class="" name="rel_friend1_nic_front" multiple="false" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">Back photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
+                                <img id="rel_friend1_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist2"></div><br>
+                                    <div id="file_container2" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1b") ?>" data-id="rel_friend1_nic_back">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="rel_friend1_nic_back" class="" name="rel_friend1_nic_back" multiple="false" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
                             <?= render_input('rel_friend2', 'Name of non-relative friend 2', isset($data) ? $data->rel_friend2 : '', 'text', ['required' => true]); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">Front photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
+                                <img id="rel_friend2_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist3"></div><br>
+                                    <div id="file_container3" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend2f") ?>" data-id="rel_friend2_nic_front">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="rel_friend2_nic_front" class="" name="rel_friend2_nic_front" multiple="false" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">Back photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
+                                <img id="rel_friend2_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist4"></div><br>
+                                    <div id="file_container4" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend2b") ?>" data-id="rel_friend2_nic_back">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="rel_friend2_nic_back" class="" name="rel_friend2_nic_back" multiple="false" required="">
+                            </div>
                         </div>
                         <div class="col-md-12">
                             <?= render_input('photo', 'Photo', '', 'file', []); ?>

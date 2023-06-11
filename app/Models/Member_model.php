@@ -49,10 +49,10 @@ class Member_model extends Model {
     }
 
     //GET NEXT MEMBERS NO
-    public function get_nxt_mem_no() {
-        $result = $this->db->query("SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'machanloans_db' AND TABLE_NAME = 'ml_member';");
-        return $result->getResult()[0]->AUTO_INCREMENT;
-    }
+//    public function get_nxt_mem_no() {
+//        $result = $this->db->query("SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'machanloans_db' AND TABLE_NAME = 'ml_member';");
+//        return $result->getResult()[0]->AUTO_INCREMENT;
+//    }
 
     public function update_data($data, $id) {
         return $this->db->table(DB_PREFIX . 'member')->update($data, ["id" => $id]);

@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Libraries\PluploadHandler;
+
 class API extends BaseController {
 
     public function __construct() {
@@ -242,6 +244,33 @@ class API extends BaseController {
             } else {
                 echo json_encode(array("due_dates" => $due_dates, "charge" => $charg_per_period));
             }
+        }
+    }
+
+    public function upload($path) {
+        $up_path = 'public/images/' . str_replace("__", "/", $path);
+
+        $ph = new PluploadHandler(array(
+            'target_dir' => $up_path,
+            'allow_extensions' => 'jpg,jpeg,png'
+        ));
+
+        $ph->sendNoCacheHeaders();
+        $ph->sendCORSHeaders();
+
+        if ($result = $ph->handleUpload()) {
+            die(json_encode(array(
+                'OK' => 1,
+                'info' => $result
+            )));
+        } else {
+            die(json_encode(array(
+                'OK' => 0,
+                'error' => array(
+                    'code' => $ph->getErrorCode(),
+                    'message' => $ph->getErrorMessage()
+                )
+            )));
         }
     }
 
