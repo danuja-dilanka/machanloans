@@ -20,7 +20,11 @@ $(document).ready(function () {
     $.getScript(BASE_URL + "public/assets/js/post_load/settings.js");
 
     if (tot_parts > 1) {
-        const jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - 2] + "_" + parts[tot_parts - 1] + ".js";
+        var dec = 1;
+        if (SECRET_ID != "") {
+            dec = dec + 1;
+        }
+        const jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - (dec + 1)] + "_" + parts[tot_parts - dec] + ".js";
         checkJSFileExists(jsFilePath).then(exists => {
             $.getScript(jsFilePath);
         });

@@ -113,7 +113,7 @@ class Member extends BaseController {
         if ($req_id != "" && has_permission("member", "edit")) {
             $data = $this->thisModel->get_data(decode($req_id));
             if (isset($data->id)) {
-                return view('_member/_member', ["data" => $data]);
+                return view('_member/_member', ["data" => $data, "req_id" => $req_id]);
             } else {
                 return redirect()->to(base_url('member/mem'));
             }

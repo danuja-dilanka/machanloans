@@ -4,7 +4,9 @@
     
     <script>
         var BASE_URL = '<?= base_url() ?>';
+        var SECRET_ID = '<?= isset($req_id) ? $req_id : "" ?>';
     </script>
+    
     <!-- jQuery  -->
     <script src="<?= base_url() ?>public/assets/js/vendor/jquery-3.6.1.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/popper.min.js"></script>
@@ -67,6 +69,5 @@
     <script src="<?= base_url() ?>public/assets/js/sweet_model.js"></script>
     <script src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/common_func.js"></script>
-
     </body>
 </html>
