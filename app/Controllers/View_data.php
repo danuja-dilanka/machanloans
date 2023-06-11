@@ -30,12 +30,14 @@ class View_data extends BaseController {
                 $value->gender == 1 ? "Male" : "Female",
                 $value->city,
                 $value->address,
-                "<a href='" . base_url("public/images/loan_req/nic/friend1f/") . $value->rel_friend1_nic_front . "'>Front</a>&nbsp;<a href='" . base_url("public/images/loan_req/nic/friend1b/") . $value->rel_friend1_nic_back . "'>Back</a>",
-                "<a href='" . base_url("public/images/loan_req/nic/friend2f/") . $value->rel_friend2_nic_front . "'>Front</a>&nbsp;<a href='" . base_url("public/images/loan_req/nic/friend2b/") . $value->rel_friend2_nic_back . "'>Back</a>",
-                "<a href='" . base_url("public/images/loan_req/electricity_bill/") . $value->electricity_bill . "'>View</a>",
-                "<a href='" . base_url("public/images/loan_req/selfie/") . $value->selfie . "'>View</a>",
-                "<a href='" . base_url("public/images/loan_req/fb_screenshot/") . $value->fb_screenshot . "'>View</a>",
-                (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "") .
+                (($value->rel_friend1_nic_front != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend1f/") . $value->rel_friend1_nic_front . "'>Front</a>,&nbsp;" : "-").
+                (($value->rel_friend1_nic_back != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend1b/") . $value->rel_friend1_nic_back . "'>Back</a>" : "-"),
+                (($value->rel_friend2_nic_front != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend2f/") . $value->rel_friend2_nic_front . "'>Front</a>,&nbsp;" : "-").
+                (($value->rel_friend2_nic_back != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend2b/") . $value->rel_friend2_nic_back . "'>Back</a>" : "-"),
+                (($value->electricity_bill != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/electricity_bill/") . $value->electricity_bill . "'>View</a>" : "-"),
+                (($value->selfie != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/selfie/") . $value->selfie . "'>View</a>" : "-"),
+                (($value->fb_screenshot != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/fb_screenshot/") . $value->fb_screenshot . "'>View</a>" : "-"),
+                (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "-") .
                 ("<button type='button' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='btn btn-sm btn-primary'>Rate</button>&nbsp;") .
                 (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
             ];
