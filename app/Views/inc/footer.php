@@ -52,7 +52,6 @@
 
     <!-- Custom JS -->
     <script src="<?= base_url() ?>public/plugins/chartJs/chart.min.js"></script>
-    <script src="<?= base_url() ?>public/assets/js/dashboard.js?v=1.1"></script>
     
     <!-- DATATABLE JS -->
     <script src="<?= base_url() ?>public/assets/js/jquery.sweet-modal.min.js"></script>
