@@ -25,6 +25,7 @@
                         </div>
                         <div class="col-md-6">
                             <?= render_input('phone', 'Phone', isset($data) ? $data->phone : '', 'text', ['required' => true, 'maxlength' => 11, 'minlength' => 9]); ?>
+                            <small>Phone Number Must Be In This Format: 947XXXXXXXX</small>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('profit_perc', 'Profit percentage', isset($data) ? $data->profit_perc : '', 'number', ['required' => true, "step" => '0.01']); ?>

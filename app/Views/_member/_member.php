@@ -37,6 +37,7 @@
                         </div>
                         <div class="col-md-6">
                             <?= render_input('mobile', 'Mobile', isset($data) ? $data->mobile : '', 'number', ['required' => true]); ?>
+                            <small>Phone Number Must Be In This Format: 947XXXXXXXX</small>
                         </div>
                         <div class="col-md-6">
                             <?= render_custom_select("gender", ["Male", "Female"], "Gender", isset($data) ? $data->gender : '', 'required="true"') ?>
@@ -51,7 +52,7 @@
                             <?= render_textarea('cred_address', 'Current Residential Address', isset($data) ? $data->cred_address : '', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_custom_select("job_or_business", ["Job", "Business"], "Job or business", isset($data) ? $data->job_or_business : '', 'required="true"') ?>
+                            <?= render_input('job_or_business', 'Job or business', isset($data) ? $data->job_or_business : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-12">
                             <?= render_textarea('working_address', 'Address of place of employment or business', isset($data) ? $data->working_address : '', ['required' => true]); ?>
@@ -159,9 +160,6 @@
                                 </div>
                                 <input type="hidden" id="fb_screenshot" class="" name="fb_screenshot" multiple="false" required="">
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                            <?= render_input('photo', 'Photo', '', 'file', []); ?>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">

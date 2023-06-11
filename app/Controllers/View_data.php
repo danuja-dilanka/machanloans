@@ -30,6 +30,11 @@ class View_data extends BaseController {
                 $value->gender == 1 ? "Male" : "Female",
                 $value->city,
                 $value->address,
+                $value->cred_address,
+                $value->job_or_business,
+                $value->working_address,
+                $value->rel_friend1,
+                $value->rel_friend2,
                 (($value->rel_friend1_nic_front != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend1f/") . $value->rel_friend1_nic_front . "'>Front</a>,&nbsp;" : "-").
                 (($value->rel_friend1_nic_back != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend1b/") . $value->rel_friend1_nic_back . "'>Back</a>" : "-"),
                 (($value->rel_friend2_nic_front != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend2f/") . $value->rel_friend2_nic_front . "'>Front</a>,&nbsp;" : "-").

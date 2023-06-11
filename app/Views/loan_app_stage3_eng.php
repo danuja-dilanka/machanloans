@@ -135,6 +135,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">Phone number<span class="required"> *</span></label>
                                                 <input type="text" class="form-control" name="phone" value="" required="">
+                                                <small>Phone Number Must Be In This Format: 947XXXXXXXX</small>
                                             </div>
                                         </div>
 
@@ -142,6 +143,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">Whatsapp Number<span class="required"> *</span></label>
                                                 <input type="text" class="form-control" name="whatsapp" value="" required="">
+                                                <small>Phone Number Must Be In This Format: 947XXXXXXXX</small>
                                             </div>
                                         </div>
 

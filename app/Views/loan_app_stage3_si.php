@@ -127,6 +127,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">දුරකතන අංකය<span class="required"> *</span></label>
                                                 <input type="text" class="form-control" name="phone" value="" required="">
+                                                <small>දුරකථන අංකය මෙම ආකෘතියේ තිබිය යුතුය: 947XXXXXXXX</small>
                                             </div>
                                         </div>
 
@@ -134,6 +135,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">වට්ස් ඇප් අංකය<span class="required"> *</span></label>
                                                 <input type="text" class="form-control" name="whatsapp" value="" required="">
+                                                <small>දුරකථන අංකය මෙම ආකෘතියේ තිබිය යුතුය: 947XXXXXXXX</small>
                                             </div>
                                         </div>
 
