@@ -24,7 +24,11 @@
                 <th>Gender</th>
                 <th>City</th>
                 <th>Address</th>
-                <th class="dont_export">Photo</th>
+                <th class="dont_export">Non-Relative Friend 1</th>
+                <th class="dont_export">Non-Relative Friend 2</th>
+                <th class="dont_export">Electricity Bill</th>
+                <th class="dont_export">Selfie</th>
+                <th class="dont_export">Facebook Screenshot</th>
                 <th class="dont_export">Action</th>
             </tr>
         </thead>
@@ -41,7 +45,11 @@
                 <th>Gender</th>
                 <th>City</th>
                 <th>Address</th>
-                <th>Photo</th>
+                <th class="dont_export">Non-Relative Friend 1</th>
+                <th class="dont_export">Non-Relative Friend 2</th>
+                <th class="dont_export">Electricity Bill</th>
+                <th class="dont_export">Selfie</th>
+                <th class="dont_export">Facebook Screenshot</th>
                 <th class="dont_export">Action</th>
             </tr>
         </tfoot>
