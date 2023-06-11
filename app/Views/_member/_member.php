@@ -24,7 +24,7 @@
                             <?= render_input('nic', 'NIC', isset($data) ? $data->nic : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-3">
-                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : "MLM-". model("Member_model")->get_nxt_mem_no(), 'text', ['required' => true, "readonly" => true]); ?>
+                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : "MLM-" . model("Member_model")->get_nxt_mem_no(), 'text', ['required' => true, "readonly" => true]); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('birthday', 'Birthday', isset($data) ? $data->birthday : '', 'date', ['required' => true]); ?>
@@ -63,7 +63,7 @@
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">Front photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
-                                <img id="rel_friend1_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="rel_friend1_nic_front_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/nic/friend1f") . "/" . $data->rel_friend1_nic_front : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist1"></div><br>
                                     <div id="file_container1" style="position: relative;">
@@ -77,7 +77,7 @@
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">Back photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
-                                <img id="rel_friend1_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="rel_friend1_nic_back_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/nic/friend1b") . "/" . $data->rel_friend1_nic_back : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist2"></div><br>
                                     <div id="file_container2" style="position: relative;">
@@ -94,7 +94,7 @@
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">Front photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
-                                <img id="rel_friend2_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="rel_friend2_nic_front_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/nic/friend2f") . "/" . $data->rel_friend2_nic_front : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist3"></div><br>
                                     <div id="file_container3" style="position: relative;">
@@ -108,7 +108,7 @@
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">Back photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
-                                <img id="rel_friend2_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="rel_friend2_nic_back_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/nic/friend2b") . "/" . $data->rel_friend2_nic_back : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist4"></div><br>
                                     <div id="file_container4" style="position: relative;">
@@ -122,7 +122,7 @@
                         <div class="col-md-12">
                             <div class="form-group text-center">
                                 <label class="control-label">Electricity Bill Photo (20MB)<span class="required"> *</span></label>
-                                <img id="electricity_bill_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="electricity_bill_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/electricity_bill") . "/" . $data->electricity_bill : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist7"></div><br>
                                     <div id="file_container7" style="position: relative;">
@@ -136,7 +136,7 @@
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">A Selfie photograph taken with the ID card in hand, with the face clearly visible (20MB)<span class="required"> *</span></label>
-                                <img id="selfie_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="selfie_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/selfie") . "/" . $data->selfie : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist5"></div><br>
                                     <div id="file_container5" style="position: relative;">
@@ -150,7 +150,7 @@
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">Facebook Screenshot (20MB)<span class="required"> *</span></label>
-                                <img id="fb_screenshot_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="fb_screenshot_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/fb_screenshot") . "/" . $data->fb_screenshot : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist6"></div><br>
                                     <div id="file_container6" style="position: relative;">
