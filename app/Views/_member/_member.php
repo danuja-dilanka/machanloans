@@ -71,7 +71,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="rel_friend1_nic_front" class="" name="rel_friend1_nic_front" multiple="false" required="">
+                                <input type="hidden" id="rel_friend1_nic_front" value="<?= isset($data) ? $data->rel_friend1_nic_front : '' ?>" class="" name="rel_friend1_nic_front" multiple="false" required="">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -85,7 +85,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="rel_friend1_nic_back" class="" name="rel_friend1_nic_back" multiple="false" required="">
+                                <input type="hidden" id="rel_friend1_nic_back" value="<?= isset($data) ? $data->rel_friend1_nic_back : '' ?>" class="" name="rel_friend1_nic_back" multiple="false" required="">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -102,7 +102,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="rel_friend2_nic_front" class="" name="rel_friend2_nic_front" multiple="false" required="">
+                                <input type="hidden" id="rel_friend2_nic_front" value="<?= isset($data) ? $data->rel_friend2_nic_front : '' ?>" class="" name="rel_friend2_nic_front" multiple="false" required="">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -116,7 +116,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="rel_friend2_nic_back" class="" name="rel_friend2_nic_back" multiple="false" required="">
+                                <input type="hidden" id="rel_friend2_nic_back" value="<?= isset($data) ? $data->rel_friend2_nic_back : '' ?>" class="" name="rel_friend2_nic_back" multiple="false" required="">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -130,7 +130,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="electricity_bill" class="" name="electricity_bill" multiple="false" required="">
+                                <input type="hidden" id="electricity_bill" value="<?= isset($data) ? $data->electricity_bill : '' ?>" class="" name="electricity_bill" multiple="false" required="">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -144,7 +144,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="selfie" class="" name="selfie" multiple="false" required="">
+                                <input type="hidden" id="selfie" class="" value="<?= isset($data) ? $data->selfie : '' ?>" name="selfie" multiple="false" required="">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -158,7 +158,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="fb_screenshot" class="" name="fb_screenshot" multiple="false" required="">
+                                <input type="hidden" id="fb_screenshot" value="<?= isset($data) ? $data->fb_screenshot : '' ?>" class="" name="fb_screenshot" multiple="false" required="">
                             </div>
                         </div>
                         <div class="col-md-12">
