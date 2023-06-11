@@ -25,16 +25,9 @@ $(document).ready(function () {
             dec = dec + 1;
         }
         const jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - (dec + 1)] + "_" + parts[tot_parts - dec] + ".js";
-        var is_exist = checkJSFileExists(jsFilePath);
-        if (is_exist) {
+        checkJSFileExists(jsFilePath).then(exists => {
             $.getScript(jsFilePath);
-        } else {
-            jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - dec] + ".js";
-            is_exist = checkJSFileExists(jsFilePath);
-            if (is_exist) {
-                $.getScript(jsFilePath);
-            }
-        }
+        });
     }
 });
 
