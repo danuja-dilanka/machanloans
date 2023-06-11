@@ -24,9 +24,16 @@ $(document).ready(function () {
         if (SECRET_ID != "") {
             dec = dec + 1;
         }
-        const jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - (dec + 1)] + "_" + parts[tot_parts - dec] + ".js";
+        var jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - (dec + 1)] + "_" + parts[tot_parts - dec] + ".js";
         checkJSFileExists(jsFilePath).then(exists => {
-            $.getScript(jsFilePath);
+            if (exists) {
+                $.getScript(jsFilePath);
+            } else {
+                jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - dec] + ".js";
+                checkJSFileExists(jsFilePath).then(main_exists => {
+                    $.getScript(jsFilePath);
+                });
+            }
         });
     }
 });
