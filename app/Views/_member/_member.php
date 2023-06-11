@@ -119,6 +119,48 @@
                             </div>
                         </div>
                         <div class="col-md-12">
+                            <div class="form-group text-center">
+                                <label class="control-label">Electricity Bill Photo (20MB)<span class="required"> *</span></label>
+                                <img id="electricity_bill_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist7"></div><br>
+                                    <div id="file_container7" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/electricity_bill") ?>" data-id="electricity_bill">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="electricity_bill" class="" name="electricity_bill" multiple="false" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">A Selfie photograph taken with the ID card in hand, with the face clearly visible (20MB)<span class="required"> *</span></label>
+                                <img id="selfie_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist5"></div><br>
+                                    <div id="file_container5" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="selfie" class="" name="selfie" multiple="false" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">Facebook Screenshot (20MB)<span class="required"> *</span></label>
+                                <img id="fb_screenshot_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist6"></div><br>
+                                    <div id="file_container6" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="fb_screenshot" class="" name="fb_screenshot" multiple="false" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
                             <?= render_input('photo', 'Photo', '', 'file', []); ?>
                         </div>
                         <div class="col-md-12">
