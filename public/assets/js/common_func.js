@@ -24,17 +24,17 @@ $(document).ready(function () {
         if (SECRET_ID != "") {
             dec = dec + 1;
         }
-        var jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - (dec + 1)] + "_" + parts[tot_parts - dec] + ".js";
-        checkJSFileExists(jsFilePath).then(exists => {
-            if (exists) {
+        const jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - (dec + 1)] + "_" + parts[tot_parts - dec] + ".js";
+        var is_exist = checkJSFileExists(jsFilePath);
+        if (is_exist) {
+            $.getScript(jsFilePath);
+        } else {
+            jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - dec] + ".js";
+            is_exist = checkJSFileExists(jsFilePath);
+            if (is_exist) {
                 $.getScript(jsFilePath);
-            } else {
-                jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - dec] + ".js";
-                checkJSFileExists(jsFilePath).then(main_exists => {
-                    $.getScript(jsFilePath);
-                });
             }
-        });
+        }
     }
 });
 
