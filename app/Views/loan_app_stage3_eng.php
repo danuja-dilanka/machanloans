@@ -69,8 +69,8 @@
                                             <div class="form-group">
                                                 <label class="control-label">Loan Repayment Method *<span class="required"> *</span></label>
                                                 <select class="form-control" name="payment_method" required="">
-                                                    <option value="0" selected="">Months</option>
-                                                    <option value="1">Week</option>
+                                                    <option value="1" selected="">Months</option>
+                                                    <option value="2">Week</option>
                                                 </select>
                                             </div>
                                         </div>

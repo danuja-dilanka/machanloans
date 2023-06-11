@@ -61,8 +61,8 @@
                                             <div class="form-group">
                                                 <label class="control-label">ණය ගෙවීමේ ක්‍රමය<span class="required"> *</span></label>
                                                 <select class="form-control" name="payment_method" required="">
-                                                    <option value="0" selected="">මාසික</option>
-                                                    <option value="1">සති</option>
+                                                    <option value="1" selected="">මාසික</option>
+                                                    <option value="2">සති</option>
                                                 </select>
                                             </div>
                                         </div>
