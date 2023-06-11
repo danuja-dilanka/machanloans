@@ -23,10 +23,8 @@
                 <th>Mobile</th>
                 <th>Gender</th>
                 <th>City</th>
-                <th>Address</th>
                 <th>Current Residential Address</th>
                 <th>Job or business</th>
-                <th>Address of place of employment or business</th>
                 <th>Name of non-relative friend 1</th>
                 <th>Name of non-relative friend 2</th>
                 <th class="dont_export">Non-Relative Friend 1</th>
