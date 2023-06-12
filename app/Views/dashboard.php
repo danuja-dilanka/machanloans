@@ -12,9 +12,8 @@
                         All Branch
                     </a>
                     <div class="dropdown-menu" aria-labelledby="selectLanguage">
-                        <a class="dropdown-item" href="https://machan.quicksoft.lk/switch_branch">All Branch</a>
-                        <a class="dropdown-item" href="https://machan.quicksoft.lk/switch_branch?branch_id=default&amp;branch=Main Branch">Main Branch</a>
-                        <a class="dropdown-item" href="https://machan.quicksoft.lk/switch_branch?branch_id=1&amp;branch=Main Branch">Main Branch</a>
+                        <a class="dropdown-item" href="">All Branch</a>
+                        <a class="dropdown-item" href="">Main Branch</a>
                     </div>
                 </div>
                 <!--<ul class="breadcrumbs float-left">/ul>-->
@@ -61,7 +60,7 @@
                             <h4 class="pt-1 mb-0"><b></b></h4>
                         </div>
                         <div>
-                            <a href="https://machan.quicksoft.lk/admin/deposit_requests"><i class="ti-arrow-right"></i>&nbsp;View</a>
+                            <a href="s"><i class="ti-arrow-right"></i>&nbsp;View</a>
                         </div>
                     </div>
                 </div>
@@ -77,7 +76,7 @@
                             <h4 class="pt-1 mb-0"><b></b></h4>
                         </div>
                         <div>
-                            <a href="https://machan.quicksoft.lk/admin/withdraw_requests"><i class="ti-arrow-right"></i>&nbsp;View</a>
+                            <a href=""><i class="ti-arrow-right"></i>&nbsp;View</a>
                         </div>
                     </div>
                 </div>
