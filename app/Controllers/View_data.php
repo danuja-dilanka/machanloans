@@ -33,10 +33,6 @@ class View_data extends BaseController {
                 $value->job_or_business,
                 $value->rel_friend1,
                 $value->rel_friend2,
-                (($value->rel_friend1_nic_front != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend1f/") . $value->rel_friend1_nic_front . "'>Front</a>,&nbsp;" : "-").
-                (($value->rel_friend1_nic_back != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend1b/") . $value->rel_friend1_nic_back . "'>Back</a>" : "-"),
-                (($value->rel_friend2_nic_front != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend2f/") . $value->rel_friend2_nic_front . "'>Front</a>,&nbsp;" : "-").
-                (($value->rel_friend2_nic_back != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/nic/friend2b/") . $value->rel_friend2_nic_back . "'>Back</a>" : "-"),
                 (($value->electricity_bill != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/electricity_bill/") . $value->electricity_bill . "'>View</a>" : "-"),
                 (($value->selfie != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/selfie/") . $value->selfie . "'>View</a>" : "-"),
                 (($value->fb_screenshot != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/fb_screenshot/") . $value->fb_screenshot . "'>View</a>" : "-"),
