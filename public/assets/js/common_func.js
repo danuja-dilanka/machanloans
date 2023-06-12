@@ -1,11 +1,13 @@
 function import_script_if_exist(jsFilePath) {
-    $.ajax({
-        url: jsFilePath,
-        type: 'HEAD',
-        success: function () {
-            $.getScript(jsFilePath);
-        }
-    });
+    try {
+        $.ajax({
+            url: jsFilePath,
+            type: 'HEAD',
+            success: function () {
+                $.getScript(jsFilePath);
+            }
+        });
+    } catch (e) {}
 }
 
 $(document).ready(function () {
@@ -26,7 +28,7 @@ $(document).ready(function () {
 
         var jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - (dec + 1)] + "_" + parts[tot_parts - dec] + ".js";
         import_script_if_exist(jsFilePath);
-        
+
         jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - dec] + ".js";
         import_script_if_exist(jsFilePath);
     }
