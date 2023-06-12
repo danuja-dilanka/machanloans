@@ -56,15 +56,16 @@ function do_upload(index, upload_path) {
     uploader.init();
 }
 
-do_upload(1, "loan_req__nic__friend1f");
-do_upload(2, "loan_req__nic__friend1b");
-do_upload(3, "loan_req__nic__friend2f");
-do_upload(4, "loan_req__nic__friend2b");
+do_upload(1, "member");
+do_upload(2, "loan_req__bank_statement");
+do_upload(3, "loan_req__ga_certificate");
+do_upload(4, "loan_req__nic__hw_nic_front");
 do_upload(5, "loan_req__selfie");
 do_upload(6, "loan_req__fb_screenshot");
 do_upload(7, "loan_req__electricity_bill");
 do_upload(8, "loan_req__nic__back");
 do_upload(9, "loan_req__nic__front");
+do_upload(10, "loan_req__nic__hw_nic_back");
 
 
 $(document).on('click', '.remove_file', function () {
