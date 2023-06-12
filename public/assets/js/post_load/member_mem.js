@@ -72,8 +72,7 @@ $(document).on('click', '.remove_file', function () {
     $.post(BASE_URL + 'api/remove_file', {src: ele.data('src'), type: ele.data('type')}, function (data) {
         if (ele.parent().hasClass("active_record") && data == "1") {
             $("#" + ele.data("img")).attr("src", BASE_URL + "public/images/no-image.png");
-            $("#" + ele.data("file")).remove();
-
         }
+        $("#" + ele.data("file")).remove();
     });
 });
