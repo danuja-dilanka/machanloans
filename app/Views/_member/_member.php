@@ -15,16 +15,16 @@
                     <?php } ?>
                     <div class="row">
                         <div class="col-md-6">
-                            <?= render_input('first_name', 'First Name', isset($data) ? $data->first_name : '', 'text', []); ?>
+                            <?= render_input('first_name', 'First Name', isset($data) ? $data->first_name : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_input('last_name', 'Last Name', isset($data) ? $data->last_name : '', 'text', []); ?>
+                            <?= render_input('last_name', 'Last Name', isset($data) ? $data->last_name : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-3">
                             <?= render_input('nic', 'NIC', isset($data) ? $data->nic : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-3">
-                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : "MPL-" . model("Member_model")->get_nxt_mem_no(), 'text', ["readonly" => true]); ?>
+                            <?= render_input('member_no', 'Member No', isset($data) ? $data->member_no : "MPL-" . model("Member_model")->get_nxt_mem_no(), 'text', ['required' => true, "readonly" => true]); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('birthday', 'Birthday', isset($data) ? $data->birthday : '', 'date', []); ?>
@@ -33,10 +33,10 @@
                             <?= render_input('business_name', 'Business Name', isset($data) ? $data->business_name : '', 'text'); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_input('email', 'Email', isset($data) ? $data->email : '', 'email', []); ?>
+                            <?= render_input('email', 'Email', isset($data) ? $data->email : '', 'email', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_input('mobile', 'Mobile', isset($data) ? $data->mobile : '', 'number', []); ?>
+                            <?= render_input('mobile', 'Mobile', isset($data) ? $data->mobile : '', 'number', ['required' => true]); ?>
                             <small>Phone Number Must Be In This Format: 947XXXXXXXX</small>
                         </div>
                         <div class="col-md-6">
