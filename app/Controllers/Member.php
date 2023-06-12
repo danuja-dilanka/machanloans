@@ -30,7 +30,8 @@ class Member extends BaseController {
             'last_name' => 'required',
             'member_no' => 'required',
             'mobile' => 'required|numeric|min_length[9]',
-            'email' => 'required|valid_email'
+            'email' => 'required|valid_email',
+            'nic' => 'required',
         ];
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
