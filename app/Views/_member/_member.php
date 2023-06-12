@@ -58,10 +58,10 @@
                             <?= render_textarea('cred_address', 'Current Residential Address', isset($data) ? $data->cred_address : '', []); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_input('job_or_business', 'Job or business', isset($data) ? $data->job_or_business : '', 'text', []); ?>
+                            <?= render_textarea('working_address', 'Address of place of employment or business', isset($data) ? $data->working_address : '', []); ?>
                         </div>
                         <div class="col-md-12">
-                            <?= render_textarea('working_address', 'Address of place of employment or business', isset($data) ? $data->working_address : '', []); ?>
+                            <?= render_input('job_or_business', 'Job or business', isset($data) ? $data->job_or_business : '', 'text', []); ?>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
