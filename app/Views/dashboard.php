@@ -4,7 +4,7 @@
     <div class="row align-items-center py-3">
         <div class="col-sm-12">
             <div class="breadcrumbs-area clearfix">
-                <h6 class="page-title float-left">Dashboard</h6>
+                <h6 class="page-title float-left">Dashboard &nbsp;<i class="fa-solid fa-sync fa-spin"></i></h6>
 
                 <!--Branch Switcher-->
                 <div class="dropdown float-right">
