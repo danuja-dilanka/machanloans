@@ -70,6 +70,7 @@ do_upload(9, "loan_req__nic__front");
 $(document).on('click', '.remove_file', function () {
     var ele = $(this);
     $.post(BASE_URL + 'api/remove_file', {src: ele.data('src'), type: ele.data('type')}, function (data) {
+        alert(data);
         if (data == "1") {
             if (ele.parent().hasClass("active_record")) {
                 $("#" + ele.data("img")).attr("src", BASE_URL + "public/images/no-image.png");
