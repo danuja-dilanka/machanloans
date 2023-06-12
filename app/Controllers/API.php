@@ -279,7 +279,7 @@ class API extends BaseController {
         if ($this->request->is('post')) {
             $data = $this->request->getPost();
             if (isset($data["src"]) && isset($data["type"])) {
-                $del_path = base_url("public/images") . str_replace("/", "__", $data["src"]);
+                $del_path = "public/images/" . str_replace("__", "/", $data["src"]);
                 if (del_file($del_path)) {
                     $status = 1;
                 }
