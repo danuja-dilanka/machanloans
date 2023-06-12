@@ -1,8 +1,11 @@
-function file_exist(url) {
-    var http = new XMLHttpRequest();
-    http.open('HEAD', url, false);
-    http.send();
-    return http.status != 404;
+function import_script_if_exist(jsFilePath) {
+    $.ajax({
+        url: jsFilePath,
+        type: 'HEAD',
+        success: function () {
+            $.getScript(jsFilePath);
+        }
+    });
 }
 
 $(document).ready(function () {
@@ -20,15 +23,12 @@ $(document).ready(function () {
         if (SECRET_ID != "") {
             dec = dec + 1;
         }
+
         var jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - (dec + 1)] + "_" + parts[tot_parts - dec] + ".js";
-        if (file_exist(jsFilePath)) {
-            $.getScript(jsFilePath);
-        } else {
-            jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - dec] + ".js";
-            if (file_exist(jsFilePath)) {
-                $.getScript(jsFilePath);
-            }
-        }
+        import_script_if_exist(jsFilePath);
+        
+        jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - dec] + ".js";
+        import_script_if_exist(jsFilePath);
     }
 });
 
