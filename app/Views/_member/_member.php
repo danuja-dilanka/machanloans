@@ -139,20 +139,6 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">GA Certificate (20MB)<span class="required"> *</span></label>
-                                <img id="ga_certificate_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/ga_certificate") . "/" . $data->ga_certificate : base_url("public/images") . "/no-image.png" ?>" height="150">
-                                <div style="font: 13px Verdana; background: #eee; color: #333">
-                                    <div id="filelist3"></div><br>
-                                    <div id="file_container3" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/ga_certificate") ?>" data-id="ga_certificate">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
-                                    </div><br>
-                                </div>
-                                <input type="hidden" id="ga_certificate" value="<?= isset($data) ? $data->ga_certificate : '' ?>" class="" name="ga_certificate" multiple="false">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group text-center">
                                 <label class="control-label">Husband or wife ID copy front (20MB)<span class="required"> *</span></label>
                                 <img id="hw_nic_front_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/nic/hw_nic_front") . "/" . $data->hw_nic_front : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
@@ -177,6 +163,20 @@
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="hw_nic_back" value="<?= isset($data) ? $data->hw_nic_back : '' ?>" class="" name="hw_nic_back" multiple="false">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">GA Certificate (20MB)<span class="required"> *</span></label>
+                                <img id="ga_certificate_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/ga_certificate") . "/" . $data->ga_certificate : base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist3"></div><br>
+                                    <div id="file_container3" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/ga_certificate") ?>" data-id="ga_certificate">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="ga_certificate" value="<?= isset($data) ? $data->ga_certificate : '' ?>" class="" name="ga_certificate" multiple="false">
                             </div>
                         </div>
                         <div class="col-md-6">
