@@ -7,10 +7,7 @@ use App\Libraries\PluploadHandler;
 class API extends BaseController {
 
     public function __construct() {
-
-        if (!already_logined()) {
-            return redirect()->route('login');
-        }
+        
     }
 
     public function users() {
@@ -287,6 +284,17 @@ class API extends BaseController {
         }
 
         echo $status;
+    }
+
+    public function get_summary() {
+        $data = [];
+        if (already_logined() && has_permission("dashboard", "view")) {
+            $common_model = model("Common_model");
+            $data["total_members"] = $common_model->get_data("SELECT COUNT(id) AS total_members FROM `" . DB_PREFIX . "member`")->total_members;
+            $data["total_pending_loans"] = $common_model->get_data("SELECT COUNT(id) AS total_pending_loans FROM `" . DB_PREFIX . "loan_request` WHERE `status` = 0")->total_pending_loans;
+        }
+
+        json_encode($data);
     }
 
 }

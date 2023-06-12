@@ -42,10 +42,10 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Total Members</h5>
-                            <h4 class="pt-1 mb-0"><b>0</b></h4>
+                            <h4 class="pt-1 mb-0" id="total_members"><b></b></h4>
                         </div>
                         <div>
-                            <a href="https://machan.quicksoft.lk/admin/members"><i class="ti-arrow-right"></i>&nbsp;View</a>
+                            <a href="<?= base_url("member/mem_list") ?>"><i class="ti-arrow-right"></i>&nbsp;View</a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Deposit Requests</h5>
-                            <h4 class="pt-1 mb-0"><b>0</b></h4>
+                            <h4 class="pt-1 mb-0"><b></b></h4>
                         </div>
                         <div>
                             <a href="https://machan.quicksoft.lk/admin/deposit_requests"><i class="ti-arrow-right"></i>&nbsp;View</a>
@@ -74,7 +74,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Withdraw Requests</h5>
-                            <h4 class="pt-1 mb-0"><b>0</b></h4>
+                            <h4 class="pt-1 mb-0"><b></b></h4>
                         </div>
                         <div>
                             <a href="https://machan.quicksoft.lk/admin/withdraw_requests"><i class="ti-arrow-right"></i>&nbsp;View</a>
@@ -90,10 +90,10 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Pending Loans</h5>
-                            <h4 class="pt-1 mb-0"><b>0</b></h4>
+                            <h4 class="pt-1 mb-0" id="total_pending_loans"><b></b></h4>
                         </div>
                         <div>
-                            <a href="https://machan.quicksoft.lk/admin/loans"><i class="ti-arrow-right"></i>&nbsp;View</a>
+                            <a href="<?= base_url("loan/loan_list") ?>"><i class="ti-arrow-right"></i>&nbsp;View</a>
                         </div>
                     </div>
                 </div>
