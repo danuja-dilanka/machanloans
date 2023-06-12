@@ -42,12 +42,15 @@ function do_upload(index, upload_path) {
 
             FileUploaded: function (up, file) {
                 var base = document.getElementById('pickfiles' + index);
-                document.getElementById(base.getAttribute('data-id') + "_img").src = base.getAttribute('data-src') + "/" + file.name;
-                document.getElementById(base.getAttribute('data-id')).value = file.name;
+                var unic_id = base.getAttribute('data-id');
+                var img_src = base.getAttribute('data-src');
+                document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span class="remove_file" data-src="' + img_src.replace("/", "__") + '" data-type="' + unic_id + '">X</span>';
+                document.getElementById(unic_id + "_img").src = img_src + "/" + file.name;
+                document.getElementById(unic_id).value = file.name;
             }
         }
     });
-    
+
     uploader.init();
 }
 
