@@ -1,13 +1,9 @@
 function import_script_if_exist(jsFilePath) {
-    try {
-        $.ajax({
-            url: jsFilePath,
-            type: 'HEAD',
-            success: function () {
-                $.getScript(jsFilePath);
-            }
-        });
-    } catch (e) {}
+    return fetch(jsFilePath).then(response => {
+        if (response.status === 200) {
+            $.getScript(jsFilePath);
+        }
+    }).catch(() => {});
 }
 
 $(document).ready(function () {
