@@ -10,4 +10,4 @@ function live_update() {
     });
 }
 
-setTimeout(live_update, 1000);
+setInterval(live_update, 1000);
