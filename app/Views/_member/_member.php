@@ -101,7 +101,7 @@
                             <?= render_textarea('rel_friend1_address', 'Address of non-relative friend 1', isset($data) ? $data->rel_friend1_address : '', []); ?>
                         </div>
                         <div class="col-md-6">
-                             <?= render_input('rel_friend2', 'Name of non-relative friend 2', isset($data) ? $data->rel_friend2 : '', 'text', []); ?>
+                            <?= render_input('rel_friend2', 'Name of non-relative friend 2', isset($data) ? $data->rel_friend2 : '', 'text', []); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('rel_friend2_phone', 'Contact number of non-relative friend 2', isset($data) ? $data->rel_friend2_phone : '', 'text', []); ?>
@@ -112,7 +112,7 @@
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">Member Image (20MB)</label>
-                                <img id="photo_img" alt="" src="<?= isset($data->photo) && file_exists(base_url("public/images/member") . "/" . $data->photo) ? base_url("public/images/member") . "/" . $data->photo : base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="photo_img" alt="" src="<?= isset($data->photo) && file_exists(FCPATH . "public/images/member/" . $data->photo) ? base_url("public/images/member") . "/" . $data->photo : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist1"></div><br>
                                     <div id="file_container1" style="position: relative;">
