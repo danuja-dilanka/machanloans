@@ -294,7 +294,7 @@ class API extends BaseController {
             $data["total_pending_loans"] = $common_model->get_data("SELECT COUNT(id) AS total_pending_loans FROM `" . DB_PREFIX . "loan_request` WHERE `status` = 0")->total_pending_loans;
         }
 
-        json_encode($data);
+        echo json_encode($data);
     }
 
 }
