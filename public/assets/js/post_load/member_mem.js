@@ -58,3 +58,5 @@ do_upload(4, "loan_req__nic__friend2b");
 do_upload(5, "loan_req__selfie");
 do_upload(6, "loan_req__fb_screenshot");
 do_upload(7, "loan_req__electricity_bill");
+do_upload(8, "loan_req__nic__back");
+do_upload(9, "loan_req__nic__front");
