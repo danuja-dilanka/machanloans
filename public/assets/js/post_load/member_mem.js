@@ -44,7 +44,7 @@ function do_upload(index, upload_path) {
                 var base = document.getElementById('pickfiles' + index);
                 var unic_id = base.getAttribute('data-id');
                 var img_src = base.getAttribute('data-src');
-                document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span style="cursor:pointer" class="text-danger remove_file" data-img="' + unic_id + "_img" + '" data-src="' + upload_path + "__" + file.name + '" data-type="' + unic_id + '">X</span>';
+                document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span style="cursor:pointer" class="text-danger remove_file" data-file="' + file.id + '" data-img="' + unic_id + "_img" + '" data-src="' + upload_path + "__" + file.name + '" data-type="' + unic_id + '">X</span>';
                 document.getElementById(unic_id + "_img").src = img_src + "/" + file.name;
                 document.getElementById(unic_id).value = file.name;
                 $(".filelist_info").removeClass("active_record");
@@ -72,6 +72,8 @@ $(document).on('click', '.remove_file', function () {
     $.post(BASE_URL + 'api/remove_file', {src: ele.data('src'), type: ele.data('type')}, function (data) {
         if (ele.parent().hasClass("active_record") && data == "1") {
             $("#" + ele.data("img")).attr("src", BASE_URL + "public/images/no-image.png");
+            $("#" + ele.data("file")).remove();
+
         }
     });
 });
