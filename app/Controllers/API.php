@@ -274,4 +274,19 @@ class API extends BaseController {
         }
     }
 
+    public function remove_file() {
+        $status = 0;
+        if ($this->request->is('post')) {
+            $data = $this->request->getPost();
+            if (isset($data["src"]) && isset($data["type"])) {
+                $del_path = 'public/images/' . str_replace("/", "__", $data["src"]);
+                if(del_file($del_path)){
+                    $status = 1;
+                }
+            }
+        }
+
+        echo $status;
+    }
+
 }

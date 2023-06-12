@@ -28,7 +28,7 @@ function do_upload(index, upload_path) {
 
             FilesAdded: function (up, files) {
                 plupload.each(files, function (file) {
-                    document.getElementById('filelist' + index).innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
+                    document.getElementById('filelist' + index).innerHTML += '<div id="' + file.id + '" class="filelist_info">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
                 });
             },
 
@@ -44,9 +44,11 @@ function do_upload(index, upload_path) {
                 var base = document.getElementById('pickfiles' + index);
                 var unic_id = base.getAttribute('data-id');
                 var img_src = base.getAttribute('data-src');
-                document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span class="remove_file" data-src="' + img_src.replace("/", "__") + '" data-type="' + unic_id + '">X</span>';
+                document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span style="cursor:pointer" class="text-danger remove_file" data-img="' + unic_id + "_img" + '" data-src="' + upload_path + "__" + file.name + '" data-type="' + unic_id + '">X</span>';
                 document.getElementById(unic_id + "_img").src = img_src + "/" + file.name;
                 document.getElementById(unic_id).value = file.name;
+                $(".filelist_info").removeClass("active_record");
+                document.getElementById(file.id).classList.add("active_record");
             }
         }
     });
@@ -63,3 +65,13 @@ do_upload(6, "loan_req__fb_screenshot");
 do_upload(7, "loan_req__electricity_bill");
 do_upload(8, "loan_req__nic__back");
 do_upload(9, "loan_req__nic__front");
+
+
+$(document).on('click', '.remove_file', function () {
+    var ele = $(this);
+    $.post(BASE_URL + 'api/remove_file/', {src: ele.data('src'), type: ele.data('type')}, function (data) {
+        if (ele.parent().hasClass("active_record") && data == "1") {
+            $("#" + ele.data("img")).attr("src", BASE_URL + "public/images/no-image.png");
+        }
+    });
+});
