@@ -179,6 +179,20 @@
                                 <input type="hidden" id="hw_nic_back" value="<?= isset($data) ? $data->hw_nic_back : '' ?>" class="" name="hw_nic_back" multiple="false">
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">Facebook Screenshot (20MB)<span class="required"> *</span></label>
+                                <img id="fb_screenshot_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/fb_screenshot") . "/" . $data->fb_screenshot : base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist6"></div><br>
+                                    <div id="file_container6" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="fb_screenshot" value="<?= isset($data) ? $data->fb_screenshot : '' ?>" class="" name="fb_screenshot" multiple="false">
+                            </div>
+                        </div>
                         <div class="col-md-12">
                             <div class="form-group text-center">
                                 <label class="control-label">Electricity Bill Photo (20MB)<span class="required"> *</span></label>
@@ -193,7 +207,7 @@
                                 <input type="hidden" id="electricity_bill" value="<?= isset($data) ? $data->electricity_bill : '' ?>" class="" name="electricity_bill" multiple="false">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-group text-center">
                                 <label class="control-label">A Selfie photograph taken with the ID card in hand, with the face clearly visible (20MB)<span class="required"> *</span></label>
                                 <img id="selfie_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/selfie") . "/" . $data->selfie : base_url("public/images") . "/no-image.png" ?>" height="150">
@@ -205,20 +219,6 @@
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="selfie" class="" value="<?= isset($data) ? $data->selfie : '' ?>" name="selfie" multiple="false">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group text-center">
-                                <label class="control-label">Facebook Screenshot (20MB)<span class="required"> *</span></label>
-                                <img id="fb_screenshot_img" alt="" src="<?= isset($data) ? base_url("public/images/loan_req/fb_screenshot") . "/" . $data->fb_screenshot : base_url("public/images") . "/no-image.png" ?>" height="150">
-                                <div style="font: 13px Verdana; background: #eee; color: #333">
-                                    <div id="filelist6"></div><br>
-                                    <div id="file_container6" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
-                                    </div><br>
-                                </div>
-                                <input type="hidden" id="fb_screenshot" value="<?= isset($data) ? $data->fb_screenshot : '' ?>" class="" name="fb_screenshot" multiple="false">
                             </div>
                         </div>
                         <div class="col-md-12">
