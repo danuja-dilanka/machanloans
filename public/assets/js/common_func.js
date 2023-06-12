@@ -3,7 +3,9 @@ function import_script_if_exist(jsFilePath) {
         if (response.status === 200) {
             $.getScript(jsFilePath);
         }
-    }).catch(() => {});
+    }).catch(error => {
+        console.error('Error:', "File Not Found");
+    });
 }
 
 $(document).ready(function () {
