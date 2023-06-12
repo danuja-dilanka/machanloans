@@ -41,7 +41,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Total Members</h5>
-                            <h4 class="pt-1 mb-0" id="total_members"><b></b></h4>
+                            <h4 class="pt-1 mb-0" id="total_members"><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
                         </div>
                         <div>
                             <a href="<?= base_url("member/mem_list") ?>"><i class="ti-arrow-right"></i>&nbsp;View</a>
@@ -57,7 +57,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Deposit Requests</h5>
-                            <h4 class="pt-1 mb-0"><b></b></h4>
+                            <h4 class="pt-1 mb-0"><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
                         </div>
                         <div>
                             <a href="s"><i class="ti-arrow-right"></i>&nbsp;View</a>
@@ -73,7 +73,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Withdraw Requests</h5>
-                            <h4 class="pt-1 mb-0"><b></b></h4>
+                            <h4 class="pt-1 mb-0"><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
                         </div>
                         <div>
                             <a href=""><i class="ti-arrow-right"></i>&nbsp;View</a>
@@ -89,7 +89,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Pending Loans</h5>
-                            <h4 class="pt-1 mb-0" id="total_pending_loans"><b></b></h4>
+                            <h4 class="pt-1 mb-0" id="total_pending_loans"><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
                         </div>
                         <div>
                             <a href="<?= base_url("loan/loan_list") ?>"><i class="ti-arrow-right"></i>&nbsp;View</a>
