@@ -10,4 +10,4 @@ function live_update() {
     });
 }
 
-setInterval(live_update, 1000);
+setInterval(live_update, 3600000);
