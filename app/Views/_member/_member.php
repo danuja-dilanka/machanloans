@@ -65,7 +65,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">Front photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
+                                <label class="control-label">Front photograph of the National Identity Card (20MB)</label>
                                 <img id="nic_front_img" alt="" src="<?= isset($data->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $data->nic_front : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist9"></div><br>
@@ -79,7 +79,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">Back photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
+                                <label class="control-label">Back photograph of the National Identity Card (20MB)</label>
                                 <img id="nic_back_img" alt="" src="<?= isset($data->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $data->nic_back : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist8"></div><br>
@@ -111,8 +111,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">Member Image (20MB)<span class="required"> *</span></label>
-                                <img id="photo_img" alt="" src="<?= isset($data->photo) ? base_url("public/images/member") . "/" . $data->photo : base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <label class="control-label">Member Image (20MB)</label>
+                                <img id="photo_img" alt="" src="<?= isset($data->photo) && file_exists(base_url("public/images/member") . "/" . $data->photo) ? base_url("public/images/member") . "/" . $data->photo : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist1"></div><br>
                                     <div id="file_container1" style="position: relative;">
@@ -125,7 +125,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">Bank statement (20MB)<span class="required"> *</span></label>
+                                <label class="control-label">Bank statement (20MB)</label>
                                 <img id="bank_statement_img" alt="" src="<?= isset($data->bank_statement) ? base_url("public/images/loan_req/bank_statement") . "/" . $data->bank_statement : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist2"></div><br>
@@ -139,7 +139,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">Husband or wife ID copy front (20MB)<span class="required"> *</span></label>
+                                <label class="control-label">Husband or wife ID copy front (20MB)</label>
                                 <img id="hw_nic_front_img" alt="" src="<?= isset($data->hw_nic_front) ? base_url("public/images/loan_req/nic/hw_nic_front") . "/" . $data->hw_nic_front : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist4"></div><br>
@@ -153,7 +153,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">Husband or wife ID copy back (20MB)<span class="required"> *</span></label>
+                                <label class="control-label">Husband or wife ID copy back (20MB)</label>
                                 <img id="hw_nic_back_img" alt="" src="<?= isset($data->hw_nic_back) ? base_url("public/images/loan_req/nic/hw_nic_back") . "/" . $data->hw_nic_back : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist10"></div><br>
@@ -167,7 +167,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">GA Certificate (20MB)<span class="required"> *</span></label>
+                                <label class="control-label">GA Certificate (20MB)</label>
                                 <img id="ga_certificate_img" alt="" src="<?= isset($data->ga_certificate) ? base_url("public/images/loan_req/ga_certificate") . "/" . $data->ga_certificate : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist3"></div><br>
@@ -181,7 +181,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">Facebook Screenshot (20MB)<span class="required"> *</span></label>
+                                <label class="control-label">Facebook Screenshot (20MB)</label>
                                 <img id="fb_screenshot_img" alt="" src="<?= isset($data->fb_screenshot) ? base_url("public/images/loan_req/fb_screenshot") . "/" . $data->fb_screenshot : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist6"></div><br>
@@ -195,7 +195,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group text-center">
-                                <label class="control-label">Electricity Bill Photo (20MB)<span class="required"> *</span></label>
+                                <label class="control-label">Electricity Bill Photo (20MB)</label>
                                 <img id="electricity_bill_img" alt="" src="<?= isset($data->electricity_bill) ? base_url("public/images/loan_req/electricity_bill") . "/" . $data->electricity_bill : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist7"></div><br>
@@ -209,7 +209,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group text-center">
-                                <label class="control-label">A Selfie photograph taken with the ID card in hand, with the face clearly visible (20MB)<span class="required"> *</span></label>
+                                <label class="control-label">A Selfie photograph taken with the ID card in hand, with the face clearly visible (20MB)</label>
                                 <img id="selfie_img" alt="" src="<?= isset($data->selfie) ? base_url("public/images/loan_req/selfie") . "/" . $data->selfie : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist5"></div><br>
