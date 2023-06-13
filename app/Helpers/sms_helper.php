@@ -22,11 +22,15 @@ function send_sms($to, $message) {
 
         curl_close($curl);
 
+        $post_data = json_decode($response);
+        if(!isset($post_data->id)){
+            $post_data->id = 0;
+        }
         model('Sms_model')->add_data([
             "message" => $encoded,
             "mobile" => $mobile,
             "response" => $response,
-            "mess_id" => json_decode($response)->id,
+            "mess_id" => $post_data->id,
             "send_dt" => date("Y-m-d H:i:s")
         ]);
         
