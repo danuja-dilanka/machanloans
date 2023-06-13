@@ -20,22 +20,13 @@ class View_data extends BaseController {
         foreach ($members as $key => $value) {
             $key_enc = encode($value->id);
             $data[] = [
+                $key,
+                $value->photo != "" ? "<a href='". base_url("public/images/member/") . $value->photo."' target='_blank'><img src='". base_url("public/images/member/") . $value->photo."' width='150'/></a>" : base_url("public/uploads/profile/") . "default.png",
                 $value->first_name,
                 $value->last_name,
                 $value->member_no,
-                $value->birthday,
-                $value->business_name,
-                $value->email,
                 $value->mobile,
-                $value->gender == 1 ? "Male" : "Female",
                 $value->city,
-                $value->cred_address,
-                $value->job_or_business,
-                $value->rel_friend1,
-                $value->rel_friend2,
-                (($value->electricity_bill != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/electricity_bill/") . $value->electricity_bill . "'>View</a>" : "-"),
-                (($value->selfie != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/selfie/") . $value->selfie . "'>View</a>" : "-"),
-                (($value->fb_screenshot != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/fb_screenshot/") . $value->fb_screenshot . "'>View</a>" : "-"),
                 (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "-") .
                 ("<a target='_blank' class='btn btn-sm btn-info' href='" . base_url("member/view_member/") . $key_enc . "'>View</a>&nbsp;") .
                 ("<button type='button' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='btn btn-sm btn-primary'>Rate</button>&nbsp;") .

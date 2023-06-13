@@ -11,47 +11,29 @@
             <?= create_link("member", "mem", ["member", "add"], "+ New", "h6") ?>
         </div>
     </div>
-    <table id="dt_tb" class="table" data-action="members" style="width:100%">
+    <table id="dt_tb" class="table table-bordered table-responsive" data-action="members" style="width:100%">
         <thead>
             <tr>
+                <th>#</th>
+                <th>Member Photo</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Member No</th>
-                <th>Birthday</th>
-                <th>Business Name</th>
-                <th>Email</th>
                 <th>Mobile</th>
-                <th>Gender</th>
                 <th>City</th>
-                <th>Current Residential Address</th>
-                <th>Job or business</th>
-                <th>Name of non-relative friend 1</th>
-                <th>Name of non-relative friend 2</th>
-                <th class="dont_export">Electricity Bill</th>
-                <th class="dont_export">Selfie</th>
-                <th class="dont_export">Facebook Screenshot</th>
                 <th class="dont_export">Action</th>
             </tr>
         </thead>
         <tbody></tbody>
         <tfoot>
             <tr>
+                <th>#</th>
+                <th>Member Photo</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Member No</th>
-                <th>Birthday</th>
-                <th>Business Name</th>
-                <th>Email</th>
                 <th>Mobile</th>
-                <th>Gender</th>
                 <th>City</th>
-                <th>Current Residential Address</th>
-                <th>Job or business</th>
-                <th>Name of non-relative friend 1</th>
-                <th>Name of non-relative friend 2</th>
-                <th class="dont_export">Electricity Bill</th>
-                <th class="dont_export">Selfie</th>
-                <th class="dont_export">Facebook Screenshot</th>
                 <th class="dont_export">Action</th>
             </tr>
         </tfoot>

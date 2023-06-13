@@ -37,7 +37,7 @@
                                 <tbody>
                                     <tr>
                                         <td colspan="2" class="profile_picture text-center">
-                                            <img src="<?= isset($data->photo) && $data->photo != "" ? base_url("public/images/member/") . $data->photo : "https://machan.quicksoft.lk/public/uploads/profile/default.png" ?>" class="thumb-image-md">
+                                            <img src="<?= isset($data->photo) && $data->photo != "" ? base_url("public/images/member/") . $data->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
                                         </td>
                                     </tr>
                                     <tr>
