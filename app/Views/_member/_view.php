@@ -142,14 +142,14 @@
                                         <table id="transactions_table" class="table table-bordered custom_dt_table no-footer dtr-inline " aria-describedby="transactions_table_info">
                                             <thead>
                                                 <tr>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Date</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Member</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Account Number</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Amount</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Debit/Credit</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Type</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Status</th>
-                                                    <th class="text-center sorting_disabled" rowspan="1" colspan="1">Action</th>
+                                                    <th class="sorting_disabled">Date</th>
+                                                    <th class="sorting_disabled">Member</th>
+                                                    <th class="sorting_disabled">Account Number</th>
+                                                    <th class="sorting_disabled">Amount</th>
+                                                    <th class="sorting_disabled">Debit/Credit</th>
+                                                    <th class="sorting_disabled">Type</th>
+                                                    <th class="sorting_disabled">Status</th>
+                                                    <th class="text-center sorting_disabled">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -176,14 +176,14 @@
                                         <table id="loans_table" class="table table-bordered data-table custom_dt_table no-footer dtr-inline" aria-describedby="loans_table_info">
                                             <thead>
                                                 <tr>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Loan ID</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Loan Product</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Applied Amount</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Total Payable</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Amount Paid</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Due Amount</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Release Date</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Status</th></tr>
+                                                    <th class="sorting_disabled">Loan ID</th>
+                                                    <th class="sorting_disabled">Loan Product</th>
+                                                    <th class="text-right sorting_disabled">Applied Amount</th>
+                                                    <th class="text-right sorting_disabled">Total Payable</th>
+                                                    <th class="text-right sorting_disabled">Amount Paid</th>
+                                                    <th class="text-right sorting_disabled">Due Amount</th>
+                                                    <th class="sorting_disabled">Release Date</th>
+                                                    <th class="sorting_disabled">Status</th></tr>
                                             </thead>
                                             <tbody>
 
@@ -210,10 +210,10 @@
                                         <table class="table table-bordered data-table custom_dt_table no-footer dtr-inline" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                                             <thead>
                                                 <tr>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Document Name</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Document File</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Submitted At</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Action</th></tr>
+                                                    <th class="sorting_disabled">Document Name</th>
+                                                    <th class="sorting_disabled">Document File</th>
+                                                    <th class="sorting_disabled">Submitted At</th>
+                                                    <th class="sorting_disabled">Action</th></tr>
                                             </thead>
                                             <tbody>
                                             </tbody>
