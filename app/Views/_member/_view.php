@@ -296,7 +296,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-block"><i class="ti-check-box"></i>&nbsp;Send</button>
+                                            <button type="button" id="send_sms" class="btn btn-primary btn-block"><i class="ti-check-box"></i>&nbsp;Send</button>
                                         </div>
                                     </div>
                                 </div>

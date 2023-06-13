@@ -32,7 +32,7 @@ function send_sms($to, $message) {
         
         
     }else{
-        $response = '{"errors":{"phone":["Invalid Phone"]}}';
+        $response = '{"message":"failed", errors":{"phone":["Invalid Phone"]}}';
     }
 
     return json_decode($response);

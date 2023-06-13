@@ -297,4 +297,19 @@ class API extends BaseController {
         echo json_encode($data);
     }
 
+    public function send_sms() {
+        $status = 0;
+        if (already_logined() && $this->request->is('post')) {
+            $data = $this->request->getPost();
+            if (isset($data["phone"]) && isset($data["message"])) {
+                $response = send_sms(trim($data["phone"]), trim($data["message"]));
+                if (strtolower($response["message"]) == "success") {
+                    $status = 1;
+                }
+            }
+        }
+
+        echo $status;
+    }
+
 }
