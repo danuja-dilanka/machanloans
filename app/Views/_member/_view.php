@@ -21,7 +21,7 @@
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kyc_documents"><i class="ti-files"></i>&nbsp;KYC Documents</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#email"><i class="ti-email"></i>&nbsp;Send Email</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sms"><i class="ti-comment-alt"></i>&nbsp;Send SMS</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://machan.quicksoft.lk/admin/members/72/edit"><i class="ti-pencil-alt"></i>&nbsp;Edit Member Details</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url("member/mem/") . $req_id ?>"><i class="ti-pencil-alt"></i>&nbsp;Edit Member Details</a></li>
             </ul>
         </div>
 
@@ -32,12 +32,11 @@
                         <div class="card-header">
                             <span class="header-title">Member Details</span>
                         </div>
-
                         <div class="card-body">
                             <table class="table table-bordered">
                                 <tbody><tr>
                                         <td colspan="2" class="profile_picture text-center">
-                                            <img src="<?= isset($data->photo) && $data->photo != "" ? base_url("public/images/member/").$data->photo : "https://machan.quicksoft.lk/public/uploads/profile/default.png" ?>" class="thumb-image-md">
+                                            <img src="<?= isset($data->photo) && $data->photo != "" ? base_url("public/images/member/") . $data->photo : "https://machan.quicksoft.lk/public/uploads/profile/default.png" ?>" class="thumb-image-md">
                                         </td>
                                     </tr>
                                     <tr>
@@ -67,14 +66,14 @@
                                     <tr>
                                         <td>Gender</td>
                                         <td><?php
-                                        if(isset($data)){
-                                            if($data->gender == 1){
-                                                echo 'Male';
-                                            }else{
-                                                echo 'Female';
+                                            if (isset($data)) {
+                                                if ($data->gender == 1) {
+                                                    echo 'Male';
+                                                } else {
+                                                    echo 'Female';
+                                                }
                                             }
-                                        }
-                                        ?></td>
+                                            ?></td>
                                     </tr>
                                     <tr>
                                         <td>City</td>
@@ -162,7 +161,7 @@
                         </div>
 
                         <div class="card-body">
-                            
+
                             <div id="loans_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="loans_table_length"><label>Show <select name="loans_table_length" aria-controls="loans_table" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> Entries</label></div></div><div class="col-sm-12 col-md-6"><div id="loans_table_filter" class="dataTables_filter"><label>Search<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="loans_table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="loans_table" class="table table-bordered data-table dataTable no-footer dtr-inline" aria-describedby="loans_table_info">
                                             <thead>
                                                 <tr><th class="sorting_disabled" rowspan="1" colspan="1">Loan ID</th><th class="sorting_disabled" rowspan="1" colspan="1">Loan Product</th><th class="text-right sorting_disabled" rowspan="1" colspan="1">Applied Amount</th><th class="text-right sorting_disabled" rowspan="1" colspan="1">Total Payable</th><th class="text-right sorting_disabled" rowspan="1" colspan="1">Amount Paid</th><th class="text-right sorting_disabled" rowspan="1" colspan="1">Due Amount</th><th class="sorting_disabled" rowspan="1" colspan="1">Release Date</th><th class="sorting_disabled" rowspan="1" colspan="1">Status</th></tr>
