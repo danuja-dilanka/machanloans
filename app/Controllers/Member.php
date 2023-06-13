@@ -23,6 +23,20 @@ class Member extends BaseController {
         return redirect()->route('member/mem_list');
     }
 
+    //MEMBER VIEW
+    public function view_member($req_id) {
+        if (!has_permission("member", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        $data = $this->thisModel->get_data(decode($req_id));
+        if (isset($data->id)) {
+            return view('_member/_member', ["data" => $data, "req_id" => $req_id]);
+        } else {
+            return redirect()->to(base_url('member/mem'));
+        }
+    }
+
     //CREATE/ UPDATE VIEW
     public function mem($req_id = "") {
         $rules = [
@@ -140,13 +154,13 @@ class Member extends BaseController {
         if (!has_permission("member", "delete")) {
             session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));
-        }else{
+        } else {
             $result = $this->thisModel->delete_data(decode($req_id));
-            if($result){
+            if ($result) {
                 session()->setFlashdata('notify', 'Deleted Successfully!');
             }
         }
-        
+
         return redirect()->to(base_url('member/mem_list'));
     }
 

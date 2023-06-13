@@ -37,6 +37,7 @@ class View_data extends BaseController {
                 (($value->selfie != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/selfie/") . $value->selfie . "'>View</a>" : "-"),
                 (($value->fb_screenshot != "") ? "<a target='_blank' href='" . base_url("public/images/loan_req/fb_screenshot/") . $value->fb_screenshot . "'>View</a>" : "-"),
                 (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "-") .
+                ("<a target='_blank' href='" . base_url("member/view_member/") . $key_enc . "'>View</a>") .
                 ("<button type='button' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='btn btn-sm btn-primary'>Rate</button>&nbsp;") .
                 (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
             ];

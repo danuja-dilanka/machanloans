@@ -131,7 +131,7 @@ if (document.getElementById('transactionAnalysis')) {
         });
     }
 
-    loadChart(_base_currency_id);
+    loadChart(base_currency_id);
     $(document).on('change', '.filter-select', function () {
         var currency_id = $(this).val();
         chartCurrency = $(this).find(':selected').data('symbol');
