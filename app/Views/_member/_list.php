@@ -11,7 +11,7 @@
             <?= create_link("member", "mem", ["member", "add"], "+ New", "h6") ?>
         </div>
     </div>
-    <table id="dt_tb" class="table table-bordered table-responsive" data-action="members" style="width:100%">
+    <table id="dt_tb" class="table table-bordered table-responsive" data-action="members">
         <thead>
             <tr>
                 <th>Member No</th>
