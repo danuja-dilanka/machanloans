@@ -34,7 +34,8 @@
                         </div>
                         <div class="card-body">
                             <table class="table table-bordered">
-                                <tbody><tr>
+                                <tbody>
+                                    <tr>
                                         <td colspan="2" class="profile_picture text-center">
                                             <img src="<?= isset($data->photo) && $data->photo != "" ? base_url("public/images/member/") . $data->photo : "https://machan.quicksoft.lk/public/uploads/profile/default.png" ?>" class="thumb-image-md">
                                         </td>
@@ -73,7 +74,8 @@
                                                     echo 'Female';
                                                 }
                                             }
-                                            ?></td>
+                                            ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>City</td>
@@ -139,17 +141,17 @@
                             <div id="transactions_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <table id="transactions_table" class="table table-bordered custom_dt_table no-footer dtr-inline " aria-describedby="transactions_table_info">
+                                        <table id="transactions_table" class="table table-bordered no-footer dtr-inline " aria-describedby="transactions_table_info">
                                             <thead>
                                                 <tr>
-                                                    <th class="sorting_disabled">Date</th>
-                                                    <th class="sorting_disabled">Member</th>
-                                                    <th class="sorting_disabled">Account Number</th>
-                                                    <th class="sorting_disabled">Amount</th>
-                                                    <th class="sorting_disabled">Debit/Credit</th>
-                                                    <th class="sorting_disabled">Type</th>
-                                                    <th class="sorting_disabled">Status</th>
-                                                    <th class="text-center sorting_disabled">Action</th>
+                                                    <th>Date</th>
+                                                    <th>Member</th>
+                                                    <th>Account Number</th>
+                                                    <th>Amount</th>
+                                                    <th>Debit/Credit</th>
+                                                    <th>Type</th>
+                                                    <th>Status</th>
+                                                    <th class="text-center">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -173,17 +175,17 @@
                             <div id="loans_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <table id="loans_table" class="table table-bordered data-table custom_dt_table no-footer dtr-inline" aria-describedby="loans_table_info">
+                                        <table id="loans_table" class="table table-bordered data-table no-footer dtr-inline" aria-describedby="loans_table_info">
                                             <thead>
                                                 <tr>
-                                                    <th class="sorting_disabled">Loan ID</th>
-                                                    <th class="sorting_disabled">Loan Product</th>
-                                                    <th class="text-right sorting_disabled">Applied Amount</th>
-                                                    <th class="text-right sorting_disabled">Total Payable</th>
-                                                    <th class="text-right sorting_disabled">Amount Paid</th>
-                                                    <th class="text-right sorting_disabled">Due Amount</th>
-                                                    <th class="sorting_disabled">Release Date</th>
-                                                    <th class="sorting_disabled">Status</th></tr>
+                                                    <th>Loan ID</th>
+                                                    <th>Loan Product</th>
+                                                    <th class="text-right">Applied Amount</th>
+                                                    <th class="text-right">Total Payable</th>
+                                                    <th class="text-right">Amount Paid</th>
+                                                    <th class="text-right">Due Amount</th>
+                                                    <th>Release Date</th>
+                                                    <th>Status</th></tr>
                                             </thead>
                                             <tbody>
 
@@ -204,16 +206,17 @@
                         </div>
 
                         <div class="card-body">
-                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                            <div class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <table class="table table-bordered data-table custom_dt_table no-footer dtr-inline" aria-describedby="DataTables_Table_0_info">
+                                        <table class="table table-bordered data-table no-footer dtr-inline" aria-describedby="DataTables_Table_0_info">
                                             <thead>
                                                 <tr>
-                                                    <th class="sorting_disabled">Document Name</th>
-                                                    <th class="sorting_disabled">Document File</th>
-                                                    <th class="sorting_disabled">Submitted At</th>
-                                                    <th class="sorting_disabled">Action</th></tr>
+                                                    <th>Document Name</th>
+                                                    <th>Document File</th>
+                                                    <th>Submitted At</th>
+                                                    <th>Action</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
                                             </tbody>
