@@ -170,9 +170,9 @@
                         </div>
 
                         <div class="card-body">
-
                             <div id="loans_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                <div class="row"><div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
                                         <table id="loans_table" class="table table-bordered data-table custom_dt_table no-footer dtr-inline" aria-describedby="loans_table_info">
                                             <thead>
                                                 <tr>
