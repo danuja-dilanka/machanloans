@@ -299,12 +299,15 @@ class API extends BaseController {
 
     public function send_sms() {
         $status = 0;
-        if (already_logined() && $this->request->is('post')) {
+        if (already_logined()) {
             $data = $this->request->getPost();
-            if (isset($data["phone"]) && isset($data["message"])) {
-                $response = send_sms(trim($data["phone"]), trim($data["message"]));
-                if (strtolower($response["message"]) == "success") {
-                    $status = 1;
+            if (isset($data["user"]) && isset($data["message"])) {
+                $user = model("User_model")->get_data(decode($data["user"]));
+                if (isset($user->mobile)) {
+                    $response = send_sms($user->mobile, trim($data["message"]));
+                    if (strtolower($response["message"]) == "success") {
+                        $status = 1;
+                    }
                 }
             }
         }
