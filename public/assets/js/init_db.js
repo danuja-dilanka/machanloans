@@ -205,7 +205,7 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
         ]
     };
 
-    
+
 
     if (refreshDT == 0) {
         $(dt_tb).DataTable(options);
@@ -290,3 +290,7 @@ $(document).ready(function () {
         load_data(BASE_URL + 'get_ajax_data/' + common_action);
     }
 });
+
+if ($(".custom_dt_table").length > 0) {
+    $(".custom_dt_table").DataTable();
+}

@@ -109,7 +109,7 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered custom_dt_table">
                                     <thead>
                                         <tr>
                                             <th class="text-nowrap">Account Number</th>
@@ -121,14 +121,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>21321341</td>
-                                            <td class="text-nowrap">Bank Account</td>
-                                            <td>LKR</td>
-                                            <td class="text-nowrap text-right">₨0.00</td>						
-                                            <td class="text-nowrap text-right">₨0.00</td>						
-                                            <td class="text-nowrap text-right">₨0.00</td>						
-                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -143,13 +136,29 @@
                         </div>
 
                         <div class="card-body">
-                            <div id="transactions_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="transactions_table_length"><label>Show <select name="transactions_table_length" aria-controls="transactions_table" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> Entries</label></div></div><div class="col-sm-12 col-md-6"><div id="transactions_table_filter" class="dataTables_filter"><label>Search<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="transactions_table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="transactions_table" class="table table-bordered dataTable no-footer dtr-inline" aria-describedby="transactions_table_info">
+                            <div id="transactions_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="transactions_table" class="table table-bordered custom_dt_table no-footer dtr-inline " aria-describedby="transactions_table_info">
                                             <thead>
-                                                <tr><th class="sorting_disabled" rowspan="1" colspan="1">Date</th><th class="sorting_disabled" rowspan="1" colspan="1">Member</th><th class="sorting_disabled" rowspan="1" colspan="1">Account Number</th><th class="sorting_disabled" rowspan="1" colspan="1">Amount</th><th class="sorting_disabled" rowspan="1" colspan="1">Debit/Credit</th><th class="sorting_disabled" rowspan="1" colspan="1">Type</th><th class="sorting_disabled" rowspan="1" colspan="1">Status</th><th class="text-center sorting_disabled" rowspan="1" colspan="1">Action</th></tr>
+                                                <tr>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Date</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Member</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Account Number</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Amount</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Debit/Credit</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Type</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Status</th>
+                                                    <th class="text-center sorting_disabled" rowspan="1" colspan="1">Action</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                                <tr id="row_121" class="odd"><td class="dtr-control">2023-06-06 08:35 PM</td><td>Prabashani SAmanthika</td><td>21321341</td><td><span class="text-success">+ ₨0.00</span></td><td>CR</td><td>Deposit</td><td><span class="badge badge-success">Completed</span></td><td><div class="dropdown text-center"><button class="btn btn-primary btn-xs dropdown-toggle" type="button" data-toggle="dropdown">Action&nbsp;</button><div class="dropdown-menu"><a class="dropdown-item" href="https://machan.quicksoft.lk/admin/transactions/121/edit"><i class="ti-pencil-alt"></i> Edit</a><a class="dropdown-item" href="https://machan.quicksoft.lk/admin/transactions/121"><i class="ti-eye"></i>  View</a><form action="https://machan.quicksoft.lk/admin/transactions/121" method="post"><input type="hidden" name="_token" value="EvN7hQk0Jps799sdZNRvM7hVPNnGWgsvZ2sAi1jH"><input name="_method" type="hidden" value="DELETE"><button class="dropdown-item btn-remove" type="submit"><i class="ti-trash"></i> Delete</button></form></div></div></td></tr></tbody>
-                                        </table><div id="transactions_table_processing" class="dataTables_processing card" style="display: none;">Processing...<div><div></div><div></div><div></div><div></div></div></div></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="transactions_table_info" role="status" aria-live="polite">Showing 1 to 1 of 1 Entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="transactions_table_paginate"><ul class="pagination pagination-bordered"><li class="paginate_button page-item previous disabled" id="transactions_table_previous"><a href="#" aria-controls="transactions_table" data-dt-idx="0" tabindex="0" class="page-link"><i class="ti-angle-left"></i></a></li><li class="paginate_button page-item active"><a href="#" aria-controls="transactions_table" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="transactions_table_next"><a href="#" aria-controls="transactions_table" data-dt-idx="2" tabindex="0" class="page-link"><i class="ti-angle-right"></i></a></li></ul></div></div></div></div>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div><!--End Transaction Table-->
@@ -162,13 +171,27 @@
 
                         <div class="card-body">
 
-                            <div id="loans_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="loans_table_length"><label>Show <select name="loans_table_length" aria-controls="loans_table" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> Entries</label></div></div><div class="col-sm-12 col-md-6"><div id="loans_table_filter" class="dataTables_filter"><label>Search<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="loans_table"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="loans_table" class="table table-bordered data-table dataTable no-footer dtr-inline" aria-describedby="loans_table_info">
+                            <div id="loans_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                <div class="row"><div class="col-sm-12">
+                                        <table id="loans_table" class="table table-bordered data-table custom_dt_table no-footer dtr-inline" aria-describedby="loans_table_info">
                                             <thead>
-                                                <tr><th class="sorting_disabled" rowspan="1" colspan="1">Loan ID</th><th class="sorting_disabled" rowspan="1" colspan="1">Loan Product</th><th class="text-right sorting_disabled" rowspan="1" colspan="1">Applied Amount</th><th class="text-right sorting_disabled" rowspan="1" colspan="1">Total Payable</th><th class="text-right sorting_disabled" rowspan="1" colspan="1">Amount Paid</th><th class="text-right sorting_disabled" rowspan="1" colspan="1">Due Amount</th><th class="sorting_disabled" rowspan="1" colspan="1">Release Date</th><th class="sorting_disabled" rowspan="1" colspan="1">Status</th></tr>
+                                                <tr>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Loan ID</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Loan Product</th>
+                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Applied Amount</th>
+                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Total Payable</th>
+                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Amount Paid</th>
+                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Due Amount</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Release Date</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Status</th></tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">No Data Found</td></tr></tbody>
-                                        </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="loans_table_info" role="status" aria-live="polite">Showing 0 To 0 Of 0 Entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="loans_table_paginate"><ul class="pagination pagination-bordered"><li class="paginate_button page-item previous disabled" id="loans_table_previous"><a href="#" aria-controls="loans_table" data-dt-idx="0" tabindex="0" class="page-link"><i class="ti-angle-left"></i></a></li><li class="paginate_button page-item next disabled" id="loans_table_next"><a href="#" aria-controls="loans_table" data-dt-idx="1" tabindex="0" class="page-link"><i class="ti-angle-right"></i></a></li></ul></div></div></div></div>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -181,13 +204,23 @@
                         </div>
 
                         <div class="card-body">
-                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="DataTables_Table_0_length"><label>Show <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> Entries</label></div></div><div class="col-sm-12 col-md-6"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label>Search<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="DataTables_Table_0"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-bordered data-table dataTable no-footer dtr-inline" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table class="table table-bordered data-table custom_dt_table no-footer dtr-inline" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                                             <thead>
-                                                <tr><th class="sorting_disabled" rowspan="1" colspan="1">Document Name</th><th class="sorting_disabled" rowspan="1" colspan="1">Document File</th><th class="sorting_disabled" rowspan="1" colspan="1">Submitted At</th><th class="sorting_disabled" rowspan="1" colspan="1">Action</th></tr>
+                                                <tr>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Document Name</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Document File</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Submitted At</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Action</th></tr>
                                             </thead>
                                             <tbody>
-                                                <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">No Data Found</td></tr></tbody>
-                                        </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 0 To 0 Of 0 Entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><ul class="pagination pagination-bordered"><li class="paginate_button page-item previous disabled" id="DataTables_Table_0_previous"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" class="page-link"><i class="ti-angle-left"></i></a></li><li class="paginate_button page-item next disabled" id="DataTables_Table_0_next"><a href="#" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" class="page-link"><i class="ti-angle-right"></i></a></li></ul></div></div></div></div>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div><!--End KYC Documents Tab-->
@@ -247,7 +280,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="control-label">User Mobile<span class="required"> *</span></label>
-                                            <input type="text" class="form-control" name="phone" value="94769047134" required="" readonly="">
+                                            <input type="text" class="form-control" name="phone" value="<?= isset($data) ? $data->mobile : null ?>" required="" readonly="">
                                         </div>
                                     </div>
 
