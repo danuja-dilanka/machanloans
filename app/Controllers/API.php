@@ -303,8 +303,8 @@ class API extends BaseController {
             $data = $this->request->getGet();
             if (isset($data["user"]) && isset($data["message"])) {
                 $user = model("Member_model")->get_data(decode($data["user"]));
-                if (isset($user->id)) {
-                    $response = send_sms("94761695904", trim($data["message"]));
+                if (isset($user->mobile)) {
+                    $response = send_sms($user->mobile, trim($data["message"]));
                     if (strtolower($response->message) == "success") {
                         $status = 1;
                     }
