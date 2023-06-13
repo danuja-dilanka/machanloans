@@ -8,6 +8,14 @@ $(document).on("click", "#send_sms", function () {
                 showHideTransition: 'slide',
                 icon: 'success'
             });
+        } else {
+            $.toast({
+                heading: 'Alert',
+                text: "Failed",
+                position: 'bottom-right',
+                showHideTransition: 'slide',
+                icon: 'error'
+            });
         }
     });
 });
