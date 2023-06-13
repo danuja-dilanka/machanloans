@@ -19,6 +19,19 @@ class View_data extends BaseController {
         $members = model('Member_model')->get_mem_data();
         foreach ($members as $key => $value) {
             $key_enc = encode($value->id);
+            $dropdown = '<div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink'.$key.'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Action
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink'.$key.'">
+                  '.(has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "") .'
+                  '.("<a target='_blank' class='btn btn-sm btn-info' href='" . base_url("member/view_member/") . $key_enc . "'>View</a>&nbsp;").'
+                  '.("<button type='button' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='btn btn-sm btn-primary'>Rate</button>&nbsp;").'
+                  '.(has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "").'
+                </div>
+              </div>';
+            
             $data[] = [
                 $key,
                 $value->photo != "" ? "<a href='". base_url("public/images/member/") . $value->photo."' target='_blank'><img src='". base_url("public/images/member/") . $value->photo."' width='150'/></a>" : base_url("public/uploads/profile/") . "default.png",
@@ -27,10 +40,7 @@ class View_data extends BaseController {
                 $value->member_no,
                 $value->mobile,
                 $value->city,
-                (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "-") .
-                ("<a target='_blank' class='btn btn-sm btn-info' href='" . base_url("member/view_member/") . $key_enc . "'>View</a>&nbsp;") .
-                ("<button type='button' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='btn btn-sm btn-primary'>Rate</button>&nbsp;") .
-                (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
+                $dropdown
             ];
         }
 
