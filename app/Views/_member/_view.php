@@ -141,7 +141,7 @@
                             <div id="transactions_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <table id="transactions_table" class="table table-bordered custom_dt_table no-footer dtr-inline " aria-describedby="transactions_table_info">
+                                        <table id="transactions_table" class="table table-bordered custom_dt_table" aria-describedby="transactions_table_info">
                                             <thead>
                                                 <tr>
                                                     <th>Date</th>
@@ -175,7 +175,7 @@
                             <div id="loans_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <table id="loans_table" class="table table-bordered custom_dt_table no-footer dtr-inline" aria-describedby="loans_table_info">
+                                        <table id="loans_table" class="table table-bordered custom_dt_table" aria-describedby="loans_table_info">
                                             <thead>
                                                 <tr>
                                                     <th>Loan ID</th>
@@ -210,7 +210,7 @@
                             <div class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <table class="table table-bordered no-footer custom_dt_table dtr-inline" aria-describedby="DataTables_Table_0_info">
+                                        <table class="table table-bordered custom_dt_table" aria-describedby="DataTables_Table_0_info">
                                             <thead>
                                                 <tr>
                                                     <th>Document Name</th>
