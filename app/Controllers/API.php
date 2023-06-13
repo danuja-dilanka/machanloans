@@ -302,13 +302,13 @@ class API extends BaseController {
         if (already_logined()) {
             $data = $this->request->getPost();
             if (isset($data["user"]) && isset($data["message"])) {
-                $user = model("Member_model")->get_mem_data(decode($data["user"]));
-                if (isset($user->mobile)) {
-                    $response = send_sms($user->mobile, trim($data["message"]));
+//                $user = model("Member_model")->get_mem_data(decode($data["user"]));
+//                if (isset($user->mobile)) {
+                    $response = send_sms("94761695904", trim($data["message"]));
                     if (strtolower($response["message"]) == "success") {
                         $status = 1;
                     }
-                }
+//                }
             }
         }
 
