@@ -26,6 +26,7 @@
         <tbody></tbody>
         <tfoot>
             <tr>
+                <th>Member No</th>
                 <th>Member Photo</th>
                 <th>First Name</th>
                 <th>Last Name</th>
