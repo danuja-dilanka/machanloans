@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="table-responsive">
-        <table id="dt_tb" class="table table-bordered" data-action="members">
+        <table id="dt_tb" class="table table-bordered" data-action="members" style="width:100%">
             <thead>
                 <tr>
                     <th>Member No</th>
