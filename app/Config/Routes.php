@@ -84,6 +84,7 @@ $routes->match(['post'], '/api/(:any)', 'API::$1');
 $routes->match(['post'], '/api/(:any)/(:any)', 'API::$1/$2');
 
 $routes->match(['get', 'post'], '/api/send_sms', 'API::send_sms');
+$routes->match(['get', 'post'], '/api/send_email', 'API::send_email');
 
 //DATA TABLE AJAX CALL
 $routes->match(['get', 'post'], '/get_ajax_data/(:any)', 'View_data::$1');
