@@ -38,6 +38,7 @@ class View_data extends BaseController {
                 $value->first_name,
                 $value->last_name,
                 $value->mobile,
+                $value->email,
                 $value->city,
                 $dropdown
             ];

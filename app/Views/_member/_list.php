@@ -19,11 +19,24 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Mobile</th>
+                <th>Email</th>
                 <th>City</th>
                 <th class="dont_export">Action</th>
             </tr>
         </thead>
         <tbody></tbody>
+        <tfoot>
+            <tr>
+                <th>Member No</th>
+                <th>Member Photo</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>City</th>
+                <th class="dont_export">Action</th>
+            </tr>
+        </tfoot>
     </table>
 </div>
 
