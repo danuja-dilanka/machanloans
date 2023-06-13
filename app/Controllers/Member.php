@@ -31,7 +31,7 @@ class Member extends BaseController {
 
         $data = $this->thisModel->get_data(decode($req_id));
         if (isset($data->id)) {
-            return view('_member/_member', ["data" => $data, "req_id" => $req_id]);
+            return view('_member/_view', ["data" => $data, "req_id" => $req_id]);
         } else {
             return redirect()->to(base_url('member/mem'));
         }
