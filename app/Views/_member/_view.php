@@ -138,28 +138,24 @@
                         </div>
 
                         <div class="card-body">
-                            <div id="transactions_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <table id="transactions_table" class="table table-bordered custom_dt_table" aria-describedby="transactions_table_info">
-                                            <thead>
-                                                <tr>
-                                                    <th>Date</th>
-                                                    <th>Member</th>
-                                                    <th>Account Number</th>
-                                                    <th>Amount</th>
-                                                    <th>Debit/Credit</th>
-                                                    <th>Type</th>
-                                                    <th>Status</th>
-                                                    <th class="text-center">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                            <div class="table-responsive">
+                                <table id="transactions_table" class="table table-bordered custom_dt_table" aria-describedby="transactions_table_info">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Member</th>
+                                            <th>Account Number</th>
+                                            <th>Amount</th>
+                                            <th>Debit/Credit</th>
+                                            <th>Type</th>
+                                            <th>Status</th>
+                                            <th class="text-center">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -172,28 +168,24 @@
                         </div>
 
                         <div class="card-body">
-                            <div id="loans_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <table id="loans_table" class="table table-bordered custom_dt_table" aria-describedby="loans_table_info">
-                                            <thead>
-                                                <tr>
-                                                    <th>Loan ID</th>
-                                                    <th>Loan Product</th>
-                                                    <th class="text-right">Applied Amount</th>
-                                                    <th class="text-right">Total Payable</th>
-                                                    <th class="text-right">Amount Paid</th>
-                                                    <th class="text-right">Due Amount</th>
-                                                    <th>Release Date</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                            <div class="table-responsive">
+                                <table id="loans_table" class="table table-bordered custom_dt_table" aria-describedby="loans_table_info">
+                                    <thead>
+                                        <tr>
+                                            <th>Loan ID</th>
+                                            <th>Loan Product</th>
+                                            <th class="text-right">Applied Amount</th>
+                                            <th class="text-right">Total Payable</th>
+                                            <th class="text-right">Amount Paid</th>
+                                            <th class="text-right">Due Amount</th>
+                                            <th>Release Date</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -207,23 +199,19 @@
                         </div>
 
                         <div class="card-body">
-                            <div class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <table class="table table-bordered custom_dt_table" aria-describedby="DataTables_Table_0_info">
-                                            <thead>
-                                                <tr>
-                                                    <th>Document Name</th>
-                                                    <th>Document File</th>
-                                                    <th>Submitted At</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered custom_dt_table" aria-describedby="DataTables_Table_0_info">
+                                    <thead>
+                                        <tr>
+                                            <th>Document Name</th>
+                                            <th>Document File</th>
+                                            <th>Submitted At</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
