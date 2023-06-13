@@ -199,15 +199,15 @@
                 <div id="kyc_documents" class="tab-pane">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h4 class="header-title">Documents of Prabashani SAmanthika</h4>
-                            <a class="btn btn-primary btn-xs ml-auto ajax-modal" data-title="Add New Document" href="https://machan.quicksoft.lk/admin/member_documents/create/72"><i class="ti-plus"></i>&nbsp;Add New</a>
+                            <h4 class="header-title">Documents of <?= isset($data) ? $data->first_name." ".$data->last_name : null ?></h4>
+                            <!--<a class="btn btn-primary btn-xs ml-auto ajax-modal" data-title="Add New Document" href="#"><i class="ti-plus"></i>&nbsp;Add New</a>-->
                         </div>
 
                         <div class="card-body">
                             <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <table class="table table-bordered data-table custom_dt_table no-footer dtr-inline" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                                        <table class="table table-bordered data-table custom_dt_table no-footer dtr-inline" aria-describedby="DataTables_Table_0_info">
                                             <thead>
                                                 <tr>
                                                     <th class="sorting_disabled">Document Name</th>
@@ -232,8 +232,7 @@
                         </div>
 
                         <div class="card-body">
-                            <form method="post" class="validate" autocomplete="off" action="https://machan.quicksoft.lk/admin/members/send_email" enctype="multipart/form-data" novalidate="">
-                                <input type="hidden" name="_token" value="EvN7hQk0Jps799sdZNRvM7hVPNnGWgsvZ2sAi1jH">
+                            <form method="post" class="validate" autocomplete="off" action="" enctype="multipart/form-data" novalidate="">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
