@@ -300,7 +300,7 @@ class API extends BaseController {
     public function send_sms() {
         $status = 0;
         if (already_logined()) {
-            $data = $this->request->getGet();
+            $data = $this->request->getPost();
             if (isset($data["user"]) && isset($data["message"])) {
                 $user = model("Member_model")->get_data(decode($data["user"]));
                 if (isset($user->id)) {

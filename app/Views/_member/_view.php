@@ -202,7 +202,7 @@
                 <div id="kyc_documents" class="tab-pane">
                     <div class="card">
                         <div class="card-header d-flex align-items-center">
-                            <h4 class="header-title">Documents of <?= isset($data) ? $data->first_name." ".$data->last_name : null ?></h4>
+                            <h4 class="header-title">Documents of <?= isset($data) ? $data->first_name . " " . $data->last_name : null ?></h4>
                             <!--<a class="btn btn-primary btn-xs ml-auto ajax-modal" data-title="Add New Document" href="#"><i class="ti-plus"></i>&nbsp;Add New</a>-->
                         </div>
 
@@ -278,7 +278,7 @@
 
                         <div class="card-body">
                             <form method="post" class="validate" autocomplete="off" action="https://machan.quicksoft.lk/admin/members/send_sms" enctype="multipart/form-data" novalidate="">
-                                <input type="hidden" name="_token" value="EvN7hQk0Jps799sdZNRvM7hVPNnGWgsvZ2sAi1jH">
+                                <input type="hidden" name="user" value="<?= $req_id ?>" readonly>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
