@@ -312,7 +312,7 @@ class API extends BaseController {
             }
         }
 
-        echo $status;
+        echo json_encode($this->request->getPost());
     }
 
 }
