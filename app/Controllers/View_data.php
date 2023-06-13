@@ -33,11 +33,10 @@ class View_data extends BaseController {
               </div>';
             
             $data[] = [
-                $key,
+                $value->member_no,
                 $value->photo != "" ? "<a href='". base_url("public/images/member/") . $value->photo."' target='_blank'><img src='". base_url("public/images/member/") . $value->photo."' width='100'/></a>" : base_url("public/uploads/profile/") . "default.png",
                 $value->first_name,
                 $value->last_name,
-                $value->member_no,
                 $value->mobile,
                 $value->city,
                 $dropdown

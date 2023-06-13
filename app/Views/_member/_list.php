@@ -14,11 +14,10 @@
     <table id="dt_tb" class="table table-bordered table-responsive" data-action="members" style="width:100%">
         <thead>
             <tr>
-                <th>#</th>
+                <th>Member No</th>
                 <th>Member Photo</th>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Member No</th>
                 <th>Mobile</th>
                 <th>City</th>
                 <th class="dont_export">Action</th>
@@ -27,11 +26,9 @@
         <tbody></tbody>
         <tfoot>
             <tr>
-                <th>#</th>
                 <th>Member Photo</th>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Member No</th>
                 <th>Mobile</th>
                 <th>City</th>
                 <th class="dont_export">Action</th>
