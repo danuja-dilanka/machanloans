@@ -80,8 +80,8 @@ $routes->match(['get', 'post'], '/setting/(:any)/(:any)', 'Setting::$1/$2');
 $routes->match(['get', 'post'], '/setting/(:any)/(:any)/(:any)', 'Setting::$1/$2/$3');
 
 //API CONTROLLER
-$routes->match(['post'], '/api/(:any)', 'API::$1');
-$routes->match(['post'], '/api/(:any)/(:any)', 'API::$1/$2');
+$routes->match(['get', 'post'], '/api/(:any)', 'API::$1');
+$routes->match(['get', 'post'], '/api/(:any)/(:any)', 'API::$1/$2');
 
 //DATA TABLE AJAX CALL
 $routes->match(['get', 'post'], '/get_ajax_data/(:any)', 'View_data::$1');
