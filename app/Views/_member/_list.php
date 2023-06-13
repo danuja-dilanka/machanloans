@@ -11,7 +11,7 @@
             <?= create_link("member", "mem", ["member", "add"], "+ New", "h6") ?>
         </div>
     </div>
-    <table id="dt_tb" class="table table-responsive" data-action="members" style="width:100%">
+    <table id="dt_tb" class="table table-bordered table-responsive" data-action="members" style="width:100%">
         <thead>
             <tr>
                 <th>Member No</th>
@@ -24,17 +24,6 @@
             </tr>
         </thead>
         <tbody></tbody>
-        <tfoot>
-            <tr>
-                <th>Member No</th>
-                <th>Member Photo</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Mobile</th>
-                <th>City</th>
-                <th class="dont_export">Action</th>
-            </tr>
-        </tfoot>
     </table>
 </div>
 
