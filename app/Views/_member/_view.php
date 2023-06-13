@@ -241,7 +241,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="control-label">User Email<span class="required"> *</span></label>
-                                            <input type="email" class="form-control" name="user_email" value="" required="" readonly="">
+                                            <input type="email" class="form-control" name="user_email" value="<?= isset($data) ? $data->email : null ?>" required="" readonly="">
                                         </div>
                                     </div>
 
@@ -261,7 +261,7 @@
 
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-block"><i class="ti-check-box"></i>&nbsp;Send</button>
+                                            <button type="button" id="send_email" class="btn btn-primary btn-block"><i class="ti-check-box"></i>&nbsp;Send</button>
                                         </div>
                                     </div>
                                 </div>

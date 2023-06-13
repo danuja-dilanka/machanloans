@@ -315,4 +315,22 @@ class API extends BaseController {
         echo $status;
     }
 
+    public function send_email() {
+        $status = 0;
+        if (already_logined()) {
+            $data = $this->request->getGet();
+            if (isset($data["user"]) && isset($data["subject"]) && isset($data["message"])) {
+                $user = model("Member_model")->get_data(decode($data["user"]));
+                if (isset($user->email) && filter_var($user->email, FILTER_VALIDATE_EMAIL)) {
+                    $response = send_email($user->email, trim($data["subject"]), trim($data["message"]));
+                    if ($response) {
+                        $status = 1;
+                    }
+                }
+            }
+        }
+
+        echo $status;
+    }
+
 }
