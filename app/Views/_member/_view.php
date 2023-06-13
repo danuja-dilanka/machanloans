@@ -255,7 +255,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label class="control-label">Message<span class="required"> *</span></label>
-                                            <textarea class="form-control" rows="8" name="message" required=""></textarea>
+                                            <textarea class="form-control" rows="8" name="email_message" required=""></textarea>
                                         </div>
                                     </div>
 
