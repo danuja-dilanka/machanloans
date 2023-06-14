@@ -61,7 +61,6 @@ class View_data extends BaseController {
                 </a>
 
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink' . $key . '">
-                  ' . (has_permission("loan", "edit") ? "<a href='" . base_url("loan/loan/") . $key_enc . "' class='dropdown-item'>Edit</a>" : "") . '
                   ' . ("<a target='_blank' class='dropdown-item' href='" . base_url("loan/view_loan/") . $key_enc . "'>View</a>") . '
                   ' . (has_permission("loan", "delete") ? "<a href='#' data-id='" . base_url("loan/del_loan/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . '
                 </div>
