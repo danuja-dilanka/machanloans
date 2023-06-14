@@ -159,8 +159,8 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td colspan="2">Grand Total</td>
-                                                    <td colspan="2"><b>₨0.00</b></td>
+                                                    <td>Grand Total</td>
+                                                    <td><b>₨0.00</b></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -199,13 +199,13 @@
                                 <table class="table table-bordered custom_dt_table no-footer dtr-inline">
                                     <thead>
                                         <tr>
-                                            <th class="" rowspan="1" colspan="1">Date</th>
-                                            <th class="text-right " rowspan="1" colspan="1">Amount to Pay</th>
-                                            <th class="text-right " rowspan="1" colspan="1">Late Penalty</th>
-                                            <th class="text-right " rowspan="1" colspan="1">Principal Amount</th>
-                                            <th class="text-right " rowspan="1" colspan="1">Interest</th>
-                                            <th class="text-right " rowspan="1" colspan="1">Balance</th>
-                                            <th class="text-center " rowspan="1" colspan="1">Status</th>
+                                            <th class="">Date</th>
+                                            <th class="text-right ">Amount to Pay</th>
+                                            <th class="text-right ">Late Penalty</th>
+                                            <th class="text-right ">Principal Amount</th>
+                                            <th class="text-right ">Interest</th>
+                                            <th class="text-right ">Balance</th>
+                                            <th class="text-center ">Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -219,11 +219,11 @@
                                 <table class="table table-bordered custom_dt_table no-footer dtr-inline">
                                     <thead>
                                         <tr>
-                                            <th class="" rowspan="1" colspan="1">Date</th>
-                                            <th class="text-right " rowspan="1" colspan="1">Principal Amount</th>
-                                            <th class="text-right " rowspan="1" colspan="1">Interest</th>
-                                            <th class="text-right " rowspan="1" colspan="1">Late Penalty</th>
-                                            <th class="text-right " rowspan="1" colspan="1">Total Amount</th>
+                                            <th class="">Date</th>
+                                            <th class="text-right ">Principal Amount</th>
+                                            <th class="text-right ">Interest</th>
+                                            <th class="text-right ">Late Penalty</th>
+                                            <th class="text-right ">Total Amount</th>
                                         </tr>
                                     </thead>
                                     <tbody>
