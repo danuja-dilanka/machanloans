@@ -70,6 +70,6 @@
     <script src="<?= base_url() ?>public/assets/js/ajax-bootstrap-select.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/sweet_model.js"></script>
     <script src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
-    <script src="<?= base_url() ?>public/assets/js/common_func.js?i=9"></script>
+    <script src="<?= base_url() ?>public/assets/js/common_func.js?i=10"></script>
     </body>
 </html>
