@@ -28,7 +28,7 @@ class Member extends BaseController {
         if (!has_permission("member", "view")) {
             return redirect()->to(base_url('dashboard'));
         }
-        
+
         $member = decode($req_id);
         $data = $this->thisModel->get_data($member);
         if (isset($data->id)) {
@@ -51,12 +51,14 @@ class Member extends BaseController {
             if (isset($data[$key])) {
                 $doc = $this->thisModel->get_docs_by(["member" => $member, "code" => $key]);
                 if (isset($doc->id)) {
-                    $this->thisModel->update_doc([
-                        "added_by" => decode(session()->ml_user),
-                        "submitted_date" => date("Y-m-d"),
-                        "submitted_time" => date("H:i:s"),
-                        "document" => $data[$key],
-                            ], $member);
+                    if ($doc->document != $data[$key]) {
+                        $this->thisModel->update_doc([
+                            "added_by" => decode(session()->ml_user),
+                            "submitted_date" => date("Y-m-d"),
+                            "submitted_time" => date("H:i:s"),
+                            "document" => $data[$key],
+                                ], $member);
+                    }
                 } else {
                     $this->thisModel->add_doc([
                         "added_by" => decode(session()->ml_user),

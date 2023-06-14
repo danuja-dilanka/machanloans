@@ -203,6 +203,7 @@
                                 <table class="table table-bordered custom_dt_table" aria-describedby="DataTables_Table_0_info">
                                     <thead>
                                         <tr>
+                                            <th>#</th>
                                             <th>Document Name</th>
                                             <th>Document File</th>
                                             <th>Submitted At</th>
@@ -211,7 +212,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        foreach ($docs as $key => $value) {
+                                        foreach ($docs as $d_key => $d_value) {
                                             $docs_path = [
                                                 "bank_statement" => "public/images/loan_req/electricity_bill",
                                                 "hw_nic_front" => "public/images/loan_req/nic/hw_nic_front",
@@ -222,9 +223,16 @@
                                             ];
                                             ?>
                                             <tr>
-                                                <td><?= $value->name ?></td>
-                                                <td><a href="<?= base_url($docs_path[$value->code]) . "/" . $value->document ?>" target="_blank">View</a></td>
-                                                <td><?= $value->submitted_date . " " . $value->submitted_time ?></td>
+                                                <td><?= $d_key + 1 ?></td>
+                                                <td><?= $d_value->name ?></td>
+                                                <td>
+                                                    <?php if ($d_value->document != "") { ?> 
+                                                        <a href="<?= base_url($docs_path[$d_value->code]) . "/" . $d_value->document ?>" target="_blank">View</a>
+                                                    <?php } else { ?>
+                                                        <p class="text-center">Not Submitted</p>
+                                                    <?php } ?>
+                                                </td>
+                                                <td><?= $value->submitted_date . " " . $d_value->submitted_time ?></td>
                                                 <!--<td></td>-->
                                             </tr>
                                             <?php
