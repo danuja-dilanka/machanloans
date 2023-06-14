@@ -39,7 +39,7 @@
                             <a class="nav-link active" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="https://machan.quicksoft.lk/admin/loans/222/edit">Edit</a>
+                            <a class="nav-link" href="<?= base_url("loan/loan/") . $req_id ?>">Edit</a>
                         </li>
                     </ul>
                     <!-- Tab panes -->
