@@ -232,7 +232,7 @@
                                                         <p class="text-center">Not Submitted</p>
                                                     <?php } ?>
                                                 </td>
-                                                <td><?= $value->submitted_date . " " . $d_value->submitted_time ?></td>
+                                                <td><?= $d_value->document != "" ? $d_value->submitted_date . " " . $d_value->submitted_time : "-" ?></td>
                                                 <!--<td></td>-->
                                             </tr>
                                             <?php
