@@ -41,8 +41,8 @@ class Member extends BaseController {
     private function mng_docs($data, $member) {
         $docs = [
             "bank_statement" => "Bank Statement",
-            "hw_nic_front" => "Husband or wife ID copy front",
-            "hw_nic_back" => "Husband or wife ID copy back",
+            "hw_nic_front" => "Husband / wife ID copy front",
+            "hw_nic_back" => "Husband / wife ID copy back",
             "ga_certificate" => "GA Certificate",
             "fb_screenshot" => "Facebook Screenshot",
             "electricity_bill" => "Electricity Bill Photo"

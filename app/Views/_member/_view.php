@@ -225,11 +225,11 @@
                                             <tr>
                                                 <td><?= $d_key + 1 ?></td>
                                                 <td><?= $d_value->name ?></td>
-                                                <td>
+                                                <td class="text-center">
                                                     <?php if ($d_value->document != "") { ?> 
                                                         <a href="<?= base_url($docs_path[$d_value->code]) . "/" . $d_value->document ?>" target="_blank">View</a>
                                                     <?php } else { ?>
-                                                        <p class="text-center">Not Submitted</p>
+                                                        <p>Not Submitted</p>
                                                     <?php } ?>
                                                 </td>
                                                 <td><?= $d_value->document != "" ? $d_value->submitted_date . " " . $d_value->submitted_time : "-" ?></td>
