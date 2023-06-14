@@ -108,7 +108,7 @@ var uploader3 = new plupload.Uploader({
     multi_selection: false,
     browse_button: 'pickfiles3', // you can pass an id...
     container: document.getElementById('file_container3'), // ... or DOM Element itself
-    url: BASE_URL + 'web/upload/2',
+    url: BASE_URL + 'web/upload/3',
     flash_swf_url: BASE_URL + 'public/assets/js/Moxie.swf',
     silverlight_xap_url: BASE_URL + 'public/assets/js/Moxie.xap',
 
@@ -159,7 +159,7 @@ var uploader4 = new plupload.Uploader({
     multi_selection: false,
     browse_button: 'pickfiles4', // you can pass an id...
     container: document.getElementById('file_container4'), // ... or DOM Element itself
-    url: BASE_URL + 'web/upload/3',
+    url: BASE_URL + 'web/upload/4',
     flash_swf_url: BASE_URL + 'public/assets/js/Moxie.swf',
     silverlight_xap_url: BASE_URL + 'public/assets/js/Moxie.xap',
 
