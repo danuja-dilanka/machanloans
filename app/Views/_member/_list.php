@@ -16,7 +16,7 @@
             <thead>
                 <tr>
                     <th>Member No</th>
-                    <th>Member Photo</th>
+                    <th class="dont_export">Member Photo</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Mobile</th>
