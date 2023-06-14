@@ -213,8 +213,49 @@
                                                 <input type="hidden" id="nic_back" class="dropify" name="nic_back" multiple="false" required="">
                                             </div>
                                         </div>
-
-
+                                        <div class="col-sm-12">
+                                            මචං ව්‍යාපෘති ණය යෝජනා ක්‍රමය යටතේ අඩු පොළී , කෙටි කාලීන ණය ක්‍රමය හා සම්බන්ධ වූ ඔබට ස්තූති.මේ සදහා සම්බන්ධ වීමට පෙර මෙයට අදාල කොන්දේසි මාලාව හොදින් කියවා තේරුම් ගෙන ඇතැයි විශ්වාස කරමු.එහි සදහන් කොන්දේසි කඩ කරන ඕනෑම මොහොතක ඔබේ අනන්‍යතාව හෙලි කර නීත්‍යානුකූල ක්‍රියාමාර්ග සදහා පිවිසෙන බවට දැනුම් දෙන්නෙමු.එහි ඇති කොන්දේසි හා එකඟ වන්නේ නම් පමණක් පහත තොරතුරු ලබා දී ණය පහසු කම ලබා ගන්න. ණය ලබා ගැනීම සදහා පහත තොරතුරු අත්‍යාවශ්‍ය බව කරුණාවෙන් සලකන්න.
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">කාලත්‍රයාගේ නම (අවිවාහක නම් මවගේ/පියාගේ)</label>
+                                                <input type="text" class="form-control" name="spouse_name" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">කාලත්‍රයාගේ දුරකතන අංකය (අවිවාහක නම් මවගේ/පියාගේ)</label>
+                                                <input type="text" class="form-control" name="spouse_tel_number" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">කාලත්‍රයාගේ හැදුනුම්පතෙහි ජායාරූපයක්(දෙපසම) මෙහි අමුණන්න. (අවිවාහක නම් මවගේ/පියාගේ) (20MB)<span class="required"> *</span></label><br>
+                                                <img id="spouse_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist3"></div><br>
+                                                    <div id="file_container3" style="position: relative;">
+                                                        <a class="btn btn-sm btn-default" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_front") ?>" data-id="spouse_nic_front">Select</a> 
+                                                        <a class="btn btn-sm btn-primary" id="uploadfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="spouse_nic_front" class="dropify" name="spouse_nic_front" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">කාලත්‍රයාගේ හැදුනුම්පතෙහි ජායාරූපයක්(දෙපසම) මෙහි අමුණන්න. (අවිවාහක නම් මවගේ/පියාගේ) (20MB)<span class="required"> *</span></label><br>
+                                                <img id="spouse_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist4"></div><br>
+                                                    <div id="file_container4" style="position: relative;">
+                                                        <a class="btn btn-sm btn-default" id="pickfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_back") ?>" data-id="spouse_nic_back">Select</a> 
+                                                        <a class="btn btn-sm btn-primary" id="uploadfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="spouse_nic_back" class="dropify" name="spouse_nic_back" multiple="false" required="">
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
