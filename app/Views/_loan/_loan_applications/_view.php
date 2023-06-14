@@ -71,12 +71,12 @@
                                     <tr>
                                         <td>Status</td>
                                         <td>
-                                            <?php if ($value->status == 0) { ?>
+                                            <?php if ($data->status == 0) { ?>
                                                 <span class='badge badge-warning'>Pending</span>
                                                 <a href='#' data-id='<?= base_url("loan/loan_approve/") . $req_id ?>' class='btn btn-outline-primary btn-xs confirm_red_btn'><i class="ti-check-box"></i>&nbsp;Click to Approve</a>
                                                 <a class="btn btn-outline-danger btn-xs float-right confirm_red_btn" href="<?= base_url("loan/loan_reject/") . $req_id ?>"><i class="ti-close"></i>&nbsp;Click to Reject</a>
                                                 <?php
-                                            } else if ($value->status == 1) {
+                                            } else if ($data->status == 1) {
                                                 echo "<span class='badge badge-success'>Approved</span>";
                                             } else {
                                                 echo "<span class='badge badge-danger'>Rejected</span>";
