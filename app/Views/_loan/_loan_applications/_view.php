@@ -1,4 +1,5 @@
 <?= view('inc/header') ?>
+<?= view('_loan/_guarantor/_model') ?>
 <div class="main-content-inner mt-4">		
     <div class="row">
         <div class="col-lg-12">
@@ -39,7 +40,7 @@
                             <a class="nav-link" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
                         <!--                        <li class="nav-item">
-                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id   ?>">Edit</a>
+                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id     ?>">Edit</a>
                                                 </li>-->
                     </ul>
                     <!-- Tab panes -->
@@ -144,7 +145,7 @@
                             <div class="card">
                                 <div class="card-header d-flex align-items-center">
                                     <span>Guarantors</span>
-                                    <a class="btn btn-primary btn-xs ml-auto ajax-modal" href="#" data-title="Add Guarantor"><i class="ti-plus"></i>Add New</a>
+                                    <a class="btn btn-primary btn-xs ml-auto" href="#" data-toggle="modal" data-target="#gur_model"><i class="ti-plus"></i>Add New</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -169,7 +170,7 @@
                             <div class="card">
                                 <div class="card-header d-flex align-items-center">
                                     <span>New Guarantors</span>
-                                    <a class="btn btn-primary btn-xs ml-auto ajax-modal" href="#" data-title="Add Guarantor"><i class="ti-plus"></i>Add New</a>
+                                    <a class="btn btn-primary btn-xs ml-auto" href="#"  data-toggle="modal" data-target="#gur_model"><i class="ti-plus"></i>Add New</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
