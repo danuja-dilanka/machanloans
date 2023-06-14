@@ -66,16 +66,16 @@ class View_data extends BaseController {
                   ' . (has_permission("loan", "delete") ? "<a href='#' data-id='" . base_url("loan/del_loan/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . '
                 </div>
               </div>';
-
+            
             $status_txt = "";
             if ($value->status == 0) {
-                $status_txt = "Pending";
+                $status_txt = "<span class='text-info'>Pending</span>";
             } else {
-                $status_txt = "Approved";
+                $status_txt = "<span class='text-success'>Approved</span>";
             }
 
             $data[] = [
-                "Loan-#" . $value->id,
+                $value->id,
                 $value->loan_product,
                 $value->full_name,
                 $value->mem_no,
