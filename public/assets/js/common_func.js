@@ -33,4 +33,4 @@ $(document).ready(function () {
 });
 
 
-lazyload(document.getElementsByTagName("img"));
+lazyload();
