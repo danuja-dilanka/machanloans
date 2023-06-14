@@ -1,3 +1,4 @@
+<?= view('inc/header') ?>
 <div class="main-content-inner mt-4">		
     <div class="row">
         <div class="col-lg-12">
@@ -237,3 +238,4 @@
         </div>
     </div>
 </div>
+<?= view('inc/footer') ?>
