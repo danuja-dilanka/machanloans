@@ -180,6 +180,21 @@ class Loan extends BaseController {
         return view('_loan/_loan_group/_list', ["title" => "Loan Groups"]);
     }
 
+    //LOAN VIEW
+    public function view_loan($req_id) {
+        if (!has_permission("loan", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        $loan = decode($req_id);
+        $data = $this->thisModel->get_loan_req_data($loan);
+        if (isset($data->id)) {
+            return view('_loan/_loan_applications/_view', ["data" => $data, "req_id" => $req_id]);
+        } else {
+            return redirect()->to(base_url('loan/loan'));
+        }
+    }
+
     //CREATE/ UPDATE VIEW LOAN
     public function loan($req_id = "") {
         $rules = [

@@ -20,21 +20,21 @@ class View_data extends BaseController {
         foreach ($members as $key => $value) {
             $key_enc = encode($value->id);
             $dropdown = '<div class="dropdown">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink'.$key.'" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink' . $key . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Action
                 </a>
 
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink'.$key.'">
-                  '.(has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='dropdown-item'>Edit</a>" : "") .'
-                  '.("<a target='_blank' class='dropdown-item' href='" . base_url("member/view_member/") . $key_enc . "'>View</a>").'
-                  '.("<button type='button' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='dropdown-item'>Rate</button>").'
-                  '.(has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "").'
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink' . $key . '">
+                  ' . (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='dropdown-item'>Edit</a>" : "") . '
+                  ' . ("<a target='_blank' class='dropdown-item' href='" . base_url("member/view_member/") . $key_enc . "'>View</a>") . '
+                  ' . ("<button type='button' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='dropdown-item'>Rate</button>") . '
+                  ' . (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . '
                 </div>
               </div>';
-            
+
             $data[] = [
                 $value->member_no,
-                $value->photo != "" ? "<a href='". base_url("public/images/member/") . $value->photo."' target='_blank'><img src='". base_url("public/images/member/") . $value->photo."' width='100'/></a>" : base_url("public/uploads/profile/") . "default.png",
+                $value->photo != "" ? "<a href='" . base_url("public/images/member/") . $value->photo . "' target='_blank'><img src='" . base_url("public/images/member/") . $value->photo . "' width='100'/></a>" : base_url("public/uploads/profile/") . "default.png",
                 $value->first_name,
                 $value->last_name,
                 $value->mobile,
@@ -54,6 +54,19 @@ class View_data extends BaseController {
         $data = [];
         $loans = model('Loan_model')->get_loan_req_data();
         foreach ($loans as $key => $value) {
+            $key_enc = encode($value->id);
+            $dropdown = '<div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink' . $key . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Action
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink' . $key . '">
+                  ' . (has_permission("loan", "edit") ? "<a href='" . base_url("loan/loan/") . $key_enc . "' class='dropdown-item'>Edit</a>" : "") . '
+                  ' . ("<a target='_blank' class='dropdown-item' href='" . base_url("loan/view_loan/") . $key_enc . "'>View</a>") . '
+                  ' . (has_permission("loan", "delete") ? "<a href='#' data-id='" . base_url("loan/del_loan/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . '
+                </div>
+              </div>';
+            
             $status_txt = "";
             if ($value->status == 0) {
                 $status_txt = "Pending";
@@ -61,7 +74,6 @@ class View_data extends BaseController {
                 $status_txt = "Approved";
             }
 
-            $key_enc = encode($value->id);
             $data[] = [
                 $value->id,
                 $value->loan_product,
@@ -70,9 +82,7 @@ class View_data extends BaseController {
                 $value->loan_rel_date,
                 number_format($value->last_amount, 2, ".", ","),
                 $status_txt,
-//                (has_permission("loan", "edit") ? "<a href='".base_url("loan/loan/").$key_enc."' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "").
-                ($value->status == 0 && has_permission("loan", "edit") ? "<a href='" . base_url("loan/loan_approve/") . $key_enc . "' class='btn btn-sm btn-primary'>Approve</a>&nbsp;" : "") .
-                (has_permission("loan", "delete") ? "<a href='#' data-id='" . base_url("loan/del_loan/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
+                $dropdown
             ];
         }
 
