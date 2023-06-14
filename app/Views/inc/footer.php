@@ -49,7 +49,10 @@
             });
         </script>
     <?php } ?>
-
+        
+    <!-- LAZY LOAD -->
+    <script src="<?= base_url() ?>public/assets/js/jquery.lazyload.min.js"></script>
+    
     <!-- Custom JS -->
     <script src="<?= base_url() ?>public/plugins/chartJs/chart.min.js"></script>
     
