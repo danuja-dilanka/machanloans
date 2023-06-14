@@ -44,7 +44,7 @@
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane" id="loan_details">
+                        <div class="tab-pane active show" id="loan_details">
                             <div class="alert alert-warning mt-4">
                                 <span>
                                     Add Loan ID, Release Date and First Payment Date before approving loan request
@@ -86,7 +86,7 @@
                                     </tr>
                                     <tr>
                                         <td>First Payment Date</td>
-                                        <td>2023-06-12</td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>Release Date</td>
@@ -97,30 +97,30 @@
                                     <tr>
                                         <td>Applied Amount</td>
                                         <td>
-                                            ₨20,000.00
+                                            
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Total Payable</td>
                                         <td>
-                                            ₨21,000.00
+                                           
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Total Paid</td>
                                         <td class="text-success">
-                                            ₨0.00
+                                            
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Due Amount</td>
                                         <td class="text-danger">
-                                            ₨21,000.00
+                                            
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Late Payment Penalties</td>
-                                        <td>0.00 %</td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>Attachment</td>
@@ -218,7 +218,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade mt-4 active show" id="repayments">
+                        <div class="tab-pane fade mt-4" id="repayments">
                             <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
                                 <div class="row">
                                     <div class="col-sm-12">
