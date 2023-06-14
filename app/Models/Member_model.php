@@ -66,4 +66,32 @@ class Member_model extends Model {
         }
     }
 
+    //ADD MEMBER DOCUMENT
+    public function add_doc($data) {
+        $this->db->table(DB_PREFIX . 'member_doc')->insert($data);
+        return $this->db->insertID();
+    }
+    
+    //UPDATE MEMBER DOCUMENT
+    public function update_doc($data, $id) {
+        return $this->db->table(DB_PREFIX . 'member_doc')->update($data, ["id" => $id]);
+    }
+
+    //GET MEMBER DOCUMENTS BY -> where
+    public function get_docs_by($where = []) {
+        $result = $this->db->table(DB_PREFIX . 'member_doc');
+        $result->select('*');
+        $result->where($where);
+        return $result->get()->getResult();
+    }
+
+    //DELETE MEMBER DOC
+    public function delete_docs($id = 0, $where = []) {
+        if ($id == 0) {
+            return $this->db->table(DB_PREFIX . 'member_doc')->delete($where);
+        } else {
+            return $this->db->table(DB_PREFIX . 'member_doc')->delete(["id" => $id]);
+        }
+    }
+
 }

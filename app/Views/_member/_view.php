@@ -18,7 +18,7 @@
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#account_overview"><i class="ti-credit-card"></i>&nbsp;Account Overview</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#transaction-history"><i class="ti-view-list-alt"></i>Transactions</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#member_loans"><i class="ti-agenda"></i>&nbsp;Loans</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kyc_documents"><i class="ti-files"></i>&nbsp;KYC Documents</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#kyc_documents"><i class="ti-files"></i>&nbsp;Documents</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#email"><i class="ti-email"></i>&nbsp;Send Email</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sms"><i class="ti-comment-alt"></i>&nbsp;Send SMS</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url("member/mem/") . $req_id ?>"><i class="ti-pencil-alt"></i>&nbsp;Edit Member Details</a></li>
@@ -206,16 +206,36 @@
                                             <th>Document Name</th>
                                             <th>Document File</th>
                                             <th>Submitted At</th>
-                                            <th>Action</th>
+                                            <!--<th>Action</th>-->
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                        foreach ($docs as $key => $value) {
+                                            $docs_path = [
+                                                "bank_statement" => "public/images/loan_req/electricity_bill",
+                                                "hw_nic_front" => "public/images/loan_req/nic/hw_nic_front",
+                                                "hw_nic_back" => "public/images/loan_req/nic/hw_nic_back",
+                                                "ga_certificate" => "public/images/loan_req/ga_certificate",
+                                                "fb_screenshot" => "public/images/loan_req/fb_screenshot",
+                                                "electricity_bill" => "public/images/loan_req/electricity_bill"
+                                            ];
+                                            ?>
+                                            <tr>
+                                                <td><?= $value->name ?></td>
+                                                <td><a href="<?= base_url($docs_path[$value->code]) . "/" . $data->document ?>" target="_blank">View</a></td>
+                                                <td><?= $value->submitted_date . " " . $value->submitted_time ?></td>
+                                                <!--<td></td>-->
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-                </div><!--End KYC Documents Tab-->
+                </div><!--End Documents Tab-->
 
                 <div id="email" class="tab-pane">
                     <div class="card">

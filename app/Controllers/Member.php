@@ -28,13 +28,51 @@ class Member extends BaseController {
         if (!has_permission("member", "view")) {
             return redirect()->to(base_url('dashboard'));
         }
-
-        $data = $this->thisModel->get_data(decode($req_id));
+        
+        $member = decode($req_id);
+        $data = $this->thisModel->get_data($member);
         if (isset($data->id)) {
-            return view('_member/_view', ["data" => $data, "req_id" => $req_id]);
+            return view('_member/_view', ["data" => $data, "docs" => $this->thisModel->get_docs_by(["member" => $member]), "req_id" => $req_id]);
         } else {
             return redirect()->to(base_url('member/mem'));
         }
+    }
+
+    private function mng_docs($data, $member) {
+        $docs = [
+            "bank_statement" => "Bank Statement",
+            "hw_nic_front" => "Husband or wife ID copy front",
+            "hw_nic_back" => "Husband or wife ID copy back",
+            "ga_certificate" => "GA Certificate",
+            "fb_screenshot" => "Facebook Screenshot",
+            "electricity_bill" => "Electricity Bill Photo"
+        ];
+        foreach ($docs as $key => $value) {
+            if (isset($data[$key])) {
+                $doc = $this->thisModel->get_docs_by(["member" => $member, "code" => $key]);
+                if (isset($doc->id)) {
+                    $this->thisModel->update_doc([
+                        "added_by" => decode(session()->ml_user),
+                        "submitted_date" => date("Y-m-d"),
+                        "submitted_time" => date("H:i:s"),
+                        "document" => $data[$key],
+                            ], $member);
+                } else {
+                    $this->thisModel->add_doc([
+                        "added_by" => decode(session()->ml_user),
+                        "submitted_date" => date("Y-m-d"),
+                        "submitted_time" => date("H:i:s"),
+                        "document" => $data[$key],
+                        "code" => $key,
+                        "member" => $member,
+                        "name" => $value,
+                            ], $member);
+                }
+                unset($data[$key]);
+            }
+        }
+
+        return $data;
     }
 
     //CREATE/ UPDATE VIEW
@@ -68,10 +106,12 @@ class Member extends BaseController {
             }
 
             if ($req_id != "" && has_permission("member", "edit")) {
-                $data = $this->thisModel->get_data(decode($req_id));
+                $member_id = decode($req_id);
+                $data = $this->thisModel->get_data($member_id);
                 if (isset($data->id)) {
                     $result = $this->thisModel->update_data($post_data, $data->id);
                     if ($result) {
+                        $this->mng_docs($post_data, $member_id);
                         if ($client_login) {
                             $user_det = $user_model->get_data_by(["email" => $login_email]);
                             if (!isset($user_det[0])) {
@@ -102,6 +142,7 @@ class Member extends BaseController {
             } else if (has_permission("member", "add")) {
                 $insert_id = $this->thisModel->add_data($post_data);
                 if ($insert_id > 0) {
+                    $this->mng_docs($post_data, $insert_id);
                     if ($client_login) {
                         $user_det = $user_model->get_data_by(["email" => $login_email]);
                         if (!isset($user_det[0])) {
