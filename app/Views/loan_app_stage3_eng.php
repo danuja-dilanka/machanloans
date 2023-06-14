@@ -218,7 +218,7 @@
                                                 <input type="hidden" id="nic_back" class="dropify" name="nic_back" multiple="false" required="">
                                             </div>
                                         </div>
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-12 text-center">
                                             Thank you for joining the low-interest, short-term loan system under the Manchan Project Loan Scheme. We hope that you have read and understood the terms and conditions before joining. Let us inform you that you will enter. Only if you agree with the conditions, give the following information and get the loan facility. Please note that the following information is essential to avail the loan.
                                         </div>
                                         <div class="col-md-12">

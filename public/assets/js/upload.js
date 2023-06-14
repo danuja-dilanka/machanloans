@@ -125,7 +125,7 @@ var uploader3 = new plupload.Uploader({
             document.getElementById('filelist3').innerHTML = '';
 
             document.getElementById('uploadfiles3').onclick = function () {
-                uploader2.start();
+                uploader3.start();
                 return false;
             };
         },
@@ -176,7 +176,7 @@ var uploader4 = new plupload.Uploader({
             document.getElementById('filelist4').innerHTML = '';
 
             document.getElementById('uploadfiles4').onclick = function () {
-                uploader2.start();
+                uploader4.start();
                 return false;
             };
         },
