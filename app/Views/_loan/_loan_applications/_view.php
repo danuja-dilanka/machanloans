@@ -38,13 +38,13 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url("loan/loan/") . $req_id ?>">Edit</a>
-                        </li>
+<!--                        <li class="nav-item">
+                            <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id ?>">Edit</a>
+                        </li>-->
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div class="tab-pane active show" id="loan_details">
+                        <div class="tab-pane active mt-4" id="loan_details">
                             <div class="alert alert-warning mt-4">
                                 <span>
                                     Add Loan ID, Release Date and First Payment Date before approving loan request
@@ -140,7 +140,7 @@
                             </table>
                         </div>
 
-                        <div class="tab-pane fade" id="guarantor">
+                        <div class="tab-pane fade mt-4" id="guarantor">
                             <div class="card">
                                 <div class="card-header d-flex align-items-center">
                                     <span>Guarantors</span>
@@ -169,7 +169,7 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="new_guarantors">
+                        <div class="tab-pane fade mt-4" id="new_guarantors">
                             <div class="card">
                                 <div class="card-header d-flex align-items-center">
                                     <span>New Guarantors</span>
