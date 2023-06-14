@@ -21,7 +21,7 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#loan_details">Loan Details</a>
+                            <a class="nav-link active" data-toggle="tab" href="#loan_details">Loan Details</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#guarantor">Guarantor</a>
@@ -36,7 +36,7 @@
                             <a class="nav-link" data-toggle="tab" href="#schedule">Repayments Schedule</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#repayments">Repayments</a>
+                            <a class="nav-link" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url("loan/loan/") . $req_id ?>">Edit</a>
@@ -54,26 +54,34 @@
                                 <tbody>
                                     <tr>
                                         <td>Loan ID</td>
-                                        <td></td>
+                                        <td><?= $data->id ?></td>
                                     </tr>
                                     <tr>
                                         <td>Loan Type</td>
-                                        <td>D-3</td>
+                                        <td><?= $data->loan_product ?></td>
                                     </tr>
                                     <tr>
                                         <td>Borrower</td>
-                                        <td>Nadeeshani Kalpana</td>
+                                        <td><?= $data->full_name ?></td>
                                     </tr>
                                     <tr>
                                         <td>Member No</td>
-                                        <td>MPL 012</td>
+                                        <td><?= $data->member_no ?></td>
                                     </tr>
                                     <tr>
                                         <td>Status</td>
                                         <td>
-                                            <span class="badge badge-warning">Pending</span>
-                                            <a class="btn btn-outline-primary btn-xs" href="https://machan.quicksoft.lk/admin/loans/approve/222"><i class="ti-check-box"></i>&nbsp;Click to Approve</a>
-                                            <a class="btn btn-outline-danger btn-xs float-right" href="https://machan.quicksoft.lk/admin/loans/reject/222"><i class="ti-close"></i>&nbsp;Click to Reject</a>
+                                            <?php if ($value->status == 0) { ?>
+                                                <span class='badge badge-warning'>Pending</span>
+                                                <a href='#' data-id='<?= base_url("loan/loan_approve/") . $req_id ?>' class='btn btn-outline-primary btn-xs confirm_red_btn'><i class="ti-check-box"></i>&nbsp;Click to Approve</a>
+                                                <a class="btn btn-outline-danger btn-xs float-right confirm_red_btn" href="<?= base_url("loan/loan_reject/") . $req_id ?>"><i class="ti-close"></i>&nbsp;Click to Reject</a>
+                                                <?php
+                                            } else if ($value->status == 1) {
+                                                echo "<span class='badge badge-success'>Approved</span>";
+                                            } else {
+                                                echo "<span class='badge badge-danger'>Rejected</span>";
+                                            }
+                                            ?>
                                         </td>
                                     </tr>
                                     <tr>
