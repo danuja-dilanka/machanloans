@@ -193,13 +193,13 @@
                                         <table class="table table-bordered data-table dataTable no-footer dtr-inline" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
                                             <thead>
                                                 <tr>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Date</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Amount to Pay</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Late Penalty</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Principal Amount</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Interest</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Balance</th>
-                                                    <th class="text-center sorting_disabled" rowspan="1" colspan="1">Status</th>
+                                                    <th class="" rowspan="1" colspan="1">Date</th>
+                                                    <th class="text-right " rowspan="1" colspan="1">Amount to Pay</th>
+                                                    <th class="text-right " rowspan="1" colspan="1">Late Penalty</th>
+                                                    <th class="text-right " rowspan="1" colspan="1">Principal Amount</th>
+                                                    <th class="text-right " rowspan="1" colspan="1">Interest</th>
+                                                    <th class="text-right " rowspan="1" colspan="1">Balance</th>
+                                                    <th class="text-center " rowspan="1" colspan="1">Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -217,11 +217,11 @@
                                         <table class="table table-bordered data-table dataTable no-footer dtr-inline" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
                                             <thead>
                                                 <tr>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1">Date</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Principal Amount</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Interest</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Late Penalty</th>
-                                                    <th class="text-right sorting_disabled" rowspan="1" colspan="1">Total Amount</th>
+                                                    <th class="" rowspan="1" colspan="1">Date</th>
+                                                    <th class="text-right " rowspan="1" colspan="1">Principal Amount</th>
+                                                    <th class="text-right " rowspan="1" colspan="1">Interest</th>
+                                                    <th class="text-right " rowspan="1" colspan="1">Late Penalty</th>
+                                                    <th class="text-right " rowspan="1" colspan="1">Total Amount</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
