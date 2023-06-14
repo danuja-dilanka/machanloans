@@ -31,6 +31,3 @@ $(document).ready(function () {
         import_script_if_exist(jsFilePath);
     }
 });
-
-
-lazyload();

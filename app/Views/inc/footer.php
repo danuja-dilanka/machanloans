@@ -50,8 +50,6 @@
         </script>
     <?php } ?>
         
-    <!-- LAZY LOAD -->
-    <script src="<?= base_url() ?>public/assets/js/jquery.lazyload.min.js"></script>
     
     <!-- Custom JS -->
     <script src="<?= base_url() ?>public/plugins/chartJs/chart.min.js"></script>
@@ -70,6 +68,6 @@
     <script src="<?= base_url() ?>public/assets/js/ajax-bootstrap-select.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/sweet_model.js"></script>
     <script src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
-    <script src="<?= base_url() ?>public/assets/js/common_func.js?i=11"></script>
+    <script src="<?= base_url() ?>public/assets/js/common_func.js?i=10"></script>
     </body>
 </html>
