@@ -66,7 +66,7 @@ class View_data extends BaseController {
                   ' . (has_permission("loan", "delete") ? "<a href='#' data-id='" . base_url("loan/del_loan/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . '
                 </div>
               </div>';
-            
+
             $status_txt = "";
             if ($value->status == 0) {
                 $status_txt = "Pending";
@@ -75,7 +75,7 @@ class View_data extends BaseController {
             }
 
             $data[] = [
-                $value->id,
+                "Loan-#" . $value->id,
                 $value->loan_product,
                 $value->full_name,
                 $value->mem_no,
