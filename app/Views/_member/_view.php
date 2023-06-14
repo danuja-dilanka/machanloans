@@ -223,7 +223,7 @@
                                             ?>
                                             <tr>
                                                 <td><?= $value->name ?></td>
-                                                <td><a href="<?= base_url($docs_path[$value->code]) . "/" . $data->document ?>" target="_blank">View</a></td>
+                                                <td><a href="<?= base_url($docs_path[$value->code]) . "/" . $value->document ?>" target="_blank">View</a></td>
                                                 <td><?= $value->submitted_date . " " . $value->submitted_time ?></td>
                                                 <!--<td></td>-->
                                             </tr>
