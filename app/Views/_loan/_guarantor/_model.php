@@ -42,17 +42,11 @@
                             <input type="text" class="form-control float-field" name="amount" value="" required="">
                         </div>
                     </div>
-
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <button type="submit" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;Submit</button>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;Submit</button>
             </div>
         </div>
     </div>
