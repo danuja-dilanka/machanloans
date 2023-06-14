@@ -158,10 +158,6 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Grand Total</td>
-                                                    <td><b>₨0.00</b></td>
-                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
