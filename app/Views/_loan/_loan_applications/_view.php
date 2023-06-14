@@ -38,9 +38,9 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
-<!--                        <li class="nav-item">
-                            <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id ?>">Edit</a>
-                        </li>-->
+                        <!--                        <li class="nav-item">
+                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id   ?>">Edit</a>
+                                                </li>-->
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
@@ -97,25 +97,25 @@
                                     <tr>
                                         <td>Applied Amount</td>
                                         <td>
-                                            
+
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Total Payable</td>
                                         <td>
-                                           
+
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Total Paid</td>
                                         <td class="text-success">
-                                            
+
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Due Amount</td>
                                         <td class="text-danger">
-                                            
+
                                         </td>
                                     </tr>
                                     <tr>
@@ -148,7 +148,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table id="guarantors_table" class="table table-bordered mt-2">
+                                        <table id="guarantors_table" class="table table-bordered custom_dt_table mt-2">
                                             <thead>
                                                 <tr>
                                                     <th>Loan ID</th>
@@ -177,7 +177,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
-                                        <table id="loan_guarantors_table" class="table table-bordered mt-2">
+                                        <table id="loan_guarantors_table" class="table custom_dt_table table-bordered mt-2">
                                             <thead>
                                                 <tr>
                                                     <th>Name</th>
@@ -195,49 +195,41 @@
                             </div>
                         </div>
                         <div class="tab-pane fade mt-4" id="schedule">
-                            <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <table class="table table-bordered data-table dataTable no-footer dtr-inline" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
-                                            <thead>
-                                                <tr>
-                                                    <th class="" rowspan="1" colspan="1">Date</th>
-                                                    <th class="text-right " rowspan="1" colspan="1">Amount to Pay</th>
-                                                    <th class="text-right " rowspan="1" colspan="1">Late Penalty</th>
-                                                    <th class="text-right " rowspan="1" colspan="1">Principal Amount</th>
-                                                    <th class="text-right " rowspan="1" colspan="1">Interest</th>
-                                                    <th class="text-right " rowspan="1" colspan="1">Balance</th>
-                                                    <th class="text-center " rowspan="1" colspan="1">Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                            <div class="table-responsive">
+                                <table class="table table-bordered custom_dt_table no-footer dtr-inline">
+                                    <thead>
+                                        <tr>
+                                            <th class="" rowspan="1" colspan="1">Date</th>
+                                            <th class="text-right " rowspan="1" colspan="1">Amount to Pay</th>
+                                            <th class="text-right " rowspan="1" colspan="1">Late Penalty</th>
+                                            <th class="text-right " rowspan="1" colspan="1">Principal Amount</th>
+                                            <th class="text-right " rowspan="1" colspan="1">Interest</th>
+                                            <th class="text-right " rowspan="1" colspan="1">Balance</th>
+                                            <th class="text-center " rowspan="1" colspan="1">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <div class="tab-pane fade mt-4" id="repayments">
-                            <div id="DataTables_Table_1_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <table class="table table-bordered data-table dataTable no-footer dtr-inline" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
-                                            <thead>
-                                                <tr>
-                                                    <th class="" rowspan="1" colspan="1">Date</th>
-                                                    <th class="text-right " rowspan="1" colspan="1">Principal Amount</th>
-                                                    <th class="text-right " rowspan="1" colspan="1">Interest</th>
-                                                    <th class="text-right " rowspan="1" colspan="1">Late Penalty</th>
-                                                    <th class="text-right " rowspan="1" colspan="1">Total Amount</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
+                            <div class="table-responsive">
+                                <table class="table table-bordered custom_dt_table no-footer dtr-inline">
+                                    <thead>
+                                        <tr>
+                                            <th class="" rowspan="1" colspan="1">Date</th>
+                                            <th class="text-right " rowspan="1" colspan="1">Principal Amount</th>
+                                            <th class="text-right " rowspan="1" colspan="1">Interest</th>
+                                            <th class="text-right " rowspan="1" colspan="1">Late Penalty</th>
+                                            <th class="text-right " rowspan="1" colspan="1">Total Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
