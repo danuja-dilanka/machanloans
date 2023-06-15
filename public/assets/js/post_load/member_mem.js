@@ -66,6 +66,8 @@ do_upload(7, "loan_req__electricity_bill");
 do_upload(8, "loan_req__nic__back");
 do_upload(9, "loan_req__nic__front");
 do_upload(10, "loan_req__nic__hw_nic_back");
+do_upload(11, "loan_req__nic__spouse_nic_front");
+do_upload(12, "loan_req__nic__spouse_nic_back");
 
 
 $(document).on('click', '.remove_file', function () {

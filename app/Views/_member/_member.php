@@ -230,7 +230,7 @@
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">Attach a photograph (both sides) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
-                                <img id="spouse_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="spouse_nic_front_img" alt="" src="<?= isset($data->spouse_nic_front) ? base_url("public/images/loan_req/nic/spouse_nic_front") . "/" . $data->spouse_nic_front : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist11"></div><br>
                                     <div id="file_container11" style="position: relative;">
@@ -238,13 +238,13 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="spouse_nic_front" name="spouse_nic_front" multiple="false">
+                                <input type="hidden" id="spouse_nic_front" value="<?= isset($data) ? $data->spouse_nic_front : '' ?>" name="spouse_nic_front" multiple="false">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">Attach a photograph (both sides) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
-                                <img id="spouse_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <img id="spouse_nic_back_img" alt="" src="<?= isset($data->spouse_nic_back) ? base_url("public/images/loan_req/nic/spouse_nic_back") . "/" . $data->spouse_nic_back : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist12"></div><br>
                                     <div id="file_container12" style="position: relative;">
@@ -252,7 +252,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="spouse_nic_back" name="spouse_nic_back" multiple="false">
+                                <input type="hidden" id="spouse_nic_back" value="<?= isset($data) ? $data->spouse_nic_back : '' ?>" name="spouse_nic_back" multiple="false">
                             </div>
                         </div>
                         <div class="col-md-12">
