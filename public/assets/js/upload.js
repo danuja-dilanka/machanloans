@@ -272,9 +272,9 @@ var uploader6 = new plupload.Uploader({
 
     init: {
         PostInit: function () {
-            document.getElementById('filelist5').innerHTML = '';
+            document.getElementById('filelist6').innerHTML = '';
 
-            document.getElementById('uploadfiles5').onclick = function () {
+            document.getElementById('uploadfiles6').onclick = function () {
                 uploader6.start();
                 return false;
             };
