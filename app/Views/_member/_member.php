@@ -222,16 +222,10 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="control-label">Spouse's Name (Mother's/Father's if unmarried)</label>
-                                <input type="text" class="form-control" name="spouse_name" required>
-                            </div>
+                            <?= render_input('spouse_name', "Spouse's Name (Mother's/Father's if unmarried)", isset($data) ? $data->spouse_name : '', 'text', []); ?>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="control-label">Spouse's Telephone Number (Mother's/Father's if unmarried)</label>
-                                <input type="text" class="form-control" name="spouse_tel_number" required>
-                            </div>
+                            <?= render_input('spouse_tel_number', "Spouse's Telephone Number (Mother's/Father's if unmarried)", isset($data) ? $data->spouse_tel_number : '', 'text', []); ?>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
