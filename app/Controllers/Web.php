@@ -225,7 +225,7 @@ class Web extends BaseController {
                     $this->thisModel->update_loan_req_data(["member" => $member_id], $insert_id);
                 }
 
-                return redirect()->to(base_url("loan_application/gaurantors/" . $lng . "/" . encode($insert_id)));
+                return redirect()->to(base_url("loan_application/guarantors/" . $lng . "/" . encode($insert_id)));
 
                 /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
             } else {
