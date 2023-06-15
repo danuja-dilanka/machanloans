@@ -13,7 +13,7 @@ class Web extends BaseController {
         $this->thisModel = model('Loan_model');
     }
 
-    public function guarantors($req_id, $lng) {
+    public function gaurantors($req_id, $lng) {
         $rules = [
             'loan' => 'trim|required',
             'friend1_name' => 'trim|required',
@@ -23,7 +23,6 @@ class Web extends BaseController {
             'friend1b_nic' => 'trim|required'
         ];
 
-                return view('gaurantor', ['req_id' => $req_id, 'lng' => $lng]);
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
             $db_data = [
@@ -161,7 +160,7 @@ class Web extends BaseController {
                     ]);
                 }
 
-                return redirect()->to(base_url("loan_application/guarantors/" . encode($insert_id) . "/" . $lng));
+                return redirect()->to(base_url("loan_application/gaurantors/" . encode($insert_id) . "/" . $lng));
 
                 /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
             } else {
