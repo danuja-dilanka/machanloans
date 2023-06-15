@@ -214,6 +214,7 @@
                                         <?php
                                         foreach ($docs as $d_key => $d_value) {
                                             $docs_path = [
+                                                "selfie" => "public/images/loan_req/selfie",
                                                 "bank_statement" => "public/images/loan_req/electricity_bill",
                                                 "hw_nic_front" => "public/images/loan_req/nic/hw_nic_front",
                                                 "hw_nic_back" => "public/images/loan_req/nic/hw_nic_back",
