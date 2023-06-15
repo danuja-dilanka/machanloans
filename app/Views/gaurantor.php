@@ -98,7 +98,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <hr>
-                                        <div class="form-group mb-2">
+                                        <div class="form-group" style="margin-left: 2%">
                                             <input type="hidden" name="loan" value="<?= $req_id ?>" required readonly/>
                                             <button type="submit" class="btn btn-primary">Next</button>
                                         </div>
