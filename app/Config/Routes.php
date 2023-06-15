@@ -57,9 +57,9 @@ $routes->match(['get', 'post'], 'loan/(:any)/(:any)/(:any)', 'Loan::$1/$2/$3');
 
 //WEB PUBLIC CONTROLLER
 $routes->match(['get', 'post'], '/loan_application', 'Web::loan_application');
+$routes->match(['get', 'post'], '/loan_application/guarantors/(:any)/(:any)', 'Web::guarantors/$1/$2');
 $routes->match(['get', 'post'], '/loan_application/(:any)', 'Web::loan_application/$1');
 $routes->match(['get', 'post'], '/loan_application/(:any)/(:any)', 'Web::loan_application/$1/$2');
-$routes->match(['get', 'post'], '/loan_application/guarantors/(:any)/(:any)', 'Web::guarantors/$2/$3');
 $routes->match(['get', 'post'], '/loan_check/(:any)', 'Web::loan_check/$1');
 
 //REPORTS CONTROLLER
