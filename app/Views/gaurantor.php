@@ -26,17 +26,14 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
-
                                     <div class="text-center">
                                         <img width="100" src="<?= base_url() ?>public/uploads/media/logo.png">
                                     </div>
-
                                     <div class="row">
                                         <div class="col-md-12 text-center mb-5">
                                             <h3>Machan Project Loan ( මචං ව්‍යාපෘති ණය යෝජනා ක්‍රමය)</h3>
                                         </div>
                                     </div>
-
                                     <div class="text-center"><hr>
                                         <?php if ($lng != "si") { ?>
                                             <p>Thank you for joining the low-interest, short-term loan system under the Manchan Project Loan Scheme. We hope that you have read and understood the terms and conditions before joining. Let us inform you that you will enter. Only if you agree with the conditions, give the following information and get the loan facility. Please note that the following information is essential to avail the loan.<br></p>

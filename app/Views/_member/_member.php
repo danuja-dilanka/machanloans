@@ -101,7 +101,7 @@
                             <?= render_textarea('rel_friend1_address', 'Address of non-relative friend 1', isset($data) ? $data->rel_friend1_address : '', []); ?>
                         </div>
                         <div class="col-md-6">
-                             <?= render_input('rel_friend2', 'Name of non-relative friend 2', isset($data) ? $data->rel_friend2 : '', 'text', []); ?>
+                            <?= render_input('rel_friend2', 'Name of non-relative friend 2', isset($data) ? $data->rel_friend2 : '', 'text', []); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('rel_friend2_phone', 'Contact number of non-relative friend 2', isset($data) ? $data->rel_friend2_phone : '', 'text', []); ?>
@@ -219,6 +219,46 @@
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="selfie" class="" value="<?= isset($data) ? $data->selfie : '' ?>" name="selfie" multiple="false">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Spouse's Name (Mother's/Father's if unmarried)</label>
+                                <input type="text" class="form-control" name="spouse_name" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Spouse's Telephone Number (Mother's/Father's if unmarried)</label>
+                                <input type="text" class="form-control" name="spouse_tel_number" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">Attach a photograph (both sides) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
+                                <img id="spouse_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist11"></div><br>
+                                    <div id="file_container11" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_front") ?>" data-id="spouse_nic_front">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="spouse_nic_front" class="dropify" name="spouse_nic_front" multiple="false" required="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">Attach a photograph (both sides) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
+                                <img id="spouse_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist12"></div><br>
+                                    <div id="file_container12" style="position: relative;">
+                                        <a class="btn btn-sm btn-default" id="pickfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_back") ?>" data-id="spouse_nic_back">Select</a> 
+                                        <a class="btn btn-sm btn-primary" id="uploadfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="spouse_nic_back" class="dropify" name="spouse_nic_back" multiple="false" required="">
                             </div>
                         </div>
                         <div class="col-md-12">
