@@ -106,7 +106,7 @@ class Web extends BaseController {
             if (isset($loan_det->id)) {
                 return view('gaurantor', ['req_id' => $req_id, 'lng' => $lng]);
             } else {
-//                return redirect()->to(base_url("loan_application/$lng"));
+                return redirect()->to(base_url("loan_application/$lng"));
             }
         }
     }

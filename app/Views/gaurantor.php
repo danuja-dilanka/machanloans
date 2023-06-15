@@ -45,7 +45,7 @@
                                         <?php } ?>
                                         <hr>
                                     </div>
-                                    <?= form_open_multipart(base_url("web/guarantors/$req_id/$lng"), array('data-parsley-validate' => 'true')); ?>
+                                    <?= form_open_multipart(base_url("loan_application/guarantors/$lng/$req_id"), array('data-parsley-validate' => 'true')); ?>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
