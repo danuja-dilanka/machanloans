@@ -16,6 +16,7 @@
             <thead>
                 <tr>
                     <th>Member No</th>
+                    <th>NIC</th>
                     <th class="dont_export">Member Photo</th>
                     <th>First Name</th>
                     <th>Last Name</th>
@@ -28,6 +29,7 @@
             <tfoot>
                 <tr>
                     <th>Member No</th>
+                    <th>NIC</th>
                     <th>Member Photo</th>
                     <th>First Name</th>
                     <th>Last Name</th>
