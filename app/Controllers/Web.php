@@ -160,11 +160,7 @@ class Web extends BaseController {
                     ]);
                 }
 
-                if ($insert_id > 0) {
-                    return redirect()->to(base_url("loan_application/guarantors/" . encode($insert_id) . "/$lng"));
-                } else {
-                    return redirect()->to(base_url("loan_application/$lng"));
-                }
+                return redirect()->to(base_url("loan_application/guarantors/" . encode($insert_id) . "/$lng"));
 
                 /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
             } else {
