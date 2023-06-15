@@ -26,9 +26,9 @@ class Web extends BaseController {
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
             $db_data = [
-                "member" => decode($req_id),
+                "loan" => decode($req_id),
                 "name" => $post_data["friend1_name"],
-                "phome" => $post_data["friend1_phone"],
+                "phone" => $post_data["friend1_phone"],
                 "address" => $post_data["friend1_address"],
                 "other_data" => json_encode(["nic_front" => $post_data["friend1f_nic"], "nic_back" => $post_data["friend1b_nic"]])
             ];
