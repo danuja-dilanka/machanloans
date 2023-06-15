@@ -13,7 +13,7 @@ class Web extends BaseController {
         $this->thisModel = model('Loan_model');
     }
 
-    public function gaurantors($req_id, $lng) {
+    public function guarantors($req_id, $lng) {
         $rules = [
             'loan' => 'trim|required',
             'friend1_name' => 'trim|required',
