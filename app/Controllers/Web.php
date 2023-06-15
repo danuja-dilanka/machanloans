@@ -23,7 +23,6 @@ class Web extends BaseController {
             'friend1b_nic' => 'trim|required'
         ];
 
-                return view('gaurantor', ['req_id' => $req_id, 'lng' => $lng]);
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
             $db_data = [
