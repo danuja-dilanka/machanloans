@@ -58,7 +58,7 @@ class Web extends BaseController {
         return $data;
     }
 
-    public function guarantors($req_id, $lng) {
+    public function guarantors($lng, $req_id) {
         $rules = [
             'loan' => 'trim|required',
             'friend1_name' => 'trim|required',
@@ -225,7 +225,7 @@ class Web extends BaseController {
                     $this->thisModel->update_loan_req_data(["member" => $member_id], $insert_id);
                 }
 
-                return redirect()->to(base_url("loan_application/gaurantors/" . encode($insert_id) . "/" . $lng));
+                return redirect()->to(base_url("loan_application/gaurantors/" . $lng . "/" . encode($insert_id)));
 
                 /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
             } else {
