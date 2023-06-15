@@ -43,7 +43,7 @@ class Web extends BaseController {
             if (isset($loan_det->id)) {
                 return view('gaurantor', ['req_id' => $req_id, 'lng' => $lng]);
             } else {
-                return redirect()->to(base_url("loan_application/$lng"));
+//                return redirect()->to(base_url("loan_application/$lng"));
             }
         }
     }
@@ -160,7 +160,7 @@ class Web extends BaseController {
                     ]);
                 }
 
-                return redirect()->to(base_url("loan_application/guarantors/" . encode($insert_id) . "/$lng"));
+                return redirect()->to(base_url("loan_application/guarantors/" . encode($insert_id) . "/" . $lng));
 
                 /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
             } else {
