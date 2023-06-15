@@ -141,7 +141,7 @@
                                                 <input type="hidden" id="friend2b_nic" class="dropify" name="friend2b_nic" multiple="false" required="">
                                             </div>
                                         </div>
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="form-group text-center">
                                                 <label class="control-label"><?= $lng != "si" ? "Enter a selfie photograph taken with the ID in hand, with the face clearly visible" : "හැදුනුම්පත අතේ තබාගෙන , මුහුණ පැහැදිලිව පෙනෙන සේ ලබා ගන්නා ලද සෙල්ෆි ජායාරූපයක් ඇතුලත් කරන්න" ?> (20MB)<span class="required"> *</span></label><br>
                                                 <img id="selfie_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
@@ -169,7 +169,7 @@
                                                 <input type="hidden" id="fb_screenshot" class="dropify" name="fb_screenshot" multiple="false" required="">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group text-center">
                                                 <label class="control-label"><?= $lng != "si" ? "Attach a photo of the electricity bill here, (otherwise any document that can verify the address so that the address is clearly visible)" : "විදුලි බිලෙහි ජායාරූපයක් මෙහි අමුණන්න, (නැතිනම් ලිපිනය තහවුරු කර ගත හැකි ඕනෑම ලියවිල්ලක් ලිපිනය පැහැදිලිව පෙනෙන ලෙස) " ?> (20MB)<span class="required"> *</span></label><br>
                                                 <img id="electricity_bill_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
