@@ -244,7 +244,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="spouse_nic_front" class="dropify" name="spouse_nic_front" multiple="false" required="">
+                                <input type="hidden" id="spouse_nic_front" name="spouse_nic_front" multiple="false">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -258,7 +258,7 @@
                                         <a class="btn btn-sm btn-primary" id="uploadfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                     </div><br>
                                 </div>
-                                <input type="hidden" id="spouse_nic_back" class="dropify" name="spouse_nic_back" multiple="false" required="">
+                                <input type="hidden" id="spouse_nic_back" name="spouse_nic_back" multiple="false">
                             </div>
                         </div>
                         <div class="col-md-12">
