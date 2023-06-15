@@ -1,6 +1,3 @@
-
-// Custom example logic
-
 var uploader = new plupload.Uploader({
     runtimes: 'html5,flash,silverlight,html4',
     multi_selection: false,
@@ -204,3 +201,105 @@ var uploader4 = new plupload.Uploader({
 });
 
 uploader4.init();
+
+var uploader5 = new plupload.Uploader({
+    runtimes: 'html5,flash,silverlight,html4',
+    multi_selection: false,
+    browse_button: 'pickfiles5', // you can pass an id...
+    container: document.getElementById('file_container5'), // ... or DOM Element itself
+    url: BASE_URL + 'web/upload/5',
+    flash_swf_url: BASE_URL + 'public/assets/js/Moxie.swf',
+    silverlight_xap_url: BASE_URL + 'public/assets/js/Moxie.xap',
+
+    filters: {
+        max_file_size: '30mb',
+        mime_types: [
+            {title: "Image files", extensions: "jpg,gif,png"},
+            {title: "Zip files", extensions: "zip"}
+        ]
+    },
+
+    init: {
+        PostInit: function () {
+            document.getElementById('filelist5').innerHTML = '';
+
+            document.getElementById('uploadfiles5').onclick = function () {
+                uploader5.start();
+                return false;
+            };
+        },
+
+        FilesAdded: function (up, files) {
+            plupload.each(files, function (file) {
+                document.getElementById('filelist5').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
+            });
+        },
+
+        UploadProgress: function (up, file) {
+            document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+        },
+
+        Error: function (up, err) {
+            console.log(err.code + " : " + err.message);
+        },
+
+        FileUploaded: function (up, file) {
+            var base = document.getElementById('pickfiles5');
+            document.getElementById(base.getAttribute('data-id') + "_img").src = base.getAttribute('data-src') + "/" + file.name;
+            document.getElementById(base.getAttribute('data-id')).value = file.name;
+        }
+    }
+});
+
+uploader5.init();
+
+var uploader6 = new plupload.Uploader({
+    runtimes: 'html5,flash,silverlight,html4',
+    multi_selection: false,
+    browse_button: 'pickfiles6', // you can pass an id...
+    container: document.getElementById('file_container6'), // ... or DOM Element itself
+    url: BASE_URL + 'web/upload/6',
+    flash_swf_url: BASE_URL + 'public/assets/js/Moxie.swf',
+    silverlight_xap_url: BASE_URL + 'public/assets/js/Moxie.xap',
+
+    filters: {
+        max_file_size: '30mb',
+        mime_types: [
+            {title: "Image files", extensions: "jpg,gif,png"},
+            {title: "Zip files", extensions: "zip"}
+        ]
+    },
+
+    init: {
+        PostInit: function () {
+            document.getElementById('filelist5').innerHTML = '';
+
+            document.getElementById('uploadfiles5').onclick = function () {
+                uploader6.start();
+                return false;
+            };
+        },
+
+        FilesAdded: function (up, files) {
+            plupload.each(files, function (file) {
+                document.getElementById('filelist6').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
+            });
+        },
+
+        UploadProgress: function (up, file) {
+            document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+        },
+
+        Error: function (up, err) {
+            console.log(err.code + " : " + err.message);
+        },
+
+        FileUploaded: function (up, file) {
+            var base = document.getElementById('pickfiles6');
+            document.getElementById(base.getAttribute('data-id') + "_img").src = base.getAttribute('data-src') + "/" + file.name;
+            document.getElementById(base.getAttribute('data-id')).value = file.name;
+        }
+    }
+});
+
+uploader6.init();

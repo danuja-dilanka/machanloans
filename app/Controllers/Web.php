@@ -12,9 +12,40 @@ class Web extends BaseController {
     public function __construct() {
         $this->thisModel = model('Loan_model');
     }
-    
-    public function send_sms() {
-        send_sms("94776636688", "TEST RUN");
+
+    public function guarantors($req_id, $lng) {
+        $rules = [
+            'loan' => 'trim|required',
+            'friend1_name' => 'trim|required',
+            'friend1_phone' => 'trim|required',
+            'friend1_address' => 'trim|required',
+            'friend1f_nic' => 'trim|required',
+            'friend1b_nic' => 'trim|required'
+        ];
+
+        if ($this->request->is('post') && $this->validate($rules)) {
+            $post_data = $this->request->getPost();
+            $db_data = [
+                "member" => decode($req_id),
+                "name" => $post_data["friend1_name"],
+                "phome" => $post_data["friend1_phone"],
+                "address" => $post_data["friend1_address"],
+                "other_data" => json_encode(["nic_front" => $post_data["friend1f_nic"], "nic_back" => $post_data["friend1b_nic"]])
+            ];
+            $insert_id = $this->thisModel->add_loan_guarantor($db_data);
+            if ($insert_id > 0) {
+                return view('loan_app_stage4', ['lng' => $lng]);
+            } else {
+                return redirect()->to(base_url("loan_application/$lng"));
+            }
+        } else {
+            $loan_det = $this->thisModel->get_loan_req_data(decode($req_id));
+            if (isset($loan_det->id)) {
+                return view('gaurantor', ['req_id' => $req_id, 'lng' => $lng]);
+            } else {
+                return redirect()->to(base_url("loan_application/$lng"));
+            }
+        }
     }
 
     public function loan_application($lng = "") {
@@ -69,7 +100,7 @@ class Web extends BaseController {
                             "loan_proof" => $post_data["bank_slip"]
                         ]);
                     }
-                    
+
                     return view('loan_app_waiting', ['lng' => $lng]);
                 } else {
                     return view('loan_app_stage2', ['lng' => $lng, 'prev_loan' => $avoid_data, 'member' => $member]);
@@ -129,9 +160,13 @@ class Web extends BaseController {
                     ]);
                 }
 
-                /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
+                if ($insert_id > 0) {
+                    return redirect()->to(base_url("loan_application/guarantors/" . encode($insert_id) . "/$lng"));
+                } else {
+                    return redirect()->to(base_url("loan_application/$lng"));
+                }
 
-                return view('loan_app_stage4', ['lng' => $lng]);
+                /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
             } else {
                 return redirect()->to(base_url("loan_application/$lng"));
             }
@@ -151,6 +186,10 @@ class Web extends BaseController {
             $up_path = 'public/images/loan_req/nic/spouse_nic_front/';
         } else if ($type == 4) {
             $up_path = 'public/images/loan_req/nic/spouse_nic_back/';
+        } else if ($type == 5) {
+            $up_path = 'public/images/loan_req/nic/friend1f/';
+        } else if ($type == 6) {
+            $up_path = 'public/images/loan_req/nic/friend1b/';
         }
 
         $ph = new PluploadHandler(array(

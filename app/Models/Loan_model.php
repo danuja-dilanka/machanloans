@@ -224,4 +224,10 @@ class Loan_model extends Model {
         }
     }
 
+    //ADD LOAN GUARANTOR
+    public function add_loan_guarantor($data) {
+        $this->db->table(DB_PREFIX . 'member_guarantor')->insert($data);
+        return $this->db->insertID();
+    }
+
 }
