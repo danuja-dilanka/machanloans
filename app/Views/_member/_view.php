@@ -81,22 +81,50 @@
                                         <td>City</td>
                                         <td><?= isset($data) ? $data->city : null ?></td>
                                     </tr>
-<!--                                    <tr>
-                                        <td>State</td>
-                                        <td></td>
-                                    </tr>-->
-<!--                                    <tr>
-                                        <td>Zip</td>
-                                        <td></td>
-                                    </tr>-->
                                     <tr>
                                         <td>Address</td>
                                         <td><?= isset($data) ? $data->address : null ?></td>
                                     </tr>
-<!--                                    <tr>
-                                        <td>Credit Source</td>
-                                        <td></td>
-                                    </tr>-->
+                                    <tr>
+                                        <td>Google location</td>
+                                        <td><?= isset($data) ? $data->google_location : null ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Current Residential Address</td>
+                                        <td><?= isset($data) ? $data->cred_address : null ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address of place of employment or business</td>
+                                        <td><?= isset($data) ? $data->working_address : null ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Job or business</td>
+                                        <td><?= isset($data) ? $data->job_or_business : null ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name of non-relative friend 1</td>
+                                        <td><?= isset($data) ? $data->rel_friend1 : null ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contact number of non-relative friend 1</td>
+                                        <td><?= isset($data) ? $data->rel_friend1_phone : null ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address of non-relative friend 1</td>
+                                        <td><?= isset($data) ? $data->rel_friend1_address : null ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name of non-relative friend 2</td>
+                                        <td><?= isset($data) ? $data->rel_friend2 : null ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contact number of non-relative friend 2</td>
+                                        <td><?= isset($data) ? $data->rel_friend2_phone : null ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Address of non-relative friend 2</td>
+                                        <td><?= isset($data) ? $data->rel_friend2_address : null ?></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
