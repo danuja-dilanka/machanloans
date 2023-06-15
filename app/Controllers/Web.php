@@ -20,24 +20,33 @@ class Web extends BaseController {
             'friend1_phone' => 'trim|required',
             'friend1_address' => 'trim|required',
             'friend1f_nic' => 'trim|required',
-            'friend1b_nic' => 'trim|required'
+            'friend1b_nic' => 'trim|required',
+            'friend2_name' => 'trim|required',
+            'friend2_phone' => 'trim|required',
+            'friend2_address' => 'trim|required',
+            'friend2f_nic' => 'trim|required',
+            'friend2b_nic' => 'trim|required'
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
-            $db_data = [
+            $this->thisModel->add_loan_guarantor([
                 "loan" => decode($req_id),
                 "name" => $post_data["friend1_name"],
                 "phone" => $post_data["friend1_phone"],
                 "address" => $post_data["friend1_address"],
                 "other_data" => json_encode(["nic_front" => $post_data["friend1f_nic"], "nic_back" => $post_data["friend1b_nic"]])
-            ];
-            $insert_id = $this->thisModel->add_loan_guarantor($db_data);
-            if ($insert_id > 0) {
-                return view('loan_app_stage4', ['lng' => $lng]);
-            } else {
-                return redirect()->to(base_url("loan_application/$lng"));
-            }
+            ]);
+            
+            $this->thisModel->add_loan_guarantor([
+                "loan" => decode($req_id),
+                "name" => $post_data["friend2_name"],
+                "phone" => $post_data["friend2_phone"],
+                "address" => $post_data["friend2_address"],
+                "other_data" => json_encode(["nic_front" => $post_data["friend2f_nic"], "nic_back" => $post_data["friend2b_nic"]])
+            ]);
+            
+            return view('loan_app_stage4', ['lng' => $lng]);
         } else {
             $loan_det = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($loan_det->id)) {
@@ -186,6 +195,10 @@ class Web extends BaseController {
             $up_path = 'public/images/loan_req/nic/friend1f/';
         } else if ($type == 6) {
             $up_path = 'public/images/loan_req/nic/friend1b/';
+        } else if ($type == 7) {
+            $up_path = 'public/images/loan_req/nic/friend2f/';
+        } else if ($type == 8) {
+            $up_path = 'public/images/loan_req/nic/friend2b/';
         }
 
         $ph = new PluploadHandler(array(
