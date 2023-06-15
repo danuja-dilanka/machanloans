@@ -45,7 +45,7 @@
                                         <?php } ?>
                                         <hr>
                                     </div>
-                                    <?= form_open_multipart(base_url("web/request_loan/$lng"), array('data-parsley-validate' => 'true')); ?>
+                                    <?= form_open_multipart(base_url("web/guarantors/$req_id/$lng"), array('data-parsley-validate' => 'true')); ?>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label"><?= $lng != "si" ? "Name of a friend who is not a relative (01)" : "ඥාතියෙකු නොවන මිතුරෙකුගේ නම (01)" ?></label>
