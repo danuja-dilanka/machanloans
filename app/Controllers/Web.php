@@ -13,6 +13,51 @@ class Web extends BaseController {
         $this->thisModel = model('Loan_model');
     }
 
+    public function done($lng) {
+        return view('loan_app_stage4', ['lng' => $lng]);
+    }
+
+    private function mng_docs($data, $member) {
+        $member_model = model('Member_model');
+        $docs = [
+            "selfie" => "Selfie",
+            "bank_statement" => "Bank Statement",
+            "hw_nic_front" => "Husband / wife ID copy front",
+            "hw_nic_back" => "Husband / wife ID copy back",
+            "ga_certificate" => "GA Certificate",
+            "fb_screenshot" => "Facebook Screenshot",
+            "electricity_bill" => "Electricity Bill Photo"
+        ];
+        foreach ($docs as $key => $value) {
+            if (isset($data[$key])) {
+                $doc = $member_model->get_docs_by(["member" => $member, "code" => $key]);
+                if (isset($doc->id)) {
+                    if ($doc->document != $data[$key]) {
+                        $member_model->update_doc([
+                            "added_by" => 0,
+                            "submitted_date" => date("Y-m-d"),
+                            "submitted_time" => date("H:i:s"),
+                            "document" => $data[$key],
+                                ], $member);
+                    }
+                } else {
+                    $member_model->add_doc([
+                        "added_by" => 0,
+                        "submitted_date" => date("Y-m-d"),
+                        "submitted_time" => date("H:i:s"),
+                        "document" => $data[$key],
+                        "code" => $key,
+                        "member" => $member,
+                        "name" => $value,
+                            ], $member);
+                }
+                unset($data[$key]);
+            }
+        }
+
+        return $data;
+    }
+
     public function guarantors($req_id, $lng) {
         $rules = [
             'loan' => 'trim|required',
@@ -25,10 +70,18 @@ class Web extends BaseController {
             'friend2_phone' => 'trim|required',
             'friend2_address' => 'trim|required',
             'friend2f_nic' => 'trim|required',
-            'friend2b_nic' => 'trim|required'
+            'friend2b_nic' => 'trim|required',
+            'selfie' => 'trim|required',
+            'fb_screenshot' => 'trim|required',
+            'electricity_bill' => 'trim|required'
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {
+            $loan_det = $this->thisModel->get_loan_req_data(decode($req_id));
+            if (!isset($loan_det->id)) {
+                return redirect()->to(base_url("loan_application/$lng"));
+            }
+
             $post_data = $this->request->getPost();
             $this->thisModel->add_loan_guarantor([
                 "loan" => decode($req_id),
@@ -37,7 +90,7 @@ class Web extends BaseController {
                 "address" => $post_data["friend1_address"],
                 "other_data" => json_encode(["nic_front" => $post_data["friend1f_nic"], "nic_back" => $post_data["friend1b_nic"]])
             ]);
-            
+
             $this->thisModel->add_loan_guarantor([
                 "loan" => decode($req_id),
                 "name" => $post_data["friend2_name"],
@@ -45,8 +98,9 @@ class Web extends BaseController {
                 "address" => $post_data["friend2_address"],
                 "other_data" => json_encode(["nic_front" => $post_data["friend2f_nic"], "nic_back" => $post_data["friend2b_nic"]])
             ]);
-            
-            return view('loan_app_stage4', ['lng' => $lng]);
+
+            $this->mng_docs($post_data, $loan_det->member);
+            return redirect()->to(base_url("loan_application/done/$lng"));
         } else {
             $loan_det = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($loan_det->id)) {
@@ -158,7 +212,7 @@ class Web extends BaseController {
                 $Member_model = model('Member_model');
                 if (!isset($Member_model->get_mem_data_by(["nic" => $post_data["nic"]])->id)) {
                     $name = explode(" ", $post_data["full_name"]);
-                    $Member_model->add_data([
+                    $member_id = $Member_model->add_data([
                         "first_name" => $name[0],
                         "last_name" => count($name) > 1 ? $name[count($name) - 1] : "",
                         "birthday" => $post_data["birthday"],
@@ -167,6 +221,8 @@ class Web extends BaseController {
                         "address" => $post_data["current_address"],
                         "nic" => $post_data["nic"],
                     ]);
+
+                    $this->thisModel->update_loan_req_data(["member" => $member_id], $insert_id);
                 }
 
                 return redirect()->to(base_url("loan_application/gaurantors/" . encode($insert_id) . "/" . $lng));
@@ -199,6 +255,12 @@ class Web extends BaseController {
             $up_path = 'public/images/loan_req/nic/friend2f/';
         } else if ($type == 8) {
             $up_path = 'public/images/loan_req/nic/friend2b/';
+        } else if ($type == 9) {
+            $up_path = 'public/images/loan_req/selfie/';
+        } else if ($type == 10) {
+            $up_path = 'public/images/loan_req/fb_screenshot/';
+        } else if ($type == 11) {
+            $up_path = 'public/images/loan_req/electricity_bill/';
         }
 
         $ph = new PluploadHandler(array(
