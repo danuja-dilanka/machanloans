@@ -157,7 +157,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label"><?= $lng != "si" ? "Attach your Facebook Screen Shot here" : "ඔබේ මුහුණු පොතෙහි ( Facebook ) තිර රුවක් ( Screen Shot) මෙහි අමුණන්න" ?> (20MB)<span class="required"> *</span></label><br>
+                                                <label class="control-label"><?= $lng != "si" ? "Attach your Facebook Screen Shot here" : "ඔබේ මුහුණු පොතෙහි ( Facebook ) තිර රුවක් ( Screen Shot) මෙහි අමුණන්න" ?> <br>(20MB)<span class="required"> *</span></label><br>
                                                 <img id="fb_screenshot_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist10"></div><br>
