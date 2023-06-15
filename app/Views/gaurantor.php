@@ -46,50 +46,52 @@
                                         <hr>
                                     </div>
                                     <?= form_open_multipart(base_url("web/guarantors/$req_id/$lng"), array('data-parsley-validate' => 'true')); ?>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label"><?= $lng != "si" ? "Name of a friend who is not a relative (01)" : "ඥාතියෙකු නොවන මිතුරෙකුගේ නම (01)" ?></label>
-                                            <input type="text" class="form-control" name="friend1_name" value="" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label"><?= $lng != "si" ? "Telephone number of a friend who is not a relative (01)" : "ඥාතියෙකු නොවන මිතුරෙකුගේ දුරකථන අංකය (01)" ?></label>
-                                            <input type="text" class="form-control" name="friend1_phone" value="" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label class="control-label"><?= $lng != "si" ? "Address of a friend who is not a relative (01)" : "ඥාතියෙකු නොවන මිතුරෙකුගේ ලිපිනය (01)" ?></label>
-                                            <textarea type="text" class="form-control" name="friend1_address" value="" required></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group text-center">
-                                            <label class="control-label"><?= $lng != "si" ? "A photograph of a non-relative friend's ID card (01) Front" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත (01) ඉදිරිපස ඡායාරූපයක්" ?> (20MB)<span class="required"> *</span></label><br>
-                                            <img id="friend1f_nic_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
-                                            <div style="font: 13px Verdana; background: #eee; color: #333">
-                                                <div id="filelist5"></div><br>
-                                                <div id="file_container5" style="position: relative;">
-                                                    <a class="btn btn-sm btn-default" id="pickfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1f") ?>" data-id="friend1f_nic">Select</a> 
-                                                    <a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
-                                                </div><br>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label"><?= $lng != "si" ? "Name of a friend who is not a relative (01)" : "ඥාතියෙකු නොවන මිතුරෙකුගේ නම (01)" ?></label>
+                                                <input type="text" class="form-control" name="friend1_name" value="" required>
                                             </div>
-                                            <input type="hidden" id="friend1f_nic" class="dropify" name="friend1f_nic" multiple="false" required="">
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group text-center">
-                                            <label class="control-label"><?= $lng != "si" ? "A photograph of a non-relative friend's ID card (01) Back" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත පිටුපස ඡායාරූපයක් (01)" ?> (20MB)<span class="required"> *</span></label><br>
-                                            <img id="friend1b_nic_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
-                                            <div style="font: 13px Verdana; background: #eee; color: #333">
-                                                <div id="filelist6"></div><br>
-                                                <div id="file_container6" style="position: relative;">
-                                                    <a class="btn btn-sm btn-default" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1b") ?>" data-id="friend1b_nic">Select</a> 
-                                                    <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
-                                                </div><br>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label"><?= $lng != "si" ? "Telephone number of a friend who is not a relative (01)" : "ඥාතියෙකු නොවන මිතුරෙකුගේ දුරකථන අංකය (01)" ?></label>
+                                                <input type="text" class="form-control" name="friend1_phone" value="" required>
                                             </div>
-                                            <input type="hidden" id="friend1b_nic" class="dropify" name="friend1b_nic" multiple="false" required="">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label"><?= $lng != "si" ? "Address of a friend who is not a relative (01)" : "ඥාතියෙකු නොවන මිතුරෙකුගේ ලිපිනය (01)" ?></label>
+                                                <textarea type="text" class="form-control" name="friend1_address" value="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group text-center">
+                                                <label class="control-label"><?= $lng != "si" ? "A photograph of a non-relative friend's ID card (01) Front" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත (01) ඉදිරිපස ඡායාරූපයක්" ?> (20MB)<span class="required"> *</span></label><br>
+                                                <img id="friend1f_nic_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist5"></div><br>
+                                                    <div id="file_container5" style="position: relative;">
+                                                        <a class="btn btn-sm btn-default" id="pickfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1f") ?>" data-id="friend1f_nic">Select</a> 
+                                                        <a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="friend1f_nic" class="dropify" name="friend1f_nic" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group text-center">
+                                                <label class="control-label"><?= $lng != "si" ? "A photograph of a non-relative friend's ID card (01) Back" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත පිටුපස ඡායාරූපයක් (01)" ?> (20MB)<span class="required"> *</span></label><br>
+                                                <img id="friend1b_nic_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist6"></div><br>
+                                                    <div id="file_container6" style="position: relative;">
+                                                        <a class="btn btn-sm btn-default" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1b") ?>" data-id="friend1b_nic">Select</a> 
+                                                        <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="friend1b_nic" class="dropify" name="friend1b_nic" multiple="false" required="">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
