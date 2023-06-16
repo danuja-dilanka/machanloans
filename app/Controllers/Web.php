@@ -40,7 +40,7 @@ class Web extends BaseController {
                             "document" => $data[$key],
                                 ], $member);
                     }
-                } else {
+                } else if ($data[$key] != "") {
                     $member_model->add_doc([
                         "added_by" => 0,
                         "submitted_date" => date("Y-m-d"),

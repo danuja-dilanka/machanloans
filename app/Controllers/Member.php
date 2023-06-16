@@ -59,7 +59,7 @@ class Member extends BaseController {
                             "document" => $data[$key],
                                 ], $member);
                     }
-                } else {
+                } else if ($data[$key] != "") {
                     $this->thisModel->add_doc([
                         "added_by" => decode(session()->ml_user),
                         "submitted_date" => date("Y-m-d"),
