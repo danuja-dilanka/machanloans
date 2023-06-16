@@ -18,8 +18,8 @@
                             <h4>Member Details</h4>
                             <hr>
                         </div>
-                        <div class="row">
-                            <div class="col-md-8">
+                        <div class="row col-md-12">
+                            <div class="col-md-9">
                                 <nav>
                                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
@@ -117,7 +117,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <img src="<?= isset($member->photo) && $member->photo != "" ? base_url("public/images/member/") . $member->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
                                 <a style="margin-top:2%" href="<?= base_url("member/mem/"). encode($member->id) ?>" class="btn btn-primary btn-lg btn-block">Edit Member Details</a>
                             </div>
