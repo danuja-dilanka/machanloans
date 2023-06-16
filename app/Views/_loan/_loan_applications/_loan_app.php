@@ -14,8 +14,56 @@
                         </div>
                     <?php } ?>
                     <div class="row">
+                        <div class="col-md-12 text-center">
+                            <h4>Member Details</h4>
+                            <hr>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Name</label>
+                                <input type="text" class="form-control" value="<?= isset($member) ? $member->first_name . " " . $member->last_name : "" ?>" readonly="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Member No</label>
+                                <input type="text" class="form-control" value="<?= isset($member) ? $member->member_no : "" ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Phone number</label>
+                                <input type="date" class="form-control" value="<?= isset($member) ? $member->mobile : "" ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Email </label>
+                                <input type="email" class="form-control" value="<?= isset($member) ? $member->email : "" ?>" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Address on ID</label>
+                                <textarea class="form-control" readonly><?= isset($member) ? $member->address : "" ?></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Current Residential Address</label>
+                                <textarea class="form-control" readonly><?= isset($member) ? $member->cred_address : "" ?></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <hr>
+                        </div>
                         <div class="col-md-6">
                             <?= render_input('loan_id', 'Loan ID', isset($data) ? $data->first_name : '', 'text', ['required' => true]); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <?= render_custom_select("payment_method", ["Months", "Week"], "Gender", isset($data) ? $data->gender : '', '') ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_select('loan_type', model("Loan_model")->get_pro_data(0, 1), array('id', 'loan_name'), 'Loan Product', '', ['required' => true]); ?>
