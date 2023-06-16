@@ -258,7 +258,7 @@ class Loan extends BaseController {
                 return redirect()->to(base_url('loan/loan'));
             }
         } else if (has_permission("loan", "add")) {
-            if ($this->input->get("b") != "") {
+            if ($this->request->getGet("b") != "") {
                 $member = decode($this->input->get("b"));
                 if (isset($member->id)) {
                     return view('_loan/_loan_applications/_loan_app', ["title" => "New Loan", "member" => $member]);
