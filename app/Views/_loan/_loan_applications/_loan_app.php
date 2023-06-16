@@ -72,8 +72,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                    <div class="row">
+                                <div class="tab-pane fade col-md-12" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <div class="row col-md-8">
                                         <div class="table-responsive col-md-12">
                                             <table class="table table-bordered custom_dt_table" style="width: 100%">
                                                 <thead>
