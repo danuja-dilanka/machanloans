@@ -45,22 +45,22 @@
                                         <input type="email" class="form-control" value="<?= isset($member) ? $member->email : "" ?>" readonly>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Address on ID</label>
+                                        <textarea class="form-control" readonly><?= isset($member) ? $member->address : "" ?></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Current Residential Address</label>
+                                        <textarea class="form-control" readonly><?= isset($member) ? $member->cred_address : "" ?></textarea>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-4">
                                 <img src="<?= isset($member->photo) && $member->photo != "" ? base_url("public/images/member/") . $member->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="control-label">Address on ID</label>
-                                <textarea class="form-control" readonly><?= isset($member) ? $member->address : "" ?></textarea>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="control-label">Current Residential Address</label>
-                                <textarea class="form-control" readonly><?= isset($member) ? $member->cred_address : "" ?></textarea>
                             </div>
                         </div>
                         <div class="col-md-12 text-center">
