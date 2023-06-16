@@ -8,8 +8,8 @@
                     <h4 class="header-title">Select Member | New Loan Application</h4>
                 </div>
                 <div class="card-body">
-                    <div class="row text-center">
-                        <div class="col-md-6"></div>
+                    <div class="row col-md-12 text-center">
+                        <div class="col-md-4"></div>
                         <div class="col-md-4">
                             <?= render_select('member', model("Member_model")->get_data(0, 1), array('id', 'full_name'), 'Member', '', ['required' => true]); ?>
                             <div class="col-md-12">
