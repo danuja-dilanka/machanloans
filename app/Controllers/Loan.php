@@ -7,11 +7,11 @@ class Loan extends BaseController {
     private $thisModel;
 
     public function __construct() {
-        
+
         if (!already_logined()) {
             return redirect()->route('login');
         }
-        
+
         $this->thisModel = model('Loan_model');
     }
 
@@ -176,7 +176,7 @@ class Loan extends BaseController {
         if (!has_permission("group_data", "view")) {
             return redirect()->to(base_url('dashboard'));
         }
-        
+
         return view('_loan/_loan_group/_list', ["title" => "Loan Groups"]);
     }
 
@@ -192,6 +192,22 @@ class Loan extends BaseController {
             return view('_loan/_loan_applications/_view', ["data" => $data, "req_id" => $req_id]);
         } else {
             return redirect()->to(base_url('loan/loan'));
+        }
+    }
+
+    //NEW LOAN VIEW
+    public function new_loan() {
+        if (!has_permission("loan", "add")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+        $rules = [
+            'member' => 'required'
+        ];
+
+        if ($this->request->is('post') && $this->validate($rules)) {
+            return redirect()->route('loan/loan');
+        } else {
+            return view('_loan/_loan_applications/_loan_for', ["title" => "New Loan | Select Member"]);
         }
     }
 
@@ -242,7 +258,7 @@ class Loan extends BaseController {
                 return redirect()->to(base_url('loan/loan'));
             }
         } else if (has_permission("loan", "add")) {
-            return view('_loan/_loan_applications/_loan_app', ["title" => "New Loan Group"]);
+            return view('_loan/_loan_applications/_loan_app', ["title" => "New Loan"]);
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));
@@ -302,7 +318,7 @@ class Loan extends BaseController {
         if (!has_permission("loan", "view")) {
             return redirect()->to(base_url('dashboard'));
         }
-        
+
         return view('_loan/_loan_applications/_list', ["title" => "Loan Lists"]);
     }
 
@@ -327,7 +343,7 @@ class Loan extends BaseController {
         if (!has_permission("loan_pay", "view")) {
             return redirect()->to(base_url('dashboard'));
         }
-        
+
         return view('_loan/_loan_pay/_list', ["title" => "Loan Payments"]);
     }
 
