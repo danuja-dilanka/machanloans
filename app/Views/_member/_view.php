@@ -120,7 +120,6 @@
                                 <div class="tab-pane fade" id="nav-friends" role="tabpanel" aria-labelledby="nav-friends-tab">
                                     <table class="table table-bordered">
                                         <tbody>
-
                                             <tr>
                                                 <td>Name of non-relative friend 1</td>
                                                 <td><?= isset($data) ? $data->rel_friend1 : null ?></td>
@@ -158,6 +157,20 @@
                                             <tr>
                                                 <td>Spouse's Telephone Number</td>
                                                 <td><?= isset($data) ? $data->spouse_tel_number : null ?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" class="profile_picture text-center">
+                                                    <img src="<?= isset($data->spouse_nic_front) ? base_url("public/images/loan_req/nic/spouse_nic_front") . "/" . $data->spouse_nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
+                                                    <h4>NIC Front</h4>
+                                                </td>
+                                                <td colspan="2" class="profile_picture text-center">
+                                                    <img src="<?= isset($data->spouse_nic_back) ? base_url("public/images/loan_req/nic/spouse_nic_back") . "/" . $data->spouse_nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
+                                                    <h4>NIC Back</h4>
+                                                </td>
                                             </tr>
                                         </tbody>
                                     </table>

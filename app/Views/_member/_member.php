@@ -229,7 +229,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">Attach a photograph (both sides) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
+                                <label class="control-label">Attach a photograph (Front) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
                                 <img id="spouse_nic_front_img" alt="" src="<?= isset($data->spouse_nic_front) ? base_url("public/images/loan_req/nic/spouse_nic_front") . "/" . $data->spouse_nic_front : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist11"></div><br>
@@ -243,7 +243,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
-                                <label class="control-label">Attach a photograph (both sides) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
+                                <label class="control-label">Attach a photograph (Back) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
                                 <img id="spouse_nic_back_img" alt="" src="<?= isset($data->spouse_nic_back) ? base_url("public/images/loan_req/nic/spouse_nic_back") . "/" . $data->spouse_nic_back : base_url("public/images") . "/no-image.png" ?>" height="150">
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist12"></div><br>
