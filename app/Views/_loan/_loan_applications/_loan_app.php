@@ -19,34 +19,36 @@
                             <hr>
                         </div>
 
-                        <div class="col-md-8">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">Name</label>
-                                    <input type="text" class="form-control" value="<?= isset($member) ? $member->first_name . " " . $member->last_name : "" ?>" readonly="">
+                        <div class="row">
+                            <div class="col-md-8 row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Name</label>
+                                        <input type="text" class="form-control" value="<?= isset($member) ? $member->first_name . " " . $member->last_name : "" ?>" readonly="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Member No</label>
+                                        <input type="text" class="form-control" value="<?= isset($member) ? $member->member_no : "" ?>" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Phone number</label>
+                                        <input type="text" class="form-control" value="<?= isset($member) ? $member->mobile : "" ?>" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Email </label>
+                                        <input type="email" class="form-control" value="<?= isset($member) ? $member->email : "" ?>" readonly>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">Member No</label>
-                                    <input type="text" class="form-control" value="<?= isset($member) ? $member->member_no : "" ?>" readonly>
-                                </div>
+                            <div class="col-md-4">
+                                <img src="<?= isset($member->photo) && $member->photo != "" ? base_url("public/images/member/") . $member->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">Phone number</label>
-                                    <input type="text" class="form-control" value="<?= isset($member) ? $member->mobile : "" ?>" readonly>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="control-label">Email </label>
-                                    <input type="email" class="form-control" value="<?= isset($member) ? $member->email : "" ?>" readonly>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <img src="<?= isset($member->photo) && $member->photo != "" ? base_url("public/images/member/") . $member->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
