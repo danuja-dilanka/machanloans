@@ -28,7 +28,7 @@ class Member_model extends Model {
 
     public function get_mem_data($id = 0, $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'member');
-        $result->select('*');
+        $result->select('*, CONCAT(first_name, " ", last_name, " (", member_no, ")") AS full_name');
         if ($id > 0) {
             return $result->where(["id" => $id])->get()->getRow();
         } else {
@@ -71,7 +71,7 @@ class Member_model extends Model {
         $this->db->table(DB_PREFIX . 'member_doc')->insert($data);
         return $this->db->insertID();
     }
-    
+
     //UPDATE MEMBER DOCUMENT
     public function update_doc($data, $id) {
         return $this->db->table(DB_PREFIX . 'member_doc')->update($data, ["id" => $id]);
