@@ -69,15 +69,32 @@
                                     </div>
                                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="card" style="width: 18rem;">
-                                                    <img class="card-img-top" src="<?= isset($member->photo) && $member->photo != "" ? base_url("public/images/member/") . $member->photo : base_url("public/uploads/profile/") . "default.png" ?>" alt="Card image cap">
-                                                    <div class="card-body">
-                                                        <p></p>
-                                                        <a href="#" class="btn btn-primary">Full Screen</a>
+                                            <?php
+                                            $docs = model("Member_model")->get_docs_by(["member" => $member->id]);
+                                            foreach ($docs as $d_key => $d_value) {
+                                                $docs_path = [
+                                                    "selfie" => "public/images/loan_req/selfie",
+                                                    "bank_statement" => "public/images/loan_req/electricity_bill",
+                                                    "hw_nic_front" => "public/images/loan_req/nic/hw_nic_front",
+                                                    "hw_nic_back" => "public/images/loan_req/nic/hw_nic_back",
+                                                    "ga_certificate" => "public/images/loan_req/ga_certificate",
+                                                    "fb_screenshot" => "public/images/loan_req/fb_screenshot",
+                                                    "electricity_bill" => "public/images/loan_req/electricity_bill"
+                                                ];
+                                                ?>
+
+                                                <div class="col-md-6">
+                                                    <div class="card" style="width: 18rem;">
+                                                        <img class="card-img-top" src="<?= base_url($docs_path[$d_value->code]) . "/" . $d_value->document ?>" alt="<?= $d_value->name ?>">
+                                                        <div class="card-body">
+                                                            <p><?= $d_value->name ?> | <?= $d_value->document != "" ? $d_value->submitted_date . " " . $d_value->submitted_time : "-" ?></p>
+                                                            <a href="<?= isset($member->photo) && $member->photo != "" ? base_url("public/images/member/") . $member->photo : "#" ?>" class="btn btn-primary">Full Screen</a>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                                <?php
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
