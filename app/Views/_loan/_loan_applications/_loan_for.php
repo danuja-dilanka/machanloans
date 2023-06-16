@@ -2,7 +2,7 @@
 <div class="main-content-inner mt-4">
     <?= form_open_multipart(current_url(), array('data-parsley-validate' => 'true')); ?>
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="header-title">Select Member | New Loan Application</h4>
