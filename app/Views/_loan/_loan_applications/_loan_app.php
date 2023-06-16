@@ -70,7 +70,7 @@
                             <?= render_input('loan_id', 'Loan ID', isset($data) ? $data->first_name : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_custom_select("payment_method", ["Months", "Week"], "Gender", isset($data) ? $data->gender : '', '') ?>
+                            <?= render_custom_select("payment_method", ["Months", "Week"], "Payment Type", isset($data) ? $data->gender : '', '') ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_select('loan_type', model("Loan_model")->get_pro_data(0, 1), array('id', 'loan_name'), 'Loan Product', '', ['required' => true]); ?>
