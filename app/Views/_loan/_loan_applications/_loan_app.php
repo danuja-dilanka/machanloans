@@ -119,7 +119,7 @@
                             </div>
                             <div class="col-md-4">
                                 <img src="<?= isset($member->photo) && $member->photo != "" ? base_url("public/images/member/") . $member->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
-                                <br><a href="<?= base_url("member/mem/"). encode($member->id) ?>" class="btn btn-primary btn-lg btn-block">Edit Member Details</a>
+                                <a style="margin-top:2%" href="<?= base_url("member/mem/"). encode($member->id) ?>" class="btn btn-primary btn-lg btn-block">Edit Member Details</a>
                             </div>
                         </div>
                         <div class="col-md-12 text-center">
