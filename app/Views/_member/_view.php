@@ -18,7 +18,7 @@
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#account_overview"><i class="ti-credit-card"></i>&nbsp;Account Overview</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#transaction-history"><i class="ti-view-list-alt"></i>Transactions</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#member_loans"><i class="ti-agenda"></i>&nbsp;Loans</a></li>
-                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#documents"><i class="ti-files"></i>&nbsp;Documents</a></li>
+                <li class="nav-item" id="documents_nav"><a class="nav-link" data-toggle="tab" href="#documents"><i class="ti-files"></i>&nbsp;Documents</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#email"><i class="ti-email"></i>&nbsp;Send Email</a></li>
                 <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#sms"><i class="ti-comment-alt"></i>&nbsp;Send SMS</a></li>
                 <li class="nav-item"><a class="nav-link" href="<?= base_url("member/mem/") . $req_id ?>"><i class="ti-pencil-alt"></i>&nbsp;Edit Member Details</a></li>
@@ -117,7 +117,7 @@
                                             <tr>
                                                 <td colspan="2">
                                                     <ul class="nav flex-column nav-tabs settings-tab" role="tablist">
-                                                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#documents"><i class="ti-files"></i>&nbsp;See Documents</a></li>
+                                                        <li class="nav-item  text-center" onclick="document.getElementById('documents_nav').click()"><a class="nav-link" href="#"><i class="ti-files"></i>&nbsp;See Documents</a></li>
                                                     </ul>
                                                 </td>
                                             </tr>
