@@ -45,7 +45,7 @@
                             <nav style="margin-top:2%">
                                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
-                                    <a class="nav-item nav-link" id="nav-friends-tab" data-toggle="tab" href="#nav-friends" role="tab" aria-controls="nav-friends" aria-selected="false">Friend</a>
+                                    <a class="nav-item nav-link" id="nav-friends-tab" data-toggle="tab" href="#nav-friends" role="tab" aria-controls="nav-friends" aria-selected="false">Friends</a>
                                     <a class="nav-item nav-link" id="nav-spouse-tab" data-toggle="tab" href="#nav-spouse" role="tab" aria-controls="nav-spouse" aria-selected="false">Spouses </a>
                                 </div>
                             </nav>
