@@ -259,7 +259,7 @@ class Loan extends BaseController {
             }
         } else if (has_permission("loan", "add")) {
             if ($this->request->getGet("b") != "") {
-                $member = decode($this->request->getGet("b"));
+                $member = model("Member_model")->get_mem_data(decode($this->request->getGet("b")));
                 if (isset($member->id)) {
                     return view('_loan/_loan_applications/_loan_app', ["title" => "New Loan", "member" => $member]);
                 } else {
