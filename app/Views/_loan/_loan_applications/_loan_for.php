@@ -5,7 +5,7 @@
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="header-title">Select Member</h4>
+                    <h4 class="header-title">Select Member | New Loan Application</h4>
                 </div>
                 <div class="card-body">
                     <div class="row text-center">

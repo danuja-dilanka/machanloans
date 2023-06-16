@@ -205,7 +205,7 @@ class Loan extends BaseController {
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {
-            return redirect()->route('loan/loan');
+            return redirect()->to(base_url('loan/loan') . "?b=" . encode($this->request->getPost('member')));
         } else {
             return view('_loan/_loan_applications/_loan_for', ["title" => "New Loan | Select Member"]);
         }
@@ -258,7 +258,16 @@ class Loan extends BaseController {
                 return redirect()->to(base_url('loan/loan'));
             }
         } else if (has_permission("loan", "add")) {
-            return view('_loan/_loan_applications/_loan_app', ["title" => "New Loan"]);
+            if ($this->input->get("b") != "") {
+                $member = decode($this->input->get("b"));
+                if (isset($member->id)) {
+                    return view('_loan/_loan_applications/_loan_app', ["title" => "New Loan", "member" => $member]);
+                } else {
+                    return redirect()->to(base_url('loan/new_loan'));
+                }
+            } else {
+                return redirect()->to(base_url('loan/new_loan'));
+            }
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));
