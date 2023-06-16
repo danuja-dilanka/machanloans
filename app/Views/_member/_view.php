@@ -32,101 +32,133 @@
                         <div class="card-header">
                             <span class="header-title">Member Details</span>
                         </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2" class="profile_picture text-center">
-                                            <img src="<?= isset($data->photo) && $data->photo != "" ? base_url("public/images/member/") . $data->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>First Name</td>
-                                        <td><?= isset($data) ? $data->first_name : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Last Name</td>
-                                        <td><?= isset($data) ? $data->last_name : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Business Name</td>
-                                        <td><?= isset($data) ? $data->business_name : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Member No</td>
-                                        <td><?= isset($data) ? $data->member_no : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td><?= isset($data) ? $data->email : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mobile</td>
-                                        <td><?= isset($data) ? $data->mobile : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gender</td>
-                                        <td><?php
-                                            if (isset($data)) {
-                                                if ($data->gender == 1) {
-                                                    echo 'Male';
-                                                } else {
-                                                    echo 'Female';
-                                                }
-                                            }
-                                            ?>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>City</td>
-                                        <td><?= isset($data) ? $data->city : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address</td>
-                                        <td><?= isset($data) ? $data->address : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Google location</td>
-                                        <td><?= isset($data) ? $data->google_location : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Current Residential Address</td>
-                                        <td><?= isset($data) ? $data->cred_address : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address of place of employment or business</td>
-                                        <td><?= isset($data) ? $data->working_address : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Job or business</td>
-                                        <td><?= isset($data) ? $data->job_or_business : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Name of non-relative friend 1</td>
-                                        <td><?= isset($data) ? $data->rel_friend1 : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Contact number of non-relative friend 1</td>
-                                        <td><?= isset($data) ? $data->rel_friend1_phone : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address of non-relative friend 1</td>
-                                        <td><?= isset($data) ? $data->rel_friend1_address : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Name of non-relative friend 2</td>
-                                        <td><?= isset($data) ? $data->rel_friend2 : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Contact number of non-relative friend 2</td>
-                                        <td><?= isset($data) ? $data->rel_friend2_phone : null ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Address of non-relative friend 2</td>
-                                        <td><?= isset($data) ? $data->rel_friend2_address : null ?></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="card-body" style="margin-top:2%">
+                            <nav>
+                                <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
+                                    <a class="nav-item nav-link" id="nav-friends-tab" data-toggle="tab" href="#nav-friends" role="tab" aria-controls="nav-friends" aria-selected="false">Friend</a>
+                                    <a class="nav-item nav-link" id="nav-spouse-tab" data-toggle="tab" href="#nav-spouse" role="tab" aria-controls="nav-spouse" aria-selected="false">Spouses </a>
+                                </div>
+                            </nav>
+                            <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="2" class="profile_picture text-center">
+                                                    <img src="<?= isset($data->photo) && $data->photo != "" ? base_url("public/images/member/") . $data->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>First Name</td>
+                                                <td><?= isset($data) ? $data->first_name : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Last Name</td>
+                                                <td><?= isset($data) ? $data->last_name : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Business Name</td>
+                                                <td><?= isset($data) ? $data->business_name : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Member No</td>
+                                                <td><?= isset($data) ? $data->member_no : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Email</td>
+                                                <td><?= isset($data) ? $data->email : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mobile</td>
+                                                <td><?= isset($data) ? $data->mobile : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Gender</td>
+                                                <td><?php
+                                                    if (isset($data)) {
+                                                        if ($data->gender == 1) {
+                                                            echo 'Male';
+                                                        } else {
+                                                            echo 'Female';
+                                                        }
+                                                    }
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>City</td>
+                                                <td><?= isset($data) ? $data->city : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address</td>
+                                                <td><?= isset($data) ? $data->address : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Google location</td>
+                                                <td><?= isset($data) ? $data->google_location : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Current Residential Address</td>
+                                                <td><?= isset($data) ? $data->cred_address : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address of place of employment or business</td>
+                                                <td><?= isset($data) ? $data->working_address : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Job or business</td>
+                                                <td><?= isset($data) ? $data->job_or_business : null ?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="nav-friends" role="tabpanel" aria-labelledby="nav-friends-tab">
+                                    <table class="table table-bordered">
+                                        <tbody>
+
+                                            <tr>
+                                                <td>Name of non-relative friend 1</td>
+                                                <td><?= isset($data) ? $data->rel_friend1 : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Contact number of non-relative friend 1</td>
+                                                <td><?= isset($data) ? $data->rel_friend1_phone : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address of non-relative friend 1</td>
+                                                <td><?= isset($data) ? $data->rel_friend1_address : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Name of non-relative friend 2</td>
+                                                <td><?= isset($data) ? $data->rel_friend2 : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Contact number of non-relative friend 2</td>
+                                                <td><?= isset($data) ? $data->rel_friend2_phone : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Address of non-relative friend 2</td>
+                                                <td><?= isset($data) ? $data->rel_friend2_address : null ?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade" id="nav-spouse" role="tabpanel" aria-labelledby="nav-spouse-tab">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td>Spouse's Name</td>
+                                                <td><?= isset($data) ? $data->spouse_name : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Spouse's Telephone Number</td>
+                                                <td><?= isset($data) ? $data->spouse_tel_number : null ?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
