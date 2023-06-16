@@ -81,21 +81,20 @@
                                                     "fb_screenshot" => "public/images/loan_req/fb_screenshot",
                                                     "electricity_bill" => "public/images/loan_req/electricity_bill"
                                                 ];
-
-                                                if ($d_value->document != "" && !file_exists(ROOTPATH . $docs_path[$d_value->code] . "/" . $d_value->document)) {
-                                                    continue;
-                                                }
                                                 ?>
-
-                                                <div class="col-md-6">
-                                                    <div class="card" style="width: 18rem;">
-                                                        <img class="card-img-top" src="<?= base_url($docs_path[$d_value->code]) . "/" . $d_value->document ?>" alt="<?= $d_value->name ?>" alt="" width="100">
-                                                        <div class="card-body">
-                                                            <p><?= $d_value->name ?> | <?= $d_value->document != "" ? $d_value->submitted_date . " " . $d_value->submitted_time : "-" ?></p>
-                                                            <a href="<?= base_url($docs_path[$d_value->code]) . "/" . $d_value->document ?>" class="btn btn-primary">Full Screen</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <tr>
+                                                    <td><?= $d_key + 1 ?></td>
+                                                    <td><?= $d_value->name ?></td>
+                                                    <td class="text-center">
+                                                        <?php if ($d_value->document != "") { ?> 
+                                                            <a href="<?= base_url($docs_path[$d_value->code]) . "/" . $d_value->document ?>" target="_blank">View</a>
+                                                        <?php } else { ?>
+                                                            <p>Not Submitted</p>
+                                                        <?php } ?>
+                                                    </td>
+                                                    <td><?= $d_value->document != "" ? $d_value->submitted_date . " " . $d_value->submitted_time : "-" ?></td>
+                                                    <!--<td></td>-->
+                                                </tr>
                                                 <?php
                                             }
                                             ?>
