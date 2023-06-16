@@ -18,62 +18,56 @@
                             <h4>Member Details</h4>
                             <hr>
                         </div>
-
                         <div class="row">
-                            <div class="col-md-8 row">
-
-                                <div class="row">
-                                    <div class="col-xs-12 ">
-                                        <nav>
-                                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
-                                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Documents</a>
-                                            </div>
-                                        </nav>
-                                        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Name</label>
-                                                        <input type="text" class="form-control" value="<?= isset($member) ? $member->first_name . " " . $member->last_name : "" ?>" readonly="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Member No</label>
-                                                        <input type="text" class="form-control" value="<?= isset($member) ? $member->member_no : "" ?>" readonly>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Phone number</label>
-                                                        <input type="text" class="form-control" value="<?= isset($member) ? $member->mobile : "" ?>" readonly>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Email </label>
-                                                        <input type="email" class="form-control" value="<?= isset($member) ? $member->email : "" ?>" readonly>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Address on ID</label>
-                                                        <textarea class="form-control" readonly><?= isset($member) ? $member->address : "" ?></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="control-label">Current Residential Address</label>
-                                                        <textarea class="form-control" readonly><?= isset($member) ? $member->cred_address : "" ?></textarea>
-                                                    </div>
+                            <div class="col-md-8">
+                                <nav>
+                                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
+                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Documents</a>
+                                    </div>
+                                </nav>
+                                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Name</label>
+                                                    <input type="text" class="form-control" value="<?= isset($member) ? $member->first_name . " " . $member->last_name : "" ?>" readonly="">
                                                 </div>
                                             </div>
-                                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Member No</label>
+                                                    <input type="text" class="form-control" value="<?= isset($member) ? $member->member_no : "" ?>" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Phone number</label>
+                                                    <input type="text" class="form-control" value="<?= isset($member) ? $member->mobile : "" ?>" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Email </label>
+                                                    <input type="email" class="form-control" value="<?= isset($member) ? $member->email : "" ?>" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Address on ID</label>
+                                                    <textarea class="form-control" readonly><?= isset($member) ? $member->address : "" ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="control-label">Current Residential Address</label>
+                                                    <textarea class="form-control" readonly><?= isset($member) ? $member->cred_address : "" ?></textarea>
+                                                </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 
                                     </div>
                                 </div>
