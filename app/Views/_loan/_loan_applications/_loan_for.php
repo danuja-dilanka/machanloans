@@ -11,7 +11,7 @@
                     <div class="row text-center">
                         <div class="col-md-6"></div>
                         <div class="col-md-4">
-                            <?= render_select('loan', model("Member_model")->get_data(0, 1), array('id', 'full_name'), 'Member', '', ['required' => true]); ?>
+                            <?= render_select('member', model("Member_model")->get_data(0, 1), array('id', 'full_name'), 'Member', '', ['required' => true]); ?>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Continue</button>
