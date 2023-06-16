@@ -33,6 +33,15 @@
                             <span class="header-title">Member Details</span>
                         </div>
                         <div class="card-body" style="margin-top:2%">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td colspan="2" class="profile_picture text-center">
+                                            <img src="<?= isset($data->photo) && $data->photo != "" ? base_url("public/images/member/") . $data->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             <nav>
                                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
@@ -44,11 +53,6 @@
                                 <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                     <table class="table table-bordered">
                                         <tbody>
-                                            <tr>
-                                                <td colspan="2" class="profile_picture text-center">
-                                                    <img src="<?= isset($data->photo) && $data->photo != "" ? base_url("public/images/member/") . $data->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md">
-                                                </td>
-                                            </tr>
                                             <tr>
                                                 <td>First Name</td>
                                                 <td><?= isset($data) ? $data->first_name : null ?></td>
