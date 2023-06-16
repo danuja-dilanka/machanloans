@@ -165,11 +165,11 @@
                                             <tr>
                                                 <td colspan="2" class="profile_picture text-center">
                                                     <img src="<?= isset($data->spouse_nic_front) ? base_url("public/images/loan_req/nic/spouse_nic_front") . "/" . $data->spouse_nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
-                                                    <h4>NIC Front</h4>
+                                                    <h6>NIC Front</h6>
                                                 </td>
                                                 <td colspan="2" class="profile_picture text-center">
                                                     <img src="<?= isset($data->spouse_nic_back) ? base_url("public/images/loan_req/nic/spouse_nic_back") . "/" . $data->spouse_nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
-                                                    <h4>NIC Back</h4>
+                                                    <h6>NIC Back</h6>
                                                 </td>
                                             </tr>
                                         </tbody>
