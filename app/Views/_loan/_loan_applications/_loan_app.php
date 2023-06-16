@@ -70,7 +70,7 @@
                                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                         <div class="row">
                                             <div class="table-responsive col-md-12">
-                                                <table class="table table-bordered" style="width: 100%">
+                                                <table class="table table-bordered custom_dt_table" style="width: 100%">
                                                     <thead>
                                                         <tr>
                                                             <th>#</th>
