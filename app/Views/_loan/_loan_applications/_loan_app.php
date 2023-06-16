@@ -30,27 +30,27 @@
                                 <input type="text" class="form-control" value="<?= isset($member) ? $member->member_no : "" ?>" readonly>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Phone number</label>
-                                <input type="date" class="form-control" value="<?= isset($member) ? $member->mobile : "" ?>" readonly>
+                                <input type="text" class="form-control" value="<?= isset($member) ? $member->mobile : "" ?>" readonly>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Email </label>
                                 <input type="email" class="form-control" value="<?= isset($member) ? $member->email : "" ?>" readonly>
                             </div>
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Address on ID</label>
                                 <textarea class="form-control" readonly><?= isset($member) ? $member->address : "" ?></textarea>
                             </div>
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 <label class="control-label">Current Residential Address</label>
                                 <textarea class="form-control" readonly><?= isset($member) ? $member->cred_address : "" ?></textarea>
