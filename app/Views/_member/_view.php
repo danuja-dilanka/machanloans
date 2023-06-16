@@ -32,7 +32,7 @@
                         <div class="card-header">
                             <span class="header-title">Member Details</span>
                         </div>
-                        <div class="card-body" style="margin-top:2%">
+                        <div class="card-body">
                             <table class="table table-bordered">
                                 <tbody>
                                     <tr>
@@ -42,7 +42,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <nav>
+                            <nav style="margin-top:2%">
                                 <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
                                     <a class="nav-item nav-link" id="nav-friends-tab" data-toggle="tab" href="#nav-friends" role="tab" aria-controls="nav-friends" aria-selected="false">Friend</a>
