@@ -23,7 +23,8 @@
                                 <nav>
                                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
-                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Documents</a>
+                                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Main Documents</a>
+                                        <a class="nav-item nav-link" id="nav-other-doc" data-toggle="tab" href="#nav-other-doc" role="tab" aria-controls="nav-other-doc" aria-selected="false">Other Documents</a>
                                     </div>
                                 </nav>
                                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
@@ -76,68 +77,80 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                        <div class="row col-md-12">
-                                            <div class="col-md-3">
-                                                <table class="table table-bordered">
-                                                    <tbody>
+                                        <div class="row ">
+                                            <table class="table table-bordered">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class=" text-center">
+                                                            <a target="_blank" href="<?= isset($member->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $member->nic_front : "#" ?>">
+                                                                <img src="<?= isset($member->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $member->nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-sm">
+                                                            </a>
+                                                            <h6 style="margin-top:2%">NIC Front</h6>
+                                                        </td>
+                                                        <td class=" text-center">
+                                                            <a target="_blank" href="<?= isset($member->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $member->nic_back : "#" ?>">
+                                                                <img src="<?= isset($member->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $member->nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-sm">
+                                                            </a>
+                                                            <h6 style="margin-top:2%">NIC Back</h6>
+                                                        </td>
+                                                        <td class=" text-center">
+                                                            <a target="_blank" href="<?= isset($member->spouse_nic_front) ? base_url("public/images/loan_req/nic/spouse_nic_front") . "/" . $member->spouse_nic_front : "#" ?>">
+                                                                <img src="<?= isset($member->spouse_nic_front) ? base_url("public/images/loan_req/nic/spouse_nic_front") . "/" . $member->spouse_nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-sm">
+                                                            </a>
+                                                            <h6 style="margin-top:2%">Spouse's NIC Front</h6>
+                                                        </td>
+                                                        <td class=" text-center">
+                                                            <a target="_blank" href="<?= isset($member->spouse_nic_back) ? base_url("public/images/loan_req/nic/spouse_nic_back") . "/" . $member->spouse_nic_back : "#" ?>">
+                                                                <img src="<?= isset($member->spouse_nic_back) ? base_url("public/images/loan_req/nic/spouse_nic_back") . "/" . $member->spouse_nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-sm">
+                                                            </a>
+                                                            <h6 style="margin-top:2%">Spouse's NIC Back</h6>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-other-doc" role="tabpanel" aria-labelledby="nav-other-doc-tab">
+                                        <div class="row">
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered custom_dt_table" style="width: 100%">
+                                                    <thead>
                                                         <tr>
-                                                            <td class=" text-center">
-                                                                <a target="_blank" href="<?= isset($member->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $member->nic_front : "#" ?>">
-                                                                    <img src="<?= isset($member->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $member->nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-sm">
-                                                                </a>
-                                                                <h6 style="margin-top:2%">NIC Front</h6>
-                                                            </td>
-                                                            <td class=" text-center">
-                                                                <a target="_blank" href="<?= isset($member->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $member->nic_back : "#" ?>">
-                                                                    <img src="<?= isset($member->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $member->nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-sm">
-                                                                </a>
-                                                                <h6 style="margin-top:2%">NIC Back</h6>
-                                                            </td>
+                                                            <th>#</th>
+                                                            <th>Document Name</th>
+                                                            <th>Document File</th>
                                                         </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
+                                                        $docs = model("Member_model")->get_docs_by(["member" => $member->id]);
+                                                        foreach ($docs as $d_key => $d_value) {
+                                                            $docs_path = [
+                                                                "selfie" => "public/images/loan_req/selfie",
+                                                                "bank_statement" => "public/images/loan_req/electricity_bill",
+                                                                "hw_nic_front" => "public/images/loan_req/nic/hw_nic_front",
+                                                                "hw_nic_back" => "public/images/loan_req/nic/hw_nic_back",
+                                                                "ga_certificate" => "public/images/loan_req/ga_certificate",
+                                                                "fb_screenshot" => "public/images/loan_req/fb_screenshot",
+                                                                "electricity_bill" => "public/images/loan_req/electricity_bill"
+                                                            ];
+                                                            ?>
+                                                            <tr>
+                                                                <td><?= $d_key + 1 ?></td>
+                                                                <td><?= $d_value->name ?></td>
+                                                                <td class="text-center">
+                                                                    <?php if ($d_value->document != "") { ?> 
+                                                                        <a href="<?= base_url($docs_path[$d_value->code]) . "/" . $d_value->document ?>" target="_blank">View</a>
+                                                                    <?php } else { ?>
+                                                                        <p>Not Submitted</p>
+                                                                    <?php } ?>
+                                                                </td>
+                                                            </tr>
+                                                            <?php
+                                                        }
+                                                        ?>
                                                     </tbody>
                                                 </table>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <div class="table-responsive">
-                                                    <table class="table table-bordered custom_dt_table" style="width: 100%">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>#</th>
-                                                                <th>Document Name</th>
-                                                                <th>Document File</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <?php
-                                                            $docs = model("Member_model")->get_docs_by(["member" => $member->id]);
-                                                            foreach ($docs as $d_key => $d_value) {
-                                                                $docs_path = [
-                                                                    "selfie" => "public/images/loan_req/selfie",
-                                                                    "bank_statement" => "public/images/loan_req/electricity_bill",
-                                                                    "hw_nic_front" => "public/images/loan_req/nic/hw_nic_front",
-                                                                    "hw_nic_back" => "public/images/loan_req/nic/hw_nic_back",
-                                                                    "ga_certificate" => "public/images/loan_req/ga_certificate",
-                                                                    "fb_screenshot" => "public/images/loan_req/fb_screenshot",
-                                                                    "electricity_bill" => "public/images/loan_req/electricity_bill"
-                                                                ];
-                                                                ?>
-                                                                <tr>
-                                                                    <td><?= $d_key + 1 ?></td>
-                                                                    <td><?= $d_value->name ?></td>
-                                                                    <td class="text-center">
-                                                                        <?php if ($d_value->document != "") { ?> 
-                                                                            <a href="<?= base_url($docs_path[$d_value->code]) . "/" . $d_value->document ?>" target="_blank">View</a>
-                                                                        <?php } else { ?>
-                                                                            <p>Not Submitted</p>
-                                                                        <?php } ?>
-                                                                    </td>
-                                                                </tr>
-                                                                <?php
-                                                            }
-                                                            ?>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
