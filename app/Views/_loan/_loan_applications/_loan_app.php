@@ -24,7 +24,7 @@
                                     <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                         <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
                                         <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Main Documents</a>
-                                        <a class="nav-item nav-link" id="nav-other-doc" data-toggle="tab" href="#nav-other-doc" role="tab" aria-controls="nav-other-doc" aria-selected="false">Other Documents</a>
+                                        <a class="nav-item nav-link" id="nav-other-doc" data-toggle="tab" href="#nav-otherdoc" role="tab" aria-controls="nav-other-doc" aria-selected="false">Other Documents</a>
                                     </div>
                                 </nav>
                                 <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
@@ -110,7 +110,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="nav-other-doc" role="tabpanel" aria-labelledby="nav-other-doc-tab">
+                                    <div class="tab-pane fade" id="nav-otherdoc" role="tabpanel" aria-labelledby="nav-other-doc-tab">
                                         <div class="row">
                                             <div class="table-responsive">
                                                 <table class="table table-bordered custom_dt_table" style="width: 100%">
