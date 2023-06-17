@@ -77,7 +77,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                                         <div class="row col-md-12">
-                                            <div class="col-md-4">
+                                            <div class="col-md-3">
                                                 <table class="table table-bordered">
                                                     <tbody>
                                                         <tr>
@@ -97,7 +97,7 @@
                                                     </tbody>
                                                 </table>
                                             </div>
-                                            <div class="col-md-8">
+                                            <div class="col-md-9">
                                                 <div class="table-responsive">
                                                     <table class="table table-bordered custom_dt_table" style="width: 100%">
                                                         <thead>
