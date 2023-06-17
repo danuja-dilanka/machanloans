@@ -131,6 +131,27 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <td class="profile_picture text-center">
+                                                    <img src="<?= isset($data->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $data->nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
+                                                    <h6>NIC Front</h6>
+                                                </td>
+                                                <td class="profile_picture text-center">
+                                                    <img src="<?= isset($data->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $data->nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
+                                                    <h6>NIC Back</h6>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <ul class="nav flex-column nav-tabs settings-tab" role="tablist">
+                                                        <li class="nav-item  text-center" onclick="document.getElementById('documents_nav').click()"><a class="nav-link" href="#"><i class="ti-files"></i>&nbsp;Other Documents</a></li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="nav-friends" role="tabpanel" aria-labelledby="nav-friends-tab">
                                     <table class="table table-bordered">
