@@ -215,9 +215,11 @@ class Web extends BaseController {
                     $member_id = $Member_model->add_data([
                         "first_name" => $name[0],
                         "last_name" => count($name) > 1 ? $name[count($name) - 1] : "",
+                        "name_with_ini" => $post_data["full_name"],
                         "birthday" => $post_data["birthday"],
                         "email" => $post_data["email"],
                         "mobile" => $post_data["phone"],
+                        "whatsapp" => $post_data["whatsapp"],
                         "address" => $post_data["current_address"],
                         "nic" => $post_data["nic"],
                     ]);

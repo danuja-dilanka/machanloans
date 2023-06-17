@@ -103,7 +103,7 @@
                                                 <td><?= isset($data) ? $data->city : null ?></td>
                                             </tr>
                                             <tr>
-                                                <td>ID address</td>
+                                                <td>ID Address</td>
                                                 <td><?= isset($data) ? $data->address : null ?></td>
                                             </tr>
                                             <tr>

@@ -56,7 +56,7 @@
                             <?= render_input('city', 'City', isset($data) ? $data->city : '', 'text', []); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_textarea('address', 'Address', isset($data) ? $data->address : '', []); ?>
+                            <?= render_textarea('address', 'ID Address', isset($data) ? $data->address : '', []); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_textarea('google_location', 'Google location', isset($data) ? $data->google_location : '', []); ?>
