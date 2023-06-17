@@ -10,7 +10,6 @@
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-4 col-lg-3">
             <ul class="nav flex-column nav-tabs settings-tab" role="tablist">
