@@ -62,6 +62,10 @@
                                                 <td><?= isset($data) ? $data->last_name : null ?></td>
                                             </tr>
                                             <tr>
+                                                <td>Full Name</td>
+                                                <td><?= isset($data) ? $data->name_with_ini : null ?></td>
+                                            </tr>
+                                            <tr>
                                                 <td>Business Name</td>
                                                 <td><?= isset($data) ? $data->business_name : null ?></td>
                                             </tr>
@@ -76,6 +80,10 @@
                                             <tr>
                                                 <td>Mobile</td>
                                                 <td><?= isset($data) ? $data->mobile : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Whatsapp Mobile</td>
+                                                <td><?= isset($data) ? $data->whatsapp : null ?></td>
                                             </tr>
                                             <tr>
                                                 <td>Gender</td>
@@ -95,7 +103,7 @@
                                                 <td><?= isset($data) ? $data->city : null ?></td>
                                             </tr>
                                             <tr>
-                                                <td>Address</td>
+                                                <td>ID address</td>
                                                 <td><?= isset($data) ? $data->address : null ?></td>
                                             </tr>
                                             <tr>
@@ -117,7 +125,7 @@
                                             <tr>
                                                 <td colspan="2">
                                                     <ul class="nav flex-column nav-tabs settings-tab" role="tablist">
-                                                        <li class="nav-item  text-center" onclick="document.getElementById('documents_nav').click()"><a class="nav-link" href="#"><i class="ti-files"></i>&nbsp;See Documents</a></li>
+                                                        <li class="nav-item  text-center" onclick="document.getElementById('documents_nav').click()"><a class="nav-link" href="#"><i class="ti-files"></i>&nbsp;Other Documents</a></li>
                                                     </ul>
                                                 </td>
                                             </tr>

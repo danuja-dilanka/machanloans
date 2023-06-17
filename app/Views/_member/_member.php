@@ -20,6 +20,9 @@
                         <div class="col-md-6">
                             <?= render_input('last_name', 'Last Name', isset($data) ? $data->last_name : '', 'text', ['required' => true]); ?>
                         </div>
+                        <div class="col-md-12">
+                            <?= render_input('name_with_ini', 'Name with initial', isset($data) ? $data->name_with_ini : '', 'text', ['required' => true]); ?>
+                        </div>
                         <div class="col-md-3">
                             <?= render_input('nic', 'NIC', isset($data) ? $data->nic : '', 'text', ['required' => true]); ?>
                         </div>
@@ -38,6 +41,10 @@
                         <div class="col-md-6">
                             <?= render_input('mobile', 'Mobile', isset($data) ? $data->mobile : '', 'number', ['required' => true]); ?>
                             <small>Phone Number Must Be In This Format: 947XXXXXXXX</small>
+                        </div>
+                        <div class="col-md-6">
+                            <?= render_input('whatsapp', 'Whatsapp', isset($data) ? $data->whatsapp : '', 'number'); ?>
+                            <small>Whatsapp Number Must Be In This Format: 07XXXXXXXX</small>
                         </div>
                         <div class="col-md-6">
                             <?= render_custom_select("gender", ["Male", "Female"], "Gender", isset($data) ? $data->gender : '', '') ?>
