@@ -122,13 +122,6 @@
                                                 <td>Job or business</td>
                                                 <td><?= isset($data) ? $data->job_or_business : null ?></td>
                                             </tr>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <ul class="nav flex-column nav-tabs settings-tab" role="tablist">
-                                                        <li class="nav-item  text-center" onclick="document.getElementById('documents_nav').click()"><a class="nav-link" href="#"><i class="ti-files"></i>&nbsp;Other Documents</a></li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
                                         </tbody>
                                     </table>
                                     <table class="table table-bordered">
