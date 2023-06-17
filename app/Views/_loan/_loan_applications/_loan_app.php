@@ -81,15 +81,15 @@
                                                 <table class="table table-bordered">
                                                     <tbody>
                                                         <tr>
-                                                            <td class="profile_picture text-center">
+                                                            <td class=" text-center">
                                                                 <a target="_blank" href="<?= isset($member->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $member->nic_front : "#" ?>">
-                                                                    <img src="<?= isset($member->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $member->nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
+                                                                    <img src="<?= isset($member->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $member->nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-sm">
                                                                 </a>
                                                                 <h6 style="margin-top:2%">NIC Front</h6>
                                                             </td>
-                                                            <td class="profile_picture text-center">
+                                                            <td class=" text-center">
                                                                 <a target="_blank" href="<?= isset($member->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $member->nic_back : "#" ?>">
-                                                                    <img src="<?= isset($member->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $member->nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
+                                                                    <img src="<?= isset($member->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $member->nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-sm">
                                                                 </a>
                                                                 <h6 style="margin-top:2%">NIC Back</h6>
                                                             </td>
