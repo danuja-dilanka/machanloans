@@ -128,12 +128,16 @@
                                         <tbody>
                                             <tr>
                                                 <td class="profile_picture text-center">
-                                                    <img src="<?= isset($data->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $data->nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
-                                                    <h6>NIC Front</h6>
+                                                    <a target="_blank" href="<?= isset($data->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $data->nic_front : "#" ?>">
+                                                        <img src="<?= isset($data->nic_front) ? base_url("public/images/loan_req/nic/front") . "/" . $data->nic_front : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
+                                                    </a>
+                                                    <h6 style="margin-top:2%">NIC Front</h6>
                                                 </td>
                                                 <td class="profile_picture text-center">
-                                                    <img src="<?= isset($data->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $data->nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
-                                                    <h6>NIC Back</h6>
+                                                    <a target="_blank" href="<?= isset($data->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $data->nic_back : "#" ?>">
+                                                        <img src="<?= isset($data->nic_back) ? base_url("public/images/loan_req/nic/back") . "/" . $data->nic_back : base_url("public/images") . "/no-image.png" ?>" class="thumb-image-md">
+                                                    </a>
+                                                    <h6 style="margin-top:2%">NIC Back</h6>
                                                 </td>
                                             </tr>
                                             <tr>
