@@ -72,7 +72,7 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <img src="<?= isset($member->photo) && $member->photo != "" ? base_url("public/images/member/") . $member->photo : base_url("public/uploads/profile/") . "default.png" ?>" class="thumb-image-md" width="250">
-                                                <a style="margin-top:2%" href="<?= base_url("member/mem/") . encode($member->id) ?>" class="btn btn-primary btn-lg btn-block">Edit Member Details</a>
+                                                <a style="margin-top:2%" href="<?= base_url("member/mem/") . encode($member->id) ?>" class="btn btn-success btn-lg btn-block"><i class="ti-check-box"></i>&nbsp;Edit Member Details</a>
                                             </div>
                                         </div>
                                     </div>
