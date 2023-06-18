@@ -70,6 +70,9 @@
                         <div class="col-md-12">
                             <?= render_input('job_or_business', 'Job or business', isset($data) ? $data->job_or_business : '', 'text', []); ?>
                         </div>
+                        <div class="col-md-12">
+                            <?= render_input('bank_details', 'Bank Details', isset($data) ? $data->bank_details : '', 'text', []); ?>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
                                 <label class="control-label">Front photograph of the National Identity Card (20MB)</label>
