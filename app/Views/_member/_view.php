@@ -122,6 +122,18 @@
                                                 <td>Job or business</td>
                                                 <td><?= isset($data) ? $data->job_or_business : null ?></td>
                                             </tr>
+                                            <tr>
+                                                <td>Bank Name</td>
+                                                <td><?= isset($data) ? $data->bank_name : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Branch Name</td>
+                                                <td><?= isset($data) ? $data->branch_name : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Account Number</td>
+                                                <td><?= isset($data) ? $data->acc_number : null ?></td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                     <table class="table table-bordered">
