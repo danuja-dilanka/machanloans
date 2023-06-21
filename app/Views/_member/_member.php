@@ -70,8 +70,14 @@
                         <div class="col-md-12">
                             <?= render_input('job_or_business', 'Job or business', isset($data) ? $data->job_or_business : '', 'text', []); ?>
                         </div>
+                        <div class="col-md-6">
+                            <?= render_input('bank_name', 'Bank Name', isset($data) ? $data->bank_name : '', 'text', []); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <?= render_input('branch_name', 'Branch Name', isset($data) ? $data->branch_name : '', 'text', []); ?>
+                        </div>
                         <div class="col-md-12">
-                            <?= render_input('bank_details', 'Bank Details', isset($data) ? $data->bank_details : '', 'text', []); ?>
+                            <?= render_input('acc_number', 'Account Number', isset($data) ? $data->acc_number : '', 'text', []); ?>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group text-center">
