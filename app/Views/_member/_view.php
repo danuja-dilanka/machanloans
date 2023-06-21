@@ -209,32 +209,24 @@
                                     </table>
                                 </div>
                                 <div class="tab-pane fade show active" id="nav-ploans" role="tabpanel" aria-labelledby="nav-ploans-tab">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <span class="header-title">Loans</span>
-                                        </div>
+                                    <div class="table-responsive">
+                                        <table id="loans_table" class="table table-bordered custom_dt_table" aria-describedby="loans_table_info">
+                                            <thead>
+                                                <tr>
+                                                    <th>Loan ID</th>
+                                                    <th>Loan Product</th>
+                                                    <th class="text-right">Applied Amount</th>
+                                                    <th class="text-right">Total Payable</th>
+                                                    <th class="text-right">Amount Paid</th>
+                                                    <th class="text-right">Due Amount</th>
+                                                    <th>Release Date</th>
+                                                    <th>Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
 
-                                        <div class="card-body">
-                                            <div class="table-responsive">
-                                                <table id="loans_table" class="table table-bordered custom_dt_table" aria-describedby="loans_table_info">
-                                                    <thead>
-                                                        <tr>
-                                                            <th>Loan ID</th>
-                                                            <th>Loan Product</th>
-                                                            <th class="text-right">Applied Amount</th>
-                                                            <th class="text-right">Total Payable</th>
-                                                            <th class="text-right">Amount Paid</th>
-                                                            <th class="text-right">Due Amount</th>
-                                                            <th>Release Date</th>
-                                                            <th>Status</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
