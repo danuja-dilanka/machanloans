@@ -46,6 +46,7 @@
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
                                     <a class="nav-item nav-link" id="nav-friends-tab" data-toggle="tab" href="#nav-friends" role="tab" aria-controls="nav-friends" aria-selected="false">Friends</a>
                                     <a class="nav-item nav-link" id="nav-spouse-tab" data-toggle="tab" href="#nav-spouse" role="tab" aria-controls="nav-spouse" aria-selected="false">Spouses </a>
+                                    <a class="nav-item nav-link" id="nav-ploans-tab" data-toggle="tab" href="#nav-ploans" role="tab" aria-controls="nav-ploans" aria-selected="false">Loans</a>
                                 </div>
                             </nav>
                             <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
@@ -206,6 +207,35 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                                <div class="tab-pane fade show active" id="nav-ploans" role="tabpanel" aria-labelledby="nav-ploans-tab">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <span class="header-title">Loans</span>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table id="loans_table" class="table table-bordered custom_dt_table" aria-describedby="loans_table_info">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Loan ID</th>
+                                                            <th>Loan Product</th>
+                                                            <th class="text-right">Applied Amount</th>
+                                                            <th class="text-right">Total Payable</th>
+                                                            <th class="text-right">Amount Paid</th>
+                                                            <th class="text-right">Due Amount</th>
+                                                            <th>Release Date</th>
+                                                            <th>Status</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
