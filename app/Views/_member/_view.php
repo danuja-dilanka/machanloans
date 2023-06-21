@@ -46,7 +46,7 @@
                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
                                     <a class="nav-item nav-link" id="nav-friends-tab" data-toggle="tab" href="#nav-friends" role="tab" aria-controls="nav-friends" aria-selected="false">Friends</a>
                                     <a class="nav-item nav-link" id="nav-spouse-tab" data-toggle="tab" href="#nav-spouse" role="tab" aria-controls="nav-spouse" aria-selected="false">Spouses </a>
-                                    <a class="nav-item nav-link" id="nav-ploans-tab" data-toggle="tab" href="#nav-ploans" role="tab" aria-controls="nav-ploans" aria-selected="false">Loans</a>
+                                    <a class="nav-item nav-link" id="nav-bank-tab" data-toggle="tab" href="#nav-bank" role="tab" aria-controls="nav-bank" aria-selected="false">Bank Details</a>
                                 </div>
                             </nav>
                             <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
@@ -121,18 +121,6 @@
                                             <tr>
                                                 <td>Job or business</td>
                                                 <td><?= isset($data) ? $data->job_or_business : null ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Bank Name</td>
-                                                <td><?= isset($data) ? $data->bank_name : null ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Branch Name</td>
-                                                <td><?= isset($data) ? $data->branch_name : null ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Account Number</td>
-                                                <td><?= isset($data) ? $data->acc_number : null ?></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -220,24 +208,21 @@
                                         </tbody>
                                     </table>
                                 </div>
-                                <div class="tab-pane fade show active" id="nav-ploans" role="tabpanel" aria-labelledby="nav-ploans-tab">
+                                <div class="tab-pane fade show active" id="nav-bank" role="tabpanel" aria-labelledby="nav-bank-tab">
                                     <div class="table-responsive">
-                                        <table id="loans_table" class="table table-bordered custom_dt_table" aria-describedby="loans_table_info">
-                                            <thead>
-                                                <tr>
-                                                    <th>Loan ID</th>
-                                                    <th>Loan Product</th>
-                                                    <th class="text-right">Applied Amount</th>
-                                                    <th class="text-right">Total Payable</th>
-                                                    <th class="text-right">Amount Paid</th>
-                                                    <th class="text-right">Due Amount</th>
-                                                    <th>Release Date</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-
-                                            </tbody>
+                                        <table class="table">
+                                            <tr>
+                                                <td>Bank Name</td>
+                                                <td><?= isset($data) ? $data->bank_name : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Branch Name</td>
+                                                <td><?= isset($data) ? $data->branch_name : null ?></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Account Number</td>
+                                                <td><?= isset($data) ? $data->acc_number : null ?></td>
+                                            </tr>
                                         </table>
                                     </div>
                                 </div>
