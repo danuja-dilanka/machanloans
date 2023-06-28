@@ -43,46 +43,72 @@
                                                         <div class="col-md-9">
                                                             <div class="row">
                                                                 <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">Name</label>
-                                                                        <input type="text" class="form-control" value="<?= isset($member) ? $member->first_name . " " . $member->last_name : "" ?>" readonly="">
-                                                                    </div>
+                                                                    <?= render_input('', 'First Name', isset($member) ? $member->first_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">Member No</label>
-                                                                        <input type="text" class="form-control" value="<?= isset($member) ? $member->member_no : "" ?>" readonly>
-                                                                    </div>
+                                                                    <?= render_input('', 'Last Name', isset($member) ? $member->last_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">Phone number</label>
-                                                                        <input type="text" class="form-control" value="<?= isset($member) ? $member->mobile : "" ?>" readonly>
-                                                                    </div>
+                                                                    <?= render_input('', 'Name', isset($member) ? $member->first_name . " " . $member->last_name : '', 'text', ["readonly" => true]); ?>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <?= render_input('', 'Member No', isset($member) ? $member->member_no : '', 'text', ["readonly" => true]); ?>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <?= render_input('', 'Phone number', isset($member) ? $member->mobile : '', 'text', ["readonly" => true]); ?>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <?= render_input('', 'Email', isset($member) ? $member->email : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">Email </label>
-                                                                        <input type="email" class="form-control" value="<?= isset($member) ? $member->email : "" ?>" readonly>
-                                                                    </div>
+                                                                    <?= render_textarea('', 'Address on ID', isset($member) ? $member->address : '', ["readonly" => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">Address on ID</label>
-                                                                        <textarea class="form-control" readonly><?= isset($member) ? $member->address : "" ?></textarea>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label class="control-label">Current Residential Address</label>
-                                                                        <textarea class="form-control" readonly><?= isset($member) ? $member->cred_address : "" ?></textarea>
-                                                                    </div>
+                                                                    <?= render_textarea('', 'Current Residential Address', isset($member) ? $member->cred_address : '', ["readonly" => true]); ?>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <img src="<?= isset($member->photo) && $member->photo != "" ? base_url("public/images/member/") . $member->photo : base_url("public/uploads/profile/") . "default.png" ?>" alt="" class="thumb-image-md" width="250">
                                                             <a style="margin-top:2%" href="<?= base_url("member/mem/") . encode($member->id) ?>" class="btn btn-success btn-lg btn-block"><i class="ti-check-box"></i>&nbsp;Edit Member Details</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row col-sm-12">
+                                                        <div class="col-md-4">
+                                                            <?= render_input('', 'Whatsapp', isset($member) ? $member->whatsapp : '', 'number'); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_custom_select("", ["Male", "Female"], "Gender", isset($member) ? $member->gender : '', '') ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_custom_select("", ["Married", "Unmarried"], "Civil Status", isset($member) ? $member->civil_status : '', '') ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', 'City', isset($member) ? $member->city : '', 'text', []); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_textarea('', 'ID Address', isset($member) ? $member->address : '', []); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_textarea('', 'Google location', isset($member) ? $member->google_location : '', []); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_textarea('', 'Current Residential Address', isset($member) ? $member->cred_address : '', []); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_textarea('', 'Address of place of employment or business', isset($member) ? $member->working_address : '', []); ?>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <?= render_input('', 'Job or business', isset($member) ? $member->job_or_business : '', 'text', []); ?>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <?= render_input('', 'Bank Name', isset($member) ? $member->bank_name : '', 'text', []); ?>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <?= render_input('', 'Branch Name', isset($member) ? $member->branch_name : '', 'text', []); ?>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <?= render_input('', 'Account Number', isset($member) ? $member->acc_number : '', 'text', []); ?>
                                                         </div>
                                                     </div>
                                                 </div>
