@@ -30,6 +30,7 @@ function do_upload(index, upload_path) {
                 plupload.each(files, function (file) {
                     document.getElementById('filelist' + index).innerHTML += '<div id="' + file.id + '" class="filelist_info">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
                 });
+                uploader.start();
             },
 
             UploadProgress: function (up, file) {
