@@ -62,6 +62,18 @@ do_upload(2, "loan_req__nic__back");
 do_upload(3, "loan_req__nic__spouse_nic_front");
 do_upload(4, "loan_req__nic__spouse_nic_back");
 
+$(document).on('click', '.remove_file', function () {
+    var ele = $(this);
+    $.post(BASE_URL + 'api/remove_file', {src: ele.data('src'), type: ele.data('type')}, function (data) {
+        if (data == "1") {
+            if (ele.parent().parent().hasClass("active_record")) {
+                $("#" + ele.data("img")).attr("src", BASE_URL + "public/images/no-image.png");
+            }
+            $("#" + ele.data("file")).remove();
+        }
+    });
+});
+
 var uploader5 = new plupload.Uploader({
     runtimes: 'html5,flash,silverlight,html4',
     multi_selection: false,
