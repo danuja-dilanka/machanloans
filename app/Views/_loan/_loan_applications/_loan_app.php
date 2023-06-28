@@ -244,10 +244,7 @@
                             <div class="tab-pane fade" id="nav-step2" role="tabpanel" aria-labelledby="nav-step2-tab">
                                 <div class="row col-sm-12">
                                     <div class="col-md-6">
-                                        <?= render_input('loan_id', 'Loan ID', isset($data) ? $data->first_name : '', 'text', ['required' => true]); ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?= render_custom_select("payment_method", ["Months", "Week"], "Payment Type", isset($data) ? $data->gender : '', '') ?>
+                                        <?= render_input('', 'Loan ID', isset($data->id) ? "L-#" . $data->id : "L-#" . model("Loan_model")->get_nxt_loan_id(), 'text', ['readonly' => true]); ?>
                                     </div>
                                     <div class="col-md-6">
                                         <?= render_select('loan_type', model("Loan_model")->get_pro_data(0, 1), array('id', 'loan_name'), 'Loan Product', '', ['required' => true]); ?>

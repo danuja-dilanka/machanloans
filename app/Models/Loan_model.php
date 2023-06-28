@@ -6,6 +6,12 @@ use CodeIgniter\Model;
 
 class Loan_model extends Model {
 
+//    GET NEXT LOAM NO
+    public function get_nxt_loan_id() {
+        $result = $this->db->query("SELECT `AUTO_INCREMENT` FROM  INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'machanloans_db' AND TABLE_NAME = 'ml_loan_request';");
+        return $result->getResult()[0]->AUTO_INCREMENT;
+    }
+
     //ADD LOAN PRODUCT
     public function add_pro_data($data) {
         $this->db->table(DB_PREFIX . 'loan_product')->insert($data);
