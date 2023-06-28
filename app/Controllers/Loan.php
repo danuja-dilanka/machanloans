@@ -428,7 +428,7 @@ class Loan extends BaseController {
 
     //CREATE / UPDATE LOAN SETTINGS
     public function settings() {
-        if (has_permission("loan_setting", "update")) {
+        if (has_permission("loan_setting", "edit")) {
             
             $rules = [
                 'loan_detail_banner' => 'required',
