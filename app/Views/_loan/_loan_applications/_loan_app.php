@@ -78,10 +78,10 @@
                                                             <?= render_input('', 'Whatsapp', isset($member) ? $member->whatsapp : '', 'number', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <?= render_custom_select("", ["Male", "Female"], "Gender", isset($member) ? $member->gender : '', 'readonly') ?>
+                                                            <?= render_custom_select("", ["Male", "Female"], "Gender", isset($member) ? $member->gender : '', 'disabled') ?>
                                                         </div>
                                                         <div class="col-md-3">
-                                                            <?= render_custom_select("", ["Married", "Unmarried"], "Civil Status", isset($member) ? $member->civil_status : '', 'readonly') ?>
+                                                            <?= render_custom_select("", ["Married", "Unmarried"], "Civil Status", isset($member) ? $member->civil_status : '', 'disabled') ?>
                                                         </div>
                                                         <div class="col-md-3">
                                                             <?= render_input('', 'City', isset($member) ? $member->city : '', 'text', ["readonly" => true]); ?>
