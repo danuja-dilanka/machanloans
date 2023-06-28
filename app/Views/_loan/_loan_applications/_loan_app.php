@@ -60,12 +60,6 @@
                                                                 <div class="col-md-4">
                                                                     <?= render_input('', 'Email', isset($member) ? $member->email : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
-                                                                <div class="col-md-6">
-                                                                    <?= render_textarea('', 'Address on ID', isset($member) ? $member->address : '', ["readonly" => true]); ?>
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <?= render_textarea('', 'Current Residential Address', isset($member) ? $member->cred_address : '', ["readonly" => true]); ?>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-3">
@@ -74,41 +68,47 @@
                                                         </div>
                                                     </div>
                                                     <div class="row col-sm-12">
-                                                        <div class="col-md-4">
-                                                            <?= render_input('', 'Whatsapp', isset($member) ? $member->whatsapp : '', 'number'); ?>
+                                                        <div class="col-md-6">
+                                                            <?= render_textarea('', 'Address on ID', isset($member) ? $member->address : '', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <?= render_custom_select("", ["Male", "Female"], "Gender", isset($member) ? $member->gender : '', '') ?>
+                                                            <?= render_textarea('', 'Current Residential Address', isset($member) ? $member->cred_address : '', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <?= render_input('', 'Whatsapp', isset($member) ? $member->whatsapp : '', 'number', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <?= render_custom_select("", ["Male", "Female"], "Gender", isset($member) ? $member->gender : '', 'readonly') ?>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <?= render_custom_select("", ["Married", "Unmarried"], "Civil Status", isset($member) ? $member->civil_status : '', 'readonly') ?>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <?= render_input('', 'City', isset($member) ? $member->city : '', 'text', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <?= render_custom_select("", ["Married", "Unmarried"], "Civil Status", isset($member) ? $member->civil_status : '', '') ?>
+                                                            <?= render_textarea('', 'ID Address', isset($member) ? $member->address : '', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <?= render_input('', 'City', isset($member) ? $member->city : '', 'text', []); ?>
+                                                            <?= render_textarea('', 'Google location', isset($member) ? $member->google_location : '', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <?= render_textarea('', 'ID Address', isset($member) ? $member->address : '', []); ?>
+                                                            <?= render_textarea('', 'Current Residential Address', isset($member) ? $member->cred_address : '', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <?= render_textarea('', 'Google location', isset($member) ? $member->google_location : '', []); ?>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <?= render_textarea('', 'Current Residential Address', isset($member) ? $member->cred_address : '', []); ?>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <?= render_textarea('', 'Address of place of employment or business', isset($member) ? $member->working_address : '', []); ?>
+                                                            <?= render_textarea('', 'Address of place of employment or business', isset($member) ? $member->working_address : '', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-12">
-                                                            <?= render_input('', 'Job or business', isset($member) ? $member->job_or_business : '', 'text', []); ?>
+                                                            <?= render_input('', 'Job or business', isset($member) ? $member->job_or_business : '', 'text', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <?= render_input('', 'Bank Name', isset($member) ? $member->bank_name : '', 'text', []); ?>
+                                                            <?= render_input('', 'Bank Name', isset($member) ? $member->bank_name : '', 'text', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <?= render_input('', 'Branch Name', isset($member) ? $member->branch_name : '', 'text', []); ?>
+                                                            <?= render_input('', 'Branch Name', isset($member) ? $member->branch_name : '', 'text', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-4">
-                                                            <?= render_input('', 'Account Number', isset($member) ? $member->acc_number : '', 'text', []); ?>
+                                                            <?= render_input('', 'Account Number', isset($member) ? $member->acc_number : '', 'text', ["readonly" => true]); ?>
                                                         </div>
                                                     </div>
                                                 </div>
