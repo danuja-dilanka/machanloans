@@ -23,6 +23,7 @@ var uploader = new plupload.Uploader({
                 uploader.start();
                 return false;
             };
+            uploader.start();
         },
 
         FilesAdded: function (up, files) {
