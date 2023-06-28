@@ -172,7 +172,7 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <button type="button" onclick="document.getElementById('nav-step2-tab').click()" class="btn btn-info"><i class="ti-check-box"></i>&nbsp;Next</button>
+                                            <button type="button" onclick="document.getElementById('nav-step2-tab').click()" class="btn btn-info"><i class="fa fa-arrow-right"></i>&nbsp;Next</button>
                                         </div>
                                     </div>
                                 </div>
