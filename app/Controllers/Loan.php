@@ -426,4 +426,34 @@ class Loan extends BaseController {
         return redirect()->to(base_url('loan/loan_pay_list'));
     }
 
+    //CREATE / UPDATE LOAN SETTINGS
+    public function settings() {
+        if (has_permission("loan_setting", "update")) {
+            
+            $rules = [
+                'loan_detail_banner' => 'required',
+            ];
+
+            if ($this->request->is('post') && $this->validate($rules)) {
+                $loan_detail_banner = get_option("loan_detail_banner");
+                if ($loan_detail_banner != null) {
+                    if (set_option("loan_detail_banner", $this->request->getPost("loan_detail_banner"))) {
+                        session()->setFlashdata('notify', 'Successfully Updated');
+                    }
+                } else {
+                    if (add_option("loan_detail_banner", $this->request->getPost("loan_detail_banner"))) {
+                        session()->setFlashdata('notify', 'Successfully Updated');
+                    }
+                }
+
+                return redirect()->to(base_url('loan/settings'));
+            }
+
+            return view('_loan/_setting', ["title" => "Loan Settings"]);
+        } else {
+            session()->setFlashdata('notify', 'error||Access Denied!');
+            return redirect()->to(base_url('dashboard'));
+        }
+    }
+
 }

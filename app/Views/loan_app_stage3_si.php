@@ -40,7 +40,8 @@
                                         <p>මචං ව්‍යාපෘති ණය යෝජනා ක්‍රමය  යටතේ අඩු පොළී , කෙටි කාලීන ණය ක්‍රමය හා සම්බන්ධ වූ ඔබට ස්තූති.මේ සදහා සම්බන්ධ වීමට පෙර මෙයට අදාල කොන්දේසි මාලාව හොදින් කියවා තේරුම් ගෙන ඇතැයි විශ්වාස කරමු.එහි සදහන් කොන්දේසි කඩ කරන ඕනෑම මොහොතක ඔබේ අනන්‍යතාව හෙලි කර නීත්‍යානුකූල ක්‍රියාමාර්ග සදහා පිවිසෙන බවට දැනුම් දෙන්නෙමු.එහි ඇති කොන්දේසි හා එකඟ වන්නේ නම් පමණක් පහත තොරතුරු ලබා දී ණය පහසු කම ලබා ගන්න. ණය ලබා ගැනීම සදහා පහත තොරතුරු අත්‍යාවශ්‍ය බව කරුණාවෙන් සලකන්න.         </p>
 
                                     </div>
-                                    <img alt="plans" src="https://machan.quicksoft.lk/public/uploads/media/plans.png" width="100%" style="width:100%">
+                                    <?php $loan_detail_banner = get_option("loan_detail_banner"); ?>
+                                    <img alt="plans" src="<?= ($loan_detail_banner) != null ? base_url("public/images/loan_detail_banner") . "/" . $loan_detail_banner : base_url("public/uploads") . "/media/plans.png" ?>" width="100%" style="width:100%">
                                     <?= form_open_multipart(base_url("web/request_loan/$lng"), array('data-parsley-validate' => 'true')); ?>
                                     <div class="row">
                                         <div class="col-md-12">
@@ -53,16 +54,6 @@
                                                     <?php foreach ($products as $key => $value) { ?>
                                                         <option value="<?= $value->id ?>"><?= $value->loan_name ?></option>
                                                     <?php } ?>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="control-label">ණය ගෙවීමේ ක්‍රමය<span class="required"> *</span></label>
-                                                <select class="form-control" name="payment_method" required="">
-                                                    <option value="1" selected="">මාසික</option>
-                                                    <option value="2">සති</option>
                                                 </select>
                                             </div>
                                         </div>

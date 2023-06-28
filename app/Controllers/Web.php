@@ -186,7 +186,6 @@ class Web extends BaseController {
         $rules = [
             'nic' => 'trim|required|min_length[10]|max_length[12]',
             'loan_type' => 'trim|required|numeric',
-            'payment_method' => 'trim|required|numeric',
             'name' => 'trim|required',
             'full_name' => 'trim|required',
             'birthday' => 'trim|required',
