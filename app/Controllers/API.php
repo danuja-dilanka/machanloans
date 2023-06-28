@@ -6,10 +6,6 @@ use App\Libraries\PluploadHandler;
 
 class API extends BaseController {
 
-    public function __construct() {
-        
-    }
-
     public function users() {
         $data = [];
         if ($this->request->is('post')) {

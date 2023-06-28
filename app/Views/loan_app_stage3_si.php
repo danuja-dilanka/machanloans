@@ -201,7 +201,7 @@
                                                 <input type="hidden" id="nic_back" class="" name="nic_back" multiple="false" required>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="control-label">කාලත්‍රයාගේ නම (අවිවාහක නම් මවගේ/පියාගේ)</label>
@@ -262,6 +262,7 @@
         <script>
             var BASE_URL = '<?= base_url() ?>';
         </script>
+        <script src="<?= base_url() ?>public/assets/js/vendor/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
         <script src="<?= base_url() ?>public/assets/js/upload.js?v=5"></script>
     </body>
