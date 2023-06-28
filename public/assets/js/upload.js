@@ -27,9 +27,9 @@ var uploader = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader.start();
                 document.getElementById('filelist').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader.start();
         },
 
         UploadProgress: function (up, file) {
@@ -79,9 +79,9 @@ var uploader2 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader2.start();
                 document.getElementById('filelist2').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader2.start();
         },
 
         UploadProgress: function (up, file) {
@@ -131,9 +131,9 @@ var uploader3 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader3.start();
                 document.getElementById('filelist3').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader3.start();
         },
 
         UploadProgress: function (up, file) {
@@ -183,9 +183,9 @@ var uploader4 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader4.start();
                 document.getElementById('filelist4').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader4.start();
         },
 
         UploadProgress: function (up, file) {
@@ -235,9 +235,9 @@ var uploader5 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader5.start();
                 document.getElementById('filelist5').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader5.start();
         },
 
         UploadProgress: function (up, file) {
@@ -287,9 +287,9 @@ var uploader6 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader6.start();
                 document.getElementById('filelist6').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader6.start();
         },
 
         UploadProgress: function (up, file) {
@@ -339,9 +339,9 @@ var uploader7 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader7.start();
                 document.getElementById('filelist7').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader7.start();
         },
 
         UploadProgress: function (up, file) {
@@ -391,9 +391,9 @@ var uploader8 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader8.start();
                 document.getElementById('filelist8').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader8.start();
         },
 
         UploadProgress: function (up, file) {
@@ -443,9 +443,9 @@ var uploader9 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader9.start();
                 document.getElementById('filelist9').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader9.start();
         },
 
         UploadProgress: function (up, file) {
@@ -495,9 +495,9 @@ var uploader10 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader10.start();
                 document.getElementById('filelist10').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader10.start();
         },
 
         UploadProgress: function (up, file) {
@@ -547,9 +547,9 @@ var uploader11 = new plupload.Uploader({
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
+                uploader11.start();
                 document.getElementById('filelist11').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
-            uploader11.start();
         },
 
         UploadProgress: function (up, file) {
