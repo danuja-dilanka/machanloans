@@ -110,6 +110,30 @@
                                                         <div class="col-md-4">
                                                             <?= render_input('', 'Account Number', isset($member) ? $member->acc_number : '', 'text', ["readonly" => true]); ?>
                                                         </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', 'Name of non-relative friend 1', isset($member) ? $member->rel_friend1 : '', 'text', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', 'Contact number of non-relative friend 1', isset($member) ? $member->rel_friend1_phone : '', 'text', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <?= render_textarea('', 'Address of non-relative friend 1', isset($member) ? $member->rel_friend1_address : '', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', 'Name of non-relative friend 2', isset($member) ? $member->rel_friend2 : '', 'text', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', 'Contact number of non-relative friend 2', isset($member) ? $member->rel_friend2_phone : '', 'text', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <?= render_textarea('', 'Address of non-relative friend 2', isset($member) ? $member->rel_friend2_address : '', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', "Spouse's Name (Mother's/Father's if unmarried)", isset($member) ? $member->spouse_name : '', 'text', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', "Spouse's Telephone Number (Mother's/Father's if unmarried)", isset($member) ? $member->spouse_tel_number : '', 'text', ["readonly" => true]); ?>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
