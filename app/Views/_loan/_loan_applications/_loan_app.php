@@ -35,6 +35,7 @@
                                                     <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Basic Details</a>
                                                     <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Main Documents</a>
                                                     <a class="nav-item nav-link" id="nav-other-doc" data-toggle="tab" href="#nav-otherdoc" role="tab" aria-controls="nav-other-doc" aria-selected="false">Other Documents</a>
+                                                    <a class="nav-item nav-link" id="nav-bank-tab" data-toggle="tab" href="#nav-bank" role="tab" aria-controls="nav-bank" aria-selected="false">Other Documents</a>
                                                 </div>
                                             </nav>
                                             <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
@@ -100,15 +101,6 @@
                                                         </div>
                                                         <div class="col-md-12">
                                                             <?= render_input('', 'Job or business', isset($member) ? $member->job_or_business : '', 'text', ["readonly" => true]); ?>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <?= render_input('', 'Bank Name', isset($member) ? $member->bank_name : '', 'text', ["readonly" => true]); ?>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <?= render_input('', 'Branch Name', isset($member) ? $member->branch_name : '', 'text', ["readonly" => true]); ?>
-                                                        </div>
-                                                        <div class="col-md-4">
-                                                            <?= render_input('', 'Account Number', isset($member) ? $member->acc_number : '', 'text', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <?= render_input('', 'Name of non-relative friend 1', isset($member) ? $member->rel_friend1 : '', 'text', ["readonly" => true]); ?>
@@ -211,6 +203,19 @@
                                                                     ?>
                                                                 </tbody>
                                                             </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane fade" id="nav-bank" role="tabpanel" aria-labelledby="nav-bank-tab">
+                                                    <div class="col-md-12 row">
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', 'Bank Name', isset($member) ? $member->bank_name : '', 'text', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', 'Branch Name', isset($member) ? $member->branch_name : '', 'text', ["readonly" => true]); ?>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <?= render_input('', 'Account Number', isset($member) ? $member->acc_number : '', 'text', ["readonly" => true]); ?>
                                                         </div>
                                                     </div>
                                                 </div>
