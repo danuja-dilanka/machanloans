@@ -48,7 +48,7 @@
                                                                 <div class="col-md-6">
                                                                     <?= render_input('', 'Last Name', isset($member) ? $member->last_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
-                                                                <div class="col-md-6">
+                                                                <div class="col-md-12">
                                                                     <?= render_input('', 'Name', isset($member) ? $member->first_name . " " . $member->last_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-4">
