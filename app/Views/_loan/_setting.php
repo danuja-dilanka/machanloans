@@ -5,16 +5,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <div class="row">
-                        <div class="col-md-9">
-                            <h4 class="header-title">Loan Settings</h4>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;Save Changes</button>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 class="header-title">Loan Settings</h4>
                 </div>
                 <div class="card-body">
                     <?php if (count(validation_errors()) > 0) { ?>
@@ -35,6 +26,14 @@
                                 </div><br>
                             </div>
                             <input type="hidden" id="loan_detail_banner" value="<?= $loan_detail_banner ?>" name="loan_detail_banner" multiple="false">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9"></div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;Save Changes</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
