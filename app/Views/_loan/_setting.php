@@ -28,11 +28,8 @@
                             <input type="hidden" id="loan_detail_banner" value="<?= $loan_detail_banner ?>" name="loan_detail_banner" multiple="false">
                         </div>
                         <div class="row">
-                            <div class="col-md-9"></div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;Save Changes</button>
-                                </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;Save Changes</button>
                             </div>
                         </div>
                     </div>
