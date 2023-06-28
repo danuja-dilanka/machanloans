@@ -50,7 +50,7 @@
                                                                     <?= render_input('', 'Last Name', isset($member) ? $member->last_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-4">
-                                                                    <?= render_input('', 'NIC', isset($member) ? $member->nic : '', 'text', ['required' => true]); ?>
+                                                                    <?= render_input('', 'NIC', isset($member) ? $member->nic : '', 'text', ['readonly' => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <?= render_input('', 'Full Name', isset($member) ? $member->first_name . " " . $member->last_name : '', 'text', ["readonly" => true]); ?>
@@ -103,7 +103,7 @@
                                                             <?= render_textarea('', 'Address of place of employment or business', isset($member) ? $member->working_address : '', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <?= render_input('', 'Birthday', isset($data) ? $data->birthday : '', 'date', []); ?>
+                                                            <?= render_input('', 'Birthday', isset($member) ? $member->birthday : '', 'date', ['readonly' => true]); ?>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <?= render_input('', 'Job or business', isset($member) ? $member->job_or_business : '', 'text', ["readonly" => true]); ?>
