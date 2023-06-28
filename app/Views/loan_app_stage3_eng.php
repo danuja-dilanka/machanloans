@@ -179,34 +179,32 @@
                                             </div>
                                         </div>
 
-
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">A photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
+                                                <label class="control-label">A photograph of the National Identity Card - Front (20MB)<span class="required"> *</span></label>
                                                 <img id="nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
-                                                    <div id="filelist"></div><br>
-                                                    <div id="file_container" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                    <div id="filelist0"></div><br>
+                                                    <div id="file_container0" style="position: relative;">
+                                                        <a class="btn btn-sm btn-default" id="pickfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
-                                                <input type="hidden" id="nic_front" class="dropify" name="nic_front" multiple="false" required="">
+                                                <input type="hidden" id="nic_front" class="" name="nic_front" multiple="false" required>
                                             </div>
                                         </div>
-
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">A photograph of the National Identity Card (20MB)<span class="required"> *</span></label>
+                                                <label class="control-label">A photograph of the National Identity Card - Back (20MB)<span class="required"> *</span></label>
                                                 <img id="nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist2"></div><br>
                                                     <div id="file_container2" style="position: relative;">
                                                         <a class="btn btn-sm btn-default" id="pickfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/back") ?>" data-id="nic_back">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
-                                                <input type="hidden" id="nic_back" class="dropify" name="nic_back" multiple="false" required="">
+                                                <input type="hidden" id="nic_back" class="" name="nic_back" multiple="false" required>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
@@ -223,30 +221,30 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">Attach a photograph (both sides) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
+                                                <label class="control-label">Attach a photograph (Front) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
                                                 <img id="spouse_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist3"></div><br>
                                                     <div id="file_container3" style="position: relative;">
                                                         <a class="btn btn-sm btn-default" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_front") ?>" data-id="spouse_nic_front">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
-                                                <input type="hidden" id="spouse_nic_front" class="dropify" name="spouse_nic_front" multiple="false" required="">
+                                                <input type="hidden" id="spouse_nic_front" class="" name="spouse_nic_front" multiple="false" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">Attach a photograph (both sides) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
+                                                <label class="control-label">Attach a photograph (Back) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
                                                 <img id="spouse_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist4"></div><br>
                                                     <div id="file_container4" style="position: relative;">
                                                         <a class="btn btn-sm btn-default" id="pickfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_back") ?>" data-id="spouse_nic_back">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
-                                                <input type="hidden" id="spouse_nic_back" class="dropify" name="spouse_nic_back" multiple="false" required="">
+                                                <input type="hidden" id="spouse_nic_back" class="" name="spouse_nic_back" multiple="false" required>
                                             </div>
                                         </div>
                                     </div>
@@ -270,6 +268,6 @@
             var BASE_URL = '<?= base_url() ?>';
         </script>
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
-        <script src="<?= base_url() ?>public/assets/js/upload.js?v=2"></script>
+        <script src="<?= base_url() ?>public/assets/js/upload.js?v=3"></script>
     </body>
 </html>

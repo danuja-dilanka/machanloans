@@ -1,211 +1,65 @@
-var uploader = new plupload.Uploader({
-    runtimes: 'html5,flash,silverlight,html4',
-    multi_selection: false,
-    browse_button: 'pickfiles', // you can pass an id...
-    container: document.getElementById('file_container'), // ... or DOM Element itself
-    url: BASE_URL + 'web/upload',
-    flash_swf_url: BASE_URL + 'public/assets/js/Moxie.swf',
-    silverlight_xap_url: BASE_URL + 'public/assets/js/Moxie.xap',
+function do_upload(index, upload_path) {
+    var uploader = new plupload.Uploader({
+        runtimes: 'html5,flash,silverlight,html4',
+        multi_selection: false,
+        browse_button: 'pickfiles' + index, // you can pass an id...
+        container: document.getElementById('file_container' + index), // ... or DOM Element itself
+        url: BASE_URL + 'api/upload/' + upload_path,
+        flash_swf_url: BASE_URL + 'public/assets/js/Moxie.swf',
+        silverlight_xap_url: BASE_URL + 'public/assets/js/Moxie.xap',
 
-    filters: {
-        max_file_size: '30mb',
-        mime_types: [
-            {title: "Image files", extensions: "jpg,gif,png"},
-            {title: "Zip files", extensions: "zip"}
-        ]
-    },
-
-    init: {
-        PostInit: function () {
-            document.getElementById('filelist').innerHTML = '';
-
-            document.getElementById('uploadfiles').onclick = function () {
-                uploader.start();
-                return false;
-            };
-            uploader.start();
+        filters: {
+            max_file_size: '30mb',
+            mime_types: [
+                {title: "Image files", extensions: "jpg,gif,png"},
+                {title: "Zip files", extensions: "zip"}
+            ]
         },
 
-        FilesAdded: function (up, files) {
-            plupload.each(files, function (file) {
-                uploader.start();
-                document.getElementById('filelist').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
-            });
-        },
+        init: {
+            PostInit: function () {
+                document.getElementById('filelist' + index).innerHTML = '';
 
-        UploadProgress: function (up, file) {
-            document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
-        },
+                document.getElementById('uploadfiles' + index).onclick = function () {
+                    uploader.start();
+                    return false;
+                };
+            },
 
-        Error: function (up, err) {
-            console.log(err.code + " : " + err.message);
-        },
+            FilesAdded: function (up, files) {
+                plupload.each(files, function (file) {
+                    document.getElementById('filelist' + index).innerHTML += '<div id="' + file.id + '" class="filelist_info">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
+                });
+            },
 
-        FileUploaded: function (up, file) {
-            var base = document.getElementById('pickfiles');
-            document.getElementById(base.getAttribute('data-id') + "_img").src = base.getAttribute('data-src') + "/" + file.name;
-            document.getElementById(base.getAttribute('data-id')).value = file.name;
+            UploadProgress: function (up, file) {
+                document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+            },
+
+            Error: function (up, err) {
+                console.log(err.code + " : " + err.message);
+            },
+
+            FileUploaded: function (up, file) {
+                var base = document.getElementById('pickfiles' + index);
+                var unic_id = base.getAttribute('data-id');
+                var img_src = base.getAttribute('data-src');
+                document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span style="cursor:pointer" class="text-danger remove_file" data-file="' + file.id + '" data-img="' + unic_id + "_img" + '" data-src="' + upload_path + "__" + file.name + '" data-type="' + unic_id + '">X</span>';
+                document.getElementById(unic_id + "_img").src = img_src + "/" + file.name;
+                document.getElementById(unic_id).value = file.name;
+                $(".filelist_info").removeClass("active_record");
+                document.getElementById(file.id).classList.add("active_record");
+            }
         }
-    }
-});
+    });
 
-uploader.init();
+    uploader.init();
+}
 
-var uploader2 = new plupload.Uploader({
-    runtimes: 'html5,flash,silverlight,html4',
-    multi_selection: false,
-    browse_button: 'pickfiles2', // you can pass an id...
-    container: document.getElementById('file_container2'), // ... or DOM Element itself
-    url: BASE_URL + 'web/upload/1',
-    flash_swf_url: BASE_URL + 'public/assets/js/Moxie.swf',
-    silverlight_xap_url: BASE_URL + 'public/assets/js/Moxie.xap',
-
-    filters: {
-        max_file_size: '30mb',
-        mime_types: [
-            {title: "Image files", extensions: "jpg,gif,png"},
-            {title: "Zip files", extensions: "zip"}
-        ]
-    },
-
-    init: {
-        PostInit: function () {
-            document.getElementById('filelist2').innerHTML = '';
-
-            document.getElementById('uploadfiles2').onclick = function () {
-                uploader2.start();
-                return false;
-            };
-        },
-
-        FilesAdded: function (up, files) {
-            plupload.each(files, function (file) {
-                uploader2.start();
-                document.getElementById('filelist2').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
-            });
-        },
-
-        UploadProgress: function (up, file) {
-            document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
-        },
-
-        Error: function (up, err) {
-            console.log(err.code + " : " + err.message);
-        },
-
-        FileUploaded: function (up, file) {
-            var base = document.getElementById('pickfiles2');
-            document.getElementById(base.getAttribute('data-id') + "_img").src = base.getAttribute('data-src') + "/" + file.name;
-            document.getElementById(base.getAttribute('data-id')).value = file.name;
-        }
-    }
-});
-
-uploader2.init();
-
-var uploader3 = new plupload.Uploader({
-    runtimes: 'html5,flash,silverlight,html4',
-    multi_selection: false,
-    browse_button: 'pickfiles3', // you can pass an id...
-    container: document.getElementById('file_container3'), // ... or DOM Element itself
-    url: BASE_URL + 'web/upload/3',
-    flash_swf_url: BASE_URL + 'public/assets/js/Moxie.swf',
-    silverlight_xap_url: BASE_URL + 'public/assets/js/Moxie.xap',
-
-    filters: {
-        max_file_size: '30mb',
-        mime_types: [
-            {title: "Image files", extensions: "jpg,gif,png"},
-            {title: "Zip files", extensions: "zip"}
-        ]
-    },
-
-    init: {
-        PostInit: function () {
-            document.getElementById('filelist3').innerHTML = '';
-
-            document.getElementById('uploadfiles3').onclick = function () {
-                uploader3.start();
-                return false;
-            };
-        },
-
-        FilesAdded: function (up, files) {
-            plupload.each(files, function (file) {
-                uploader3.start();
-                document.getElementById('filelist3').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
-            });
-        },
-
-        UploadProgress: function (up, file) {
-            document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
-        },
-
-        Error: function (up, err) {
-            console.log(err.code + " : " + err.message);
-        },
-
-        FileUploaded: function (up, file) {
-            var base = document.getElementById('pickfiles3');
-            document.getElementById(base.getAttribute('data-id') + "_img").src = base.getAttribute('data-src') + "/" + file.name;
-            document.getElementById(base.getAttribute('data-id')).value = file.name;
-        }
-    }
-});
-
-uploader3.init();
-
-var uploader4 = new plupload.Uploader({
-    runtimes: 'html5,flash,silverlight,html4',
-    multi_selection: false,
-    browse_button: 'pickfiles4', // you can pass an id...
-    container: document.getElementById('file_container4'), // ... or DOM Element itself
-    url: BASE_URL + 'web/upload/4',
-    flash_swf_url: BASE_URL + 'public/assets/js/Moxie.swf',
-    silverlight_xap_url: BASE_URL + 'public/assets/js/Moxie.xap',
-
-    filters: {
-        max_file_size: '30mb',
-        mime_types: [
-            {title: "Image files", extensions: "jpg,gif,png"},
-            {title: "Zip files", extensions: "zip"}
-        ]
-    },
-
-    init: {
-        PostInit: function () {
-            document.getElementById('filelist4').innerHTML = '';
-
-            document.getElementById('uploadfiles4').onclick = function () {
-                uploader4.start();
-                return false;
-            };
-        },
-
-        FilesAdded: function (up, files) {
-            plupload.each(files, function (file) {
-                uploader4.start();
-                document.getElementById('filelist4').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
-            });
-        },
-
-        UploadProgress: function (up, file) {
-            document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
-        },
-
-        Error: function (up, err) {
-            console.log(err.code + " : " + err.message);
-        },
-
-        FileUploaded: function (up, file) {
-            var base = document.getElementById('pickfiles4');
-            document.getElementById(base.getAttribute('data-id') + "_img").src = base.getAttribute('data-src') + "/" + file.name;
-            document.getElementById(base.getAttribute('data-id')).value = file.name;
-        }
-    }
-});
-
-uploader4.init();
+do_upload(0, "loan_req__nic__front");
+do_upload(2, "loan_req__nic__back");
+do_upload(3, "loan_req__nic__spouse_nic_front");
+do_upload(4, "loan_req__nic__spouse_nic_back");
 
 var uploader5 = new plupload.Uploader({
     runtimes: 'html5,flash,silverlight,html4',
