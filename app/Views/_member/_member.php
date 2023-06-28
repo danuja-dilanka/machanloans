@@ -68,6 +68,9 @@
                             <?= render_textarea('working_address', 'Address of place of employment or business', isset($data) ? $data->working_address : '', []); ?>
                         </div>
                         <div class="col-md-12">
+                            <?= render_input('crowd_name', 'Name of the crowd', isset($data) ? $data->crowd_name : '', 'text', []); ?>
+                        </div>
+                        <div class="col-md-12">
                             <?= render_input('job_or_business', 'Job or business', isset($data) ? $data->job_or_business : '', 'text', []); ?>
                         </div>
                         <div class="col-md-6">

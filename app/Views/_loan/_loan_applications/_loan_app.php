@@ -126,6 +126,9 @@
                                                         <div class="col-md-12">
                                                             <?= render_textarea('', 'Address of non-relative friend 2', isset($member) ? $member->rel_friend2_address : '', ["readonly" => true]); ?>
                                                         </div>
+                                                        <div class="col-md-12">
+                                                            <?= render_input('', "Name of the crowd", isset($member) ? $member->crowd_name : '', 'text', ["readonly" => true]); ?>
+                                                        </div>
                                                         <div class="col-md-6">
                                                             <?= render_input('', "Spouse's Name (Mother's/Father's if unmarried)", isset($member) ? $member->spouse_name : '', 'text', ["readonly" => true]); ?>
                                                         </div>
