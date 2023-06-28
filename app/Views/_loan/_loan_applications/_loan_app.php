@@ -170,6 +170,15 @@
                                     <div class="col-md-12 text-center">
                                         <hr>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <button type="button" onclick="document.getElementById('nav-step2-tab').click()" class="btn btn-info"><i class="ti-check-box"></i>&nbsp;Next</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-step2" role="tabpanel" aria-labelledby="nav-step2-tab">
+                                <div class="row col-sm-12">
                                     <div class="col-md-6">
                                         <?= render_input('loan_id', 'Loan ID', isset($data) ? $data->first_name : '', 'text', ['required' => true]); ?>
                                     </div>
@@ -197,15 +206,15 @@
                                     <div class="col-md-6">
                                         <?= render_textarea('remark', 'Remarks', isset($data) ? $data->remark : '', []); ?>
                                     </div>
+                                    <div class="col-md-12 text-center">
+                                        <hr>
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;Submit</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="tab-pane fade" id="nav-step2" role="tabpanel" aria-labelledby="nav-step2-tab">
-
                             </div>
                         </div>
                     </div>
