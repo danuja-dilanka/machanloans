@@ -43,14 +43,17 @@
                                                     <div class="col-md-12 row">
                                                         <div class="col-md-9">
                                                             <div class="row">
-                                                                <div class="col-md-6">
+                                                                <div class="col-md-4">
                                                                     <?= render_input('', 'First Name', isset($member) ? $member->first_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
-                                                                <div class="col-md-6">
+                                                                <div class="col-md-4">
                                                                     <?= render_input('', 'Last Name', isset($member) ? $member->last_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
+                                                                <div class="col-md-4">
+                                                                    <?= render_input('', 'NIC', isset($member) ? $member->nic : '', 'text', ['required' => true]); ?>
+                                                                </div>
                                                                 <div class="col-md-12">
-                                                                    <?= render_input('', 'Name', isset($member) ? $member->first_name . " " . $member->last_name : '', 'text', ["readonly" => true]); ?>
+                                                                    <?= render_input('', 'Full Name', isset($member) ? $member->first_name . " " . $member->last_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-4">
                                                                     <?= render_input('', 'Member No', isset($member) ? $member->member_no : '', 'text', ["readonly" => true]); ?>
@@ -99,7 +102,10 @@
                                                         <div class="col-md-6">
                                                             <?= render_textarea('', 'Address of place of employment or business', isset($member) ? $member->working_address : '', ["readonly" => true]); ?>
                                                         </div>
-                                                        <div class="col-md-12">
+                                                        <div class="col-md-6">
+                                                            <?= render_input('', 'Birthday', isset($data) ? $data->birthday : '', 'date', []); ?>
+                                                        </div>
+                                                        <div class="col-md-6">
                                                             <?= render_input('', 'Job or business', isset($member) ? $member->job_or_business : '', 'text', ["readonly" => true]); ?>
                                                         </div>
                                                         <div class="col-md-6">
