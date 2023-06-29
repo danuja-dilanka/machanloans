@@ -226,6 +226,13 @@ class Loan extends BaseController {
             $post_data = $this->request->getPost();
             $member_enc = $post_data["member"];
             $post_data["member"] = decode($member_enc);
+            
+            $loan_pro_det = $this->thisModel->get_pro_data($post_data["loan_type"]);
+            if (!isset($loan_pro_det->id)) {
+                return redirect()->to(base_url('loan/loan_list'));
+            }
+            
+            $post_data["payment_method"] = $loan_pro_det->term_per;
 
             if ($req_id != "" && has_permission("loan", "edit")) {
                 $data = $this->thisModel->get_loan_req_data(decode($req_id));

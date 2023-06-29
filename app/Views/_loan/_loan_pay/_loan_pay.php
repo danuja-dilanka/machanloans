@@ -39,8 +39,22 @@
                         <div class="col-md-6">
                             <?= render_input('total', 'Total Amount (LKR.)', isset($data) ? $data->total : '', 'text', ['required' => true, "readonly" => true]); ?>
                         </div>
-                        <div class="col-md-12">
-                            <?= render_textarea('remark', 'Remarks', isset($data) ? $data->remark : '', ['required' => true]); ?>
+                        <div class="col-md-6">
+                            <?= render_textarea('remark', 'Remarks', isset($data) ? $data->remark : '', []); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-center">
+                                <label class="control-label">Payment Proof (20MB)</label>
+                                <img id="loan_proof_img" alt="" src="<?= isset($data->loan_proof) ? base_url("public/images/loan_req/loan_proof") . "/" . $data->loan_proof : base_url("public/images") . "/no-image.png" ?>" height="150">
+                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                    <div id="filelist1"></div><br>
+                                    <div id="file_container1" style="position: relative;">
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/loan_proof") ?>" data-id="loan_proof">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                    </div><br>
+                                </div>
+                                <input type="hidden" id="loan_proof" value="<?= isset($data) ? $data->loan_proof : '' ?>" class="" name="loan_proof" multiple="false">
+                            </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
