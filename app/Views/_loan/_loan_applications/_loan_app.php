@@ -1,6 +1,5 @@
 <?= view('inc/header') ?>
 <div class="main-content-inner mt-4">
-    <?= form_open_multipart(current_url(), array('data-parsley-validate' => 'true')); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
@@ -44,7 +43,6 @@
                                                         <div class="col-md-9">
                                                             <div class="row">
                                                                 <div class="col-md-4">
-                                                                    <?= render_input('member', '', isset($member) ? encode($member->id) : '', 'hidden', ["readonly" => true, "required" => true]); ?>
                                                                     <?= render_input('', 'First Name', isset($member) ? $member->first_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-4">
@@ -243,8 +241,10 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="nav-step2" role="tabpanel" aria-labelledby="nav-step2-tab">
+                                <?= form_open_multipart(current_url(), array('data-parsley-validate' => 'true')); ?>
                                 <div class="row col-sm-12">
                                     <div class="col-md-6">
+                                        <?= render_input('member', '', isset($member) ? encode($member->id) : '', 'hidden', ["readonly" => true, "required" => true]); ?>
                                         <?= render_input('', 'Loan ID', isset($data->id) ? "L-#" . $data->id : "L-#" . model("Loan_model")->get_nxt_loan_id(), 'text', ['readonly' => true]); ?>
                                     </div>
                                     <div class="col-md-6">
@@ -271,6 +271,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <?= form_close(); ?>	
                             </div>
                         </div>
                     </div>
@@ -278,6 +279,5 @@
             </div>
         </div>
     </div>
-    <?= form_close(); ?>	
 </div>
 <?= view('inc/footer') ?>
