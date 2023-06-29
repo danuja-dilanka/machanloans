@@ -116,8 +116,8 @@ class View_data extends BaseController {
                 number_format($value->total, 2, ".", ","),
                 $status_txt,
 //                (has_permission("loan_pay", "edit") ? "<a href='".base_url("loan/loan/").$key_enc."' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "").
-                (($value->status == 0 && has_permission("loan_pay", "edit")) ? "<a href='" . base_url("loan/loan_pay_approve/") . $key_enc . "' class='btn btn-sm btn-primary'>Approve</a>&nbsp;" : "") .
-                (($value->status == 0 && has_permission("loan_pay", "edit")) ? "<a href='" . base_url("loan/loan_pay_reject/") . $key_enc . "' class='btn btn-sm btn-danger'>Reject</a>&nbsp;" : "") .
+                (($value->status == 0 && has_permission("loan_pay", "edit")) ? "<a href='#' data-id='" . base_url("loan/loan_pay_approve/") . $key_enc . "' class='btn btn-sm btn-primary confirm_red_btn'>Approve</a>&nbsp;" : "") .
+                (($value->status == 0 && has_permission("loan_pay", "edit")) ? "<a href='#' data-id='" . base_url("loan/loan_pay_reject/") . $key_enc . "' class='btn btn-sm btn-warning confirm_red_btn'>Reject</a>&nbsp;" : "") .
                 (has_permission("loan_pay", "delete") ? "<a href='#' data-id='" . base_url("loan/del_loan_pay/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
             ];
         }
