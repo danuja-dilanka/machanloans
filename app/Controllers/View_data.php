@@ -159,7 +159,7 @@ class View_data extends BaseController {
         }
 
         $data = [];
-        $loans = model('Loan_model')->get_grp_mem_data();
+        $loans = model('Loan_model')->get_group_data();
         foreach ($loans as $key => $value) {
             $members = model('Loan_model')->get_grp_members_by_group($value->id);
             $mem_txt = "";
