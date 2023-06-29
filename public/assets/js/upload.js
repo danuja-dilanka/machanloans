@@ -19,11 +19,6 @@ function do_upload(index, upload_path) {
         init: {
             PostInit: function () {
                 document.getElementById('filelist' + index).innerHTML = '';
-
-                document.getElementById('uploadfiles' + index).onclick = function () {
-                    uploader.start();
-                    return false;
-                };
             },
 
             FilesAdded: function (up, files) {

@@ -203,6 +203,13 @@ class Web extends BaseController {
 
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
+            $loan_pro_det = $this->thisModel->get_pro_data($post_data["loan_type"]);
+            if(!isset($loan_pro_det->id)){
+                die;
+            }
+            
+            $post_data["payment_method"] = $loan_pro_det->term_per;
+            
             $insert_id = $this->thisModel->add_loan_req_data($post_data);
             if ($insert_id > 0) {
 
