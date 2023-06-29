@@ -20,16 +20,22 @@ function do_upload(index, upload_path) {
             PostInit: function () {
                 document.getElementById('filelist' + index).innerHTML = '';
 
-                document.getElementById('uploadfiles' + index).onclick = function () {
-                    uploader.start();
-                    return false;
-                };
+//                document.getElementById('uploadfiles' + index).onclick = function () {
+//                    uploader.start();
+//                    return false;
+//                };
             },
 
             FilesAdded: function (up, files) {
                 plupload.each(files, function (file) {
                     document.getElementById('filelist' + index).innerHTML += '<div id="' + file.id + '" class="filelist_info">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
                 });
+                uploader.start();
+
+                var base = document.getElementById('pickfiles' + index);
+                var unic_id = base.getAttribute('data-id');
+
+                document.getElementById(unic_id + "_img").src = BASE_URL + "/public/images/uploading.gif";
             },
 
             UploadProgress: function (up, file) {

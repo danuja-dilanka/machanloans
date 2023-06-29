@@ -21,8 +21,8 @@
                             <div style="font: 13px Verdana; background: #eee; color: #333">
                                 <div id="filelist1"></div><br>
                                 <div id="file_container1" style="position: relative;">
-                                    <a class="btn btn-sm btn-default" id="pickfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_detail_banner") ?>" data-id="loan_detail_banner">Select</a> 
-                                    <a class="btn btn-sm btn-primary" id="uploadfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                    <a class="btn btn-lg btn-block btn-danger" id="pickfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_detail_banner") ?>" data-id="loan_detail_banner">Select</a> 
+                                    <!--<a class="btn btn-sm btn-primary" id="uploadfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                 </div><br>
                             </div>
                             <input type="hidden" id="loan_detail_banner" value="<?= $loan_detail_banner ?>" name="loan_detail_banner" multiple="false">
