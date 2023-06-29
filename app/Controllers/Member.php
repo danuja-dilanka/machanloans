@@ -127,7 +127,7 @@ class Member extends BaseController {
                                     "status" => $post_data["status"]
                                 ]);
                                 if ($user_id > 0) {
-                                    send_sms($post_data["mobile"], "Dear " . $data->mem_name . ", (" . $data->member_no . ")!\nWelcome To Machan Loans!\n\nLogin: " . base_url() . "\nYour Login Email: " . $login_email . "\nYour Login Password: " . $password . "\n\nThanks For Being With Machan Loans");
+                                    send_sms($post_data["mobile"], "Dear " . $post_data["first_name"] . ", (" . $post_data["member_no"] . ")!\nWelcome To Machan Loans!\n\nLogin: " . base_url() . "\nYour Login Email: " . $login_email . "\nYour Login Password: " . $password . "\n\nThanks For Being With Machan Loans");
                                 }
                             }
                         } else {
@@ -161,7 +161,7 @@ class Member extends BaseController {
                                 "status" => $post_data["status"]
                             ]);
                             if ($user_id > 0) {
-                                send_sms($post_data["mobile"], "Dear " . $data->mem_name . ", (" . $data->member_no . ")!\nWelcome To Machan Loans!\n\nLogin: " . base_url() . "\nYour Login Email: " . $login_email . "\nYour Login Password: " . $password . "\n\nThanks For Being With Machan Loans");
+                                send_sms($post_data["mobile"], "Dear " . $post_data["first_name"] . ", (" . $post_data["member_no"] . ")!\nWelcome To Machan Loans!\n\nLogin: " . base_url() . "\nYour Login Email: " . $login_email . "\nYour Login Password: " . $password . "\n\nThanks For Being With Machan Loans");
                             }
                         }
                     }
