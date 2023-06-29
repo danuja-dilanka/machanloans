@@ -171,12 +171,12 @@ class Member extends BaseController {
         if ($req_id != "" && has_permission("member", "edit")) {
             $data = $this->thisModel->get_data(decode($req_id));
             if (isset($data->id)) {
-                return view('_member/_member', ["data" => $data, "req_id" => $req_id]);
+                return view('_member/_member', ["data" => $data, "req_id" => $req_id, "title" => "Edit Member"]);
             } else {
                 return redirect()->to(base_url('member/mem'));
             }
         } else if (has_permission("member", "add")) {
-            return view('_member/_member');
+            return view('_member/_member', ["title" => "Add Member"]);
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));
