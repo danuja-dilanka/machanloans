@@ -147,7 +147,7 @@ class Loan extends BaseController {
         if ($req_id != "" && has_permission("group_data", "edit")) {
             $data = $this->thisModel->get_group_data(decode($req_id));
             if (isset($data->id)) {
-                return view('_loan/_loan_group/_loan_grp', ["data" => $data, "title" => "Update Loan Group"]);
+                return view('_loan/_loan_group/_loan_grp', ["data" => $data, "group_members" => $this->thisModel->get_grp_members_by_group($data->id), "title" => "Update Loan Group"]);
             } else {
                 return redirect()->to(base_url('loan/loan_group'));
             }
