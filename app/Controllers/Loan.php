@@ -229,7 +229,7 @@ class Loan extends BaseController {
                     $result = $this->thisModel->update_loan_req_data($post_data, $data->id);
                     if ($result) {
                         session()->setFlashdata('notify', 'Successfully Updated');
-                        return redirect()->to(base_url('loan/loan_pro/' . $req_id));
+                        return redirect()->to(base_url('loan/loan/' . $req_id));
                     }
                 } else {
                     return redirect()->to(base_url('loan/loan_list'));
