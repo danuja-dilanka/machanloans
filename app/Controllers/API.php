@@ -329,4 +329,24 @@ class API extends BaseController {
         echo $status;
     }
 
+    public function set_mem_rate() {
+        $status = 0;
+        if (already_logined()) {
+            $data = $this->request->getPost();
+            if (isset($data["user"]) && isset($data["rate"]) && isset($data["description"])) {
+                $user_id = decode($data["user"]);
+                $Member_model = model("Member_model");
+                $user = $Member_model->get_data($user_id);
+                if (isset($user->id)) {
+                    $response = $Member_model->update_data(["rate" => intval($data["rate"]), "rate_des" => trim($data["description"]), "rate_dt" => date("Y-m-d H:i:s")], $user_id);
+                    if ($response) {
+                        $status = 1;
+                    }
+                }
+            }
+        }
+
+        echo $status;
+    }
+
 }
