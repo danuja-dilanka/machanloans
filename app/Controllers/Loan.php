@@ -261,7 +261,7 @@ class Loan extends BaseController {
                     return redirect()->to(base_url('loan/loan_list'));
                 }
             } else {
-                return redirect()->to(base_url('loan/new_loan'));
+//                return redirect()->to(base_url('loan/new_loan'));
             }
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
