@@ -214,14 +214,14 @@ class Loan extends BaseController {
     //CREATE/ UPDATE VIEW LOAN
     public function loan($req_id = "") {
         $rules = [
-            'memeber' => 'required',
+            'member' => 'required',
             'loan_type' => 'required'
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
-            $member_enc = $post_data["memeber"];
-            $post_data["memeber"] = decode($member_enc);
+            $member_enc = $post_data["member"];
+            $post_data["member"] = decode($member_enc);
 
             if ($req_id != "" && has_permission("loan", "edit")) {
                 $data = $this->thisModel->get_loan_req_data(decode($req_id));
