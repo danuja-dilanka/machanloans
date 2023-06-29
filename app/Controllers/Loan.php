@@ -104,25 +104,26 @@ class Loan extends BaseController {
     //CREATE/ UPDATE VIEW GROUP
     public function loan_group($req_id = "") {
         $rules = [
-            'loan_name' => 'required',
-            'last_amount' => 'required',
-            'int_rate' => 'required',
-            'int_rate_per' => 'required|numeric',
-            'term_per' => 'required|numeric',
-            'late_time_penl' => 'required',
-            'status' => 'required|numeric',
-            'description' => 'required',
-            'term' => 'required|'
+            'group_name' => 'required',
+            'member_limit' => 'required',
+            'group_type' => 'required',
+            'members' => 'required'
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
+            $members = $post_data["members"];
+            unset($post_data["members"]);
 
             if ($req_id != "" && has_permission("group_data", "edit")) {
                 $data = $this->thisModel->get_group_data(decode($req_id));
                 if (isset($data->id)) {
                     $result = $this->thisModel->update_group_data($post_data, $data->id);
                     if ($result) {
+                        $this->thisModel->delete_grp_mem_data(0, ["group" => $data->id]);
+                        foreach ($members as $key => $value) {
+                            $this->thisModel->add_grp_mem_data(["group" => $data->id, "member" => $value]);
+                        }
                         session()->setFlashdata('notify', 'Successfully Updated');
                         return redirect()->to(base_url('loan/loan_pro/' . $req_id));
                     }
@@ -132,6 +133,9 @@ class Loan extends BaseController {
             } else if (has_permission("group_data", "add")) {
                 $insert_id = $this->thisModel->add_group_data($post_data);
                 if ($insert_id > 0) {
+                    foreach ($members as $key => $value) {
+                        $this->thisModel->add_grp_mem_data(["group" => $insert_id, "member" => $value]);
+                    }
                     session()->setFlashdata('notify', 'Successfully Inserted');
                     return redirect()->to(base_url('loan/loan_group') . "/" . encode($insert_id));
                 } else {
