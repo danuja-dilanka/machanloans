@@ -264,6 +264,6 @@
         </script>
         <script src="<?= base_url() ?>public/assets/js/vendor/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
-        <script src="<?= base_url() ?>public/assets/js/upload.js?v=6"></script>
+        <script src="<?= base_url() ?>public/assets/js/upload.js?v=2.0"></script>
     </body>
 </html>

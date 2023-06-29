@@ -69,8 +69,8 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist5"></div><br>
                                                     <div id="file_container5" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1f") ?>" data-id="friend1f_nic">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1f") ?>" data-id="friend1f_nic">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="friend1f_nic" class="dropify" name="friend1f_nic" multiple="false" required="">
@@ -83,8 +83,8 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist6"></div><br>
                                                     <div id="file_container6" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1b") ?>" data-id="friend1b_nic">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend1b") ?>" data-id="friend1b_nic">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="friend1b_nic" class="dropify" name="friend1b_nic" multiple="false" required="">
@@ -117,8 +117,8 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist7"></div><br>
                                                     <div id="file_container7" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend2f") ?>" data-id="friend2f_nic">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend2f") ?>" data-id="friend2f_nic">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="friend2f_nic" class="dropify" name="friend2f_nic" multiple="false" required="">
@@ -131,8 +131,8 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist8"></div><br>
                                                     <div id="file_container8" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend2b") ?>" data-id="friend2b_nic">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend2b") ?>" data-id="friend2b_nic">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="friend2b_nic" class="dropify" name="friend2b_nic" multiple="false" required="">
@@ -145,8 +145,8 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist9"></div><br>
                                                     <div id="file_container9" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="selfie" class="dropify" name="selfie" multiple="false" required="">
@@ -159,8 +159,8 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist10"></div><br>
                                                     <div id="file_container10" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="fb_screenshot" class="dropify" name="fb_screenshot" multiple="false" required="">
@@ -173,8 +173,8 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist11"></div><br>
                                                     <div id="file_container11" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/electricity_bill") ?>" data-id="electricity_bill">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/electricity_bill") ?>" data-id="electricity_bill">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="electricity_bill" class="dropify" name="electricity_bill" multiple="false" required="">
@@ -203,6 +203,6 @@
     var BASE_URL = '<?= base_url() ?>';
 </script>
 <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
-<script src="<?= base_url() ?>public/assets/js/upload.js?v=13"></script>
+<script src="<?= base_url() ?>public/assets/js/upload.js?v=2.0"></script>
 </body>
 </html>
