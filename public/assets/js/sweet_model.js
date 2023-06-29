@@ -8,12 +8,16 @@ function get_template(type, key) {
 }
 
 function open_rating(element) {
-    var template = get_template(element.getAttribute('data-type'), element.getAttribute('data-key'));
+    var key = element.getAttribute('data-key');
+    var template = get_template(element.getAttribute('data-type'), key);
     $.sweetModal({
         title: template[0],
         content: template[1],
         theme: $.sweetModal.THEME_DARK
     });
+    
+    $("#star" + element.getAttribute('data-rate')).attr('checked', true);
+    $("#des__" + key).val(element.getAttribute('data-rate_des'));
 }
 
 function add_rate(ele){
