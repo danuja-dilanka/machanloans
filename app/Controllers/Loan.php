@@ -226,12 +226,12 @@ class Loan extends BaseController {
             $post_data = $this->request->getPost();
             $member_enc = $post_data["member"];
             $post_data["member"] = decode($member_enc);
-            
+
             $loan_pro_det = $this->thisModel->get_pro_data($post_data["loan_type"]);
             if (!isset($loan_pro_det->id)) {
                 return redirect()->to(base_url('loan/loan_list'));
             }
-            
+
             $post_data["payment_method"] = $loan_pro_det->term_per;
 
             if ($req_id != "" && has_permission("loan", "edit")) {
@@ -310,6 +310,7 @@ class Loan extends BaseController {
             if (isset($data->id)) {
                 $result = $this->thisModel->update_loan_req_data(["status" => 1, 'action_by' => session()->ml_user], $data->id);
                 if ($result) {
+                    send_sms($data->mem_phone, "Dear " . $data->mem_name . "!\n Your Loan Application, L-#" . $data->id . " Was Appoved On " . date("Y-m-d") . "\n\nThanks For Being With Machan Loans");
                     session()->setFlashdata('notify', 'Successfully Approved');
                 }
             }
@@ -326,6 +327,7 @@ class Loan extends BaseController {
             if (isset($data->id)) {
                 $result = $this->thisModel->update_loan_req_data(["status" => 2, 'action_by' => session()->ml_user], $data->id);
                 if ($result) {
+                    send_sms($data->mem_phone, "Dear " . $data->mem_name . "!\n Your Loan Application, L-#" . $data->id . " Was Rejected On " . date("Y-m-d") . "\n\nThanks For Being With Machan Loans");
                     session()->setFlashdata('notify', 'Successfully Approved');
                 }
             }
@@ -351,6 +353,7 @@ class Loan extends BaseController {
             if (isset($data->id)) {
                 $result = $this->thisModel->update_loan_pay_data(["status" => 1, 'action_by' => decode(session()->ml_user)], $data->id);
                 if ($result) {
+                    send_sms($data->mem_phone, "Dear " . $data->mem_name . "!\n Your Repayment, RPAY-#" . $data->id . " Was Approved On " . date("Y-m-d") . "\n\nThanks For Being With Machan Loans");
                     session()->setFlashdata('notify', 'Successfully Approved');
                 }
             }
@@ -367,6 +370,7 @@ class Loan extends BaseController {
             if (isset($data->id)) {
                 $result = $this->thisModel->update_loan_pay_data(["status" => 2, 'action_by' => decode(session()->ml_user)], $data->id);
                 if ($result) {
+                    send_sms($data->mem_phone, "Dear " . $data->mem_name . "!\n Your Repayment, RPAY-#" . $data->id . " Was Rejected On " . date("Y-m-d") . "\n\nThanks For Being With Machan Loans");
                     session()->setFlashdata('notify', 'Successfully Rejected!');
                 }
             }
