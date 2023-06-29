@@ -5,7 +5,6 @@
         float: left;
         height: 46px;
         padding: 0 10px 0 0;
-        margin: 0 0 0 0;
     }
     .rate:not(:checked) > input {
         position:absolute;
