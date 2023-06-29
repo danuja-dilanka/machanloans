@@ -5,7 +5,7 @@
         <div class="col-lg-8">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="header-title">Add New Member</h4>
+                    <h4 class="header-title"><?= $title ?></h4>
                 </div>
                 <div class="card-body">
                     <?php if (count(validation_errors()) > 0) { ?>
