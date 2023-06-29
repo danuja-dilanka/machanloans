@@ -4,11 +4,12 @@
     .rate {
         float: left;
         height: 46px;
-        padding: 0 10px;
+        padding: 0 10px 0 0;
+        margin: 0 0 0 0;
     }
     .rate:not(:checked) > input {
         position:absolute;
-        /*top:-9999px;*/
+        top:-9999px;
     }
     .rate:not(:checked) > label {
         float:right;
