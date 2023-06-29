@@ -340,7 +340,7 @@ class Loan extends BaseController {
     public function loan_pay_approve($req_id = "") {
 
         if ($req_id != "" && has_permission("loan_pay", "edit")) {
-            $data = $this->thisModel->get_loan_req_data(decode($req_id));
+            $data = $this->thisModel->get_loan_pay_data(decode($req_id));
             if (isset($data->id)) {
                 $result = $this->thisModel->update_loan_pay_data(["status" => 1, 'action_by' => decode(session()->ml_user)], $data->id);
                 if ($result) {
@@ -349,14 +349,14 @@ class Loan extends BaseController {
             }
         }
 
-//        return redirect()->to(base_url('loan/loan_pay_list'));
+        return redirect()->to(base_url('loan/loan_pay_list'));
     }
 
     //LOAN PAYMENT REJECT
     public function loan_pay_reject($req_id = "") {
 
         if ($req_id != "" && has_permission("loan_pay", "edit")) {
-            $data = $this->thisModel->get_loan_req_data(decode($req_id));
+            $data = $this->thisModel->get_loan_pay_data(decode($req_id));
             if (isset($data->id)) {
                 $result = $this->thisModel->update_loan_pay_data(["status" => 2, 'action_by' => decode(session()->ml_user)], $data->id);
                 if ($result) {
@@ -365,7 +365,7 @@ class Loan extends BaseController {
             }
         }
 
-//        return redirect()->to(base_url('loan/loan_pay_list'));
+        return redirect()->to(base_url('loan/loan_pay_list'));
     }
 
     //LIST VIEW LOAN PAYMENTS
