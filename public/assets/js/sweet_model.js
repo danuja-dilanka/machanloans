@@ -47,6 +47,7 @@ function add_rate(ele){
             var com_ele = $("#tbl_rate_act_" + data_key);
             com_ele.attr("data-rate", rate);
             com_ele.attr("data-rate_des", description);
+            $("#rate_view_" + rate);
         }
         
         $(".sweet-modal-close-link").click();
