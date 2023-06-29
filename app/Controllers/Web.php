@@ -204,19 +204,20 @@ class Web extends BaseController {
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
             $loan_pro_det = $this->thisModel->get_pro_data($post_data["loan_type"]);
-            if(!isset($loan_pro_det->id)){
+            if (!isset($loan_pro_det->id)) {
                 die;
             }
-            
+
             $post_data["payment_method"] = $loan_pro_det->term_per;
-            
+
             $insert_id = $this->thisModel->add_loan_req_data($post_data);
             if ($insert_id > 0) {
 
                 /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION */
 
                 $Member_model = model('Member_model');
-                if (!isset($Member_model->get_mem_data_by(["nic" => $post_data["nic"]])->id)) {
+                $member_det = $Member_model->get_mem_data_by(["nic" => $post_data["nic"]]);
+                if (!isset($member_det->id)) {
                     $name = explode(" ", $post_data["full_name"]);
                     $member_id = $Member_model->add_data([
                         "first_name" => $name[0],
@@ -229,9 +230,11 @@ class Web extends BaseController {
                         "address" => $post_data["current_address"],
                         "nic" => $post_data["nic"],
                     ]);
-
-                    $this->thisModel->update_loan_req_data(["member" => $member_id], $insert_id);
+                } else {
+                    $member_id = $member_det->id;
                 }
+                
+                $this->thisModel->update_loan_req_data(["member" => $member_id], $insert_id);
 
                 return redirect()->to(base_url("loan_application/guarantors/" . $lng . "/" . encode($insert_id)));
 
