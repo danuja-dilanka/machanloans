@@ -78,3 +78,15 @@ $(document).on('change', "#loan_period", function () {
     $("#repay_amount").val(data[1]);
     $("#total").val(data[1]);
 });
+
+$(document).on('click', '.remove_file', function () {
+    var ele = $(this);
+    $.post(BASE_URL + 'api/remove_file', {src: ele.data('src'), type: ele.data('type')}, function (data) {
+        if (data == "1") {
+            if (ele.parent().parent().hasClass("active_record")) {
+                $("#" + ele.data("img")).attr("src", BASE_URL + "public/images/no-image.png");
+            }
+            $("#" + ele.data("file")).remove();
+        }
+    });
+});
