@@ -248,7 +248,7 @@
                                         <?= render_input('', 'Loan ID', isset($data->id) ? "L-#" . $data->id : "L-#" . model("Loan_model")->get_nxt_loan_id(), 'text', ['readonly' => true]); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= render_select('loan_type', model("Loan_model")->get_pro_data(0, 1), array('id', 'loan_name'), 'Loan Product', '', ['required' => true]); ?>
+                                        <?= render_select('loan_type', model("Loan_model")->get_pro_data(0, 1), array('id', 'loan_name'), 'Loan Product', isset($data) ? $data->loan_type : '', ['required' => true]); ?>
                                     </div>
                                     <div class="col-md-6">
                                         <?= render_input('first_pay_dt', 'First Payment Date', isset($data) ? $data->first_pay_dt : '', 'date', []); ?>
