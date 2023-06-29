@@ -1385,7 +1385,7 @@ $(document).on('click', ".confirm_red_btn", function () {
         content: ele.data('callback') != undefined ? "Your Action Can't Be Revoked" : "Your Data Can't Be Recovered",
         buttons: {
             confirm: function () {
-                if (ele.data('callback') != undefined) {
+                if (ele.data('callback') != undefined && typeof ele.data('callback') === "function") {
                     eval(ele.data('callback') + "('" + ele.data('id') + "');");
                 } else {
                     window.location.href = ele.data('id');
