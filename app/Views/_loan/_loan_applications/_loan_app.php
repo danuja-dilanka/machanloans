@@ -44,6 +44,7 @@
                                                         <div class="col-md-9">
                                                             <div class="row">
                                                                 <div class="col-md-4">
+                                                                    <?= render_input('member', '', isset($member) ? encode($member->id) : '', 'hidden', ["readonly" => true, "required" => true]); ?>
                                                                     <?= render_input('', 'First Name', isset($member) ? $member->first_name : '', 'text', ["readonly" => true]); ?>
                                                                 </div>
                                                                 <div class="col-md-4">
@@ -250,16 +251,10 @@
                                         <?= render_select('loan_type', model("Loan_model")->get_pro_data(0, 1), array('id', 'loan_name'), 'Loan Product', '', ['required' => true]); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= render_input('first_pay_dt', 'First Payment Date', isset($data) ? $data->first_pay_dt : '', 'date', ['required' => true]); ?>
+                                        <?= render_input('first_pay_dt', 'First Payment Date', isset($data) ? $data->first_pay_dt : '', 'date', []); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= render_input('rel_date', 'Release Date', isset($data) ? $data->rel_date : '', 'date', ['required' => true]); ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?= render_input('apply_amount', 'Applied Amount', isset($data) ? $data->apply_amount : '', 'number', ['required' => true, "step" => "0.01"]); ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?= render_input('late_pay_penl', 'Late Payment Penalties', isset($data) ? $data->late_pay_penl : '', 'number', ['required' => true]); ?>
+                                        <?= render_input('rel_date', 'Release Date', isset($data) ? $data->rel_date : '', 'date', []); ?>
                                     </div>
                                     <div class="col-md-6">
                                         <?= render_textarea('description', 'Description', isset($data) ? $data->description : '', []); ?>
