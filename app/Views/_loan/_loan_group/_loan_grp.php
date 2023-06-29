@@ -18,7 +18,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <lable for="member">Select Member</lable>
-                                    <select class="form-control selectpicker" name="member[]" multiple=""></select>
+                                    <select id="members" class="form-control selectpicker selectpicker_ajax" name="member[]" data-live-search="true" data-clone="members"></select>
                                 </div>
                             </div>
                             <div class="col-md-6">

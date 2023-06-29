@@ -25,6 +25,25 @@ class API extends BaseController {
         echo json_encode(["items" => $data], true);
     }
 
+    public function members() {
+        $data = [];
+        if ($this->request->is('post')) {
+            $search = "";
+            if ($this->request->getPost("search") != "") {
+                $search = $this->request->getPost("search");
+            }
+
+            $results = model('Member_model')->get_mem_data_by("first_name LIKE '$search%' OR last_name LIKE '$search%' OR member_no LIKE '$search%'");
+            foreach ($results as $result) {
+                $data[] = [
+                    "id" => $result->id,
+                    "text" => "(" . $result->member_no . ") " . $result->first_name . " " . $result->last_name
+                ];
+            }
+        }
+        echo json_encode(["items" => $data], true);
+    }
+
     public function user_types() {
         $data = [];
         if ($this->request->is('post')) {
