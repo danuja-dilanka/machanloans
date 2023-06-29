@@ -48,6 +48,8 @@ function add_rate(ele){
             com_ele.attr("data-rate", rate);
             com_ele.attr("data-rate_des", description);
         }
+        
+        $(".sweet-modal-close-link").click();
         ele.removeAttribute('disabled');
     });
 }
