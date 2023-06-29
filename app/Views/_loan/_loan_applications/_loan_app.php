@@ -11,7 +11,7 @@
 
                     </div>
                     <div class="col-md-1">
-                        <?= create_link("loan", "new_loan", ["loan", "add"], "+ New", "h6") ?>
+                        <?= isset($data) ? create_link("loan", "new_loan", ["loan", "add"], "+ New", "h6") : "" ?>
                     </div>
                 </div>
                 <div class="card-body">

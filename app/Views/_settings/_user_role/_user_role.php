@@ -12,7 +12,7 @@
 
                     </div>
                     <div class="col-md-1">
-                        <?= create_link("setting", "user_role", ["user_role", "add"], "+ New", "h6") ?>
+                        <?= isset($data) ? create_link("setting", "user_role", ["user_role", "add"], "+ New", "h6") : "" ?>
                     </div>
                 </div>
                 <div class="card-body">
