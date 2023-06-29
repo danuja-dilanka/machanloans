@@ -3,8 +3,16 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="header-title"><?= $title ?></h4>
+                <div class="card-header row">
+                    <div class="col-md-4">
+                        <h4 class="header-title"><?= $title ?></h4>
+                    </div>
+                    <div class="col-md-7">
+
+                    </div>
+                    <div class="col-md-1">
+                        <?= create_link("loan", "new_loan", ["loan", "add"], "+ New", "h6") ?>
+                    </div>
                 </div>
                 <div class="card-body">
                     <?php if (count(validation_errors()) > 0) { ?>
