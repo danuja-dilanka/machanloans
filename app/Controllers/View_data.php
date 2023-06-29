@@ -26,11 +26,11 @@ class View_data extends BaseController {
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink' . $key . '">
                   ' . (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='dropdown-item'>Edit</a>" : "") . '
                   ' . ("<a target='_blank' class='dropdown-item' href='" . base_url("member/view_member/") . $key_enc . "'>View</a>") . '
-                  ' . ("<button type='button' data-rate_des='".$value->rate_des."' data-rate='".$value->rate."' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='dropdown-item'>Rate</button>") . '
+                  ' . ("<button type='button' id='tbl_rate_act_" . $key . "' data-rate_des='" . $value->rate_des . "' data-rate='" . $value->rate . "' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='dropdown-item'>Rate</button>") . '
                   ' . (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . '
                 </div>
               </div>';
-            
+
             $data[] = [
                 $value->member_no,
                 $value->nic,
@@ -65,7 +65,7 @@ class View_data extends BaseController {
                   ' . (has_permission("loan", "delete") ? "<a href='#' data-id='" . base_url("loan/del_loan/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . '
                 </div>
               </div>';
-            
+
             $status_txt = "";
             if ($value->status == 0) {
                 $status_txt = "<span class='badge badge-warning'>Pending</span>";

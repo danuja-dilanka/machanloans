@@ -44,7 +44,9 @@ function add_rate(ele){
                 icon: 'success'
             });
             
-            $("#dt_tb").DataTable().ajax.reload();
+            var com_ele = $("#tbl_rate_act_" + data_key);
+            com_ele.attr("data-rate", rate);
+            com_ele.attr("data-rate_des", description);
         }
         ele.removeAttribute('disabled');
     });
