@@ -349,7 +349,7 @@ class Loan extends BaseController {
             }
         }
 
-        return redirect()->to(base_url('loan/loan_pay_list'));
+//        return redirect()->to(base_url('loan/loan_pay_list'));
     }
 
     //LOAN PAYMENT REJECT
@@ -365,7 +365,7 @@ class Loan extends BaseController {
             }
         }
 
-        return redirect()->to(base_url('loan/loan_pay_list'));
+//        return redirect()->to(base_url('loan/loan_pay_list'));
     }
 
     //LIST VIEW LOAN PAYMENTS
