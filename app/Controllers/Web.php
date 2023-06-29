@@ -229,7 +229,10 @@ class Web extends BaseController {
                         "email" => $post_data["email"],
                         "mobile" => $post_data["phone"],
                         "whatsapp" => $post_data["whatsapp"],
-                        "address" => $post_data["current_address"],
+                        "address" => $post_data["residential_address"],
+                        "cred_address" => $post_data["current_address"],
+                        "business_name" => $post_data["employment"],
+                        "working_address" => $post_data["employment_address"],
                         "nic" => $post_data["nic"],
                         "branch_name" => $post_data["branch_name"],
                         "acc_number" => $post_data["acc_number"],
@@ -237,6 +240,10 @@ class Web extends BaseController {
                         "crowd_name" => $post_data["memberships"],
                         "spouse_name" => $post_data["spouse_name"],
                         "spouse_tel_number" => $post_data["spouse_tel_number"],
+                        "nic_back" => $post_data["nic_back"],
+                        "nic_front" => $post_data["nic_front"],
+                        "spouse_nic_front" => $post_data["spouse_nic_front"],
+                        "spouse_nic_back" => $post_data["spouse_nic_back"],
                         "civil_status" => $post_data["marital_status"]
                     ]);
                     if($member_id > 0){
