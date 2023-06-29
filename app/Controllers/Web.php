@@ -198,7 +198,9 @@ class Web extends BaseController {
             'whatsapp' => 'trim|required|min_length[9]|max_length[10]',
             'marital_status' => 'trim|required|numeric',
             'memberships' => 'trim|required',
-            'bank_details' => 'trim|required'
+            'branch_name' => 'trim|required',
+            'acc_number' => 'trim|required',
+            'bank_name' => 'trim|required'
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {
@@ -229,6 +231,9 @@ class Web extends BaseController {
                         "whatsapp" => $post_data["whatsapp"],
                         "address" => $post_data["current_address"],
                         "nic" => $post_data["nic"],
+                        "branch_name" => $post_data["branch_name"],
+                        "acc_number" => $post_data["acc_number"],
+                        "bank_name" => $post_data["bank_name"],
                     ]);
                 } else {
                     $member_id = $member_det->id;

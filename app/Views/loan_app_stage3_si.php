@@ -170,7 +170,24 @@
                                                     ගිණුම් අංකය
                                                     බැංකුව
                                                     ශාඛාව<span class="required"> *</span></label>
-                                                <textarea class="form-control" name="bank_details" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label"><span class="required">බැංකුවේ නම *</span></label>
+                                                <input type="text" class="form-control" name="bank_name" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label"><span class="required">ශාඛාවේ නම *</span></label>
+                                                <input type="text" class="form-control" name="branch_name" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label"><span class="required">ගිණුම් අංකය *</span></label>
+                                                <input type="text" class="form-control" name="acc_number" value="">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
