@@ -99,9 +99,11 @@ class View_data extends BaseController {
         foreach ($loans as $key => $value) {
             $status_txt = "";
             if ($value->status == 0) {
-                $status_txt = "Pending";
+                $status_txt = "<span class='badge badge-warning'>Pending</span>";
+            } else if ($value->status == 1){
+                $status_txt = "<span class='badge badge-success'>Approved</span>";
             } else {
-                $status_txt = "Approved";
+                $status_txt = "<span class='badge badge-danger'>Rejected</span>";
             }
 
             $key_enc = encode($value->id);

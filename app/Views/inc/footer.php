@@ -33,7 +33,7 @@
     <script src="<?= base_url() ?>public/assets/js/jquery-confirm.min.js"></script>
 
     <!-- App js -->
-    <script src="<?= base_url() ?>public/assets/js/scripts.js?v=1.1"></script>
+    <script src="<?= base_url() ?>public/assets/js/scripts.js?v=1.2"></script>
 
     <?php if ($notify = session()->getFlashdata('notify')) { 
         $alert = explode("||", $notify);
