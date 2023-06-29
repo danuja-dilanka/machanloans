@@ -117,7 +117,7 @@ class Member extends BaseController {
                         if ($client_login) {
                             $user_det = $user_model->get_data_by(["email" => $login_email]);
                             if (!isset($user_det[0])) {
-                                $user_model->add_data([
+                                $user_id = $user_model->add_data([
                                     "name" => $post_data["first_name"] . " " . $post_data["last_name"],
                                     "email" => $login_email,
                                     "rel_type" => "member",
@@ -126,6 +126,9 @@ class Member extends BaseController {
                                     "password" => password_hash($password, PASSWORD_DEFAULT),
                                     "status" => $post_data["status"]
                                 ]);
+                                if ($user_id > 0) {
+                                    send_sms($post_data["mobile"], "Dear " . $data->mem_name . ", (" . $data->member_no . ")!\nWelcome To Machan Loans!\n\nLogin: " . base_url() . "\nYour Login Email: " . $login_email . "\nYour Login Password: " . $password . "\n\nThanks For Being With Machan Loans");
+                                }
                             }
                         } else {
                             $user_det = $user_model->get_data_by(["rel_id" => $data->id, "rel_type" => "member"]);
@@ -148,7 +151,7 @@ class Member extends BaseController {
                     if ($client_login) {
                         $user_det = $user_model->get_data_by(["email" => $login_email]);
                         if (!isset($user_det[0])) {
-                            $user_model->add_data([
+                            $user_id = $user_model->add_data([
                                 "name" => $post_data["first_name"] . " " . $post_data["last_name"],
                                 "email" => $login_email,
                                 "rel_type" => "member",
@@ -157,6 +160,9 @@ class Member extends BaseController {
                                 "password" => password_hash($password, PASSWORD_DEFAULT),
                                 "status" => $post_data["status"]
                             ]);
+                            if ($user_id > 0) {
+                                send_sms($post_data["mobile"], "Dear " . $data->mem_name . ", (" . $data->member_no . ")!\nWelcome To Machan Loans!\n\nLogin: " . base_url() . "\nYour Login Email: " . $login_email . "\nYour Login Password: " . $password . "\n\nThanks For Being With Machan Loans");
+                            }
                         }
                     }
 
