@@ -186,7 +186,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist0"></div><br>
                                                     <div id="file_container0" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">Select</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -200,7 +200,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist2"></div><br>
                                                     <div id="file_container2" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/back") ?>" data-id="nic_back">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/back") ?>" data-id="nic_back">Select</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -226,7 +226,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist3"></div><br>
                                                     <div id="file_container3" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_front") ?>" data-id="spouse_nic_front">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_front") ?>" data-id="spouse_nic_front">Select</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -240,7 +240,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist4"></div><br>
                                                     <div id="file_container4" style="position: relative;">
-                                                        <a class="btn btn-sm btn-default" id="pickfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_back") ?>" data-id="spouse_nic_back">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_back") ?>" data-id="spouse_nic_back">Select</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
