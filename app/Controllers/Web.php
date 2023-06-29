@@ -107,7 +107,10 @@ class Web extends BaseController {
                 'rel_friend1_address' => $post_data["friend1_address"],
                 'rel_friend2' => $post_data["friend2_name"],
                 'rel_friend2_phone' => $post_data["friend2_phone"],
-                'rel_friend2_address' => $post_data["friend2_address"]
+                'rel_friend2_address' => $post_data["friend2_address"],
+                'fb_screenshot' => $post_data["fb_screenshot"],
+                'selfie' => $post_data["selfie"],
+                'electricity_bill' => $post_data["electricity_bill"]
                     ], $loan_det->member);
 
             return redirect()->to(base_url("loan_application/done/$lng"));
@@ -210,7 +213,8 @@ class Web extends BaseController {
             'memberships' => 'trim|required',
             'branch_name' => 'trim|required',
             'acc_number' => 'trim|required',
-            'bank_name' => 'trim|required'
+            'bank_name' => 'trim|required',
+            'city' => 'trim|required'
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {
@@ -254,7 +258,8 @@ class Web extends BaseController {
                         "nic_front" => $post_data["nic_front"],
                         "spouse_nic_front" => $post_data["spouse_nic_front"],
                         "spouse_nic_back" => $post_data["spouse_nic_back"],
-                        "civil_status" => $post_data["marital_status"]
+                        "civil_status" => $post_data["marital_status"],
+                        "city" => $post_data["city"]
                     ]);
                     if ($member_id > 0) {
                         $Member_model->update_data(["member_no" => "MPL-" . $member_id], $member_id);

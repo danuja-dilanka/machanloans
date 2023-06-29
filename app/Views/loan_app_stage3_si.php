@@ -72,10 +72,17 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">උපන් දිනය<span class="required"> *</span></label>
                                                 <input type="date" class="form-control" name="birthday" value="" placeholder="YYYY-MM-DD" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">නගරය<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="city" value="" required="">
                                             </div>
                                         </div>
 
@@ -150,7 +157,7 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label">මචං සීට්ටු හා රැදී සිටි කාලය</label>
+                                                <label class="control-label">මචං සීට්ටු හා රැදී සිටි කාලය (දින)</label>
                                                 <input type="text" class="form-control" name="membership_age" value="">
                                             </div>
                                         </div>
