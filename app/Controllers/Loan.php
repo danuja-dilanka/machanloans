@@ -342,7 +342,7 @@ class Loan extends BaseController {
         if ($req_id != "" && has_permission("loan_pay", "edit")) {
             $data = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($data->id)) {
-                $result = $this->thisModel->update_loan_pay_data(["status" => 1, 'action_by' => session()->ml_user], $data->id);
+                $result = $this->thisModel->update_loan_pay_data(["status" => 1, 'action_by' => decode(session()->ml_user)], $data->id);
                 if ($result) {
                     session()->setFlashdata('notify', 'Successfully Approved');
                 }
@@ -358,7 +358,7 @@ class Loan extends BaseController {
         if ($req_id != "" && has_permission("loan_pay", "edit")) {
             $data = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($data->id)) {
-                $result = $this->thisModel->update_loan_pay_data(["status" => 2, 'action_by' => session()->ml_user], $data->id);
+                $result = $this->thisModel->update_loan_pay_data(["status" => 2, 'action_by' => decode(session()->ml_user)], $data->id);
                 if ($result) {
                     session()->setFlashdata('notify', 'Successfully Rejected!');
                 }
