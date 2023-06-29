@@ -89,8 +89,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist9"></div><br>
                                     <div id="file_container9" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="nic_front" value="<?= isset($data) ? $data->nic_front : '' ?>" class="" name="nic_front" multiple="false">
@@ -103,8 +103,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist8"></div><br>
                                     <div id="file_container8" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/back") ?>" data-id="nic_back">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/back") ?>" data-id="nic_back">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="nic_back" value="<?= isset($data) ? $data->nic_back : '' ?>" class="" name="nic_back" multiple="false">
@@ -135,8 +135,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist1"></div><br>
                                     <div id="file_container1" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/member") ?>" data-id="photo">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/member") ?>" data-id="photo">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="photo" value="<?= isset($data) ? $data->photo : '' ?>" class="" name="photo" multiple="false">
@@ -149,8 +149,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist2"></div><br>
                                     <div id="file_container2" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/bank_statement") ?>" data-id="bank_statement">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/bank_statement") ?>" data-id="bank_statement">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="bank_statement" value="<?= isset($data) ? $data->bank_statement : '' ?>" class="" name="bank_statement" multiple="false">
@@ -163,8 +163,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist4"></div><br>
                                     <div id="file_container4" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/hw_nic_front") ?>" data-id="hw_nic_front">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/hw_nic_front") ?>" data-id="hw_nic_front">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="hw_nic_front" value="<?= isset($data) ? $data->hw_nic_front : '' ?>" class="" name="hw_nic_front" multiple="false">
@@ -177,8 +177,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist10"></div><br>
                                     <div id="file_container10" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/hw_nic_back") ?>" data-id="hw_nic_back">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/hw_nic_back") ?>" data-id="hw_nic_back">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="hw_nic_back" value="<?= isset($data) ? $data->hw_nic_back : '' ?>" class="" name="hw_nic_back" multiple="false">
@@ -191,8 +191,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist3"></div><br>
                                     <div id="file_container3" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/ga_certificate") ?>" data-id="ga_certificate">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/ga_certificate") ?>" data-id="ga_certificate">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="ga_certificate" value="<?= isset($data) ? $data->ga_certificate : '' ?>" class="" name="ga_certificate" multiple="false">
@@ -205,8 +205,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist6"></div><br>
                                     <div id="file_container6" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="fb_screenshot" value="<?= isset($data) ? $data->fb_screenshot : '' ?>" class="" name="fb_screenshot" multiple="false">
@@ -219,8 +219,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist7"></div><br>
                                     <div id="file_container7" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/electricity_bill") ?>" data-id="electricity_bill">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/electricity_bill") ?>" data-id="electricity_bill">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="electricity_bill" value="<?= isset($data) ? $data->electricity_bill : '' ?>" class="" name="electricity_bill" multiple="false">
@@ -233,8 +233,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist5"></div><br>
                                     <div id="file_container5" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="selfie" class="" value="<?= isset($data) ? $data->selfie : '' ?>" name="selfie" multiple="false">
@@ -253,8 +253,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist11"></div><br>
                                     <div id="file_container11" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_front") ?>" data-id="spouse_nic_front">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_front") ?>" data-id="spouse_nic_front">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="spouse_nic_front" value="<?= isset($data) ? $data->spouse_nic_front : '' ?>" name="spouse_nic_front" multiple="false">
@@ -267,8 +267,8 @@
                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                     <div id="filelist12"></div><br>
                                     <div id="file_container12" style="position: relative;">
-                                        <a class="btn btn-sm btn-default" id="pickfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_back") ?>" data-id="spouse_nic_back">Select</a> 
-                                        <a class="btn btn-sm btn-primary" id="uploadfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_back") ?>" data-id="spouse_nic_back">Select</a> 
+                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                     </div><br>
                                 </div>
                                 <input type="hidden" id="spouse_nic_back" value="<?= isset($data) ? $data->spouse_nic_back : '' ?>" name="spouse_nic_back" multiple="false">
