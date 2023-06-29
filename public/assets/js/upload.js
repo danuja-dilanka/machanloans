@@ -31,6 +31,11 @@ function do_upload(index, upload_path) {
                     document.getElementById('filelist' + index).innerHTML += '<div id="' + file.id + '" class="filelist_info">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
                 });
                 uploader.start();
+                
+                var base = document.getElementById('pickfiles' + index);
+                var unic_id = base.getAttribute('data-id');
+                
+                document.getElementById(unic_id + "_img").src = BASE_URL + "/public/images/uploading.gif";
             },
 
             UploadProgress: function (up, file) {
