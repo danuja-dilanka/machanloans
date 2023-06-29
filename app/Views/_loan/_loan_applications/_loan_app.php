@@ -254,7 +254,7 @@
                                         <?= render_input('first_pay_dt', 'First Payment Date', isset($data) ? $data->first_pay_dt : '', 'date', []); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= render_input('loan_rel_date', 'Release Date', isset($data) ? $data->rel_date : '', 'date', []); ?>
+                                        <?= render_input('loan_rel_date', 'Release Date', isset($data) ? $data->loan_rel_date : '', 'date', []); ?>
                                     </div>
                                     <div class="col-md-6">
                                         <?= render_textarea('description', 'Description', isset($data) ? $data->description : '', []); ?>
