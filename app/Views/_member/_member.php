@@ -8,10 +8,10 @@
                     <div class="col-md-4">
                         <h4 class="header-title"><?= $title ?></h4>
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-6">
 
                     </div>
-                    <div class="col-md-1">
+                    <div class="col-md-2">
                         <?= isset($data) ? create_link("member", "mem", ["member", "add"], "+ New", "h6") : "" ?>
                     </div>
                 </div>
