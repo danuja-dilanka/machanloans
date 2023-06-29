@@ -248,7 +248,8 @@ class Loan extends BaseController {
         if ($req_id != "" && has_permission("loan", "edit")) {
             $data = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($data->id)) {
-                return view('_loan/_loan_applications/_loan_app', ["data" => $data, "title" => "Update Loan Group"]);
+                $member = model("Member_model")->get_mem_data($data->member);
+                return view('_loan/_loan_applications/_loan_app', ["data" => $data, "title" => "Update Loan Group", "member" => $member]);
             } else {
                 return redirect()->to(base_url('loan/loan_list'));
             }
@@ -261,7 +262,7 @@ class Loan extends BaseController {
                     return redirect()->to(base_url('loan/loan_list'));
                 }
             } else {
-//                return redirect()->to(base_url('loan/new_loan'));
+                return redirect()->to(base_url('loan/new_loan'));
             }
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
