@@ -100,6 +100,16 @@ class Web extends BaseController {
             ]);
 
             $this->mng_docs($post_data, $loan_det->member);
+
+            model('Member_model')->update_data([
+                'rel_friend1' => $post_data["friend1_name"],
+                'rel_friend1_phone' => $post_data["friend1_phone"],
+                'rel_friend1_address' => $post_data["friend1_address"],
+                'rel_friend2' => $post_data["friend2_name"],
+                'rel_friend2_phone' => $post_data["friend2_phone"],
+                'rel_friend2_address' => $post_data["friend2_address"]
+                    ], $loan_det->member);
+
             return redirect()->to(base_url("loan_application/done/$lng"));
         } else {
             $loan_det = $this->thisModel->get_loan_req_data(decode($req_id));
@@ -246,13 +256,13 @@ class Web extends BaseController {
                         "spouse_nic_back" => $post_data["spouse_nic_back"],
                         "civil_status" => $post_data["marital_status"]
                     ]);
-                    if($member_id > 0){
+                    if ($member_id > 0) {
                         $Member_model->update_data(["member_no" => "MPL-" . $member_id], $member_id);
                     }
                 } else {
                     $member_id = $member_det->id;
                 }
-                
+
                 $this->thisModel->update_loan_req_data(["member" => $member_id], $insert_id);
 
                 return redirect()->to(base_url("loan_application/guarantors/" . $lng . "/" . encode($insert_id)));
