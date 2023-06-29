@@ -220,7 +220,8 @@ class Loan extends BaseController {
 
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
-            $post_data["memeber"] = decode($post_data["memeber"]);
+            $member_enc = $post_data["memeber"];
+            $post_data["memeber"] = decode($member_enc);
 
             if ($req_id != "" && has_permission("loan", "edit")) {
                 $data = $this->thisModel->get_loan_req_data(decode($req_id));
@@ -231,7 +232,7 @@ class Loan extends BaseController {
                         return redirect()->to(base_url('loan/loan_pro/' . $req_id));
                     }
                 } else {
-                    return redirect()->to(base_url('loan/loan'));
+                    return redirect()->to(base_url('loan/loan_list'));
                 }
             } else if (has_permission("loan", "add")) {
                 $insert_id = $this->thisModel->add_loan_req_data($post_data);
@@ -239,7 +240,7 @@ class Loan extends BaseController {
                     session()->setFlashdata('notify', 'Successfully Inserted');
                     return redirect()->to(base_url('loan/loan') . "/" . encode($insert_id));
                 } else {
-                    return redirect()->to(base_url('loan/loan'));
+                    return redirect()->to(base_url('loan/loan') . "?b=" . $member_enc);
                 }
             }
         }
@@ -249,7 +250,7 @@ class Loan extends BaseController {
             if (isset($data->id)) {
                 return view('_loan/_loan_applications/_loan_app', ["data" => $data, "title" => "Update Loan Group"]);
             } else {
-                return redirect()->to(base_url('loan/loan'));
+                return redirect()->to(base_url('loan/loan_list'));
             }
         } else if (has_permission("loan", "add")) {
             if ($this->request->getGet("b") != "") {
@@ -257,7 +258,7 @@ class Loan extends BaseController {
                 if (isset($member->id)) {
                     return view('_loan/_loan_applications/_loan_app', ["title" => "New Loan", "member" => $member]);
                 } else {
-                    return redirect()->to(base_url('loan/new_loan'));
+                    return redirect()->to(base_url('loan/loan_list'));
                 }
             } else {
                 return redirect()->to(base_url('loan/new_loan'));
@@ -423,7 +424,7 @@ class Loan extends BaseController {
     //CREATE / UPDATE LOAN SETTINGS
     public function settings() {
         if (has_permission("loan_setting", "edit")) {
-            
+
             $rules = [
                 'loan_detail_banner' => 'required',
             ];
