@@ -234,7 +234,14 @@ class Web extends BaseController {
                         "branch_name" => $post_data["branch_name"],
                         "acc_number" => $post_data["acc_number"],
                         "bank_name" => $post_data["bank_name"],
+                        "crowd_name" => $post_data["memberships"],
+                        "spouse_name" => $post_data["spouse_name"],
+                        "spouse_tel_number" => $post_data["spouse_tel_number"],
+                        "civil_status" => $post_data["marital_status"]
                     ]);
+                    if($member_id > 0){
+                        $Member_model->update_data(["member_no" => "MPL-" . $member_id], $member_id);
+                    }
                 } else {
                     $member_id = $member_det->id;
                 }
