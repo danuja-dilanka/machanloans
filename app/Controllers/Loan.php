@@ -125,7 +125,7 @@ class Loan extends BaseController {
                             $this->thisModel->add_grp_mem_data(["group" => $data->id, "member" => $value]);
                         }
                         session()->setFlashdata('notify', 'Successfully Updated');
-                        return redirect()->to(base_url('loan/loan_pro/' . $req_id));
+                        return redirect()->to(base_url('loan/loan_group/' . $req_id));
                     }
                 } else {
                     return redirect()->to(base_url('loan/loan_group'));

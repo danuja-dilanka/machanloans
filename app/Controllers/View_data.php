@@ -173,7 +173,7 @@ class View_data extends BaseController {
                 $value->group_name,
                 $value->member_limit,
                 $mem_txt,
-                $value->int_rate_per == 1 ? "Loan Group" : "Seettu",
+                $value->group_type == 1 ? "Loan Group" : "Seettu",
                 (has_permission("group_data", "edit") ? "<a href='" . base_url("loan/loan_group/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "") .
                 (has_permission("group_data", "delete") ? "<a href='#' data-id='" . base_url("loan/del_group_data/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
             ];
