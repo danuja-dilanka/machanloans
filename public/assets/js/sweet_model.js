@@ -43,6 +43,8 @@ function add_rate(ele){
                 showHideTransition: 'slide',
                 icon: 'success'
             });
+            
+            $("#dt_tb").DataTable().ajax.reload();
         }
         ele.removeAttribute('disabled');
     });
