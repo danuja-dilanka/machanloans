@@ -77,8 +77,8 @@ class View_data extends BaseController {
             $data[] = [
                 $value->id,
                 $value->loan_product,
-                $value->full_name,
-                $value->mem_no,
+                $value->full_name != null ? $value->full_name : $value->mem_name,
+                "MPL-" . $value->mem_no,
                 $value->loan_rel_date,
                 number_format($value->last_amount, 2, ".", ","),
                 $status_txt,
