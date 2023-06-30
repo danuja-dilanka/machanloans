@@ -187,7 +187,7 @@
                                         <hr>
                                         <div class="form-group" style="margin-left: 2%">
                                             <input type="hidden" name="loan" value="<?= $req_id ?>" required readonly/>
-                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-lg btn-block btn-danger">Submit</button>
                                         </div>
                                     </div>
                                 </div>
