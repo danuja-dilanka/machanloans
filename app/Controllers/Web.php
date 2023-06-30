@@ -199,7 +199,6 @@ class Web extends BaseController {
         $rules = [
             'nic' => 'trim|required|min_length[10]|max_length[12]',
             'loan_type' => 'trim|required|numeric',
-            'name' => 'trim|required',
             'full_name' => 'trim|required',
             'birthday' => 'trim|required',
             'email' => 'trim|required|valid_email',
@@ -234,10 +233,10 @@ class Web extends BaseController {
                 $Member_model = model('Member_model');
                 $member_det = $Member_model->get_mem_data_by(["nic" => $post_data["nic"]]);
                 if (!isset($member_det->id)) {
-                    $name = explode(" ", $post_data["full_name"]);
                     $member_id = $Member_model->add_data([
-                        "first_name" => $name[0],
-                        "last_name" => count($name) > 1 ? $name[count($name) - 1] : "",
+                        "first_name" => $post_data["first_name"],
+                        "last_name" => $post_data["last_name"],
+                        "google_location" => $post_data["google_location"],
                         "name_with_ini" => $post_data["full_name"],
                         "birthday" => $post_data["birthday"],
                         "email" => $post_data["email"],

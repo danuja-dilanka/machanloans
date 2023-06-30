@@ -58,10 +58,16 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label">නම<span class="required"> *</span></label>
-                                                <input type="text" class="form-control" name="name" value="" required="">
+                                                <label class="control-label">මුල් නම<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="first_name" value="" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">අවසන් නම<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="last_name" value="" required="">
                                             </div>
                                         </div>
 
@@ -93,17 +99,24 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">හැදුනුම්පතේ සහිත ලිපිනය<span class="required"> *</span></label>
                                                 <textarea class="form-control" name="residential_address" rows="4" required=""></textarea>
                                             </div>
                                         </div>
 
-                                        <div class="col-md-12">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">වර්ථමාන පදිංචි ලිපිනය<span class="required"> *</span></label>
                                                 <textarea class="form-control" name="current_address" rows="4" required=""></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">ගූගල් ස්ථානය<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="google_location" rows="4" required=""></textarea>
                                             </div>
                                         </div>
 
