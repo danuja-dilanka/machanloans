@@ -74,6 +74,10 @@
                                                 <td><?= isset($data) ? $data->member_no : null ?></td>
                                             </tr>
                                             <tr>
+                                                <td>National Identity Card Number</td>
+                                                <td><?= isset($data) ? $data->nic : null ?></td>
+                                            </tr>
+                                            <tr>
                                                 <td>Email</td>
                                                 <td><?= isset($data) ? $data->email : null ?></td>
                                             </tr>
