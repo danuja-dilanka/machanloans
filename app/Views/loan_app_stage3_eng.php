@@ -87,17 +87,27 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">Date of Birth<span class="required"> *</span></label>
                                                 <input type="date" class="form-control" name="birthday" value="" placeholder="YYYY-MM-DD" required="">
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">City<span class="required"> *</span></label>
                                                 <input type="text" class="form-control" name="city" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Gender<span class="required"> *</span></label>
+                                                <select class="form-control" name="gender" required="">
+                                                    <option value="1">Male</option>
+                                                    <option value="2">Female</option>
+                                                </select>
                                             </div>
                                         </div>
 

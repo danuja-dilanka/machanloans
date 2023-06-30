@@ -78,17 +78,27 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">උපන් දිනය<span class="required"> *</span></label>
                                                 <input type="date" class="form-control" name="birthday" value="" placeholder="YYYY-MM-DD" required="">
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label">නගරය<span class="required"> *</span></label>
                                                 <input type="text" class="form-control" name="city" value="" required="">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label class="control-label">ස්ත්රී පුරුෂ භාවය<span class="required"> *</span></label>
+                                                <select class="form-control" name="gender" required="">
+                                                    <option value="1">පිරිමි</option>
+                                                    <option value="2">ගැහැණු</option>
+                                                </select>
                                             </div>
                                         </div>
 

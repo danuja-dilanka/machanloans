@@ -258,6 +258,7 @@ class Web extends BaseController {
                         "spouse_nic_front" => $post_data["spouse_nic_front"],
                         "spouse_nic_back" => $post_data["spouse_nic_back"],
                         "civil_status" => $post_data["marital_status"],
+                        "gender" => $post_data["gender"],
                         "city" => $post_data["city"]
                     ]);
                     if ($member_id > 0) {
