@@ -73,7 +73,7 @@ class View_data extends BaseController {
         foreach ($loans as $key => $value) {
             if ($status != "" && preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $value->loan_rel_date)) {
                 $monthsToAdd = (int) ($value->lp_term_per == 1 ? $value->lp_term : $value->lp_term * 12);
-                $due_date = $newDate = date('Y-m-d', strtotime("$value->loan_rel_date +$monthsToAdd month"));
+                $due_date = date('Y-m-d', strtotime($value->loan_rel_date . " +$monthsToAdd months"));
 
                 if ($status == 0 && (strtotime($due_date)) < strtotime($today)) {
                     //ACTIVE LOANS == !IN ACTIVE
@@ -108,7 +108,7 @@ class View_data extends BaseController {
             }
 
             $data[] = [
-                $value->id,
+                $status." - ".$value->id,
                 $value->loan_product,
                 $value->full_name != null ? $value->full_name : $value->mem_name,
                 "MPL-" . $value->mem_no,
