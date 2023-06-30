@@ -68,7 +68,7 @@ class View_data extends BaseController {
         }
 
         $data = [];
-        $loans = model('Loan_model')->get_loan_req_data_by();
+        $loans = model('Loan_model')->get_loan_req_data();
         $format = 'Y-m-d';
         $today = date($format);
         foreach ($loans as $key => $value) {
