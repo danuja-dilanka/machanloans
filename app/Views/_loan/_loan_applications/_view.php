@@ -87,55 +87,44 @@
                                     </tr>
                                     <tr>
                                         <td>First Payment Date</td>
-                                        <td></td>
+                                        <td><?= $data->first_pay_dt ?></td>
                                     </tr>
                                     <tr>
                                         <td>Release Date</td>
-                                        <td>
-
-                                        </td>
+                                        <td><?= $data->loan_rel_date ?></td>
                                     </tr>
                                     <tr>
                                         <td>Applied Amount</td>
-                                        <td>
-
-                                        </td>
+                                        <td><?= $data->last_amount ?></td>
                                     </tr>
                                     <tr>
                                         <td>Total Payable</td>
-                                        <td>
-
-                                        </td>
+                                        <td><?= $data->last_amount ?></td>
                                     </tr>
+                                    <?php $loan_summary = model("Loan_model")->get_loan_pay_data_summary(["loan" => $data->id]) ?>
                                     <tr>
                                         <td>Total Paid</td>
-                                        <td class="text-success">
-
-                                        </td>
+                                        <td class="text-success"><?= $loan_summary->paid_total ?></td>
                                     </tr>
                                     <tr>
                                         <td>Due Amount</td>
-                                        <td class="text-danger">
-
-                                        </td>
+                                        <td class="text-danger"><?= $data->last_amount - floatval($loan_summary->paid_total) ?></td>
                                     </tr>
                                     <tr>
                                         <td>Late Payment Penalties</td>
-                                        <td></td>
+                                        <td><?= $loan_summary->paid_pen_amount ?></td>
                                     </tr>
                                     <tr>
                                         <td>Attachment</td>
-                                        <td>
-
-                                        </td>
+                                        <td></td>
                                     </tr>
                                     <tr>
                                         <td>Description</td>
-                                        <td></td>
+                                        <td><?= $data->description ?></td>
                                     </tr>
                                     <tr>
                                         <td>Remarks</td>
-                                        <td></td>
+                                        <td><?= $data->remark ?></td>
                                     </tr>
                                 </tbody>
                             </table>
