@@ -60,7 +60,7 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="control-label">ගෙවීම් ආකාරය</label>
+                                                <label class="control-label">ගෙවීම් ආකාරය <br></label>
                                                 <select class="form-control" id="pay_type" disabled="">
                                                     <option value="">-</option>
                                                     <option value="1">මාසික</option>
