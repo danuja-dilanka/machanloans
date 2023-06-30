@@ -368,4 +368,17 @@ class API extends BaseController {
         echo $status;
     }
 
+    public function get_loan_pay_mode() {
+
+        if ($this->request->is('post')) {
+            $data = $this->request->getPost();
+            if (isset($data["product"])) {
+                $loan_product = model("Loan_model")->get_pro_data($data["product"]);
+                if(isset($loan_product->id)){
+                    echo $loan_product->term_per;
+                }
+            }
+        }
+    }
+
 }

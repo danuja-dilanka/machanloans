@@ -53,15 +53,25 @@
                                     <img alt="plans" src="<?= ($loan_detail_banner) != null ? base_url("public/images/loan_detail_banner") . "/" . $loan_detail_banner : base_url("public/uploads") . "/media/plans.png" ?>" width="100%" style="width:100%">
                                     <?= form_open_multipart(base_url("web/request_loan/$lng"), array('data-parsley-validate' => 'true')); ?>
                                     <div class="row">
-                                        <div class="col-md-12">
+                                        <div class="col-md-8">
                                             <div class="form-group">
                                                 <label class="control-label">Loan plan to be availed. < />
                                                     <span>(Sleep- If you are getting Rs. 20,000/= to be paid weekly for two months then you should write D 4 as the loan plan. *</span>
                                                     <span class="required"> *</span></label>
-                                                <select class="form-control" name="loan_type" required="">
+                                                <select class="form-control" name="loan_type" id="loan_type" required="">
                                                     <?php foreach ($products as $key => $value) { ?>
                                                         <option value="<?= $value->id ?>"><?= $value->loan_name ?></option>
                                                     <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <select class="form-control" id="pay_type" readonly>
+                                                    <option value="">-</option>
+                                                    <option value="1">Monthly</option>
+                                                    <option value="2">Yearly</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -318,5 +328,6 @@
         <script src="<?= base_url() ?>public/assets/js/vendor/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
         <script src="<?= base_url() ?>public/assets/js/upload.js?v=2.0"></script>
+        <script src="<?= base_url() ?>public/assets/js/public_loan_app.js"></script>
     </body>
 </html>
