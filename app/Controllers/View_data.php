@@ -54,8 +54,8 @@ class View_data extends BaseController {
         $status = "";
 
         $filters = $data = [];
-        if ($this->input->get("filters") != "") {
-            $filters = $this->input->get("filters");
+        if ($this->request->getGet("filters") != "") {
+            $filters = $this->request->getGet("filters");
         }
 
         foreach ($filters as $filter => $afilter) {
