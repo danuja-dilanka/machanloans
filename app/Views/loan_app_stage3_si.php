@@ -141,6 +141,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">ජාතික හැදුනුම්පත් අංකය<span class="required"> *</span></label>
                                                 <input type="text" class="form-control" name="nic" value="" minlength="10" maxlength="12" required="">
+                                                <small>* ජාතික හැඳුනුම්පත් අංකයට නිවැරදි ඉලක්කම් දිග තිබිය යුතුය</small>
                                             </div>
                                         </div>
 

@@ -149,6 +149,7 @@
                                             <div class="form-group">
                                                 <label class="control-label">National Identity Card Number<span class="required"> *</span></label>
                                                 <input type="text" class="form-control" name="nic" value="" minlength="10" maxlength="12" required="">
+                                                <small>* NIC Must Have Correct Digit Length</small>
                                             </div>
                                         </div>
 
