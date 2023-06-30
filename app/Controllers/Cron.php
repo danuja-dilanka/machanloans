@@ -4,13 +4,8 @@ namespace App\Controllers;
 
 class Cron extends BaseController {
 
-    public function __construct() {
-        parent::__construct();
-
-        date_default_timezone_set("Asia/Colombo");
-    }
-
     public function send_birth_wishes() {
+        date_default_timezone_set("Asia/Colombo");
 
         if (strtotime(date("H:i")) >= strtotime("04:00")) {
             $Member_model = model("Member_model");
