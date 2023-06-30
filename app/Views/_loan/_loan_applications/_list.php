@@ -12,8 +12,8 @@
         </div>
     </div>
     <div class="mb-4 row">
-        <div class="col-sm-6"></div>
-        <div class="col-sm-6">
+        <div class="col-sm-7"></div>
+        <div class="col-sm-5">
             <button type="button" id="status" data-unic="1" data-id="0" data-type="0" class="filter btn btn-default" style="border: none;">Active</button>&nbsp;
             <button type="button" id="status" data-unic="1" data-id="1" data-type="0" class="filter btn btn-default" style="border: none;">Inactive</button>&nbsp;
             <button type="button" id="status" data-unic="1" data-id="2" data-type="0" class="filter btn btn-default" style="border: none;">Finished</button>&nbsp;
