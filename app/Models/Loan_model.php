@@ -154,12 +154,16 @@ class Loan_model extends Model {
     }
 
     //GET LOAN REQUEST BY -> where
-    public function get_loan_req_data_by($where = []) {
+    public function get_loan_req_data_by($where = [], $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'loan_request a');
         $result->select('a.*,b.last_amount,b.loan_name AS loan_product');
         $result->join(DB_PREFIX . 'loan_product b', 'a.loan_type = b.id');
         $result->where($where);
-        return $result->get()->getResult();
+        if ($result_type == 0) {
+            return $result->get()->getResult();
+        } else {
+            return $result->get()->getResultArray();
+        }
     }
 
     //UPDATE LOAN REQUEST
