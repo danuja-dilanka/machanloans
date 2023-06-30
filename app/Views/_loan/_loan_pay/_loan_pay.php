@@ -21,7 +21,7 @@
                             <?= render_input('pay_date', 'Payment Date', isset($data) ? $data->pay_date : date("Y-m-d"), 'date', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_select('loan', model("Loan_model")->get_loan_req_data_by("loan_rel_date IS NOT NULL", 1), array('id', 'name'), 'Loan ID', isset($data) ? $data->loan : '', ['required' => true]); ?>
+                            <?= render_select('loan', model("Loan_model")->get_loan_req_data_by("loan_rel_date IS NOT NULL AND paid_period < loan_period", 1), array('id', 'name'), 'Loan ID', isset($data) ? $data->loan : '', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
                             <?php
