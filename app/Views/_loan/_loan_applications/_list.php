@@ -1,6 +1,6 @@
 <?= view('inc/header') ?>
 <div class="main-content-inner mt-4">
-    <div class='row mb-4'>
+    <div class='row'>
         <div class="col-md-4">
             <h3><?= $title ?></h3>
         </div>
@@ -11,7 +11,8 @@
             <?= create_link("loan", "new_loan", ["loan", "add"], "+ New", "h6") ?>
         </div>
     </div>
-    <div class="mb-4 row">
+    <hr>
+    <div class="row">
         <div class="col-sm-7"></div>
         <div class="col-sm-5">
             <button type="button" id="status" data-unic="1" data-id="0" data-type="0" class="filter btn btn-default" style="border: none;">Active</button>&nbsp;
@@ -21,6 +22,7 @@
             <br><br>
         </div>
     </div>
+    <hr>
     <table id="dt_tb" class="table" data-action="loans" style="width:100%">
         <thead>
             <tr>
