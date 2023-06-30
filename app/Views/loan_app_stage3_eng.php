@@ -117,15 +117,15 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="control-label">Google Location<span class="required"> *</span></label>
-                                                <textarea class="form-control" name="google_location" rows="4" required=""></textarea>
+                                                <label class="control-label">Current Residential Address<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="current_address" rows="4" required=""></textarea>
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="control-label">Current Residential Address<span class="required"> *</span></label>
-                                                <textarea class="form-control" name="current_address" rows="4" required=""></textarea>
+                                                <label class="control-label">Google Location<span class="required"> *</span></label>
+                                                <textarea class="form-control" name="google_location" rows="4" required=""></textarea>
                                             </div>
                                         </div>
 
