@@ -81,9 +81,9 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td><?= $prev_loan->loan_details->bank_name ?> </td>
-                                                            <td><?= $prev_loan->loan_details->branch_name ?> </td>
-                                                            <td><?= $prev_loan->loan_details->acc_number ?> </td>
+                                                            <td><?= $member->bank_name ?> </td>
+                                                            <td><?= $member->branch_name ?> </td>
+                                                            <td><?= $member->acc_number ?> </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
