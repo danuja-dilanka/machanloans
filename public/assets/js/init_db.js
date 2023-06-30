@@ -238,12 +238,12 @@ $('.filter').on('change click dblclick select', function () {
     }
 
     var dt_table = "#dt_tb";
-    var common_action = ele.data("action");
+//    var common_action = ele.data("action");
     if (ele.data("tb") != undefined) {
         dt_table = "#" + ele.data("tb");
     }
 
-    load_data(BASE_URL + 'get_ajax_data/' + common_action, 1, dt_table);
+    load_data(BASE_URL + 'get_ajax_data/' + $(dt_table).data("action"), 1, dt_table);
 });
 
 $(document).on('change', '.filter_input', function () {
@@ -256,12 +256,12 @@ $(document).on('change', '.filter_input', function () {
     }
 
     var dt_table = "#dt_tb";
-    var common_action = ele.data("action");
+//    var common_action = ele.data("action");
     if (ele.data("tb") != undefined) {
         dt_table = "#" + ele.data("tb");
     }
 
-    load_data(BASE_URL + 'get_ajax_data/' + common_action, 1, dt_table);
+    load_data(BASE_URL + 'get_ajax_data/' + $(dt_table).data("action"), 1, dt_table);
 });
 
 $(document).on('change', '.filter_select', function () {
@@ -272,12 +272,12 @@ $(document).on('change', '.filter_select', function () {
     }
 
     var dt_table = "#dt_tb";
-    var common_action = ele.data("action");
+//    var common_action = ele.data("action");
     if (ele.data("tb") != undefined) {
         dt_table = "#" + ele.data("tb");
     }
 
-    load_data(BASE_URL + 'get_ajax_data/' + common_action, 1, dt_table);
+    load_data(BASE_URL + 'get_ajax_data/' + $(dt_table).data("action"), 1, dt_table);
 });
 
 $("#dt_tb").hide();
