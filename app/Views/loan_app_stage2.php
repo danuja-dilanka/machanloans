@@ -105,7 +105,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
-                                                <button type="submit" class="btn btn-primary btn-lg btn-block"><?= $lng == 'si' ? "තහවුරු කරන්න" : "Submit" ?></button>
+                                                <button type="submit" class="btn btn-danger btn-lg btn-block"><?= $lng == 'si' ? "තහවුරු කරන්න" : "Submit" ?></button>
                                             </div>
                                         </div>
                                     <?php } else { ?>
