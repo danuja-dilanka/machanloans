@@ -71,7 +71,22 @@
                                         <div class="col-md-12">
                                             <div class="col-md-12 mb-2">
                                                 <p class="text-center"><?= $lng == 'si' ? "බැංකු තොරතුරු" : "Bank Details" ?></p>
-                                                <?= $prev_loan->loan_details->bank_details ?> 
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th><?= $lng == 'si' ? "බැංකුවේ නම" : "Bank Name" ?></th>
+                                                            <th><?= $lng == 'si' ? "ශාඛාවේ නම" : "Branch Name" ?></th>
+                                                            <th><?= $lng == 'si' ? "ගිණුම් අංකය" : "Account Number" ?></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><?= $prev_loan->loan_details->bank_name ?> </td>
+                                                            <td><?= $prev_loan->loan_details->branch_name ?> </td>
+                                                            <td><?= $prev_loan->loan_details->acc_number ?> </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                             <div class="col-md-12 mb-2">
                                                 <div class="form-group text-center">
