@@ -124,7 +124,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="control-label">දුරකතන අංකය<span class="required"> *</span></label>
-                                                <input type="text" class="form-control" name="phone" value="" required="">
+                                                <input type="text" class="form-control" name="phone" minlength="11" maxlength="11" value="" required="">
                                                 <small>දුරකථන අංකය මෙම ආකෘතියේ තිබිය යුතුය: 947XXXXXXXX</small>
                                             </div>
                                         </div>
@@ -132,7 +132,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="control-label">වට්ස් ඇප් අංකය<span class="required"> *</span></label>
-                                                <input type="text" class="form-control" name="whatsapp" value="" required="">
+                                                <input type="text" class="form-control" name="whatsapp" minlength="11" maxlength="11" value="" required="">
                                                 <small>දුරකථන අංකය මෙම ආකෘතියේ තිබිය යුතුය: 947XXXXXXXX</small>
                                             </div>
                                         </div>
