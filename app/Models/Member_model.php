@@ -94,4 +94,32 @@ class Member_model extends Model {
         }
     }
 
+    //ADD MEMBER SMS WISHES
+    public function add_sms_wish($data) {
+        $this->db->table(DB_PREFIX . 'sms_wishes')->insert($data);
+        return $this->db->insertID();
+    }
+
+    //UPDATE MEMBER SMS WISHES
+    public function update_sms_wish($data, $id) {
+        return $this->db->table(DB_PREFIX . 'sms_wishes')->update($data, ["id" => $id]);
+    }
+
+    //GET MEMBER SMS WISHES BY -> where
+    public function get_sms_wishs_by($where = []) {
+        $result = $this->db->table(DB_PREFIX . 'sms_wishes');
+        $result->select('*');
+        $result->where($where);
+        return $result->get()->getResult();
+    }
+
+    //DELETE MEMBER SMS WISHES
+    public function delete_sms_wishs($id = 0, $where = []) {
+        if ($id == 0) {
+            return $this->db->table(DB_PREFIX . 'sms_wishes')->delete($where);
+        } else {
+            return $this->db->table(DB_PREFIX . 'sms_wishes')->delete(["id" => $id]);
+        }
+    }
+
 }
