@@ -1,5 +1,6 @@
 <?= view('inc/header') ?>
 <?= view('_loan/_guarantor/_model') ?>
+<?php $loan_model = model("Loan_model") ?>
 <div class="main-content-inner mt-4">		
     <div class="row">
         <div class="col-lg-12">
@@ -40,7 +41,7 @@
                             <a class="nav-link" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
                         <!--                        <li class="nav-item">
-                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id     ?>">Edit</a>
+                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id           ?>">Edit</a>
                                                 </li>-->
                     </ul>
                     <!-- Tab panes -->
@@ -101,7 +102,7 @@
                                         <td>Total Payable</td>
                                         <td><?= number_format($data->last_amount, 2, ".", ",") ?></td>
                                     </tr>
-                                    <?php $loan_summary = model("Loan_model")->get_loan_pay_data_summary(["loan" => $data->id]) ?>
+                                    <?php $loan_summary = $loan_model->get_loan_pay_data_summary(["loan" => $data->id]) ?>
                                     <tr>
                                         <td>Total Paid</td>
                                         <td class="text-success"><?= number_format($loan_summary->paid_total, 2, ".", ",") ?></td>
@@ -209,7 +210,18 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        <?php
+                                        $payments = $loan_model->get_loan_pay_all_data_by("loan=" . $data->id);
+                                        foreach ($payments as $key => $payment) {
+                                            ?>
+                                            <tr>
+                                                <td><?= $payment->pay_date ?></td>
+                                                <td><?= $payment->last_amount ?></td>
+                                                <td><?= $payment->int_rate ?></td>
+                                                <td><?= $payment->pen_amount ?></td>
+                                                <td><?= $payment->total ?></td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
