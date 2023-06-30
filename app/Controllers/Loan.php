@@ -419,10 +419,16 @@ class Loan extends BaseController {
             } else if (has_permission("loan_pay", "add")) {
                 $insert_id = $this->thisModel->add_loan_pay_data($post_data);
                 if ($insert_id > 0) {
+                    
+                    //UPDATE LOAN DETAILS
                     $loan_summary = $this->thisModel->get_loan_pay_data_summary(["loan" => $post_data["loan"]]);
+                    $loan_update = ["paid_period" => intval($loan_summary->tot_paid_count)];
                     if ($loan_summary->tot_paid_count == 1) {
-                        $this->thisModel->update_loan_req_data(["first_pay_dt" => date("Y-m-d")], $post_data["loan"]);
+                        $loan_update["first_pay_dt"] = date("Y-m-d");
                     }
+                    $this->thisModel->update_loan_req_data($loan_update, $post_data["loan"]);
+                    
+                    
                     session()->setFlashdata('notify', 'Successfully Inserted');
                     return redirect()->to(base_url('loan/loan_pay') . "/" . encode($insert_id));
                 } else {
