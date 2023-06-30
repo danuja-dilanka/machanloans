@@ -69,14 +69,11 @@ class View_data extends BaseController {
 
         $data = [];
         $loans = model('Loan_model')->get_loan_req_data();
-        $format = 'Y-m-d';
-        $today = date($format);
+        $today = date('Y-m-d');
         foreach ($loans as $key => $value) {
-            if ($status != "") {
+            if ($status != "" && preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $value->loan_rel_date)) {
                 $monthsToAdd = (int) ($value->lp_term_per == 1 ? $value->lp_term : $value->lp_term * 12);
-                $dateTime = \DateTime::createFromFormat($format, $value->loan_rel_date);
-                $dateTime->add(new \DateInterval('P' . $monthsToAdd . 'M'));
-                $due_date = $dateTime->format($format);
+                $due_date = $newDate = date('Y-m-d', strtotime("$value->loan_rel_date +$monthsToAdd month"));
 
                 if ($status == 0 && (strtotime($due_date)) < strtotime($today)) {
                     //ACTIVE LOANS == !IN ACTIVE
