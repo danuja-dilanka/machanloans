@@ -93,6 +93,10 @@ $routes->match(['get', 'post'], '/api/send_email', 'API::send_email');
 $routes->match(['get', 'post'], '/get_ajax_data/(:any)', 'View_data::$1');
 $routes->match(['get', 'post'], '/get_ajax_data/(:any)/(:any)', 'View_data::$1/$2');
 
+//CRON JOB CONTROLLER
+$routes->match(['get', 'post'], '/cron/(:any)', 'Cron::$1');
+$routes->match(['get', 'post'], '/cron/(:any)/(:any)', 'Cron::$1/$2');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
