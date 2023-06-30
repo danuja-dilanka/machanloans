@@ -68,7 +68,8 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <select class="form-control" id="pay_type" readonly>
+                                                <label class="control-label">Payment Mode</label>
+                                                <select class="form-control" id="pay_type" disabled>
                                                     <option value="">-</option>
                                                     <option value="1">Monthly</option>
                                                     <option value="2">Yearly</option>
@@ -328,6 +329,6 @@
         <script src="<?= base_url() ?>public/assets/js/vendor/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
         <script src="<?= base_url() ?>public/assets/js/upload.js?v=2.0"></script>
-        <script src="<?= base_url() ?>public/assets/js/public_loan_app.js"></script>
+        <script src="<?= base_url() ?>public/assets/js/public_loan_app.js?v=1"></script>
     </body>
 </html>
