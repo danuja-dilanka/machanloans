@@ -277,7 +277,7 @@
                                         <div class="col-md-12">
                                             <hr>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary">Next</button>
+                                                <button type="submit" class="btn btn-lg btn-block btn-danger">Next</button>
                                             </div>
                                         </div>
                                     </div>

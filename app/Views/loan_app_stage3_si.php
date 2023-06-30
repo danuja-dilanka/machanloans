@@ -272,7 +272,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <hr>
-                                                <button type="submit" class="btn btn-primary">තහවුරු කරන්න</button>
+                                                <button type="submit" class="btn btn-lg btn-block btn-danger">තහවුරු කරන්න</button>
                                             </div>
                                         </div>
                                     </div>
