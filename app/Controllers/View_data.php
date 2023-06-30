@@ -51,9 +51,45 @@ class View_data extends BaseController {
             die;
         }
 
+        $status = "";
+
+        $filters = $data = [];
+        if ($this->input->get("filters") != "") {
+            $filters = $this->input->get("filters");
+        }
+
+        foreach ($filters as $filter => $afilter) {
+            foreach ($afilter as $filter_key => $filter_val) {
+
+                if ($filter_key == "status") {
+                    $status = intval($filter_val[1]);
+                }
+            }
+        }
+
         $data = [];
-        $loans = model('Loan_model')->get_loan_req_data();
+        $loans = model('Loan_model')->get_loan_req_data_by();
+        $format = 'Y-m-d';
+        $today = date($format);
         foreach ($loans as $key => $value) {
+            if ($status != "") {
+                $monthsToAdd = (int) ($value->lp_term_per == 1 ? $value->lp_term : $value->lp_term * 12);
+                $dateTime = DateTime::createFromFormat($format, $value->loan_rel_date);
+                $dateTime->add(new DateInterval('P' . $monthsToAdd . 'M'));
+                $due_date = $dateTime->format($format);
+
+                if ($status == 0 && (strtotime($due_date)) < strtotime($today)) {
+                    //ACTIVE LOANS == !IN ACTIVE
+                    continue;
+                } elseif ($status == 1 && (strtotime($due_date)) > strtotime($today)) {
+                    //INACTIVE LOANS == ! ACTIVE
+                    continue;
+                } elseif ($status == 2 && ($value->paid_period < $value->loan_period)) {
+                    //FINISHED LOANS
+                    continue;
+                }
+            }
+
             $key_enc = encode($value->id);
             $dropdown = '<div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink' . $key . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -100,7 +136,7 @@ class View_data extends BaseController {
             $status_txt = "";
             if ($value->status == 0) {
                 $status_txt = "<span class='badge badge-warning'>Pending</span>";
-            } else if ($value->status == 1){
+            } else if ($value->status == 1) {
                 $status_txt = "<span class='badge badge-success'>Approved</span>";
             } else {
                 $status_txt = "<span class='badge badge-danger'>Rejected</span>";
