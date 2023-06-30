@@ -114,10 +114,6 @@
                                         <td>Late Payment Penalties</td>
                                         <td><?= number_format($loan_summary->paid_pen_amount, 2, ".", ",") ?></td>
                                     </tr>
-<!--                                    <tr>
-                                        <td>Attachment</td>
-                                        <td></td>
-                                    </tr>-->
                                     <tr>
                                         <td>Description</td>
                                         <td><?= $data->description ?></td>

@@ -1,6 +1,6 @@
 <?= view('inc/header') ?>
 <div class="main-content-inner mt-4">
-    <?= form_open_multipart(current_url()); ?>
+    <?= form_open_multipart(current_url(), array('data-parsley-validate' => 'true')); ?>
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
