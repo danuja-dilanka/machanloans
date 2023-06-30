@@ -95,29 +95,29 @@
                                     </tr>
                                     <tr>
                                         <td>Applied Amount</td>
-                                        <td><?= $data->last_amount ?></td>
+                                        <td><?= number_format($data->last_amount, 2, ".", ",") ?></td>
                                     </tr>
                                     <tr>
                                         <td>Total Payable</td>
-                                        <td><?= $data->last_amount ?></td>
+                                        <td><?= number_format($data->last_amount, 2, ".", ",") ?></td>
                                     </tr>
                                     <?php $loan_summary = model("Loan_model")->get_loan_pay_data_summary(["loan" => $data->id]) ?>
                                     <tr>
                                         <td>Total Paid</td>
-                                        <td class="text-success"><?= $loan_summary->paid_total ?></td>
+                                        <td class="text-success"><?= number_format($loan_summary->paid_total, 2, ".", ",") ?></td>
                                     </tr>
                                     <tr>
                                         <td>Due Amount</td>
-                                        <td class="text-danger"><?= $data->last_amount - floatval($loan_summary->paid_total) ?></td>
+                                        <td class="text-danger"><?= number_format($data->last_amount - floatval($loan_summary->paid_total), 2, ".", ",") ?></td>
                                     </tr>
                                     <tr>
                                         <td>Late Payment Penalties</td>
-                                        <td><?= $loan_summary->paid_pen_amount ?></td>
+                                        <td><?= number_format($loan_summary->paid_pen_amount, 2, ".", ",") ?></td>
                                     </tr>
-                                    <tr>
+<!--                                    <tr>
                                         <td>Attachment</td>
                                         <td></td>
-                                    </tr>
+                                    </tr>-->
                                     <tr>
                                         <td>Description</td>
                                         <td><?= $data->description ?></td>
