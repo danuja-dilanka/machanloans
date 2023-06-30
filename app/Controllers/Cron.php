@@ -22,7 +22,7 @@ class Cron extends BaseController {
             foreach ($birth_todys as $birth_tody) {
                 $wish = $wishes[array_rand($wishes, 3)[0]];
                 $sms_wish = $Member_model->get_sms_wishs_by("date='" . date("Y-m-d") . "' AND mobile='" . $birth_tody->mobile . "'");
-                if (!isset($sms_wish->id)) {
+                if (!isset($sms_wish[0]->id)) {
                     $response = send_sms($birth_tody->mobile, $wish);
                     if ($response->message == "success") {
                         $Member_model->add_sms_wish([
