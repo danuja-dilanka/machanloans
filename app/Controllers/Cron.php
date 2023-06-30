@@ -11,11 +11,11 @@ class Cron extends BaseController {
             $Member_model = model("Member_model");
 
             $wishes = [
-                "Happy birthday! :-)\nWe hope all your birthday wishes and dreams come true\n\nFrom BodyDoc",
-                "Wishing you a very happy birthday :-)\nfilled with endless love and laughter\n\nFrom BodyDoc",
-                "Happy birthday! :-)\nHappy, healthy, wonderful birthday to you, dear!\n\nFrom BodyDoc",
-                "Happy birthday! :-)\nMay this special day bring you joy, happiness, and precious memories!\n\nFrom BodyDoc",
-                "Wishing you a very happy birthday! :-)\nfilled with endless love and laughter\n\nFrom BodyDoc"
+                "Happy birthday! :-)\nWe hope all your birthday wishes and dreams come true\n\nFrom Machan",
+                "Wishing you a very happy birthday :-)\nfilled with endless love and laughter\n\nFrom Machan",
+                "Happy birthday! :-)\nHappy, healthy, wonderful birthday to you, dear!\n\nFrom Machan",
+                "Happy birthday! :-)\nMay this special day bring you joy, happiness, and precious memories!\n\nFrom Machan",
+                "Wishing you a very happy birthday! :-)\nfilled with endless love and laughter\n\nFrom Machan"
             ];
 
             $birth_todys = $Member_model->get_mem_data_by("birthday LIKE '%" . date("m-d") . "%'");
