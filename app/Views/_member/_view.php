@@ -152,7 +152,8 @@
                                                 </td>
                                             </tr>
                                         </tbody>
-                                    </table><div class="table-responsive">
+                                    </table>
+                                    <div class="table-responsive">
                                         <table class="table">
                                             <tr>
                                                 <td>Bank Name</td>
@@ -227,10 +228,10 @@
                                         </tbody>
                                     </table>
                                 </div>
-<!--                                <div class="tab-pane fade show active" id="nav-bank" role="tabpanel" aria-labelledby="nav-bank-tab">
-                                    <div class="table-responsive">
-                                    </div>
-                                </div>-->
+                                <!--                                <div class="tab-pane fade show active" id="nav-bank" role="tabpanel" aria-labelledby="nav-bank-tab">
+                                                                    <div class="table-responsive">
+                                                                    </div>
+                                                                </div>-->
                             </div>
                         </div>
                     </div>
