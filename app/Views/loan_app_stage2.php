@@ -95,8 +95,8 @@
                                                     <div style="font: 13px Verdana; background: #eee; color: #333">
                                                         <div id="filelist"></div><br>
                                                         <div id="file_container" style="position: relative;">
-                                                            <a class="btn btn-sm btn-default" id="pickfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/loan_proof") ?>" data-id="bank_slip"><?= $lng == 'si' ? "තෝරන්න" : "Select" ?></a> 
-                                                            <a class="btn btn-sm btn-primary" id="uploadfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none"><?= $lng == 'si' ? "උඩුගත කරන්න" : "Upload" ?></a>
+                                                            <!--<a class="btn btn-sm btn-default" id="pickfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/loan_proof") ?>" data-id="bank_slip"><?= $lng == 'si' ? "තෝරන්න" : "Select" ?></a>--> 
+                                                            <a class="btn btn-danger btn-lg btn-block" id="uploadfiles" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none"><?= $lng == 'si' ? "උඩුගත කරන්න" : "Upload" ?></a>
                                                         </div><br>
                                                     </div>
                                                     <input type="hidden" name="total_amount">
@@ -113,7 +113,7 @@
                                         <div class="form-group row">
                                             <div class="col-md-12">
                                                 <input name="nic" id="text" placeholder="<?= $lng == 'si' ? "හැදුනුම්පත් අංකය" : "Enter NIC" ?>" type="text" class="form-control" minlength="10" maxlength="12" required><br>
-                                                <button type="submit" class="btn btn-primary btn-lg btn-block"><?= $lng == 'si' ? "තහවුරු කරන්න" : "Submit" ?></button>
+                                                <button type="submit" class="btn btn-danger btn-lg btn-block"><?= $lng == 'si' ? "තහවුරු කරන්න" : "Submit" ?></button>
                                             </div>
                                         </div>
                                     <?php } ?> 
@@ -130,6 +130,6 @@
         </script>
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
-        <script src="<?= base_url() ?>public/assets/js/loan_repay.js"></script>
+        <script src="<?= base_url() ?>public/assets/js/loan_repay.js?v=1"></script>
     </body>
 </html>

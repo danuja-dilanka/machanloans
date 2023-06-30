@@ -19,16 +19,22 @@ var uploader = new plupload.Uploader({
         PostInit: function () {
             document.getElementById('filelist').innerHTML = '';
 
-            document.getElementById('uploadfiles').onclick = function () {
-                uploader.start();
-                return false;
-            };
+//            document.getElementById('uploadfiles').onclick = function () {
+//                uploader.start();
+//                return false;
+//            };
         },
 
         FilesAdded: function (up, files) {
             plupload.each(files, function (file) {
                 document.getElementById('filelist').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
             });
+            uploader.start();
+
+            var base = document.getElementById('pickfiles');
+            var unic_id = base.getAttribute('data-id');
+
+            document.getElementById(unic_id + "_img").src = BASE_URL + "/public/images/uploading.gif";
         },
 
         UploadProgress: function (up, file) {
@@ -59,11 +65,11 @@ function cal_loan_total() {
             if (isNaN(tmp)) {
                 tmp = 0;
             }
-            
+
             total = total + tmp;
         }
     }
-    
+
     return total.toFixed(2);
 }
 
