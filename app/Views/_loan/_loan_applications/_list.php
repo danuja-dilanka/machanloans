@@ -19,7 +19,6 @@
             <button type="button" id="status" data-unic="1" data-id="1" data-type="0" class="filter btn btn-default" style="border: none;">Inactive</button>&nbsp;
             <button type="button" id="status" data-unic="1" data-id="2" data-type="0" class="filter btn btn-default" style="border: none;">Finished</button>&nbsp;
             <a href="<?= current_url() ?>" class="btn btn-info">X</a>&nbsp;
-            <br><br>
         </div>
     </div>
     <hr>
