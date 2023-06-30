@@ -133,7 +133,6 @@
                                             <div class="form-group">
                                                 <label class="control-label">වට්ස් ඇප් අංකය<span class="required"> *</span></label>
                                                 <input type="text" class="form-control" name="whatsapp" minlength="10" maxlength="11" value="" required="">
-                                                <small>දුරකථන අංකය මෙම ආකෘතියේ තිබිය යුතුය: 947XXXXXXXX</small>
                                             </div>
                                         </div>
 
