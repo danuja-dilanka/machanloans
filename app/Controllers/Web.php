@@ -117,7 +117,7 @@ class Web extends BaseController {
         } else {
             $loan_det = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($loan_det->id)) {
-                return view('gaurantor', ['req_id' => $req_id, 'lng' => $lng]);
+                return view('gaurantor', ['req_id' => $req_id, 'lng' => $lng, 'member' => model('Member_model')->get_data($loan_det->member)]);
             } else {
                 return redirect()->to(base_url("loan_application/$lng"));
             }
@@ -154,8 +154,8 @@ class Web extends BaseController {
                 }
             }
 
+            $member = model('Member_model')->get_mem_data_by(['nic' => $nic]);
             if (isset($avoid_data->id)) {
-                $member = model('Member_model')->get_mem_data_by(['nic' => $nic]);
                 if (!isset($member[0])) {
                     $member = null;
                 } else {
@@ -183,9 +183,9 @@ class Web extends BaseController {
                 }
             } else {
                 if ($lng == "si") {
-                    return view('loan_app_stage3_si', ['lng' => $lng, 'products' => $this->thisModel->get_pro_data()]);
+                    return view('loan_app_stage3_si', ['lng' => $lng, 'products' => $this->thisModel->get_pro_data(), 'member' => $member]);
                 } else {
-                    return view('loan_app_stage3_eng', ['lng' => $lng, 'products' => $this->thisModel->get_pro_data()]);
+                    return view('loan_app_stage3_eng', ['lng' => $lng, 'products' => $this->thisModel->get_pro_data(), 'member' => $member]);
                 }
             }
         } else {
