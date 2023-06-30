@@ -74,8 +74,8 @@ class View_data extends BaseController {
         foreach ($loans as $key => $value) {
             if ($status != "") {
                 $monthsToAdd = (int) ($value->lp_term_per == 1 ? $value->lp_term : $value->lp_term * 12);
-                $dateTime = DateTime::createFromFormat($format, $value->loan_rel_date);
-                $dateTime->add(new DateInterval('P' . $monthsToAdd . 'M'));
+                $dateTime = \DateTime::createFromFormat($format, $value->loan_rel_date);
+                $dateTime->add(new \DateInterval('P' . $monthsToAdd . 'M'));
                 $due_date = $dateTime->format($format);
 
                 if ($status == 0 && (strtotime($due_date)) < strtotime($today)) {
