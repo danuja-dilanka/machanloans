@@ -24,7 +24,7 @@ class Cron extends BaseController {
                 $sms_wish = $Member_model->get_sms_wishs_by("date='" . date("Y-m-d") . "' AND mobile='" . $birth_tody->mobile . "'");
                 if (!isset($sms_wish->id)) {
                     $response = send_sms($birth_tody->mobile, $wish);
-                    if ($response["message"] == "success") {
+                    if ($response->message == "success") {
                         $Member_model->add_sms_wish([
                             "date" => date("Y-m-d"),
                             "mobile" => $birth_tody->mobile,
