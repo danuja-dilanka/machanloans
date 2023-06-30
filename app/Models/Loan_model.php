@@ -139,7 +139,7 @@ class Loan_model extends Model {
     //GET LOAN REQUEST
     public function get_loan_req_data($id = 0, $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'loan_request a');
-        $result->select('a.*,b.last_amount,c.member_no,b.last_amount,b.loan_name AS loan_product,b.int_rate AS lp_int_rate,b.int_rate_per AS lp_int_rate_per,b.term AS lp_term,b.term_per AS lp_term_per, CONCAT(c.first_name, c.last_name) AS mem_name, c.id AS mem_no, c.mobile AS mem_phone');
+        $result->select('a.*,b.last_amount,c.member_no,b.last_amount,b.loan_name AS loan_product,b.int_rate AS lp_int_rate,b.int_rate_per AS lp_int_rate_per,b.term AS lp_term,b.term_per AS lp_term_per, CONCAT(c.first_name, c.last_name) AS mem_name, c.id AS mem_no, c.member_no, c.mobile AS mem_phone');
         $result->join(DB_PREFIX . 'loan_product b', 'a.loan_type = b.id');
         $result->join(DB_PREFIX . 'member c', 'a.member = c.id', 'left');
         if ($id > 0) {
