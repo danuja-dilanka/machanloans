@@ -267,7 +267,7 @@ class Loan extends BaseController {
         $loan = decode($req_id);
         $data = $this->thisModel->get_loan_req_data($loan);
         if (isset($data->id)) {
-            return view('_loan/_loan_applications/_repay_shd_view', ["data" => $data]);
+            return view('_loan/_loan_applications/_repay_shd_view', ["data" => $data, "pay_periods" => $this->get_due_loan_periods($loan)]);
         } else {
             return redirect()->to(base_url());
         }

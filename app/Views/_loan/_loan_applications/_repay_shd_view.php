@@ -26,7 +26,7 @@
                         <div class="col-md-10">
                             <div class="card">
                                 <div class="card-body">
-                                    <?= view('sections/rpay_shdule_tb', ["data" => $data, "pay_periods" => $this->get_due_loan_periods($data - id)]) ?>
+                                    <?= view('_loan/_loan_applications/_sections/rpay_shdule_tb', ["data" => $data, "pay_periods" => $pay_periods]) ?>
                                 </div>
                             </div>
                         </div>
