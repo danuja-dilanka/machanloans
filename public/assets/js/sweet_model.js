@@ -17,7 +17,7 @@ function open_rating(element) {
     });
     
     $("#star" + element.getAttribute('data-rate')).attr('checked', true);
-    $("#des__" + key).html(element.getAttribute('data-rate_des'));
+    $("#des__" + key).val(element.getAttribute('data-rate_des'));
 }
 
 function add_rate(ele){
@@ -46,7 +46,7 @@ function add_rate(ele){
             
             var com_ele = $("#tbl_rate_act_" + data_key);
             com_ele.attr("data-rate", rate);
-            com_ele.attr("data-rate_des", description);
+            com_ele.attr("data-rate_des", $("#des__" + data_key).val().trim());
             $("#rate_view_" + data_key).html(rate);
         }
         
