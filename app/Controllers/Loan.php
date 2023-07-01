@@ -209,7 +209,7 @@ class Loan extends BaseController {
     public function public_repay_shedule_view($req_id) {
 
         $loan = decode($req_id);
-        $data = $this->thisModel->get_loan_req_data($loan);
+        $data = model('Loan_model')->get_loan_req_data($loan);
         if (isset($data->id)) {
             return view('_loan/_loan_applications/_repay_shd_view', ["data" => $data, "pay_periods" => $this->get_due_loan_periods($loan)]);
         } else {
