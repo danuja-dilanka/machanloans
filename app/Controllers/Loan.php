@@ -287,7 +287,7 @@ class Loan extends BaseController {
             if ($response->message == "success") {
                 session()->setFlashdata('notify', 'SMS Sent!');
             }
-            return redirect()->to(base_url('loan/loan'));
+            return redirect()->to(base_url('loan/loan_list'));
         }
     }
 
