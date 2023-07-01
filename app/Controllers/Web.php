@@ -268,7 +268,7 @@ class Web extends BaseController {
                     $member_id = $member_det->id;
                 }
 
-                $this->thisModel->update_loan_req_data(["member" => $member_id], $insert_id);
+                $this->thisModel->update_loan_req_data(["member" => $member_id, "shedules" => json_encode(get_due_loan_periods($insert_id)["due_dates"])], $insert_id);
 
                 return redirect()->to(base_url("loan_application/guarantors/" . $lng . "/" . encode($insert_id)));
 
