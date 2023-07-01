@@ -15,9 +15,9 @@
             <?php
             $last_amount = $data->last_amount;
             echo json_encode($pay_periods);
-            foreach ($pay_periods["due_dates"] as $key => $value) {
-                break;
-                $pay_det = $loan_model->get_loan_pay_all_data_by("pay_date='" . $value . "'");
+            $due_dates = $pay_periods["due_dates"];
+            for ($i = 0; $i < count($due_dates); $i++) {
+                $pay_det = $loan_model->get_loan_pay_all_data_by("pay_date='" . $due_dates[$i] . "'");
                 ?>
                 <tr>
                     <td><?= $value ?></td>
