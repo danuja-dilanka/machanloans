@@ -4,7 +4,6 @@ var templates = {"rating": ["Ratings", rating_template]};
 function get_template(type, key) {
     var mod_template = templates[type];
     mod_template[1] = mod_template[1].replace(/KEY/g, key);
-    alert(mod_template[1]);
     return mod_template;
 }
 
@@ -16,6 +15,7 @@ function open_rating(element) {
         content: template[1]
 //        theme: $.sweetModal.THEME_LIGHT
     });
+    alert(key);
     
     $("#star" + element.getAttribute('data-rate')).attr('checked', true);
     $("#des__" + key).val(element.getAttribute('data-rate_des'));
