@@ -280,7 +280,8 @@
                                             <th>Date</th>
                                             <th>Loan ID</th>
                                             <th>Member</th>
-                                            <th>Amount</th>
+                                            <th>Total</th>
+                                            <th>Paid Amount</th>
                                             <th>Debit/Credit</th>
                                             <th>Status</th>
                                         </tr>
@@ -302,6 +303,7 @@
                                                 <td><?= $value->pay_date ?></td>
                                                 <td><?= "L-#" . $value->loan ?></td>
                                                 <td><?= "MPL-" . $value->member ?></td>
+                                                <td><?= number_format($value->total, 2, ".", ",") ?></td>
                                                 <td><?= number_format($value->repay_amount, 2, ".", ",") ?></td>
                                                 <td>Debit</td>
                                                 <td><?= $status_txt ?></td>
