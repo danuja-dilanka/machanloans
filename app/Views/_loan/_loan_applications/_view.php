@@ -41,7 +41,7 @@
                             <a class="nav-link" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
                         <!--                        <li class="nav-item">
-                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id                    ?>">Edit</a>
+                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id                       ?>">Edit</a>
                                                 </li>-->
                     </ul>
                     <!-- Tab panes -->
@@ -92,7 +92,11 @@
                                     </tr>
                                     <tr>
                                         <td>Release Date</td>
-                                        <td><?= $data->loan_rel_date ?></td>
+                                        <?php if ($data->loan_rel_date != null) { ?>
+                                            <td><?= $data->loan_rel_date ?></td>
+                                        <?php } else { ?>
+                                            <td><a href='#' data-id='<?= base_url("loan/loan_confirm_relase/") . $req_id ?>' class='btn btn-outline-primary btn-xs confirm_red_btn'><i class="ti-check-box"></i>&nbsp;Click to Confirm</a></td>
+                                        <?php } ?>
                                     </tr>
                                     <tr>
                                         <td>Applied Amount</td>

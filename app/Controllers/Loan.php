@@ -235,6 +235,31 @@ class Loan extends BaseController {
         }
     }
 
+    //SEND LOAN RELEASE CONFIRM
+    public function loan_confirm_relase($req_id) {
+        if (!has_permission("loan", "edit")) {
+            return redirect()->to(base_url('loan/loan_list'));
+        }
+
+        $loan = decode($req_id);
+        $data = $this->thisModel->get_loan_req_data($loan);
+        if (isset($data->id)) {
+
+            $result = $this->thisModel->update_loan_req_data(["loan_rel_date" => date("Y-m-d")], $data->id);
+            if ($result) {
+                $loan_periods = $this->get_due_loan_periods($data->id)["due_dates"];
+                $up_data["loan_period"] = count($loan_periods);
+                $up_data["shedules"] = json_encode($loan_periods);
+                $result = $this->thisModel->update_loan_req_data($up_data, $data->id);
+                if ($result) {
+                    session()->setFlashdata('notify', 'Successfully Confirmed');
+                }
+            }
+        }
+
+        return redirect()->to(base_url('loan/view_loan/') . $req_id);
+    }
+
     //NEW LOAN VIEW
     public function new_loan() {
         if (!has_permission("loan", "add")) {
@@ -273,11 +298,10 @@ class Loan extends BaseController {
             if ($req_id != "" && has_permission("loan", "edit")) {
                 $data = $this->thisModel->get_loan_req_data(decode($req_id));
                 if (isset($data->id)) {
-                    
                     $loan_periods = $this->get_due_loan_periods($data->id)["due_dates"];
                     $post_data["shedules"] = json_encode($loan_periods);
                     $post_data["loan_period"] = count($loan_periods);
-                    
+
                     $result = $this->thisModel->update_loan_req_data($post_data, $data->id);
                     if ($result) {
                         session()->setFlashdata('notify', 'Successfully Updated');
