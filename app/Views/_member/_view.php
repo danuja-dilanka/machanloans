@@ -1,4 +1,5 @@
 <?= view('inc/header') ?>
+<?php $loan_model = model("Loan_model") ?>
 <div class="main-content-inner mt-4">		
     <div class="row">
         <div class="col-lg-12">
@@ -277,17 +278,35 @@
                                     <thead>
                                         <tr>
                                             <th>Date</th>
+                                            <th>Loan ID</th>
                                             <th>Member</th>
-                                            <th>Account Number</th>
                                             <th>Amount</th>
                                             <th>Debit/Credit</th>
-                                            <th>Type</th>
                                             <th>Status</th>
-                                            <th class="text-center">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        <?php
+                                        $payments = $loan_model->get_loan_pay_all_data_by("member=" . $data->id);
+                                        foreach ($payments as $key => $value) {
+                                            $status_txt = "";
+                                            if ($value->status == 0) {
+                                                $status_txt = "<span class='badge badge-warning'>Pending</span>";
+                                            } else if ($value->status == 1) {
+                                                $status_txt = "<span class='badge badge-success'>Approved</span>";
+                                            } else {
+                                                $status_txt = "<span class='badge badge-danger'>Rejected</span>";
+                                            }
+                                            ?>
+                                            <tr>
+                                                <td><?= $value->pay_date ?></td>
+                                                <td><?= "L-#" . $value->loan ?></td>
+                                                <td><?= "MPL-" . $value->member ?></td>
+                                                <td><?= number_format($value->repay_amount, 2, ".", ",") ?></td>
+                                                <td>Debit</td>
+                                                <td><?= $status_txt ?></td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -317,7 +336,30 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        <?php
+                                        $loans = $loan_model->get_loan_req_data_by("member=" . $data->id);
+                                        foreach ($loans as $key => $value) {
+                                            $status_txt = "";
+                                            if ($value->status == 0) {
+                                                $status_txt = "<span class='badge badge-warning'>Pending</span>";
+                                            } else if ($value->status == 1) {
+                                                $status_txt = "<span class='badge badge-success'>Approved</span>";
+                                            } else {
+                                                $status_txt = "<span class='badge badge-danger'>Rejected</span>";
+                                            }
+                                            $loan_summary = $loan_model->get_loan_pay_data_summary(["loan" => $value->id])
+                                            ?>
+                                            <tr>
+                                                <td><?= "L-#" . $value->id ?></td>
+                                                <td><?= $value->loan_product ?></td>
+                                                <td><?= number_format($value->last_amount, 2, ".", ",") ?></td>
+                                                <td><?= number_format($value->last_amount, 2, ".", ",") ?></td>
+                                                <td><?= number_format($loan_summary->paid_total, 2, ".", ",") ?></td>
+                                                <td><?= number_format($value->last_amount - $loan_summary->paid_total, 2, ".", ",") ?></td>
+                                                <td><?= $value->loan_rel_date ?></td>
+                                                <td><?= $status_txt ?></td>
+                                            </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

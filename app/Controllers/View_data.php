@@ -106,8 +106,10 @@ class View_data extends BaseController {
             $status_txt = "";
             if ($value->status == 0) {
                 $status_txt = "<span class='badge badge-warning'>Pending</span>";
-            } else {
+            } else if ($value->status == 1) {
                 $status_txt = "<span class='badge badge-success'>Approved</span>";
+            } else{
+                $status_txt = "<span class='badge badge-danger'>Rejected</span>";
             }
 
             $data[] = [
