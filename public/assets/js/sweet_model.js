@@ -13,8 +13,8 @@ function open_rating(element) {
     var template = get_template(element.getAttribute('data-type'), key);
     $.sweetModal({
         title: template[0],
-        content: template[1],
-        theme: $.sweetModal.THEME_DARK
+        content: template[1]
+//        theme: $.sweetModal.THEME_LIGHT
     });
     
     $("#star" + element.getAttribute('data-rate')).attr('checked', true);
