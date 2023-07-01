@@ -19,7 +19,7 @@
                 $pay_det = model('Loan_model')->get_loan_pay_all_data_by("pay_date='" . $due_dates[$i] . "'");
                 ?>
                 <tr>
-                    <td><?= $value ?></td>
+                    <td><?= $due_dates[$i] ?></td>
                     <td><?= $pay_periods["charge"]; ?></td>
                     <td><?= isset($pay_det->pen_amount) ? $pay_det->pen_amount : "-" ?></td>
                     <td><?= $data->last_amount ?></td>
