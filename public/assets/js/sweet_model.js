@@ -3,7 +3,8 @@ var templates = {"rating": ["Ratings", rating_template]};
 
 function get_template(type, key) {
     var mod_template = templates[type];
-    mod_template[1] = mod_template[1].replace(/KEY/g, key);
+    var modified_template = mod_template[1].replace(/KEY/g, key);
+    mod_template[1] = modified_template;
     return mod_template;
 }
 
