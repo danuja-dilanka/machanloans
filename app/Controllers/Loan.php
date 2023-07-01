@@ -415,6 +415,15 @@ class Loan extends BaseController {
             if (isset($data->id)) {
                 $result = $this->thisModel->update_loan_pay_data(["status" => 1, 'action_by' => decode(session()->ml_user)], $data->id);
                 if ($result) {
+
+                    //UPDATE LOAN DETAILS
+                    $loan_summary = $this->thisModel->get_loan_pay_data_summary(["loan" => $data->loan]);
+                    $loan_update = ["paid_period" => intval($loan_summary->tot_paid_count)];
+                    if ($loan_summary->tot_paid_count == 1) {
+                        $loan_update["first_pay_dt"] = $data->pay_date;
+                    }
+                    $this->thisModel->update_loan_req_data($loan_update, $data->loan);
+                    
                     send_sms($data->mem_phone, "Dear " . $data->mem_name . "!\n Your Repayment, RPAY-#" . $data->id . " Was Approved On " . date("Y-m-d") . "\n\nThanks For Being With Machan Loans");
                     session()->setFlashdata('notify', 'Successfully Approved');
                 }
@@ -481,15 +490,6 @@ class Loan extends BaseController {
             } else if (has_permission("loan_pay", "add")) {
                 $insert_id = $this->thisModel->add_loan_pay_data($post_data);
                 if ($insert_id > 0) {
-
-                    //UPDATE LOAN DETAILS
-                    $loan_summary = $this->thisModel->get_loan_pay_data_summary(["loan" => $post_data["loan"]]);
-                    $loan_update = ["paid_period" => intval($loan_summary->tot_paid_count)];
-                    if ($loan_summary->tot_paid_count == 1) {
-                        $loan_update["first_pay_dt"] = date("Y-m-d");
-                    }
-                    $this->thisModel->update_loan_req_data($loan_update, $post_data["loan"]);
-
                     session()->setFlashdata('notify', 'Successfully Inserted');
                     return redirect()->to(base_url('loan/loan_pay') . "/" . encode($insert_id));
                 } else {

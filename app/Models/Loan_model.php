@@ -229,6 +229,7 @@ class Loan_model extends Model {
         $result = $this->db->table(DB_PREFIX . 'loan_pay');
         $result->select('SUM(total) AS paid_total, SUM(pen_amount) AS paid_pen_amount, COUNT(id) AS tot_paid_count');
         $result->where($where);
+        $result->where("status", 1);
         return $result->get()->getRow();
     }
 
