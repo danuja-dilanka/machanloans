@@ -282,7 +282,7 @@ class Loan extends BaseController {
         $loan = decode($req_id);
         $data = $this->thisModel->get_loan_req_data($loan);
         if (isset($data->phone)) {
-            $url = base_url("repay_shdule/") . encode($data->id);
+            $url = base_url("repay_shdule/") . $req_id;
             $response = send_sms($data->phone, "Dear " . $data->mem_name . "!\n\nYou Can View Your Loan (L-#" . $data->id . ") Repayment Shedule Here,\n\n" . $url);
             if ($response->message == "success") {
                 session()->setFlashdata('notify', 'SMS Sent!');
