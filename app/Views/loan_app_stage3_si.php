@@ -62,7 +62,6 @@
                                             <div class="form-group">
                                                 <label class="control-label"><br><br>ගෙවීම් ආකාරය <br></label>
                                                 <select class="form-control" id="pay_type" name="temp_pay_type">
-                                                    <option value="">-</option>
                                                     <option value="1">මාසික</option>
                                                     <option value="2">සතිපතා</option>
                                                 </select>
@@ -136,8 +135,8 @@
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label class="control-label">ගූගල් ස්ථානය<span class="required"> *</span></label>
-                                                <textarea class="form-control" name="google_location" rows="4" required=""></textarea>
+                                                <label class="control-label">ගූගල් ස්ථානය</label>
+                                                <textarea class="form-control" name="google_location" rows="4"></textarea>
                                             </div>
                                         </div>
 
