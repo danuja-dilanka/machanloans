@@ -199,7 +199,7 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label">Time to sit up and wait (days)</label>
+                                                <label class="control-label">How long have you been involved with MACHAN (days)</label>
                                                 <input type="text" class="form-control" name="membership_age" value="">
                                             </div>
                                         </div>

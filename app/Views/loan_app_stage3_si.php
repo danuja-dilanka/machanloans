@@ -190,7 +190,7 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label">මචං සීට්ටු හා රැදී සිටි කාලය (දින)</label>
+                                                <label class="control-label">මචන් එක්ක සම්බන්ධ වෙලා කොච්චර කල්ද (දින)</label>
                                                 <input type="text" class="form-control" name="membership_age" value="">
                                             </div>
                                         </div>
