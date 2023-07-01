@@ -263,4 +263,40 @@ class Loan_model extends Model {
         return $this->db->insertID();
     }
 
+    //ADD LOAN RELEASE
+    public function add_loan_release($data) {
+        $this->db->table(DB_PREFIX . 'loan_release')->insert($data);
+        return $this->db->insertID();
+    }
+
+    //GET LOAN RELEASE
+    public function get_loan_release($id = 0, $result_type = 0) {
+        $result = $this->db->table(DB_PREFIX . 'loan_release a');
+        $result->select('b.*, a.confirm_by');
+        $result->join(DB_PREFIX . 'loan_request b', 'a.loan = b.id');
+        if ($id > 0) {
+            return $result->where(["a.id" => $id])->get()->getRow();
+        } else {
+            if ($result_type == 0) {
+                return $result->get()->getResult();
+            } else {
+                return $result->get()->getResultArray();
+            }
+        }
+    }
+
+    //UPDATE LOAN RELEASE
+    public function update_loan_release($data, $id) {
+        return $this->db->table(DB_PREFIX . 'loan_release')->update($data, ["id" => $id]);
+    }
+
+    //DELETE LOAN RELEASE
+    public function delete_loan_release($id = 0, $where = []) {
+        if ($id == 0) {
+            return $this->db->table(DB_PREFIX . 'loan_release')->delete($where);
+        } else {
+            return $this->db->table(DB_PREFIX . 'loan_release')->delete(["id" => $id]);
+        }
+    }
+
 }

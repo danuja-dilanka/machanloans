@@ -243,15 +243,20 @@ class Loan extends BaseController {
 
         $loan = decode($req_id);
         $data = $this->thisModel->get_loan_req_data($loan);
-        if (isset($data->id)) {
-
-            $result = $this->thisModel->update_loan_req_data(["loan_rel_date" => date("Y-m-d")], $data->id);
+        if (isset($data->id) && !preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $data->loan_rel_date)) {
+            $rel_date = date("Y-m-d");
+            $result = $this->thisModel->update_loan_req_data(["loan_rel_date" => $rel_date], $data->id);
             if ($result) {
                 $loan_periods = $this->get_due_loan_periods($data->id)["due_dates"];
                 $up_data["loan_period"] = count($loan_periods);
                 $up_data["shedules"] = json_encode($loan_periods);
                 $result = $this->thisModel->update_loan_req_data($up_data, $data->id);
                 if ($result) {
+                    $this->thisModel->add_loan_release([
+                        "loan" => $loan,
+                        "rel_date" => $rel_date,
+                        "confirm_by" => decode(session()->ml_user)
+                    ]);
                     session()->setFlashdata('notify', 'Successfully Confirmed');
                 }
             }
@@ -375,7 +380,7 @@ class Loan extends BaseController {
         if ($req_id != "" && has_permission("loan", "edit")) {
             $data = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($data->id)) {
-                $result = $this->thisModel->update_loan_req_data(["status" => 1, 'action_by' => session()->ml_user], $data->id);
+                $result = $this->thisModel->update_loan_req_data(["status" => 1, 'action_by' => decode(session()->ml_user)], $data->id);
                 if ($result) {
                     send_sms($data->mem_phone, "Dear " . $data->mem_name . "!\n Your Loan Application, L-#" . $data->id . " Was Appoved On " . date("Y-m-d") . "\n\nThanks For Being With Machan Loans");
                     session()->setFlashdata('notify', 'Successfully Approved');
