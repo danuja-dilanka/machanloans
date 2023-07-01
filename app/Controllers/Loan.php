@@ -273,7 +273,11 @@ class Loan extends BaseController {
             if ($req_id != "" && has_permission("loan", "edit")) {
                 $data = $this->thisModel->get_loan_req_data(decode($req_id));
                 if (isset($data->id)) {
-                    $post_data["shedules"] = json_encode($this->get_due_loan_periods($data->id)["due_dates"]);
+                    
+                    $loan_periods = $this->get_due_loan_periods($data->id)["due_dates"];
+                    $post_data["shedules"] = json_encode($loan_periods);
+                    $post_data["loan_period"] = count($loan_periods);
+                    
                     $result = $this->thisModel->update_loan_req_data($post_data, $data->id);
                     if ($result) {
                         session()->setFlashdata('notify', 'Successfully Updated');
@@ -285,7 +289,8 @@ class Loan extends BaseController {
             } else if (has_permission("loan", "add")) {
                 $insert_id = $this->thisModel->add_loan_req_data($post_data);
                 if ($insert_id > 0) {
-                    $this->thisModel->update_loan_req_data(["shedules" => json_encode($this->get_due_loan_periods($data->id)["due_dates"])], $insert_id);
+                    $loan_periods = $this->get_due_loan_periods($data->id)["due_dates"];
+                    $this->thisModel->update_loan_req_data(["shedules" => json_encode($loan_periods), "loan_period" => count($loan_periods)], $insert_id);
                     session()->setFlashdata('notify', 'Successfully Inserted');
                     return redirect()->to(base_url('loan/loan') . "/" . encode($insert_id));
                 } else {
