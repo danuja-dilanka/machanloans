@@ -288,7 +288,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $payments = $loan_model->get_loan_pay_all_data_by("member=" . $data->id);
+                                        $payments = $loan_model->get_loan_pay_all_data_by("a.member=" . $data->id);
                                         foreach ($payments as $key => $value) {
                                             $status_txt = "";
                                             if ($value->status == 0) {
