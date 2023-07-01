@@ -52,7 +52,7 @@
                                     </div>
                                     <div class="form-group row mb-0">
                                         <div class="col-md-12">
-                                            <button type="submit" class="btn btn-primary btn-block">
+                                            <button type="submit" class="btn btn-lg btn-block btn-danger">
                                                 Login
                                             </button>
                                         </div>
@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="form-group row mt-3">
                                         <div class="col-md-12">
-                                            <a href="<?= base_url("loan_application") ?>" class="btn btn-primary btn-block">
+                                            <a href="<?= base_url("loan_application") ?>" class="btn btn-lg btn-block btn-danger">
                                                 Loan Application
                                             </a>						
                                         </div>

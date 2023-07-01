@@ -28,7 +28,7 @@
                                 <div class="card-body">
                                     <img class="logo" src="<?= base_url() ?>public/uploads/media/logo.png">
                                     <h5 class="text-center py-4">Select Language</h5> 
-                                    <a href="<?= base_url("loan_application/si") ?>" class="btn btn-primary btn-lg btn-block">සිංහල</a>
+                                    <a href="<?= base_url("loan_application/si") ?>" class="btn btn-lg btn-block btn-danger">සිංහල</a>
                                     <a href="<?= base_url("loan_application/eng") ?>" class="btn btn-secondary btn-lg btn-block">ENGLISH</a>
                                 </div>
                             </div>
