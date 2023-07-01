@@ -69,7 +69,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label"><br>Payment Mode<br></label>
-                                                <select class="form-control" id="pay_type" disabled>
+                                                <select class="form-control" id="pay_type" >
                                                     <option value="">-</option>
                                                     <option value="1">Monthly</option>
                                                     <option value="2">Weekly</option>
