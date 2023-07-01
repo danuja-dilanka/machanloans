@@ -262,19 +262,22 @@
 
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label">කාලත්‍රයාගේ නම (අවිවාහක නම් මවගේ/පියාගේ)</label>
+                                                <lable class="control-label show_in_unmarried">මවගේ/පියාගේ නම *</lable>
+                                                <label class="control-label show_in_married" style="display:none">කාලත්‍රයාගේ නම *</label>
                                                 <input type="text" class="form-control" name="spouse_name" value="" required>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label">කාලත්‍රයාගේ දුරකතන අංකය (අවිවාහක නම් මවගේ/පියාගේ)</label>
+                                                <lable class="control-label show_in_unmarried">මවගේ/පියාගේ දුරකථන අංකය *</lable>
+                                                <label class="control-label show_in_married" style="display:none">කාලත්‍රයාගේ දුරකතන අංකය *</label>
                                                 <input type="text" class="form-control" name="spouse_tel_number" value="" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">කාලත්‍රයාගේ හැදුනුම්පතෙහි ජායාරූපයක්(දෙපසම) මෙහි අමුණන්න. (අවිවාහක නම් මවගේ/පියාගේ) (20MB)<span class="required"> *</span></label><br>
+                                                <lable class="control-label show_in_unmarried">මවගේ/පියාගේ ජාතික හැඳුනුම්පත - ඉදිරිපස * (20MB)</lable>
+                                                <label class="control-label show_in_married" style="display:none">කලත්‍රයාගේ ජාතික හැඳුනුම්පත - ඉදිරිපස * (20MB)<span class="required"> *</span></label><br>
                                                 <img id="spouse_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist3"></div><br>
@@ -288,7 +291,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">කාලත්‍රයාගේ හැදුනුම්පතෙහි ජායාරූපයක්(දෙපසම) මෙහි අමුණන්න. (අවිවාහක නම් මවගේ/පියාගේ) (20MB)<span class="required"> *</span></label><br>
+                                                <lable class="control-label show_in_unmarried">මවගේ/පියාගේ ජාතික හැඳුනුම්පත  - පිටුපස * (20MB)</lable>
+                                                <label class="control-label show_in_married" style="display:none">කලත්‍රයාගේ ජාතික හැඳුනුම්පත - පිටුපස * (20MB)<span class="required"> *</span></label><br>
                                                 <img id="spouse_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist4"></div><br>
@@ -323,7 +327,7 @@
         <script src="<?= base_url() ?>public/assets/js/vendor/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
         <script src="<?= base_url() ?>public/assets/js/upload.js?v=2.0"></script>
-        <script src="<?= base_url() ?>public/assets/js/public_loan_app.js?v=1"></script>
+        <script src="<?= base_url() ?>public/assets/js/public_loan_app.js?v=1.1"></script>
         
     </body>
 </html>

@@ -268,19 +268,22 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label">Spouse's Name (Mother's/Father's if unmarried) *</label>
+                                                <lable class="control-label show_in_unmarried">Mother's/Father's Name *</lable>
+                                                <label class="control-label show_in_married" style="display:none">Spouse's Name *</label>
                                                 <input type="text" class="form-control" name="spouse_name" value="" required>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label class="control-label">Spouse's Telephone Number (Mother's/Father's if unmarried) *</label>
+                                                <lable class="control-label show_in_unmarried">Mother's/Father's Number *</lable>
+                                                <label class="control-label show_in_married" style="display:none">Spouse's Telephone Number *</label>
                                                 <input type="text" class="form-control" name="spouse_tel_number" value="" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">Attach a photograph (Front) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
+                                                <lable class="control-label show_in_unmarried">Mother's/Father's National Identity Card - Front * (20MB)</lable>
+                                                <label class="control-label show_in_married" style="display:none">Spouse's National Identity Card - Front * (20MB)<span class="required"> *</span></label><br>
                                                 <img id="spouse_nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist3"></div><br>
@@ -294,7 +297,8 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">Attach a photograph (Back) of the applicant's ID card here. (Mother's/Father's if unmarried) (20MB)<span class="required"> *</span></label><br>
+                                                <lable class="control-label show_in_unmarried">Mother's/Father's National Identity Card - Back * (20MB)</lable>
+                                                <label class="control-label show_in_married" style="display:none">Spouse's National Identity Card - Back * (20MB)<span class="required"> *</span></label><br>
                                                 <img id="spouse_nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist4"></div><br>
@@ -329,6 +333,6 @@
         <script src="<?= base_url() ?>public/assets/js/vendor/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
         <script src="<?= base_url() ?>public/assets/js/upload.js?v=2.0"></script>
-        <script src="<?= base_url() ?>public/assets/js/public_loan_app.js?v=1"></script>
+        <script src="<?= base_url() ?>public/assets/js/public_loan_app.js?v=1.1"></script>
     </body>
 </html>
