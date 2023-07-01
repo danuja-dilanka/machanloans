@@ -26,6 +26,13 @@
                         <div class="col-md-10">
                             <div class="card">
                                 <div class="card-body">
+                                    <div class="row col-sm-12">
+                                        <div class="col-sm-4"></div>
+                                        <div class="col-sm-4">
+                                            <img class="logo" src="<?= base_url() ?>public/uploads/media/logo.png">
+                                        </div>
+                                    </div>
+                                    <h4 class="text-center">L-#<?= $data->id ?></h4>
                                     <?= view('_loan/_loan_applications/_sections/rpay_shdule_tb', ["data" => $data, "pay_periods" => $pay_periods]) ?>
                                 </div>
                             </div>
