@@ -3,8 +3,7 @@ var templates = {"rating": ["Ratings", rating_template]};
 
 function get_template(type, key) {
     var mod_template = templates[type];
-    var modified_template = mod_template[1].replace(/KEY/g, key);
-    mod_template[1] = modified_template;
+    mod_template[1] = mod_template[1].replace(/KEY/g, key);
     return mod_template;
 }
 
@@ -16,7 +15,6 @@ function open_rating(element) {
         content: template[1]
 //        theme: $.sweetModal.THEME_LIGHT
     });
-    alert(rating_template);
     
     $("#star" + element.getAttribute('data-rate')).attr('checked', true);
     $("#des__" + key).val(element.getAttribute('data-rate_des'));
