@@ -14,7 +14,9 @@
         <tbody>
             <?php
             $last_amount = $data->last_amount;
+            echo json_encode($pay_periods);
             foreach ($pay_periods["due_dates"] as $key => $value) {
+                break;
                 $pay_det = $loan_model->get_loan_pay_all_data_by("pay_date='" . $value . "'");
                 ?>
                 <tr>
