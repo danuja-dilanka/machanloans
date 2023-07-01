@@ -16,7 +16,7 @@ function open_rating(element) {
         content: template[1]
 //        theme: $.sweetModal.THEME_LIGHT
     });
-    alert(key);
+    alert(rating_template);
     
     $("#star" + element.getAttribute('data-rate')).attr('checked', true);
     $("#des__" + key).val(element.getAttribute('data-rate_des'));
