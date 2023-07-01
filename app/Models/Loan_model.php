@@ -156,7 +156,7 @@ class Loan_model extends Model {
     //GET LOAN REQUEST BY -> where
     public function get_loan_req_data_by($where = [], $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'loan_request a');
-        $result->select('a.*,b.last_amount,b.loan_name AS loan_product');
+        $result->select('a.*,b.last_amount,b.loan_name AS loan_product,b.late_time_penl');
         $result->join(DB_PREFIX . 'loan_product b', 'a.loan_type = b.id');
         $result->where($where);
         if ($result_type == 0) {
@@ -296,6 +296,41 @@ class Loan_model extends Model {
             return $this->db->table(DB_PREFIX . 'loan_release')->delete($where);
         } else {
             return $this->db->table(DB_PREFIX . 'loan_release')->delete(["id" => $id]);
+        }
+    }
+
+    //ADD DUE PAY NOTIS
+    public function add_due_pay_notify($data) {
+        $this->db->table(DB_PREFIX . 'due_pay_notify')->insert($data);
+        return $this->db->insertID();
+    }
+
+    //GET DUE PAY NOTIS
+    public function get_due_pay_notify_by($where, $result_type = 1) {
+        $result = $this->db->table(DB_PREFIX . 'due_pay_notify');
+        $result->select('*');
+        $result->where($where);
+        
+        if ($result_type == 0) {
+            return $result->get()->getResult();
+        }if ($result_type == 1) {
+            return $result->get()->getRow();
+        } else {
+            return $result->get()->getResultArray();
+        }
+    }
+
+    //UPDATE DUE PAY NOTIS
+    public function update_due_pay_notify($data, $id) {
+        return $this->db->table(DB_PREFIX . 'due_pay_notify')->update($data, ["id" => $id]);
+    }
+
+    //DELETE DUE PAY NOTIS
+    public function delete_due_pay_notify($id = 0, $where = []) {
+        if ($id == 0) {
+            return $this->db->table(DB_PREFIX . 'due_pay_notify')->delete($where);
+        } else {
+            return $this->db->table(DB_PREFIX . 'due_pay_notify')->delete(["id" => $id]);
         }
     }
 

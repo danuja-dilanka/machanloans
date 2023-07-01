@@ -37,4 +37,36 @@ class Cron extends BaseController {
         }
     }
 
+    public function send_pay_reminder($before_days = 2) {
+        date_default_timezone_set("Asia/Colombo");
+        $due_date = date('Y-m-d', strtotime(date("Y-m-d") . " +$before_days days"));
+        $loan_model = model("Loan_model");
+
+        if (strtotime(date("H:i")) >= strtotime("08:00")) {
+            $loans = $loan_model->get_loan_req_data_by("a.loan_period > a.paid_period");
+            $sms_sent = false;
+            foreach ($loans as $loan_key => $loan_value) {
+                $dates = json_decode($loan_value->shedules);
+                for ($i = 0; $i < count($dates); $i++) {
+                    $sent_notify = $loan_model->get_due_pay_notify_by("loan=" . $loan_value->id . " AND date='" . $dates[$i] . "'");
+                    if ($due_date == $dates[$i] && !isset($sent_notify->id)) {
+                        $response = send_sms($loan_value->mem_phone, "Dear " . $loan_value->mem_name . "!\n\nPlease Pay Your Due Amount LKR. " . $loan_value->period_chrg . " Of Loan, L-#" . $loan_value->id . " On Or Before " . $dates[$i] . ", Otherwise You Will Be Charged LKR. " . $loan_value->late_time_penl);
+                        if ($response->message == "success") {
+                            $sms_sent = true;
+                            $loan_model->add_due_pay_notify([
+                                "loan" => $loan_value->id,
+                                "date" => $dates[$i],
+                                "notify_dt" => date("Y-m-d H:i:s"),
+                            ]);
+                            break;
+                        }
+                    }
+                }
+                if ($sms_sent) {
+                    break;
+                }
+            }
+        }
+    }
+
 }
