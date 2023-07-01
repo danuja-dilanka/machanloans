@@ -32,13 +32,13 @@
                             <?= render_input('int_rate', 'Interest Rate', isset($data) ? $data->int_rate : '', 'number', ['required' => true, "step" => '0.01']); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_custom_select("int_rate_per", ["Monthly", "Yearly"], "Interest Rate", isset($data) ? $data->int_rate_per : '', 'required="true"') ?>
+                            <?= render_custom_select("int_rate_per", ["Monthly", "Weekly"], "Interest Rate", isset($data) ? $data->int_rate_per : '', 'required="true"') ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('term', 'Term', isset($data) ? $data->term : '', 'text', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_custom_select("term_per", ["Monthly", "Yearly"], "Term Period", isset($data) ? $data->term_per : '', 'required="true"') ?>
+                            <?= render_custom_select("term_per", ["Monthly", "Weekly"], "Term Period", isset($data) ? $data->term_per : '', 'required="true"') ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_input('late_time_penl', 'Late Payment Penalties', isset($data) ? $data->late_time_penl : '', 'text', ['required' => true]); ?>

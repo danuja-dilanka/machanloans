@@ -72,7 +72,7 @@
                                                 <select class="form-control" id="pay_type" disabled>
                                                     <option value="">-</option>
                                                     <option value="1">Monthly</option>
-                                                    <option value="2">Yearly</option>
+                                                    <option value="2">Weekly</option>
                                                 </select>
                                             </div>
                                         </div>

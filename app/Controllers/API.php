@@ -197,13 +197,14 @@ class API extends BaseController {
             }
 
             $total = floatval($loan_det->last_amount) + (floatval($loan_det->last_amount) * (floatval($loan_det->lp_int_rate) / 100));
-            if ($loan_det->lp_term_per == 1) {
-                $divisor = $loan_det->payment_method == 1 ? $loan_det->lp_term : floatval($loan_det->lp_term) * 4;
-            } else {
-                $divisor = $loan_det->payment_method == 1 ? $loan_det->lp_term * 12 : floatval($loan_det->lp_term) * 12 * 4;
-            }
-
-            $divisor = $divisor > 0 ? $divisor : 1;
+//            if ($loan_det->lp_term_per == 1) {
+////                $divisor = $loan_det->payment_method == 1 ? $loan_det->lp_term : floatval($loan_det->lp_term) * 4;
+//                $divisor = $loan_det->lp_term;
+//            } else {
+//                $divisor = $loan_det->payment_method == 1 ? $loan_det->lp_term * 12 : floatval($loan_det->lp_term) * 12 * 4;
+//            }
+            
+            $divisor = $loan_det->lp_term > 0 ? $loan_det->lp_term : 1;
             $charg_per_period = round($total / $divisor, 2);
 
             $due_dates = [];
@@ -374,7 +375,7 @@ class API extends BaseController {
             $data = $this->request->getPost();
             if (isset($data["product"])) {
                 $loan_product = model("Loan_model")->get_pro_data($data["product"]);
-                if(isset($loan_product->id)){
+                if (isset($loan_product->id)) {
                     echo $loan_product->term_per;
                 }
             }

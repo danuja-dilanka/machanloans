@@ -64,7 +64,7 @@
                                                 <select class="form-control" id="pay_type" disabled="">
                                                     <option value="">-</option>
                                                     <option value="1">මාසික</option>
-                                                    <option value="2">වාර්ෂිකව</option>
+                                                    <option value="2">සතිපතා</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -233,7 +233,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">ජාතික හැදුනුම්පතෙහි ජායාරූපයක් (20MB)<span class="required"> *</span></label><br>
+                                                <label class="control-label">ජාතික හැඳුනුම්පතේ ඡායාරූපයක් - ඉදිරිපස (20MB)<span class="required"> *</span></label><br>
                                                 <img id="nic_front_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist0"></div><br>
@@ -247,7 +247,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label">ජාතික හැදුනුම්පතෙහි ජායාරූපයක් (20MB)<span class="required"> *</span></label><br>
+                                                <label class="control-label">ජාතික හැදුනුම්පතෙහි ජායාරූපයක් - පිටුපස (20MB)<span class="required"> *</span></label><br>
                                                 <img id="nic_back_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist2"></div><br>
