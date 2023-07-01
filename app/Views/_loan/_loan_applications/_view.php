@@ -178,7 +178,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade mt-4" id="schedule">
-                            <?= view('sections/rpay_shdule_tb', ["data" => $data, "pay_periods" => $this->get_due_loan_periods($data-id)]) ?>
+                            <?= view('sections/rpay_shdule_tb', ["data" => $data, "pay_periods" => $pay_periods]) ?>
                         </div>
                         <div class="tab-pane fade mt-4" id="repayments">
                             <div class="table-responsive">
