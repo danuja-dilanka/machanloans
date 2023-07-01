@@ -12,7 +12,7 @@ $(document).ready(function () {
     get_loan_pay_mode();
 });
 
-$(document).on('change', "#marital_status", function () {
+$(document).on('change', "select[name='marital_status']", function () {
     var marital_status = $(this).val();
     if (marital_status == '0') {
         $(".show_in_unmarried").show();
