@@ -247,9 +247,10 @@ class Loan extends BaseController {
             $rel_date = date("Y-m-d");
             $result = $this->thisModel->update_loan_req_data(["loan_rel_date" => $rel_date], $data->id);
             if ($result) {
-                $loan_periods = $this->get_due_loan_periods($data->id)["due_dates"];
+                $loan_periods = $this->get_due_loan_periods($data->id);
                 $up_data["loan_period"] = count($loan_periods);
-                $up_data["shedules"] = json_encode($loan_periods);
+                $up_data["shedules"] = json_encode($loan_periods["due_dates"]);
+                $up_data["period_chrg"] = $loan_periods["charge"];
                 $result = $this->thisModel->update_loan_req_data($up_data, $data->id);
                 if ($result) {
                     $this->thisModel->add_loan_release([
@@ -303,9 +304,10 @@ class Loan extends BaseController {
             if ($req_id != "" && has_permission("loan", "edit")) {
                 $data = $this->thisModel->get_loan_req_data(decode($req_id));
                 if (isset($data->id)) {
-                    $loan_periods = $this->get_due_loan_periods($data->id)["due_dates"];
-                    $post_data["shedules"] = json_encode($loan_periods);
+                    $loan_periods = $this->get_due_loan_periods($data->id);
+                    $post_data["shedules"] = json_encode($loan_periods["due_dates"]);
                     $post_data["loan_period"] = count($loan_periods);
+                    $post_data["period_chrg"] = $loan_periods["charge"];
 
                     $result = $this->thisModel->update_loan_req_data($post_data, $data->id);
                     if ($result) {
@@ -318,8 +320,8 @@ class Loan extends BaseController {
             } else if (has_permission("loan", "add")) {
                 $insert_id = $this->thisModel->add_loan_req_data($post_data);
                 if ($insert_id > 0) {
-                    $loan_periods = $this->get_due_loan_periods($data->id)["due_dates"];
-                    $this->thisModel->update_loan_req_data(["shedules" => json_encode($loan_periods), "loan_period" => count($loan_periods)], $insert_id);
+//                    $loan_periods = $this->get_due_loan_periods($data->id);
+//                    $this->thisModel->update_loan_req_data(["shedules" => json_encode($loan_periods["due_dates"]), "loan_period" => count($loan_periods), "period_chrg" => $loan_periods["charge"]], $insert_id);
                     session()->setFlashdata('notify', 'Successfully Inserted');
                     return redirect()->to(base_url('loan/loan') . "/" . encode($insert_id));
                 } else {
