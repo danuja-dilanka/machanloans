@@ -43,7 +43,7 @@ class Cron extends BaseController {
         $loan_model = model("Loan_model");
 
         if (strtotime(date("H:i")) >= strtotime("08:00")) {
-            $loans = $loan_model->get_loan_req_data_by("a.loan_period > a.paid_period");
+            $loans = $loan_model->get_loan_req_all_data_by("a.loan_period > a.paid_period");
             $sms_sent = false;
             foreach ($loans as $loan_key => $loan_value) {
                 $dates = json_decode($loan_value->shedules);
