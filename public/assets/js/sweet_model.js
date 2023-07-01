@@ -4,6 +4,7 @@ var templates = {"rating": ["Ratings", rating_template]};
 function get_template(type, key) {
     var mod_template = templates[type];
     mod_template[1] = mod_template[1].replace(/KEY/g, key);
+    alert(mod_template[1]);
     return mod_template;
 }
 
