@@ -95,7 +95,7 @@
                                         <?php if ($data->loan_rel_date != null) { ?>
                                             <td><?= $data->loan_rel_date ?></td>
                                         <?php } else { ?>
-                                            <td><a href='#' data-id='<?= base_url("loan/loan_confirm_relase/") . $req_id ?>' class='btn btn-outline-primary btn-xs confirm_red_btn'><i class="ti-check-box"></i>&nbsp;Click to Confirm</a></td>
+                                            <td><a href='#' data-id='<?= base_url("loan/loan_confirm_relase/") . $req_id ?>' class='btn btn-outline-success btn-xs confirm_red_btn'><i class="ti-check-box"></i>&nbsp;Click to Confirm</a></td>
                                         <?php } ?>
                                     </tr>
                                     <tr>
