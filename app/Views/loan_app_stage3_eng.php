@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/file_1677691710.png">
+        <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/logo.png">
 
         <title>Machan Loans</title>
 

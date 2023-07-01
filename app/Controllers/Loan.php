@@ -261,6 +261,32 @@ class Loan extends BaseController {
         }
     }
 
+    //LOAN REPAYMNET SHEDULE VIEW
+    public function public_repay_shedule_view($req_id) {
+
+        $loan = decode($req_id);
+        $data = $this->thisModel->get_loan_req_data($loan);
+        if (isset($data->id)) {
+            return view('_loan/_loan_applications/_repay_shd_view', ["data" => $data]);
+        } else {
+            return redirect()->to(base_url());
+        }
+    }
+
+    //SEND LOAN REPAYMNET SHEDULE 
+    public function send_repay_shedule($req_id) {
+        if (!has_permission("loan", "edit")) {
+            return;
+        }
+
+        $loan = decode($req_id);
+        $data = $this->thisModel->get_loan_req_data($loan);
+        if (isset($data->phone)) {
+            $url = base_url("repay_shdule/") . encode($data->id);
+            send_sms($data->phone, "Dear " . $data->mem_name . "!\n\n You Can View Your Loan (L-#" . $data->id . ") Repayment Shedule Here\n" . $url);
+        }
+    }
+
     //NEW LOAN VIEW
     public function new_loan() {
         if (!has_permission("loan", "add")) {
@@ -423,7 +449,7 @@ class Loan extends BaseController {
                         $loan_update["first_pay_dt"] = $data->pay_date;
                     }
                     $this->thisModel->update_loan_req_data($loan_update, $data->loan);
-                    
+
                     send_sms($data->mem_phone, "Dear " . $data->mem_name . "!\n Your Repayment, RPAY-#" . $data->id . " Was Approved On " . date("Y-m-d") . "\n\nThanks For Being With Machan Loans");
                     session()->setFlashdata('notify', 'Successfully Approved');
                 }

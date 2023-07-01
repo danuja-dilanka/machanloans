@@ -97,6 +97,9 @@ $routes->match(['get', 'post'], '/get_ajax_data/(:any)/(:any)', 'View_data::$1/$
 $routes->match(['get', 'post'], '/cron/(:any)', 'Cron::$1');
 $routes->match(['get', 'post'], '/cron/(:any)/(:any)', 'Cron::$1/$2');
 
+//LOAN REPAYMNET SHEDULE VIEW CONTROLLER
+$routes->match(['get'], '/repay_shdule/(:any)', 'Loan::public_repay_shedule_view/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
