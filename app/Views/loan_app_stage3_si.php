@@ -61,7 +61,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="control-label"><br><br>ගෙවීම් ආකාරය <br></label>
-                                                <select class="form-control" id="pay_type">
+                                                <select class="form-control" id="pay_type" name="temp_pay_type">
                                                     <option value="">-</option>
                                                     <option value="1">මාසික</option>
                                                     <option value="2">සතිපතා</option>
