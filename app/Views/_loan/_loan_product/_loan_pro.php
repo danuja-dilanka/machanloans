@@ -41,7 +41,7 @@
                             <?= render_custom_select("term_per", ["Monthly", "Weekly"], "Term Period", isset($data) ? $data->term_per : '', 'required="true"') ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_input('late_time_penl', 'Late Payment Penalties', isset($data) ? $data->late_time_penl : '50', 'text', ['required' => true, "readonly" => true]); ?>
+                            <?= render_input('late_time_penl', 'Late Payment Penalties', isset($data) ? $data->late_time_penl : '50.00', 'text', ['required' => true, "readonly" => true]); ?>
                         </div>
                         <div class="col-md-6">
                             <?= render_custom_select("status", ["Active", "Inactive"], "Status", isset($data) ? $data->status : '', 'required="true"') ?>
