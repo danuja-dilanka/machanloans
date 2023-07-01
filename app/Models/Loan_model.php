@@ -233,6 +233,16 @@ class Loan_model extends Model {
         return $result->get()->getRow();
     }
 
+    //GET LOANS SUMMARY BY -> where
+    public function get_loans_summary($where = []) {
+        $result = $this->db->table(DB_PREFIX . 'loan_request a');
+        $result->select('SUM(b.last_amount) AS tot_loans_amount, COUNT(a.id) AS tot_loans');
+        $result->join(DB_PREFIX . 'loan_product b', 'a.loan_type = b.id');
+        $result->where($where);
+        $result->where("a.status", 1);
+        return $result->get()->getRow();
+    }
+
     //UPDATE LOAN PAYMENT
     public function update_loan_pay_data($data, $id) {
         return $this->db->table(DB_PREFIX . 'loan_pay')->update($data, ["id" => $id]);

@@ -243,22 +243,34 @@
                         <div class="card-header">
                             <span class="header-title">Account Overview</span>
                         </div>
-
+                        <?php
+                        $loan_summary = $loan_model->get_loan_pay_data_summary(["member" => $data->id]);
+                        $tot_loan_summary = $loan_model->get_loans_summary(["a.member" => $data->id]);
+                        ?>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered custom_dt_table">
                                     <thead>
                                         <tr>
+                                            <th class="text-nowrap">Bank Name</th>
+                                            <th class="text-nowrap">Branch Name</th>
                                             <th class="text-nowrap">Account Number</th>
-                                            <th class="text-nowrap">Account Type</th>
                                             <th>Currency</th>
-                                            <th class="text-right">Balance</th>
-                                            <th class="text-nowrap text-right">Loan Guarantee</th>
+                                            <th class="text-nowrap text-right">Total Loan Amount</th>
+                                            <th class="text-right">Total Paid</th>
                                             <th class="text-nowrap text-right">Current Balance</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
+                                        <tr>
+                                            <td><?= isset($data) ? $data->bank_name : null ?></td>
+                                            <td><?= isset($data) ? $data->branch_name : null ?></td>
+                                            <td><?= isset($data) ? $data->acc_number : null ?></td>
+                                            <td>LKR</td>
+                                            <td><?= number_format($tot_loan_summary->tot_loans_amount, 2, ".", ",") ?></td>
+                                            <td><?= number_format($loan_summary->paid_total, 2, ".", ",") ?></td>
+                                            <td><?= number_format($tot_loan_summary->tot_loans_amount - $loan_summary->paid_total, 2, ".", ",") ?></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
