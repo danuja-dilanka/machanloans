@@ -22,7 +22,7 @@ function open_rating(element) {
 
 function add_rate(ele){
     ele.setAttribute('disabled', true);
-    var data_key = ele.getAttribute('data-key');
+    var data_key = ele.getAttribute('data-id');
     var rate = 0;
     var description = $("#des__" + data_key).val().trim();
     var rates = $("." + data_key), tmp;
