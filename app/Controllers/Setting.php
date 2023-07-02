@@ -42,7 +42,7 @@ class Setting extends BaseController {
         $user_model = model('User_model');
 
         $try_by_logined_member = false;
-        if ($req_id != "" && session()->ml_user_rel_type == "member" && (decode($req_id) == decode(session()->ml_user_rel_id))) {
+        if ($req_id != "" && session()->ml_user_rel_type == "member" && (decode($req_id) == decode(session()->ml_user))) {
             $try_by_logined_member = true;
         }
 
@@ -63,7 +63,7 @@ class Setting extends BaseController {
                         return redirect()->to(base_url('setting/user/' . $req_id));
                     }
                 } else {
-                    return redirect()->to(base_url('setting/user'));
+                    return redirect()->to(base_url('dashboard'));
                 }
             } else if (has_permission("user", "add")) {
                 $insert_id = $user_model->add_data($post_data);
@@ -82,11 +82,10 @@ class Setting extends BaseController {
             if (isset($data->id)) {
                 return view('_settings/_user/_user', ["data" => $data, "title" => "Update User", "utypes" => $user_model->get_user_types(0, 1)]);
             } else {
-                return redirect()->to(base_url('loan/loan_group'));
+                return redirect()->to(base_url('loan/user_list'));
             }
         } else if (has_permission("user", "add")) {
-            return view('_settings/_user/_user', ["title" => "New User", "utypes" =>
-                $user_model->get_user_types(0, 1)]);
+            return view('_settings/_user/_user', ["title" => "New User", "utypes" => $user_model->get_user_types(0, 1)]);
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));
