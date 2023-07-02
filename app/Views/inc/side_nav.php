@@ -5,8 +5,8 @@
         </a>	
     </div>
     <div class="user-details">
-        <img class="avatar" src="https://machan.quicksoft.lk/public/uploads/profile/profile_1677691803.png" alt="avatar">
-        <span class="text-white d-inline-block">Admin </span><br>
+        <img class="avatar" src="<?= base_url() ?>public/uploads/media/logo.png" alt="avatar" style="opacity: 0.5">
+        <span class="text-white d-inline-block"><?= isset(session()->ml_utype_name) ? session()->ml_utype_name : "" ?> </span><br>
     </div>
     <div class="main-menu">
         <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">

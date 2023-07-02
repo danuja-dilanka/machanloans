@@ -45,6 +45,7 @@ class Auth extends BaseController {
 
                 session()->set([
                     'ml_user_type' => encode($user->utype),
+                    'ml_utype_name' => ($user->utype_name),
                     'ml_email' => $user->email,
                     'ml_user' => encode($user->id)
                 ]);
@@ -110,6 +111,9 @@ class Auth extends BaseController {
         }
         if (isset($session->ml_user)) {
             $session->remove('ml_user');
+        }
+        if (isset($session->ml_utype_name)) {
+            $session->remove('ml_utype_name');
         }
 
         return redirect()->to(base_url('login'));
