@@ -109,7 +109,7 @@ class View_data extends BaseController {
                 $status_txt = "<span class='badge badge-warning'>Pending</span>";
             } else if ($value->status == 1) {
                 $status_txt = "<span class='badge badge-success'>Approved</span>";
-            } else{
+            } else {
                 $status_txt = "<span class='badge badge-danger'>Rejected</span>";
             }
 
@@ -230,9 +230,27 @@ class View_data extends BaseController {
         }
 
         $data = [];
-        $loan_pays = model('Loan_model')->get_loan_pay_data();
+        $Loan_model = model('Loan_model');
+        $loan_pays = $Loan_model->get_loan_pay_data();
         foreach ($loan_pays as $key => $value) {
-            
+            $status_txt = "";
+            if ($value->status == 0) {
+                $status_txt = "<span class='badge badge-warning'>Pending</span>";
+            } else if ($value->status == 1) {
+                $status_txt = "<span class='badge badge-success'>Approved</span>";
+            } else {
+                $status_txt = "<span class='badge badge-danger'>Rejected</span>";
+            }
+
+            $data[] = [
+                "PAY-#" . $value->id,
+                $value->pay_date,
+                $value->mem_name,
+                $value->mem_acc_number,
+                $value->repay_amount,
+                "Debit",
+                $status_txt
+            ];
         }
 
         echo json_encode(["data" => $data]);

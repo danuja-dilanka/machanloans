@@ -8,9 +8,7 @@
                 <th>Account Number</th>
                 <th>Amount</th>
                 <th>Debit/Credit</th>
-                <th>Type</th>
                 <th>Status</th>
-                <th class="dont_export">Action</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -22,9 +20,7 @@
                 <th>Account Number</th>
                 <th>Amount</th>
                 <th>Debit/Credit</th>
-                <th>Type</th>
                 <th>Status</th>
-                <th class="dont_export">Action</th>
             </tr>
         </tfoot>
     </table>

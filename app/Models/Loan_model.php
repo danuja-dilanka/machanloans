@@ -203,7 +203,7 @@ class Loan_model extends Model {
     //GET LOAN PAYMENT
     public function get_loan_pay_data($id = 0, $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'loan_pay a');
-        $result->select('a.*, b.id AS loan_id, c.last_amount, c.int_rate, d.mobile AS mem_phone, CONCAT(d.first_name, d.last_name) AS mem_name');
+        $result->select('a.*, b.id AS loan_id, c.last_amount, c.int_rate, d.mobile AS mem_phone, CONCAT(d.first_name, d.last_name) AS mem_name, d.acc_number AS mem_acc_number');
         $result->join(DB_PREFIX . 'loan_request b', 'a.loan = b.id');
         $result->join(DB_PREFIX . 'loan_product c', 'b.loan_type = c.id');
         $result->join(DB_PREFIX . 'member d', 'a.member = d.id');
