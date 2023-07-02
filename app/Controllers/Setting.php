@@ -42,7 +42,7 @@ class Setting extends BaseController {
         $user_model = model('User_model');
 
         $try_by_logined_member = false;
-        if ($req_id != "" && session()->ml_user_rel_type == "member" && (decode($req_id) == decode(session()->ml_user))) {
+        if ($req_id != "" && decode(session()->ml_user_type) == 2 && (decode($req_id) == decode(session()->ml_user))) {
             $try_by_logined_member = true;
         }
 
