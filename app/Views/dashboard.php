@@ -127,8 +127,8 @@
         </div>
     </div>
     <div class="row col-md-12">
-        <div class="row">
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <div class="row mb-5">
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Recent Transactions</a>
                 </li>
