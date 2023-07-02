@@ -68,7 +68,12 @@ class View_data extends BaseController {
         }
 
         $data = [];
-        $loans = model('Loan_model')->get_loan_req_data();
+        if (session()->ml_user_rel_type == "member") {
+            $loans = model('Loan_model')->get_loan_req_all_data_by(["a.member" => session()->ml_user_rel_id]);
+        } else {
+            $loans = model('Loan_model')->get_loan_req_data();
+        }
+
         $today = date('Y-m-d');
         foreach ($loans as $key => $value) {
             if ($status != "") {
@@ -425,7 +430,7 @@ class View_data extends BaseController {
                 }
             }
         }
-        
+
         echo json_encode(["data" => $data]);
     }
 
