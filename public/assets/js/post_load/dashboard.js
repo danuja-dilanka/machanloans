@@ -95,6 +95,7 @@ if (document.getElementById('transactionAnalysis')) {
             url: BASE_URL + "/api/json_deposit_withdraw_analytics",
             type: 'POST',
             success: function (data) {
+                alert(data);
                 var json = JSON.parse(data);
 
                 transactionAnalysisChart.data.labels = json['month'];
