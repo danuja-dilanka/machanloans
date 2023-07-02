@@ -95,7 +95,7 @@ class Auth extends BaseController {
                 if (is_admin()) {
                     return redirect()->route('dashboard');
                 } else {
-                    return redirect()->route('loan/loan_list');
+                    return redirect()->to(base_url('loan/loan_list'));
                 }
             } else {
                 Services::validation()->setError('wrong_cre', "Wrong Credentials");
