@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table id="repay_tb" class="table" data-action="repayments" style="width:100%">
+    <table id="due_pay_tb" class="table" data-action="due_payments" style="width:100%">
         <thead>
             <tr>
                 <th>#</th>
