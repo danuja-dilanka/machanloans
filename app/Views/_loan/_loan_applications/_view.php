@@ -47,11 +47,6 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane active mt-4" id="loan_details">
-                            <div class="alert alert-warning mt-4">
-                                <span>
-                                    Add Loan ID, Release Date and First Payment Date before approving loan request
-                                </span>
-                            </div>
                             <table class="table table-bordered mt-4">
                                 <tbody>
                                     <tr>
