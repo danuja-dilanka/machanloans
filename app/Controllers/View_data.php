@@ -252,6 +252,20 @@ class View_data extends BaseController {
                 $status_txt
             ];
         }
+        
+        $loan_release = $Loan_model->get_loan_release();
+        foreach ($loan_release as $key => $value) {
+
+            $data[] = [
+                "LR-#" . $value->id,
+                $value->rel_date,
+                $value->mem_name,
+                $value->mem_acc_number,
+                $value->loan_pro_last_amount,
+                "Credit",
+                "<span class='badge badge-success'>Approved</span>"
+            ];
+        }
 
         echo json_encode(["data" => $data]);
     }
