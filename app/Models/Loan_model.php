@@ -286,7 +286,7 @@ class Loan_model extends Model {
     //GET LOAN RELEASE
     public function get_loan_release($id = 0, $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'loan_release a');
-        $result->select('b.*, a.confirm_by, c.last_amount AS loan_pro_last_amount, d.name_with_ini AS mem_name, d.acc_number AS mem_acc_number');
+        $result->select('b.*, a.confirm_by, a.rel_date, c.last_amount AS loan_pro_last_amount, d.name_with_ini AS mem_name, d.acc_number AS mem_acc_number');
         $result->join(DB_PREFIX . 'loan_request b', 'a.loan = b.id');
         $result->join(DB_PREFIX . 'loan_product c', 'b.loan_type = c.id');
         $result->join(DB_PREFIX . 'member d', 'b.member = d.id');
