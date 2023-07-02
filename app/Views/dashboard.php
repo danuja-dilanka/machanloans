@@ -9,10 +9,10 @@
                 <!--Branch Switcher-->
                 <div class="dropdown float-right">
                     <a class="dropdown-toggle btn btn-dark btn-xs" type="button" id="selectLanguage" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        All Branch
+                        Main Branch
                     </a>
                     <div class="dropdown-menu" aria-labelledby="selectLanguage">
-                        <a class="dropdown-item" href="">All Branch</a>
+                        <!--<a class="dropdown-item" href="">All Branch</a>-->
                         <a class="dropdown-item" href="">Main Branch</a>
                     </div>
                 </div>
