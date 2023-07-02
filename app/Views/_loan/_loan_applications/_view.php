@@ -41,7 +41,7 @@
                             <a class="nav-link" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
                         <!--                        <li class="nav-item">
-                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id                        ?>">Edit</a>
+                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id                         ?>">Edit</a>
                                                 </li>-->
                     </ul>
                     <!-- Tab panes -->
@@ -75,8 +75,10 @@
                                                 <?php
                                             } else if ($data->status == 1) {
                                                 echo "<span class='badge badge-success'>Approved</span>";
-                                            } else {
+                                            } else if ($data->status == 2) {
                                                 echo "<span class='badge badge-danger'>Rejected</span>";
+                                            } else {
+                                                echo "<span class='badge badge-warning'>Pending</span>";
                                             }
                                             ?>
                                         </td>
