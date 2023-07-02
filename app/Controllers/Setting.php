@@ -19,7 +19,7 @@ class Setting extends BaseController {
 
     public function access() {
         if (!has_permission("setting_access", "edit")) {
-            die;
+            return redirect()->to(base_url('dashboard'));
         }
 
         return view('_settings/_access', ['title' => "Access & Module Control", "settings" => $this->thisModel]);
