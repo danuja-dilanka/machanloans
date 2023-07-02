@@ -80,7 +80,7 @@ class Setting extends BaseController {
         if ($req_id != "" && (has_permission("user", "edit") || $try_by_logined_member)) {
             $data = $user_model->get_data(decode($req_id));
             if (isset($data->id)) {
-                return view('_settings/_user/_user', ["data" => $data, "title" => "Update User", "utypes" => $user_model->get_user_types(0, 1)]);
+                return view('_settings/_user/_user', ["data" => $data, "title" => "Edit User", "title" => "Update User", "utypes" => $user_model->get_user_types(0, 1)]);
             } else {
                 return redirect()->to(base_url('loan/user_list'));
             }

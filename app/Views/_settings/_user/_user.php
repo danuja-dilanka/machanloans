@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header row">
                     <div class="col-md-4">
-                        <h4 class="header-title">Add New User</h4>
+                        <h4 class="header-title"><?= $title ?></h4>
                     </div>
                     <div class="col-md-7">
 
