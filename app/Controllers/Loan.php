@@ -271,14 +271,19 @@ class Loan extends BaseController {
         if (!has_permission("loan", "add")) {
             return redirect()->to(base_url('dashboard'));
         }
-        $rules = [
-            'member' => 'required'
-        ];
 
-        if ($this->request->is('post') && $this->validate($rules)) {
-            return redirect()->to(base_url('loan/loan') . "?b=" . encode($this->request->getPost('member')));
-        } else {
-            return view('_loan/_loan_applications/_loan_for', ["title" => "New Loan | Select Member"]);
+        if (decode(session()->ml_user_type) == 1) {
+            $rules = [
+                'member' => 'required'
+            ];
+
+            if ($this->request->is('post') && $this->validate($rules)) {
+                return redirect()->to(base_url('loan/loan') . "?b=" . encode($this->request->getPost('member')));
+            } else {
+                return view('_loan/_loan_applications/_loan_for', ["title" => "New Loan | Select Member"]);
+            }
+        }else{
+            return redirect()->to(base_url('loan/loan') . "?b=" . session()->ml_user_rel_id);
         }
     }
 
