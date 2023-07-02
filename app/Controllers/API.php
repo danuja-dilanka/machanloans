@@ -334,11 +334,13 @@ class API extends BaseController {
 
         $deposit = [1000, 2000, 1000, 0, 0, 0, 0, 0, 0, 0, 0, 1000];
         $withdraw = [10, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0, 500];
+        $month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
         if ($this->request->is('post') && already_logined()) {
             
         }
 
-        echo json_encode(["deposit" => $deposit, "withdraw" => $withdraw]);
+        echo json_encode(["deposit" => $deposit, "withdraw" => $withdraw, "month" => $month]);
     }
 
 }
