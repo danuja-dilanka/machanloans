@@ -283,8 +283,6 @@ class Loan extends BaseController {
                 return view('_loan/_loan_applications/_loan_for', ["title" => "New Loan | Select Member"]);
             }
         }else{
-            echo session()->ml_user_rel_id;
-            die;
             return redirect()->to(base_url('loan/loan') . "?b=" . session()->ml_user_rel_id);
         }
     }
