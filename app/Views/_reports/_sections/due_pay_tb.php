@@ -1,26 +1,22 @@
 <div class="table-responsive">
-    <table id="due_pay_tb" class="table" data-action="due_payments" style="width:100%">
+    <table id="repay_tb" class="table" data-action="repayments" style="width:100%">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Date</th>
                 <th>Member</th>
-                <th>Account Number</th>
+                <th>Loan</th>
                 <th>Amount</th>
-                <th>Debit/Credit</th>
-                <th>Status</th>
             </tr>
         </thead>
         <tbody></tbody>
         <tfoot>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Date</th>
                 <th>Member</th>
-                <th>Account Number</th>
+                <th>Loan</th>
                 <th>Amount</th>
-                <th>Debit/Credit</th>
-                <th>Status</th>
             </tr>
         </tfoot>
     </table>
