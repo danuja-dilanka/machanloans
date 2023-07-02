@@ -91,9 +91,9 @@ if (document.getElementById('transactionAnalysis')) {
 
 
     function loadChart(currency_id) {
-        var link2 = _url + "/dashboard/json_deposit_withdraw_analytics/" + currency_id;
         $.ajax({
-            url: link2,
+            url: BASE_URL + "/api/json_deposit_withdraw_analytics",
+            type: 'POST',
             success: function (data) {
                 var json = JSON.parse(data);
 
@@ -131,10 +131,12 @@ if (document.getElementById('transactionAnalysis')) {
         });
     }
 
-    loadChart(base_currency_id);
+    loadChart(_base_currency_id);
     $(document).on('change', '.filter-select', function () {
         var currency_id = $(this).val();
         chartCurrency = $(this).find(':selected').data('symbol');
         loadChart(currency_id);
-    })
+    });
 }
+
+$(document).on('change', '#branch-switch', function () {});

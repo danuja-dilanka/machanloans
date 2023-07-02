@@ -191,7 +191,7 @@ class API extends BaseController {
             $data = $this->request->getPost();
             $loan_id = intval($data["loan"]);
             $view = intval($data["view"]);
-            
+
             $results = get_due_loan_periods($loan_id);
             $charg_per_period = $results["charge"];
             $due_dates = $results["due_dates"];
@@ -328,6 +328,17 @@ class API extends BaseController {
                 }
             }
         }
+    }
+
+    public function json_deposit_withdraw_analytics() {
+
+        $deposit = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        $withdraw = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        if ($this->request->is('post') && already_logined()) {
+            
+        }
+
+        echo json_encode(["deposit" => $deposit, "withdraw" => $withdraw]);
     }
 
 }

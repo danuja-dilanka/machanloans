@@ -49,7 +49,6 @@
             });
         </script>
     <?php } ?>
-        
     
     <!-- Custom JS -->
     <script src="<?= base_url() ?>public/plugins/chartJs/chart.min.js"></script>
