@@ -308,9 +308,11 @@
                         <div class="col-md-12">
                             <?= render_input('password', 'Password', '', 'password'); ?>
                         </div>
-                        <div class="col-md-12">
-                            <?= render_custom_select("status", ["Active", "In Active"], "Status", isset($data) ? $data->status : 1) ?>
-                        </div>
+                        <?php if (is_admin()) { ?>
+                            <div class="col-md-12">
+                                <?= render_custom_select("status", ["Active", "In Active"], "Status", isset($data) ? $data->status : 1) ?>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
