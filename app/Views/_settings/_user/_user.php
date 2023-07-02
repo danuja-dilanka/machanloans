@@ -31,12 +31,14 @@
                         <div class="col-md-6">
                             <?= render_input('password', 'Password', '', 'password', isset($data) ? [] : ['required' => true, "minlength" => 7]); ?>
                         </div>
-                        <div class="col-md-6">
-                            <?= render_select('utype', $utypes, array('id', 'utype'), 'User Type', isset($data) ? $data->utype : '', ['required' => true]); ?>
-                        </div>
-                        <div class="col-md-6">
-                            <?= render_custom_select("status", ["Active", "In Active"], "Status", isset($data) ? $data->status : '', 'required="true"') ?>
-                        </div>
+                        <?php if (is_admin()) { ?>
+                            <div class="col-md-6">
+                                <?= render_select('utype', $utypes, array('id', 'utype'), 'User Type', isset($data) ? $data->utype : '', ['required' => true]); ?>
+                            </div>
+                            <div class="col-md-6">
+                                <?= render_custom_select("status", ["Active", "In Active"], "Status", isset($data) ? $data->status : '', 'required="true"') ?>
+                            </div>
+                        <?php } ?>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">

@@ -14,7 +14,7 @@ if (!function_exists('has_permission')) {
         } else {
             return false;
         }
-        
+
         $access = $auth->get_utype_access($user_type, $module, $action);
         if ($access) {
             return true;
@@ -38,6 +38,18 @@ if (!function_exists('already_logined')) {
             if (isset($user->id)) {
                 return true;
             }
+        }
+
+        return false;
+    }
+
+}
+
+if (!function_exists('is_admin')) {
+
+    function is_admin() {
+        if (isset(session()->ml_user_type) && (decode(session()->ml_user_type) == 1)) {
+            return true;
         }
 
         return false;

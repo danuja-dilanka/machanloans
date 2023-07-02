@@ -37,9 +37,7 @@ class Setting extends BaseController {
     public function user($req_id = "") {
         $rules = [
             'email' => 'required|valid_email',
-            'name' => 'required',
-            'utype' => 'required|numeric',
-            'status' => 'required|numeric'
+            'name' => 'required'
         ];
         $user_model = model('User_model');
 
