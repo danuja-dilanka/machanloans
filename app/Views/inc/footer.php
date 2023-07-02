@@ -67,6 +67,6 @@
     <script src="<?= base_url() ?>public/assets/js/ajax-bootstrap-select.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/sweet_model.js?i=<?= mt_rand() ?>"></script>
     <script src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
-    <script src="<?= base_url() ?>public/assets/js/common_func.js?i=12"></script>
+    <script src="<?= base_url() ?>public/assets/js/common_func.js?i=1.0"></script>
     </body>
 </html>
