@@ -332,8 +332,8 @@ class API extends BaseController {
 
     public function json_deposit_withdraw_analytics() {
 
-        $deposit = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        $withdraw = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+        $deposit = [1000, 2000, 1000, 0, 0, 0, 0, 0, 0, 0, 0, 1000];
+        $withdraw = [10, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0, 500];
         if ($this->request->is('post') && already_logined()) {
             
         }
