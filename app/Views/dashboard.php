@@ -126,15 +126,55 @@
             </div>
         </div>
     </div>
-
     <div class="row">
-        <div class="col-lg-12">
-            <div class="card mb-4">
-                <div class="card-header">
-                    Recent Transactions
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1default" data-toggle="tab">Recent Transactions</a></li>
+            <li><a href="#tab2default" data-toggle="tab">Due Payments</a></li>
+            <li><a href="#tab3default" data-toggle="tab">Repayments</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="tab1default">
+                <div class="col-lg-12">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Recent Transactions
+                        </div>
+                        <div class="card-body">
+                            <?= view('_reports/_sections/transaction_tb') ?>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <?= view('_reports/_sections/transaction_tb') ?>
+            </div>
+            <div class="tab-pane fade" id="tab2default">
+                <div class="col-lg-12">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Due Payments
+                        </div>
+                        <div class="card-body">
+                            <?= view('_reports/_sections/due_pay_tb') ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab3default">
+                <div class="col-lg-12">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Repayments
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <button type="button" id="repay_date" data-tb='repay_tb' data-unic="1" data-id="<?= $today = date("Y-m-d") ?>" data-type="0" class="filter btn btn-default" style="border: none;">Today</button>&nbsp;
+                                    <button type="button" id="repay_date" data-tb='repay_tb' data-unic="1" data-id="<?= date('Y-m-d', strtotime("$today +1 day")); ?>" data-type="0" class="filter btn btn-default" style="border: none;">Tomorrow</button>&nbsp;
+                                    <button type="button" id="repay_date" data-tb='repay_tb' data-unic="1" data-id="<?= date('Y-m-d', strtotime("$today +7 days")); ?>" data-type="0" class="filter btn btn-default" style="border: none;">Week</button>&nbsp;
+                                </div>
+                            </div>
+                            <hr>
+                            <?= view('_reports/_sections/repay_tb') ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -252,7 +252,7 @@ class View_data extends BaseController {
                 $status_txt
             ];
         }
-        
+
         $loan_release = $Loan_model->get_loan_release();
         foreach ($loan_release as $key => $value) {
 
@@ -339,6 +339,50 @@ class View_data extends BaseController {
                 (has_permission("user_role", "edit") ? "<a href='" . base_url("setting/user_role/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "")
 //                (has_permission("user_role", "delete") ? "<a href='#' data-id='" . base_url("setting/del_user_role/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
             ];
+        }
+
+        echo json_encode(["data" => $data]);
+    }
+
+    public function repayments() {
+        if (!has_permission("loan", "view")) {
+            die;
+        }
+
+        $due_date = date("Y-m-d");
+        $filters = $data = [];
+        if ($this->request->getGet("filters") != "") {
+            $filters = $this->request->getGet("filters");
+        }
+
+        foreach ($filters as $filter => $afilter) {
+            foreach ($afilter as $filter_key => $filter_val) {
+
+                if ($filter_key == "repay_date") {
+                    $due_date = trim($filter_val[1]);
+                }
+            }
+        }
+
+        $loan_model = model('Loan_model');
+        $data = [];
+
+        $loans = $loan_model->get_loan_req_all_data_by("a.loan_period > a.paid_period");
+        $key = 1;
+        foreach ($loans as $loan_key => $loan_value) {
+            $dates = json_decode($loan_value->shedules);
+            for ($i = 0; $i < count($dates); $i++) {
+                $already_paid = $loan_model->get_loan_pay_all_data_by("a.loan = " . $loan_value->id . " AND a.due_pay_date = '" . $dates[$i] . "'");
+                if ($due_date == $dates[$i] && !isset($already_paid->id)) {
+                    $data[] = [
+                        $key++,
+                        $dates[$i],
+                        $loan_value->mem_name,
+                        "L-#" . $loan_value->id,
+                        $loan_value->period_chrg
+                    ];
+                }
+            }
         }
 
         echo json_encode(["data" => $data]);

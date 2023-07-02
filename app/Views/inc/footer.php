@@ -62,7 +62,7 @@
     <script src="<?= base_url() ?>public/assets/js/datatables/datatables.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/datatables/dataTables.searchPanes.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/datatables/dataTables.select.min.js"></script>
-    <script src="<?= base_url() ?>public/assets/js/init_db.js?v=1.1"></script>
+    <script src="<?= base_url() ?>public/assets/js/init_db.js?v=1.2"></script>
     
     <script src="<?= base_url() ?>public/assets/js/ajax-bootstrap-select.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/sweet_model.js?i=1.01"></script>
