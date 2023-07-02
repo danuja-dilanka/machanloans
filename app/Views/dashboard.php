@@ -134,24 +134,7 @@
                     Recent Transactions
                 </div>
                 <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Member</th>
-                                    <th class="text-nowrap">Account Number</th>
-                                    <th>Amount</th>
-                                    <th class="text-nowrap">Debit/Credit</th>
-                                    <th>Type</th>
-                                    <th>Status</th>
-                                    <th class="text-center">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
+                    <?= view('_reports/_sections/transaction_tb') ?>
                 </div>
             </div>
         </div>
