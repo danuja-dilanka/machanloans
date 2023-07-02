@@ -337,10 +337,24 @@ class API extends BaseController {
         $month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
         if ($this->request->is('post') && already_logined()) {
-            
+            $Common_model = model("Common_model");
+            for ($i = 1; $i <= 12; $i++) {
+                $deposit[$i - 1] = $Common_model->get_data("SELECT SUM(repay_amount) AS tot_repay_amount FROM `" . DB_PREFIX . "loan_pay` WHERE `pay_date` LIKE '%" . sprintf('%02d', $i) . "%'")->tot_repay_amount;
+            }
+            for ($i = 1; $i <= 12; $i++) {
+                $withdraw[$i - 1] = $Common_model->get_data("SELECT SUM(c.last_amount) AS tot_last_amount FROM `" . DB_PREFIX . "_loan_release` a INNER JOIN `" . DB_PREFIX . "loan_request` b ON a.loan = b.id INNER JOIN `" . DB_PREFIX . "loan_product` c ON b.loan_type = c.id WHERE a.rel_date LIKE '%" . sprintf('%02d', $i) . "%'")->tot_last_amount;
+            }
         }
 
         echo json_encode(["deposit" => $deposit, "withdraw" => $withdraw, "month" => $month]);
     }
 
 }
+
+/*
+
+
+SELECT SUM(c.last_amount) AS tot_last_amount FROM `" . DB_PREFIX . "_loan_release` a INNER JOIN `" . DB_PREFIX . "loan_request` b ON a.loan = b.id INNER JOIN `" . DB_PREFIX . "loan_product` c ON b.loan_type = c.id WHERE a.rel_date LIKE '%" . sprintf('%02d', $i) . "%';
+
+
+ *  */
