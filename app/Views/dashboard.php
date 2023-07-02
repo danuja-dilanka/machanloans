@@ -147,13 +147,13 @@
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
                         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                            <div class="row mt-3">
+                            <div class="row mt-1">
                                 <button type="button" id="repay_date" data-tb='repay_tb' data-unic="1" data-id="<?= $today = date("Y-m-d") ?>" data-type="0" class="filter btn btn-default" style="border: none;">Today</button>&nbsp;
                                 <button type="button" id="repay_date" data-tb='repay_tb' data-unic="1" data-id="<?= date('Y-m-d', strtotime("$today +1 day")); ?>" data-type="0" class="filter btn btn-default" style="border: none;">Tomorrow</button>&nbsp;
                                 <button type="button" id="repay_date" data-tb='repay_tb' data-unic="1" data-id="<?= date('Y-m-d', strtotime("$today +7 days")); ?>" data-type="0" class="filter btn btn-default" style="border: none;">Week</button>&nbsp;
                             </div>
                             <hr>
-                            <?php view('_reports/_sections/repay_tb') ?>
+                            <?= view('_reports/_sections/repay_tb') ?>
                         </div>
                     </div>
                 </div>
