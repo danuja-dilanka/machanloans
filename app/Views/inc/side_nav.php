@@ -4,8 +4,8 @@
             <h4 class="text-white ml-1 d-inline-block">Machan Loans</h4>
         </a>	
     </div>
-    <div class="user-details" style="background-image: url('<?= base_url() ?>public/uploads/media/logo.png');background-size: 280px 200px;">
-        <span class="text-dark text-center d-inline-block"><?= isset(session()->ml_utype_name) ? session()->ml_utype_name : "" ?> </span><br>
+    <div class="user-details" style="background-image: url('<?= base_url() ?>public/uploads/media/logo.png');background-size: 280px 200px;background-color: rgba(255, 255, 255, 0.5);">
+        <span class="text-dark text-center d-inline-block"><?= isset(session()->ml_utype_name) ? strtoupper(session()->ml_utype_name) : "" ?> </span><br>
     </div>
     <div class="main-menu">
         <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
