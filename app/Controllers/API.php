@@ -347,4 +347,20 @@ class API extends BaseController {
         echo json_encode(["deposit" => $deposit, "withdraw" => $withdraw, "month" => $month]);
     }
 
+    public function json_expense_by_category() {
+
+        $colors = ["#FF0000"];
+        $amounts = [0];
+        $category = ['Withdraw'];
+
+        if ($this->request->is('post') && already_logined()) {
+            $Common_model = model("Common_model");
+            for ($i = 1; $i <= count($category); $i++) {
+                $amounts[$i - 1] = floatval($Common_model->get_data("SELECT SUM(c.last_amount) AS tot_last_amount FROM `" . DB_PREFIX . "loan_release` a INNER JOIN `" . DB_PREFIX . "loan_request` b ON a.loan = b.id INNER JOIN `" . DB_PREFIX . "loan_product` c ON b.loan_type = c.id")->tot_last_amount);
+            }
+        }
+
+        echo json_encode(["category" => $category, "amounts" => $amounts, "colors" => $colors]);
+    }
+
 }

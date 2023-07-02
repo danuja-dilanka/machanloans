@@ -13,6 +13,49 @@ function live_update() {
 live_update();
 setInterval(live_update, 3600000);
 
+//Expense By Category Chart
+if (document.getElementById('expenseOverview')) {
+    $.ajax({
+        url: BASE_URL + "/api/json_expense_by_category",
+        type: 'POST',
+        success: function (data2) {
+            var json2 = JSON.parse(data2);
+
+            const ctx = document.getElementById('expenseOverview').getContext('2d');
+            const expenseOverviewChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: json2['category'],
+                    datasets: [
+                        {
+                            data: json2['amounts'],
+                            backgroundColor: json2['colors']
+                        }
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: false,
+                            text: $lang_expense_overview
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    return " " + context.label + ": " + _currency + " " + context.parsed;
+                                },
+                            },
+                        },
+                    }
+                },
+            });
+        }
+    });
+}
 
 //Deposit VS Withdraw Analytics
 if (document.getElementById('transactionAnalysis')) {
