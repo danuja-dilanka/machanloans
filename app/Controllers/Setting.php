@@ -41,10 +41,15 @@ class Setting extends BaseController {
         ];
         $user_model = model('User_model');
 
+        $try_by_logined_member = false;
+        if ($req_id != "" && session()->ml_user_rel_type == "member" && (decode($req_id) == decode(session()->ml_user_rel_id))) {
+            $try_by_logined_member = true;
+        }
+
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
 
-            if ($req_id != "" && has_permission("user", "edit")) {
+            if ($req_id != "" && (has_permission("user", "edit") || $try_by_logined_member)) {
                 $data = $user_model->get_data(decode($req_id));
                 if (isset($data->id)) {
                     if ($post_data["password"] != "") {
@@ -62,6 +67,7 @@ class Setting extends BaseController {
                 }
             } else if (has_permission("user", "add")) {
                 $insert_id = $user_model->add_data($post_data);
+
                 if ($insert_id > 0) {
                     session()->setFlashdata('notify', 'Successfully Inserted');
                     return redirect()->to(base_url('setting/user') . "/" . encode($insert_id));
@@ -71,7 +77,7 @@ class Setting extends BaseController {
             }
         }
 
-        if ($req_id != "" && has_permission("user", "edit")) {
+        if ($req_id != "" && (has_permission("user", "edit") || $try_by_logined_member)) {
             $data = $user_model->get_data(decode($req_id));
             if (isset($data->id)) {
                 return view('_settings/_user/_user', ["data" => $data, "title" => "Update User", "utypes" => $user_model->get_user_types(0, 1)]);
@@ -79,7 +85,8 @@ class Setting extends BaseController {
                 return redirect()->to(base_url('loan/loan_group'));
             }
         } else if (has_permission("user", "add")) {
-            return view('_settings/_user/_user', ["title" => "New User", "utypes" => $user_model->get_user_types(0, 1)]);
+            return view('_settings/_user/_user', ["title" => "New User", "utypes" =>
+                $user_model->get_user_types(0, 1)]);
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));
@@ -95,6 +102,7 @@ class Setting extends BaseController {
             if (isset($data->id)) {
                 $result = $user_model->delete_data($data->id);
                 if ($result) {
+
                     session()->setFlashdata('notify', 'Successfully Deleted');
                 }
             }
@@ -105,7 +113,8 @@ class Setting extends BaseController {
 
     //USER ROLES LIST VIEW
     public function user_role_list() {
-        if (!has_permission("user", "view")) {
+        if (!
+                has_permission("user", "view")) {
             return redirect()->to(base_url('dashboard'));
         }
         return view('_settings/_user_role/_list', ["title" => "Users"]);
@@ -152,7 +161,8 @@ class Setting extends BaseController {
                 return redirect()->to(base_url('setting/user_role'));
             }
         } else if (has_permission("user_role", "add")) {
-            return view('_settings/_user_role/_user_role', ["title" => "New User Role"]);
+            return view('_settings/_user_role/_user_role', [
+                "title" => "New User Role"]);
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));
@@ -167,6 +177,7 @@ class Setting extends BaseController {
             $data = $user_model->get_user_types(decode($req_id));
             if (isset($data->id)) {
                 $result = $user_model->delete_user_type($data->id);
+
                 if ($result) {
                     session()->setFlashdata('notify', 'Successfully Deleted');
                 }
