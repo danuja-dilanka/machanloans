@@ -146,6 +146,12 @@
                             <?= view('_reports/_sections/transaction_tb') ?>
                         </div>
                         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="row mt-1 ml-1">
+                                <button type="button" id="repay_date" data-tb='due_pay_tb' data-unic="1" data-id="<?= $today = date("Y-m-d") ?>" data-type="0" class="filter btn btn-default" style="border: 1px solid green;">Today</button>&nbsp;
+                                <button type="button" id="repay_date" data-tb='due_pay_tb' data-unic="1" data-id="<?= date('Y-m-d', strtotime("$today +1 day")); ?>" data-type="0" class="filter btn btn-default" style="border: none;">Tomorrow</button>&nbsp;
+                                <button type="button" id="repay_date" data-tb='due_pay_tb' data-unic="1" data-id="<?= date('Y-m-d', strtotime("$today +7 days")); ?>" data-type="0" class="filter btn btn-default" style="border: none;">Week</button>&nbsp;
+                            </div>
+                            <hr>
                             <?= view('_reports/_sections/due_pay_tb') ?>
                         </div>
                         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
