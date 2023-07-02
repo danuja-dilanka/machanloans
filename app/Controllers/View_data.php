@@ -69,7 +69,7 @@ class View_data extends BaseController {
 
         $data = [];
         if (decode(session()->ml_user_type) == 2) {
-            $loans = model('Loan_model')->get_loan_req_all_data_by(["a.member" => session()->ml_user_rel_id]);
+            $loans = model('Loan_model')->get_loan_req_all_data_by(["a.member" => decode(session()->ml_user_rel_id)]);
         } else {
             $loans = model('Loan_model')->get_loan_req_data();
         }
