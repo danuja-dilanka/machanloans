@@ -41,7 +41,7 @@
                             <a class="nav-link" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
                         <!--                        <li class="nav-item">
-                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id                       ?>">Edit</a>
+                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id                        ?>">Edit</a>
                                                 </li>-->
                     </ul>
                     <!-- Tab panes -->
@@ -68,7 +68,7 @@
                                     <tr>
                                         <td>Status</td>
                                         <td>
-                                            <?php if ($data->status == 0) { ?>
+                                            <?php if ($data->status == 0 && has_permission("loan", "edit")) { ?>
                                                 <span class='badge badge-warning'>Pending</span>
                                                 <a href='#' data-id='<?= base_url("loan/loan_approve/") . $req_id ?>' class='btn btn-outline-primary btn-xs confirm_red_btn'><i class="ti-check-box"></i>&nbsp;Click to Approve</a>
                                                 <a class="btn btn-outline-danger btn-xs float-right confirm_red_btn" href="<?= base_url("loan/loan_reject/") . $req_id ?>"><i class="ti-close"></i>&nbsp;Click to Reject</a>
@@ -89,8 +89,10 @@
                                         <td>Release Date</td>
                                         <?php if ($data->loan_rel_date != null) { ?>
                                             <td><?= $data->loan_rel_date ?></td>
-                                        <?php } else { ?>
+                                        <?php } else if (has_permission("loan", "edit")) { ?>
                                             <td><a href='#' data-id='<?= base_url("loan/loan_confirm_relase/") . $req_id ?>' class='btn btn-outline-success btn-xs confirm_red_btn' data-callback="no_callback"><i class="ti-check-box"></i>&nbsp;Click to Confirm</a></td>
+                                        <?php } else { ?>
+                                            <td>-</td>
                                         <?php } ?>
                                     </tr>
                                     <tr>
