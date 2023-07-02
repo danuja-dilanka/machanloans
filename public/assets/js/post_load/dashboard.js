@@ -189,3 +189,8 @@ if (document.getElementById('transactionAnalysis')) {
 }
 
 $(document).on('change', '#branch-switch', function () {});
+
+$(document).ready(function () {
+    load_data(BASE_URL + 'get_ajax_data/' + $("#due_pay_tb").data('action'));
+    load_data(BASE_URL + 'get_ajax_data/' + $("#repay_tb").data('action'));
+});

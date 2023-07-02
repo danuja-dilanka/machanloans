@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table multiple_dt_tb" data-action="due_payments" style="width:100%">
+    <table id="due_pay_tb" class="table multiple_dt_tb" data-action="due_payments" style="width:100%">
         <thead>
             <tr>
                 <th>Id</th>

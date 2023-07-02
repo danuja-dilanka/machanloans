@@ -289,13 +289,6 @@ $(document).ready(function () {
         var common_action = $("#dt_tb").data("action");
         load_data(BASE_URL + 'get_ajax_data/' + common_action);
     }
-    
-    if ($(".multiple_dt_tb").length > 0) {
-       var eles = $(".multiple_dt_tb");
-       for (let i = 0; i < eles.length; i++) {
-            load_data(BASE_URL + 'get_ajax_data/' + eles.eq(i).data("action"));
-       }
-    }
 
 });
 
