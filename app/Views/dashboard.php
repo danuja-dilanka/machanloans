@@ -57,7 +57,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Deposit Requests</h5>
-                            <h4 class="pt-1 mb-0"><br><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
+                            <h4 class="pt-1 mb-0" id='deposit_request'><br><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
                         </div>
                         <div>
                             <a href="s"><i class="ti-arrow-right"></i>&nbsp;View</a>
@@ -73,7 +73,7 @@
                     <div class="d-flex">
                         <div class="flex-grow-1">
                             <h5>Withdraw Requests</h5>
-                            <h4 class="pt-1 mb-0"><br><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
+                            <h4 class="pt-1 mb-0" id="total_withdraw_request"><br><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
                         </div>
                         <div>
                             <a href=""><i class="ti-arrow-right"></i>&nbsp;View</a>

@@ -254,7 +254,9 @@ class API extends BaseController {
         $data = [];
         if (already_logined() && has_permission("dashboard", "view")) {
             $common_model = model("Common_model");
+            $data["total_withdraw_request"] = $common_model->get_data("SELECT COUNT(id) AS total_withdraw_request FROM `" . DB_PREFIX . "loan_request` WHERE `loan_rel_date` IS NULL")->total_withdraw_request;
             $data["total_members"] = $common_model->get_data("SELECT COUNT(id) AS total_members FROM `" . DB_PREFIX . "member`")->total_members;
+            $data["deposit_request"] = $common_model->get_data("SELECT COUNT(id) AS deposit_request FROM `" . DB_PREFIX . "loan_request` WHERE `loan_rel_date` IS NOT NULL AND `loan_period` > `paid_period`")->deposit_request;
             $data["total_pending_loans"] = $common_model->get_data("SELECT COUNT(id) AS total_pending_loans FROM `" . DB_PREFIX . "loan_request` WHERE `status` = 0")->total_pending_loans;
         }
 

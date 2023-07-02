@@ -7,6 +7,12 @@ function live_update() {
         if (details.total_pending_loans !== undefined) {
             $("#total_pending_loans").html("<b>" + details.total_pending_loans + "</b>");
         }
+        if (details.total_withdraw_request !== undefined) {
+            $("#total_withdraw_request").html("<b>" + details.total_withdraw_request + "</b>");
+        }
+        if (details.deposit_request !== undefined) {
+            $("#deposit_request").html("<b>" + details.deposit_request + "</b>");
+        }
     });
 }
 
