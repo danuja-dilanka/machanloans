@@ -212,7 +212,7 @@ function load_data(data_url, refreshDT = 0, dt_tb = '#dt_tb') {
     } else {
         $(dt_tb).DataTable().destroy();
         $(dt_tb).DataTable(options);
-}
+    }
 }
 
 $('.filter').on('change click dblclick select', function () {
