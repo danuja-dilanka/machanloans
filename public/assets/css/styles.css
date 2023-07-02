@@ -254,12 +254,12 @@ h5, .h5 {
 
 .metismenu >li.active-nav > a {
     color: #fff;
-    background: #ff9f43;
+    background: #dc3545;
 }
 
 .metismenu >li.active-nav:hover > a {
     color: #fff;
-    background: #ff9f43;
+    background: #dc3545;
 }
 
 .metismenu >li:hover>a{
