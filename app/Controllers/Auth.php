@@ -16,7 +16,7 @@ class Auth extends BaseController {
         if (!already_logined()) {
             return redirect()->route('login');
         }
-        
+
         return view('dashboard');
     }
 
@@ -54,7 +54,7 @@ class Auth extends BaseController {
                 ]);
 
                 /* SPPED UP SIDE MENU LOADING */
-                
+
                 $parents = $this->thisModel->get_parent_nav();
                 $navabar = "";
                 foreach ($parents as $pkey => $pvalue) {
@@ -63,19 +63,19 @@ class Auth extends BaseController {
                     if (!has_permission($pvalue->module_name, $pvalue->action_name)) {
                         continue;
                     }
-                    
-                    $navabar .= '<li><a href="'.($pvalue->method != "" ? base_url($pvalue->class . "/" . $pvalue->method) : "javascript: void(0);").'"><i class="fas fa-user-friends"></i><span>' . ($pvalue->name) . '</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>';
+
+                    $navabar .= '<li><a href="' . ($pvalue->method != "" ? base_url($pvalue->class . "/" . $pvalue->method) : "javascript: void(0);") . '"><i class="fas fa-user-friends"></i><span>' . ($pvalue->name) . '</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>';
                     $one_time = true;
-                    
+
                     foreach ($childs as $ckey => $cvalue) {
                         if (!has_permission($cvalue->module_name, $cvalue->action_name)) {
                             continue;
                         }
-                        if($one_time == true){
+                        if ($one_time == true) {
                             $navabar .= '<ul class="nav-second-level collapse" aria-expanded="false">';
                             $one_time = false;
                         }
-                        
+
                         $tot_child++;
                         $navabar .= '<li class="nav-item"><a class="nav-link" href="' . (base_url($pvalue->class . "/" . $cvalue->method)) . '">' . ($cvalue->name) . '</a></li>';
                     }
@@ -90,10 +90,13 @@ class Auth extends BaseController {
                 session()->set([
                     'ml_navabar' => $navabar,
                 ]);
-                
-                /* END - SPPED UP SIDE MENU LOADING */
 
-                return redirect()->route('dashboard');
+                /* END - SPPED UP SIDE MENU LOADING */
+                if (is_admin()) {
+                    return redirect()->route('dashboard');
+                } else {
+                    return redirect()->route('loan/loan_list');
+                }
             } else {
                 Services::validation()->setError('wrong_cre', "Wrong Credentials");
                 return redirect()->to(base_url('login'));
