@@ -165,7 +165,7 @@ h5, .h5 {
 .sidebar-menu .user-details{
     padding: 30px 0px;
     text-align: center;
-    background: url('../../uploads/media/logo.png') no-repeat;
+    /*background: url('../../uploads/media/logo.png') no-repeat;*/
     margin-bottom: 5px;
     position: relative;
 }
