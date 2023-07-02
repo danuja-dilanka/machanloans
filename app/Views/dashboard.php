@@ -60,7 +60,7 @@
                             <h4 class="pt-1 mb-0" id='deposit_request'><br><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
                         </div>
                         <div>
-                            <a href="s"><i class="ti-arrow-right"></i>&nbsp;View</a>
+                            <a href="#"><i class="ti-arrow-right"></i>&nbsp;View</a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                             <h4 class="pt-1 mb-0" id="total_withdraw_request"><br><i class="fa-solid fa-sm fa-sync fa-spin"></i></h4>
                         </div>
                         <div>
-                            <a href=""><i class="ti-arrow-right"></i>&nbsp;View</a>
+                            <a href="#"><i class="ti-arrow-right"></i>&nbsp;View</a>
                         </div>
                     </div>
                 </div>
