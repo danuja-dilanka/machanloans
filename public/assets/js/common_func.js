@@ -4,12 +4,11 @@ function import_script_if_exist(jsFilePath) {
             $.getScript(jsFilePath);
         }
     }).catch(error => {
-
+        console.error('Error:', "File Not Found");
     });
 }
 
 $(document).ready(function () {
-
     const currentUrl = window.location.href;
     const parts = currentUrl.split('/');
     const tot_parts = parts.length;
@@ -26,17 +25,18 @@ $(document).ready(function () {
         }
 
         var jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - (dec + 1)] + "_" + parts[tot_parts - dec] + ".js";
+        try {
+            import_script_if_exist(jsFilePath);
+        } catch (e) {
+
+        }
+
+        jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - dec] + ".js";
 
         try {
             import_script_if_exist(jsFilePath);
-        } catch (e1) {
-            try {
-                jsFilePath = BASE_URL + "public/assets/js/post_load/" + parts[tot_parts - dec] + ".js";
-                import_script_if_exist(jsFilePath);
-            } catch (e2) {
-                
-            }
-        }
+        } catch (e) {
 
+        }
     }
 });
