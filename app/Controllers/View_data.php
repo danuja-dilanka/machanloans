@@ -387,9 +387,11 @@ class View_data extends BaseController {
 
         echo json_encode(["data" => $data]);
     }
-    
+
     public function due_payments() {
-        
+        $data = [];
+
+        echo json_encode(["data" => $data]);
     }
 
 }
