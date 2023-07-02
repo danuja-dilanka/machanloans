@@ -5,8 +5,7 @@
         </a>	
     </div>
     <div class="user-details">
-        <img class="avatar" src="<?= base_url() ?>public/uploads/media/logo.png" alt="avatar" style="opacity: 0.5">
-        <span class="text-white d-inline-block"><?= isset(session()->ml_utype_name) ? session()->ml_utype_name : "" ?> </span><br>
+        <span class="text-white text-center d-inline-block"><?= isset(session()->ml_utype_name) ? session()->ml_utype_name : "" ?> </span><br>
     </div>
     <div class="main-menu">
         <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
