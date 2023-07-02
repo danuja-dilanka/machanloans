@@ -83,8 +83,8 @@ $routes->match(['get', 'post'], '/setting/(:any)/(:any)', 'Setting::$1/$2');
 $routes->match(['get', 'post'], '/setting/(:any)/(:any)/(:any)', 'Setting::$1/$2/$3');
 
 //API CONTROLLER
-$routes->match(['get', 'post'], '/api/(:any)', 'API::$1');
-$routes->match(['get', 'post'], '/api/(:any)/(:any)', 'API::$1/$2');
+$routes->match(['post'], '/api/(:any)', 'API::$1');
+$routes->match(['post'], '/api/(:any)/(:any)', 'API::$1/$2');
 
 $routes->match(['get', 'post'], '/api/send_sms', 'API::send_sms');
 $routes->match(['get', 'post'], '/api/send_email', 'API::send_email');
