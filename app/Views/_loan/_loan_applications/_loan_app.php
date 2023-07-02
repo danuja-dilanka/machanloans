@@ -259,12 +259,6 @@
                                         <?= render_select('loan_type', model("Loan_model")->get_pro_data(0, 1), array('id', 'loan_name'), 'Loan Product', isset($data) ? $data->loan_type : '', ['required' => true]); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= render_input('first_pay_dt', 'First Payment Date', isset($data) ? $data->first_pay_dt : '', 'date', []); ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?= render_input('loan_rel_date', 'Release Date', isset($data) ? $data->loan_rel_date : '', 'date', []); ?>
-                                    </div>
-                                    <div class="col-md-6">
                                         <?= render_textarea('description', 'Description', isset($data) ? $data->description : '', []); ?>
                                     </div>
                                     <div class="col-md-6">
