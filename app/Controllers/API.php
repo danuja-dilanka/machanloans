@@ -350,11 +350,3 @@ class API extends BaseController {
     }
 
 }
-
-/*
-
-
-SELECT SUM(c.last_amount) AS tot_last_amount FROM `" . DB_PREFIX . "_loan_release` a INNER JOIN `" . DB_PREFIX . "loan_request` b ON a.loan = b.id INNER JOIN `" . DB_PREFIX . "loan_product` c ON b.loan_type = c.id WHERE a.rel_date LIKE '%" . sprintf('%02d', $i) . "%';
-
-
- *  */
