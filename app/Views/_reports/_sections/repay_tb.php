@@ -1,4 +1,4 @@
-<!--<div class="table-responsive">
+<div class="table-responsive">
     <table id="repay_tb" class="table multiple_dt_tb" data-action="repayments" style="width:100%">
         <thead>
             <tr>
@@ -20,4 +20,4 @@
             </tr>
         </tfoot>
     </table>
-</div>-->
+</div>
