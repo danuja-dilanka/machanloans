@@ -130,14 +130,14 @@
         <div class="col-lg-12">
             <div class="card mb-4">
                 <div class="card-header">
-                    Recent Transactions
+                    Report Section
                 </div>
                 <div class="card-body">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Recent Transactions</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Due Payments</a>
+                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Repayments</a>
                         </div>
                     </nav>
                     <br>
@@ -153,7 +153,7 @@
                                 <button type="button" id="repay_date" data-tb='repay_tb' data-unic="1" data-id="<?= date('Y-m-d', strtotime("$today +7 days")); ?>" data-type="0" class="filter btn btn-default" style="border: none;">Week</button>&nbsp;
                             </div>
                             <hr>
-                            <?php // view('_reports/_sections/repay_tb') ?>
+                            <?php view('_reports/_sections/repay_tb') ?>
                         </div>
                     </div>
                 </div>
