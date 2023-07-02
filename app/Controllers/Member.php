@@ -87,6 +87,12 @@ class Member extends BaseController {
             'email' => 'required|valid_email',
             'nic' => 'required',
         ];
+        
+        $try_by_logined_member = false;
+        if ($req_id != "" && decode(session()->ml_user_type) == 2 && (decode($req_id) == decode(session()->ml_user_rel_id))) {
+            $try_by_logined_member = true;
+        }
+        
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
             $password = $login_email = null;
@@ -107,7 +113,7 @@ class Member extends BaseController {
                 $post_data["client_login"] = 0;
             }
 
-            if ($req_id != "" && has_permission("member", "edit")) {
+            if ($req_id != "" && (has_permission("member", "edit") || $try_by_logined_member)) {
                 $member_id = decode($req_id);
                 $data = $this->thisModel->get_data($member_id);
                 if (isset($data->id)) {
@@ -174,7 +180,7 @@ class Member extends BaseController {
             }
         }
 
-        if ($req_id != "" && has_permission("member", "edit")) {
+        if ($req_id != "" && (has_permission("member", "edit") || $try_by_logined_member)) {
             $data = $this->thisModel->get_data(decode($req_id));
             if (isset($data->id)) {
                 return view('_member/_member', ["data" => $data, "req_id" => $req_id, "title" => "Edit Member"]);
