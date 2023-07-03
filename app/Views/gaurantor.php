@@ -146,7 +146,7 @@
                                                     <div id="filelist9"></div><br>
                                                     <div id="file_container9" style="position: relative;">
                                                         <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?=base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="selfie" class="dropify" name="selfie" multiple="false" required="">
