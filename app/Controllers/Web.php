@@ -95,7 +95,7 @@ class Web extends BaseController {
 //                "other_data" => json_encode(["nic_front" => $post_data["friend2f_nic"], "nic_back" => $post_data["friend2b_nic"]])
             ]);
 
-            $this->mng_docs($post_data, $loan_det->member);
+//            $this->mng_docs($post_data, $loan_det->member);
 
             model('Member_model')->update_data([
                 'rel_friend1' => $post_data["friend1_name"],
