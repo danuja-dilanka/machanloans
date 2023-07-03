@@ -35,7 +35,7 @@ class Web extends BaseController {
                     $doc = $doc[0];
                     if ($doc->document != $data[$key]) {
                         $member_model->update_doc([
-                            "added_by" => 0,
+                            "added_by" => decode(session()->ml_user),
                             "submitted_date" => date("Y-m-d"),
                             "submitted_time" => date("H:i:s"),
                             "document" => $data[$key],
@@ -43,7 +43,7 @@ class Web extends BaseController {
                     }
                 } else if ($data[$key] != "") {
                     $member_model->add_doc([
-                        "added_by" => 0,
+                        "added_by" => decode(session()->ml_user),
                         "submitted_date" => date("Y-m-d"),
                         "submitted_time" => date("H:i:s"),
                         "document" => $data[$key],
