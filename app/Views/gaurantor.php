@@ -219,6 +219,6 @@
     var BASE_URL = '<?= base_url() ?>';
 </script>
 <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
-<script src="<?= base_url() ?>public/assets/js/upload.js?v=2.0"></script>
+<script src="<?= base_url() ?>public/assets/js/upload.js?v=2.1"></script>
 </body>
 </html>
