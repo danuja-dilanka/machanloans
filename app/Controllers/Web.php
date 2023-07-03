@@ -64,13 +64,9 @@ class Web extends BaseController {
             'friend1_name' => 'trim|required',
             'friend1_phone' => 'trim|required',
             'friend1_address' => 'trim|required',
-            'friend1f_nic' => 'trim|required',
-            'friend1b_nic' => 'trim|required',
             'friend2_name' => 'trim|required',
             'friend2_phone' => 'trim|required',
             'friend2_address' => 'trim|required',
-            'friend2f_nic' => 'trim|required',
-            'friend2b_nic' => 'trim|required',
             'selfie' => 'trim|required',
             'fb_screenshot' => 'trim|required',
             'electricity_bill' => 'trim|required'
