@@ -62,34 +62,34 @@
                                                 <textarea type="text" class="form-control" name="friend1_address" value="" required></textarea>
                                             </div>
                                         </div>
-<!--                                        <div class="col-md-6">
-                                            <div class="form-group text-center">
-                                                <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (01) Front" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත (01) ඉදිරිපස ඡායාරූපයක්" ?> (20MB)<span class="required"> *</span></label><br>
-                                                <img id="friend1f_nic_img" alt="" src="<?php // base_url("public/images") . "/no-image.png" ?>" height="150">
-                                                <div style="font: 13px Verdana; background: #eee; color: #333">
-                                                    <div id="filelist5"></div><br>
-                                                    <div id="file_container5" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php // base_url("public/images/loan_req/nic/friend1f") ?>" data-id="friend1f_nic">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
-                                                    </div><br>
-                                                </div>
-                                                <input type="hidden" id="friend1f_nic" class="dropify" name="friend1f_nic" multiple="false" required="">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group text-center">
-                                                <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (01) Back" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත පිටුපස ඡායාරූපයක් (01)" ?> (20MB)<span class="required"> *</span></label><br>
-                                                <img id="friend1b_nic_img" alt="" src="<?php // base_url("public/images") . "/no-image.png" ?>" height="150">
-                                                <div style="font: 13px Verdana; background: #eee; color: #333">
-                                                    <div id="filelist6"></div><br>
-                                                    <div id="file_container6" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php // base_url("public/images/loan_req/nic/friend1b") ?>" data-id="friend1b_nic">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
-                                                    </div><br>
-                                                </div>
-                                                <input type="hidden" id="friend1b_nic" class="dropify" name="friend1b_nic" multiple="false" required="">
-                                            </div>
-                                        </div>-->
+                                        <!--                                        <div class="col-md-6">
+                                                                                    <div class="form-group text-center">
+                                                                                        <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (01) Front" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත (01) ඉදිරිපස ඡායාරූපයක්"  ?> (20MB)<span class="required"> *</span></label><br>
+                                                                                        <img id="friend1f_nic_img" alt="" src="<?php // base_url("public/images") . "/no-image.png"  ?>" height="150">
+                                                                                        <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                                                            <div id="filelist5"></div><br>
+                                                                                            <div id="file_container5" style="position: relative;">
+                                                                                                <a class="btn btn-lg btn-block btn-danger" id="pickfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php // base_url("public/images/loan_req/nic/friend1f")  ?>" data-id="friend1f_nic">Select</a> 
+                                                                                                <a class="btn btn-sm btn-primary" id="uploadfiles5" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                                                            </div><br>
+                                                                                        </div>
+                                                                                        <input type="hidden" id="friend1f_nic" class="dropify" name="friend1f_nic" multiple="false" required="">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-md-6">
+                                                                                    <div class="form-group text-center">
+                                                                                        <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (01) Back" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත පිටුපස ඡායාරූපයක් (01)"  ?> (20MB)<span class="required"> *</span></label><br>
+                                                                                        <img id="friend1b_nic_img" alt="" src="<?php // base_url("public/images") . "/no-image.png"  ?>" height="150">
+                                                                                        <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                                                            <div id="filelist6"></div><br>
+                                                                                            <div id="file_container6" style="position: relative;">
+                                                                                                <a class="btn btn-lg btn-block btn-danger" id="pickfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php // base_url("public/images/loan_req/nic/friend1b")  ?>" data-id="friend1b_nic">Select</a> 
+                                                                                                <a class="btn btn-sm btn-primary" id="uploadfiles6" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                                                            </div><br>
+                                                                                        </div>
+                                                                                        <input type="hidden" id="friend1b_nic" class="dropify" name="friend1b_nic" multiple="false" required="">
+                                                                                    </div>
+                                                                                </div>-->
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
@@ -110,49 +110,65 @@
                                                 <textarea type="text" class="form-control" name="friend2_address" value="" required></textarea>
                                             </div>
                                         </div>
-<!--                                        <div class="col-md-6">
+                                        <!--                                        <div class="col-md-6">
+                                                                                    <div class="form-group text-center">
+                                                                                        <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (02) Front" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත (02) ඉදිරිපස ඡායාරූපයක්"  ?> (20MB)<span class="required"> *</span></label><br>
+                                                                                        <img id="friend2f_nic_img" alt="" src="<?php //  base_url("public/images") . "/no-image.png"  ?>" height="150">
+                                                                                        <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                                                            <div id="filelist7"></div><br>
+                                                                                            <div id="file_container7" style="position: relative;">
+                                                                                                <a class="btn btn-lg btn-block btn-danger" id="pickfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php //  base_url("public/images/loan_req/nic/friend2f")  ?>" data-id="friend2f_nic">Select</a> 
+                                                                                                <a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                                                            </div><br>
+                                                                                        </div>
+                                                                                        <input type="hidden" id="friend2f_nic" class="dropify" name="friend2f_nic" multiple="false" required="">
+                                                                                    </div>
+                                                                                </div>-->
+                                        <!--                                        <div class="col-md-6">
+                                                                                    <div class="form-group text-center">
+                                                                                        <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (02) Back" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත පිටුපස ඡායාරූපයක් (02)"  ?> (20MB)<span class="required"> *</span></label><br>
+                                                                                        <img id="friend2b_nic_img" alt="" src="<?php // base_url("public/images") . "/no-image.png"  ?>" height="150">
+                                                                                        <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                                                            <div id="filelist8"></div><br>
+                                                                                            <div id="file_container8" style="position: relative;">
+                                                                                                <a class="btn btn-lg btn-block btn-danger" id="pickfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php // base_url("public/images/loan_req/nic/friend2b")  ?>" data-id="friend2b_nic">Select</a> 
+                                                                                                <a class="btn btn-sm btn-primary" id="uploadfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                                                            </div><br>
+                                                                                        </div>
+                                                                                        <input type="hidden" id="friend2b_nic" class="dropify" name="friend2b_nic" multiple="false" required="">
+                                                                                    </div>
+                                                                                </div>
+                                        -->                
+                                        
+                                        <div class="col-md-4">
                                             <div class="form-group text-center">
-                                                <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (02) Front" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත (02) ඉදිරිපස ඡායාරූපයක්" ?> (20MB)<span class="required"> *</span></label><br>
-                                                <img id="friend2f_nic_img" alt="" src="<?php //  base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <label class="control-label"><?= $lng != "si" ? "Member Photo" : "සාමාජික ඡායාරූපය" ?> (20MB)<span class="required"> *</span></label><br>
+                                                <img id="photo_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
-                                                    <div id="filelist7"></div><br>
-                                                    <div id="file_container7" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php //  base_url("public/images/loan_req/nic/friend2f") ?>" data-id="friend2f_nic">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
+                                                    <div id="filelist12"></div><br>
+                                                    <div id="file_container12" style="position: relative;">
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/member") ?>" data-id="photo">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
-                                                <input type="hidden" id="friend2f_nic" class="dropify" name="friend2f_nic" multiple="false" required="">
-                                            </div>
-                                        </div>-->
-<!--                                        <div class="col-md-6">
-                                            <div class="form-group text-center">
-                                                <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (02) Back" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත පිටුපස ඡායාරූපයක් (02)" ?> (20MB)<span class="required"> *</span></label><br>
-                                                <img id="friend2b_nic_img" alt="" src="<?php // base_url("public/images") . "/no-image.png" ?>" height="150">
-                                                <div style="font: 13px Verdana; background: #eee; color: #333">
-                                                    <div id="filelist8"></div><br>
-                                                    <div id="file_container8" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php // base_url("public/images/loan_req/nic/friend2b") ?>" data-id="friend2b_nic">Select</a> 
-                                                        <a class="btn btn-sm btn-primary" id="uploadfiles8" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
-                                                    </div><br>
-                                                </div>
-                                                <input type="hidden" id="friend2b_nic" class="dropify" name="friend2b_nic" multiple="false" required="">
+                                                <input type="hidden" id="photo" class="dropify" name="photo" multiple="false" required="">
                                             </div>
                                         </div>
--->                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group text-center">
-                                                <label class="control-label"><?=$lng != "si" ? "Enter a selfie photograph taken with the ID in hand, with the face clearly visible" : "හැදුනුම්පත අතේ තබාගෙන , මුහුණ පැහැදිලිව පෙනෙන සේ ලබා ගන්නා ලද සෙල්ෆි ජායාරූපයක් ඇතුලත් කරන්න" ?> (20MB)<span class="required"> *</span></label><br>
+                                                <label class="control-label"><?= $lng != "si" ? "Enter a selfie photograph taken with the ID in hand, with the face clearly visible" : "හැදුනුම්පත අතේ තබාගෙන , මුහුණ පැහැදිලිව පෙනෙන සේ ලබා ගන්නා ලද සෙල්ෆි ජායාරූපයක් ඇතුලත් කරන්න" ?> (20MB)<span class="required"> *</span></label><br>
                                                 <img id="selfie_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist9"></div><br>
                                                     <div id="file_container9" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?=base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="selfie" class="dropify" name="selfie" multiple="false" required="">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             <div class="form-group text-center">
                                                 <label class="control-label"><?= $lng != "si" ? "Attach your Facebook Screen Shot here" : "ඔබේ මුහුණු පොතෙහි ( Facebook ) තිර රුවක් ( Screen Shot) මෙහි අමුණන්න" ?> <br>(20MB)<span class="required"> *</span></label><br>
                                                 <img id="fb_screenshot_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">

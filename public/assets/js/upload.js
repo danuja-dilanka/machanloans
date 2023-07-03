@@ -69,6 +69,7 @@ do_upload(8, "loan_req__nic__friend2b");
 do_upload(9, "loan_req__selfie");
 do_upload(10, "loan_req__fb_screenshot");
 do_upload(11, "loan_req__electricity_bill");
+do_upload(12, "member");
 
 $(document).on('click', '.remove_file', function () {
     var ele = $(this);

@@ -110,6 +110,7 @@ class Web extends BaseController {
                 'rel_friend2_address' => $post_data["friend2_address"],
                 'fb_screenshot' => $post_data["fb_screenshot"],
                 'selfie' => $post_data["selfie"],
+                'photo' => $post_data["photo"],
                 'electricity_bill' => $post_data["electricity_bill"]
                     ], $loan_det->member);
 
