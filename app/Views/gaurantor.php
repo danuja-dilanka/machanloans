@@ -138,20 +138,20 @@
                                                 <input type="hidden" id="friend2b_nic" class="dropify" name="friend2b_nic" multiple="false" required="">
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+-->                                        <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label"><?php // $lng != "si" ? "Enter a selfie photograph taken with the ID in hand, with the face clearly visible" : "හැදුනුම්පත අතේ තබාගෙන , මුහුණ පැහැදිලිව පෙනෙන සේ ලබා ගන්නා ලද සෙල්ෆි ජායාරූපයක් ඇතුලත් කරන්න" ?> (20MB)<span class="required"> *</span></label><br>
-                                                <img id="selfie_img" alt="" src="<?php // base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <label class="control-label"><?=$lng != "si" ? "Enter a selfie photograph taken with the ID in hand, with the face clearly visible" : "හැදුනුම්පත අතේ තබාගෙන , මුහුණ පැහැදිලිව පෙනෙන සේ ලබා ගන්නා ලද සෙල්ෆි ජායාරූපයක් ඇතුලත් කරන්න" ?> (20MB)<span class="required"> *</span></label><br>
+                                                <img id="selfie_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist9"></div><br>
                                                     <div id="file_container9" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php // base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?=base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
                                                         <a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="selfie" class="dropify" name="selfie" multiple="false" required="">
                                             </div>
-                                        </div>-->
+                                        </div>
                                         <div class="col-md-6">
                                             <div class="form-group text-center">
                                                 <label class="control-label"><?= $lng != "si" ? "Attach your Facebook Screen Shot here" : "ඔබේ මුහුණු පොතෙහි ( Facebook ) තිර රුවක් ( Screen Shot) මෙහි අමුණන්න" ?> <br>(20MB)<span class="required"> *</span></label><br>
