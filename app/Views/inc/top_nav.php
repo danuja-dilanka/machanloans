@@ -31,7 +31,7 @@
                 <li>
                     <div class="user-profile">
                         <h4 class="user-name dropdown-toggle" data-toggle="dropdown">
-                            <img class="avatar user-thumb" id="my-profile-img" src="<?= base_url() ?>public/uploads/media/logo.png" alt="avatar"> <?= isset(session()->ml_user_name) ? session()->ml_user_name : "User" ?> <i class="fa fa-angle-down"></i>
+                            <img class="avatar user-thumb" id="my-profile-img" src="<?= isset(session()->profile_image) ? base_url("public/images/member") . "/" . session()->profile_image : base_url() . "public/uploads/media/logo.png" ?>" alt="avatar"> <?= isset(session()->ml_user_name) ? session()->ml_user_name : "User" ?> <i class="fa fa-angle-down"></i>
                         </h4>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="<?= base_url("setting/user/") . session()->ml_user ?>"><i class="ti-pencil text-muted mr-2"></i>&nbsp;Profile Settings</a>

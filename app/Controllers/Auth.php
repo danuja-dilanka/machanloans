@@ -42,7 +42,6 @@ class Auth extends BaseController {
         if ($this->request->is('post') && $this->validate($rules)) {
             $user = $this->thisModel->get_user($this->request->getPost("email"));
             if (isset($user->id) && password_verify($this->request->getPost("password"), $user->password)) {
-
                 session()->set([
                     'ml_user_type' => encode($user->utype),
                     'ml_utype_name' => ($user->utype_name),
@@ -52,6 +51,13 @@ class Auth extends BaseController {
                     'ml_user_rel_id' => encode($user->rel_id),
                     'ml_user' => encode($user->id)
                 ]);
+
+                if ($user->utype == 2) {
+                    $member = model('Member_model')->get_data($user->rel_id);
+                    session()->set([
+                        'profile_image' => $member->photo
+                    ]);
+                }
 
                 /* SPPED UP SIDE MENU LOADING */
 
