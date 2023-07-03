@@ -110,20 +110,20 @@
                                                 <textarea type="text" class="form-control" name="friend2_address" value="" required></textarea>
                                             </div>
                                         </div>
-                                        <div class="col-md-6">
+<!--                                        <div class="col-md-6">
                                             <div class="form-group text-center">
-                                                <label class="control-label"><?= $lng != "si" ? "A photograph of a non-relative friend's ID card (02) Front" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත (02) ඉදිරිපස ඡායාරූපයක්" ?> (20MB)<span class="required"> *</span></label><br>
-                                                <img id="friend2f_nic_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (02) Front" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත (02) ඉදිරිපස ඡායාරූපයක්" ?> (20MB)<span class="required"> *</span></label><br>
+                                                <img id="friend2f_nic_img" alt="" src="<?php //  base_url("public/images") . "/no-image.png" ?>" height="150">
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist7"></div><br>
                                                     <div id="file_container7" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/friend2f") ?>" data-id="friend2f_nic">Select</a> 
-                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?php //  base_url("public/images/loan_req/nic/friend2f") ?>" data-id="friend2f_nic">Select</a> 
+                                                        <a class="btn btn-sm btn-primary" id="uploadfiles7" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>
                                                     </div><br>
                                                 </div>
                                                 <input type="hidden" id="friend2f_nic" class="dropify" name="friend2f_nic" multiple="false" required="">
                                             </div>
-                                        </div>
+                                        </div>-->
 <!--                                        <div class="col-md-6">
                                             <div class="form-group text-center">
                                                 <label class="control-label"><?php // $lng != "si" ? "A photograph of a non-relative friend's ID card (02) Back" : "ඥාති නොවන මිතුරෙකුගේ හැඳුනුම්පත පිටුපස ඡායාරූපයක් (02)" ?> (20MB)<span class="required"> *</span></label><br>
