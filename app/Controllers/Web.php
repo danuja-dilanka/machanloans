@@ -38,7 +38,7 @@ class Web extends BaseController {
                             "submitted_date" => date("Y-m-d"),
                             "submitted_time" => date("H:i:s"),
                             "document" => $data[$key],
-                                ], $member);
+                                ], $doc->id);
                     }
                 } else if ($data[$key] != "") {
                     $member_model->add_doc([
@@ -49,7 +49,7 @@ class Web extends BaseController {
                         "code" => $key,
                         "member" => $member,
                         "name" => $value,
-                            ], $member);
+                            ]);
                 }
                 unset($data[$key]);
             }
