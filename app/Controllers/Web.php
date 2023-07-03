@@ -50,7 +50,7 @@ class Web extends BaseController {
                         "code" => $key,
                         "member" => $member,
                         "name" => $value,
-                            ]);
+                    ]);
                 }
                 unset($data[$key]);
             }
@@ -265,8 +265,9 @@ class Web extends BaseController {
                 } else {
                     $member_id = $member_det->id;
                 }
-                
-                $loan_periods = get_due_loan_periods($insert_id);
+
+//                $loan_periods = get_due_loan_periods($insert_id);
+                $this->thisModel->update_loan_req_data(["member" => $member_id], $insert_id);
 //                $this->thisModel->update_loan_req_data(["member" => $member_id, "shedules" => json_encode($loan_periods["due_dates"]), "loan_period" => count($loan_periods), "period_chrg" => $loan_periods["charge"]], $insert_id);
 
                 return redirect()->to(base_url("loan_application/guarantors/" . $lng . "/" . encode($insert_id)));
