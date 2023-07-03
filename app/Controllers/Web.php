@@ -84,7 +84,7 @@ class Web extends BaseController {
                 "name" => $post_data["friend1_name"],
                 "phone" => $post_data["friend1_phone"],
                 "address" => $post_data["friend1_address"],
-                "other_data" => json_encode(["nic_front" => $post_data["friend1f_nic"], "nic_back" => $post_data["friend1b_nic"]])
+//                "other_data" => json_encode(["nic_front" => $post_data["friend1f_nic"], "nic_back" => $post_data["friend1b_nic"]])
             ]);
 
             $this->thisModel->add_loan_guarantor([
@@ -92,7 +92,7 @@ class Web extends BaseController {
                 "name" => $post_data["friend2_name"],
                 "phone" => $post_data["friend2_phone"],
                 "address" => $post_data["friend2_address"],
-                "other_data" => json_encode(["nic_front" => $post_data["friend2f_nic"], "nic_back" => $post_data["friend2b_nic"]])
+//                "other_data" => json_encode(["nic_front" => $post_data["friend2f_nic"], "nic_back" => $post_data["friend2b_nic"]])
             ]);
 
             $this->mng_docs($post_data, $loan_det->member);
