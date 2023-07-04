@@ -60,7 +60,7 @@ class Setting extends BaseController {
                         }
                     }
                     
-                    if($succes <= 3){
+                    if($succes > 0 && $succes < 4){
                         session()->setFlashdata('notify', 'Sidebar Updated');
                     }
 
