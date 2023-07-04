@@ -297,12 +297,14 @@ class Web extends BaseController {
                 "phone" => $post_data["friend1_phone"],
                 "address" => $post_data["friend1_address"]
             ];
-            
+
             $loan_guarantor2 = [
                 "name" => $post_data["friend1_name"],
                 "phone" => $post_data["friend1_phone"],
                 "address" => $post_data["friend1_address"]
             ];
+
+            $this->mng_docs($post_data, $member_id);
 
             unset($post_data["friend1_name"]);
             unset($post_data["friend1_phone"]);
