@@ -427,7 +427,7 @@
         </script>
         <script src="<?= base_url() ?>public/assets/js/vendor/jquery-3.6.1.min.js"></script>
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
-        <script src="<?= base_url() ?>public/assets/js/upload.js?v=2.0"></script>
+        <script src="<?= base_url() ?>public/assets/js/upload.js?v=2.1"></script>
         <script src="<?= base_url() ?>public/assets/js/public_loan_app.js?v=1.2"></script>
     </body>
 </html>
