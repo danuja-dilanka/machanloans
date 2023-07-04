@@ -51,7 +51,7 @@
                                                         $loan_pre = $i + 1;
                                                         ?>
                                                         <tr>
-                                                            <td><?= $loan_pre ?>&nbsp;
+                                                            <td class="text-left"><?= $loan_pre ?>&nbsp;
                                                                 <input type="checkbox" name="p_periods[]" data-val="<?= $prev_loan->p_charge ?>" value="<?= $loan_pre ?>" class="loan_check"/>
                                                             </td>
                                                             <td><?= $lng == 'si' ? "වාරිකය" : "Premium" ?> <?= $p_periods++ ?></td>
