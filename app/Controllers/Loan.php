@@ -225,7 +225,7 @@ class Loan extends BaseController {
 
         $loan = decode($req_id);
         $data = $this->thisModel->get_loan_req_data($loan);
-        if (isset($data->id)) {
+        if (isset($data->id) && $data->mem_phone != "") {
             $url = base_url("repay_shdule/") . $req_id;
             $response = send_sms($data->mem_phone, "Dear " . $data->mem_name . "!\n\nYou Can View Your Loan (L-#" . $data->id . ") Repayment Shedule Here,\n\n" . $url);
             if ($response->message == "success") {
@@ -282,7 +282,7 @@ class Loan extends BaseController {
             } else {
                 return view('_loan/_loan_applications/_loan_for', ["title" => "New Loan | Select Member"]);
             }
-        }else{
+        } else {
             return redirect()->to(base_url('loan/loan') . "?b=" . session()->ml_user_rel_id);
         }
     }
