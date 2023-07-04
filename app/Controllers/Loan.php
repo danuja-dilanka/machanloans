@@ -228,7 +228,7 @@ class Loan extends BaseController {
         if (isset($data->id) && $data->mem_phone != "") {
             $url = base_url("repay_shdule/") . $req_id;
             $response = send_sms($data->mem_phone, "Dear " . $data->mem_name . "!\n\nYou Can View Your Loan (L-#" . $data->id . ") Repayment Shedule Here,\n\n" . $url);
-            if ($response->message == "success") {
+            if (isset($response->message) && $response->message == "success") {
                 session()->setFlashdata('notify', 'SMS Sent!');
             }
             return redirect()->to(base_url('loan/loan_list'));
