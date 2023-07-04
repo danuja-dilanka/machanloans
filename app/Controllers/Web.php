@@ -141,7 +141,7 @@ class Web extends BaseController {
             $available_loans = $this->thisModel->get_loan_req_data_by(['nic' => $nic]);
             $avoid_data = [];
             foreach ($available_loans as $key => $value) {
-                if ($value->status == 1) {
+                if ($value->status == 1 && ($value->loan_period - $value->paid_period > 0)) {
                     $avoid_data = $this->thisModel->get_loan_pay_data_summary(['loan' => $value->id]);
                     $avoid_data->loan_details = $value;
                     $avoid_data->p_periods = $value->loan_period - $value->paid_period;
