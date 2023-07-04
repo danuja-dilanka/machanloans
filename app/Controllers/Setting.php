@@ -69,7 +69,7 @@ class Setting extends BaseController {
                 }
             }
 
-            return view('_settings/_main', ["title" => "Main Settings"]);
+            return view('_settings/_main', ["title" => "Main Settings", "sms_templates" => $this->thisModel->get_sms_template_by()]);
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));

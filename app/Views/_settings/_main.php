@@ -54,7 +54,36 @@
                             <?= form_close(); ?>	
                         </div>
                         <div class="tab-pane fade" id="nav-sms" role="tabpanel" aria-labelledby="nav-sms-tab">
-                            
+                            <div class="table-responsive">
+                                <table class="table" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php foreach ($sms_templates as $key => $value) { ?>
+                                            <tr>
+                                                <td><?= $key + 1 ?></td>
+                                                <td><?= $value->name ?></td>
+                                                <td><?= $value->template ?></td>
+                                                <td></td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
