@@ -9,8 +9,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="row" id="sms_rep_codes"></div>
-                <div class="row">
+                <div class="row alert alert-info p-2" id="sms_rep_codes"></div>
+                <div class="row p-2">
                     <textarea class="form-control" id="sms_template" ></textarea>
                 </div>
             </div>
