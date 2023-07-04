@@ -179,6 +179,8 @@ class Web extends BaseController {
                 } else {
                     return view('loan_app_stage2', ['lng' => $lng, 'prev_loan' => $avoid_data, 'member' => $member]);
                 }
+            } elseif (isset($member->id)) {
+                return view('login_to_loan_req', ['lng' => $lng]);
             } else {
                 if ($lng == "si") {
                     return view('loan_app_stage3_si', ['lng' => $lng, 'products' => $this->thisModel->get_pro_data(), 'member' => $member]);
