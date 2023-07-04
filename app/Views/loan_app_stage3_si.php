@@ -237,7 +237,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist0"></div><br>
                                                     <div id="file_container0" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/front") ?>" data-id="nic_front">තෝරන්න</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -251,7 +251,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist2"></div><br>
                                                     <div id="file_container2" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/back") ?>" data-id="nic_back">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles2" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/back") ?>" data-id="nic_back">තෝරන්න</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -281,7 +281,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist3"></div><br>
                                                     <div id="file_container3" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_front") ?>" data-id="spouse_nic_front">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles3" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_front") ?>" data-id="spouse_nic_front">තෝරන්න</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -296,7 +296,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist4"></div><br>
                                                     <div id="file_container4" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_back") ?>" data-id="spouse_nic_back">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles4" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/nic/spouse_nic_back") ?>" data-id="spouse_nic_back">තෝරන්න</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles0" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -350,7 +350,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist12"></div><br>
                                                     <div id="file_container12" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/member") ?>" data-id="photo">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/member") ?>" data-id="photo">තෝරන්න</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -364,7 +364,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist9"></div><br>
                                                     <div id="file_container9" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">තෝරන්න</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -378,7 +378,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist10"></div><br>
                                                     <div id="file_container10" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">තෝරන්න</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
@@ -392,7 +392,7 @@
                                                 <div style="font: 13px Verdana; background: #eee; color: #333">
                                                     <div id="filelist11"></div><br>
                                                     <div id="file_container11" style="position: relative;">
-                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/electricity_bill") ?>" data-id="electricity_bill">Select</a> 
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/electricity_bill") ?>" data-id="electricity_bill">තෝරන්න</a> 
                                                         <!--<a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
                                                     </div><br>
                                                 </div>
