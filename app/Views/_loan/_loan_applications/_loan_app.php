@@ -264,7 +264,7 @@
                                                 $products = model("Loan_model")->get_pro_data();
                                                 foreach ($products as $key => $value) {
                                                     ?>
-                                                    <option value="<?= $value->id ?>" <?= isset($data->loan_type) && $data->loan_type == $value->id ? "selected" : null ?>><?= $value->loan_name . " (LKR. " . $value->last_amount . ")" ?></option>
+                                                <option value="<?= $value->id ?>" <?= isset($data->loan_type) && $data->loan_type == $value->id ? "selected" : null ?>><?= $value->loan_name . " (LKR. " . number_format($value->last_amount, 2, ".", ",") . ")" ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
