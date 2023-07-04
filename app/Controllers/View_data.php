@@ -252,7 +252,7 @@ class View_data extends BaseController {
                 $value->pay_date,
                 $value->mem_name,
                 $value->mem_acc_number,
-                $value->repay_amount,
+                $value->total,
                 "Debit",
                 $status_txt
             ];
