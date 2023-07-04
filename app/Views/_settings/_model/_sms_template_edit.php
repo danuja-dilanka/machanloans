@@ -11,7 +11,7 @@
             <div class="modal-body">
                 <div class="row alert alert-info p-2" id="sms_rep_codes"></div>
                 <div class="row p-2">
-                    <textarea class="form-control" id="sms_template" cols="7"></textarea>
+                    <textarea class="form-control" id="sms_template" cols="20"></textarea>
                 </div>
             </div>
             <div class="modal-footer">

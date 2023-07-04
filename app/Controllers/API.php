@@ -373,9 +373,10 @@ class API extends BaseController {
                 $template_id = decode($data["template_id"]);
                 $Setting_model = model("Setting_model");
                 $template = $Setting_model->get_sms_template_by(["id" => $template_id]);
-                if (isset($template->id)) {
+                if (isset($template[0]->id)) {
                     $response = $Setting_model->update_sms_template(["template" => $data["sms_template"]], $template_id);
                     if ($response) {
+                        session()->setFlashdata('notify', 'SMS Template Updated');
                         $status = 1;
                     }
                 }

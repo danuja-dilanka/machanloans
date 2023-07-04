@@ -75,7 +75,6 @@ function edit_setting(element) {
 function save_template() {
 
     $.post(BASE_URL + 'api/update_sms_template', {sms_template: $("#sms_template").val(), template_id: $("#template_id").val()}, function (data) {
-        alert($("#template_id").val());
         if (data == "1") {
             window.location.reload();
         }
