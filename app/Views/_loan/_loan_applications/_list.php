@@ -15,9 +15,9 @@
     <div class="row">
         <div class="col-sm-7"></div>
         <div class="col-sm-5">
-            <button type="button" id="status" data-unic="1" data-id="0" data-type="0" class="filter btn btn-default">Active</button>&nbsp;
-            <button type="button" id="status" data-unic="1" data-id="1" data-type="0" class="filter btn btn-default">Inactive</button>&nbsp;
-            <button type="button" id="status" data-unic="1" data-id="2" data-type="0" class="filter btn btn-default">Finished</button>&nbsp;
+            <button type="button" id="status" data-unic="1" data-id="0" data-type="0" class="filter btn btn-secondary">Active</button>&nbsp;
+            <button type="button" id="status" data-unic="1" data-id="1" data-type="0" class="filter btn btn-secondary">Inactive</button>&nbsp;
+            <button type="button" id="status" data-unic="1" data-id="2" data-type="0" class="filter btn btn-secondary">Finished</button>&nbsp;
             <a href="<?= current_url() ?>" class="btn btn-info">X</a>&nbsp;
         </div>
     </div>
