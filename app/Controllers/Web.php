@@ -239,7 +239,7 @@ class Web extends BaseController {
             $Member_model = model('Member_model');
             $member_det = $Member_model->get_mem_data_by(["nic" => $post_data["nic"]]);
             if (!isset($member_det->id)) {
-                
+
                 $member_id = $Member_model->add_data([
                     "first_name" => $post_data["first_name"],
                     "last_name" => $post_data["last_name"],
@@ -278,20 +278,32 @@ class Web extends BaseController {
                     'photo' => $post_data["photo"],
                     'electricity_bill' => $post_data["electricity_bill"]
                 ]);
-                
+
                 if ($member_id > 0) {
                     $Member_model->update_data(["member_no" => "MPL-" . $member_id], $member_id);
                 }
             } else {
                 $member_id = $member_det->id;
             }
-            
+
             $post_data["member"] = $member_id;
 
             /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
-            
+
             /* TABLE COLOUMN MISMATCH HADLING */
+
+            $loan_guarantor1 = [
+                "name" => $post_data["friend1_name"],
+                "phone" => $post_data["friend1_phone"],
+                "address" => $post_data["friend1_address"]
+            ];
             
+            $loan_guarantor2 = [
+                "name" => $post_data["friend1_name"],
+                "phone" => $post_data["friend1_phone"],
+                "address" => $post_data["friend1_address"]
+            ];
+
             unset($post_data["friend1_name"]);
             unset($post_data["friend1_phone"]);
             unset($post_data["friend1_address"]);
@@ -302,25 +314,14 @@ class Web extends BaseController {
             unset($post_data["selfie"]);
             unset($post_data["photo"]);
             unset($post_data["electricity_bill"]);
-            
+
             /* end - TABLE COLOUMN MISMATCH HADLING */
 
             $insert_id = $this->thisModel->add_loan_req_data($post_data);
             if ($insert_id > 0) {
-
-                $this->thisModel->add_loan_guarantor([
-                    "loan" => $insert_id,
-                    "name" => $post_data["friend1_name"],
-                    "phone" => $post_data["friend1_phone"],
-                    "address" => $post_data["friend1_address"]
-                ]);
-
-                $this->thisModel->add_loan_guarantor([
-                    "loan" => $insert_id,
-                    "name" => $post_data["friend2_name"],
-                    "phone" => $post_data["friend2_phone"],
-                    "address" => $post_data["friend2_address"]
-                ]);
+                $loan_guarantor1["loan"] = $loan_guarantor2["loan"] = $insert_id;
+                $this->thisModel->add_loan_guarantor($loan_guarantor1);
+                $this->thisModel->add_loan_guarantor($loan_guarantor2);
 
                 return redirect()->to(base_url("loan_application/done/$lng"));
             } else {
