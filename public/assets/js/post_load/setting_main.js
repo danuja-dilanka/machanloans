@@ -64,10 +64,10 @@ function do_upload(index, upload_path) {
 
 do_upload(1, "sidbar_imgs");
 
-function edit_setting(template, codes, template) {
+function edit_setting(template_id, codes, template) {
     $("#sms_rep_codes").html(codes);
     $("#sms_template").val(template);
-    $("#template_id").val(template);
+    $("#template_id").val(template_id);
     $('#smste_model').modal('show');
 }
 
@@ -80,4 +80,3 @@ function save_template() {
     });
 
 }
-    $('#smste_model').modal('show');
