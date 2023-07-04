@@ -4,7 +4,7 @@
             <h4 class="text-white ml-1 d-inline-block">Machan Loans</h4>
         </a>	
     </div>
-    <div class="user-details" style="background-image: url('<?= base_url() . "public/images/" . get_option("sidbar_image") ?>');background-size: <?= get_option("sidebar_image_width") ?>px <?= get_option("sidebar_image_height") ?>px;background-color: rgba(255, 255, 255, 0.5);">
+    <div class="user-details" style="background-image: url('<?= base_url() . "public/images/sidbar_imgs/" . get_option("sidbar_image") ?>');background-size: <?= get_option("sidebar_image_width") ?>px <?= get_option("sidebar_image_height") ?>px;background-color: rgba(255, 255, 255, 0.5);">
         <span class="text-dark text-center d-inline-block"><?= isset(session()->ml_utype_name) ? strtoupper(session()->ml_utype_name) : "" ?> </span><br>
     </div>
     <div class="main-menu">

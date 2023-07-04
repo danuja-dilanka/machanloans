@@ -47,7 +47,7 @@
                             <div class="col-sm-12 row">
                                 <div class="col-sm-10"></div>
                                 <div class="col-sm-2">
-                                    <button type="submit" class="btn btn-info" >Submit</button>
+                                    <button type="submit" class="btn btn-danger" >Submit</button>
                                 </div>
                             </div>
                             <?= form_close(); ?>	
