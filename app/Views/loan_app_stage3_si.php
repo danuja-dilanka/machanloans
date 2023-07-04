@@ -304,11 +304,107 @@
                                             </div>
                                         </div>
                                     </div>
+                                     <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">ඥාතියෙකු නොවන මිතුරෙකුගේ නම (01)<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="friend1_name" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">ඥාතියෙකු නොවන මිතුරෙකුගේ දුරකථන අංකය (01)<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="friend1_phone" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">ඥාතියෙකු නොවන මිතුරෙකුගේ ලිපිනය (01)<span class="required"> *</span></label>
+                                                <textarea type="text" class="form-control" name="friend1_address" value="" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">ඥාතියෙකු නොවන මිතුරෙකුගේ නම (02)<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="friend2_name" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">ඥාතියෙකු නොවන මිතුරෙකුගේ දුරකථන අංකය (02)<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="friend2_phone" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">ඥාතියෙකු නොවන මිතුරෙකුගේ ලිපිනය (02)<span class="required"> *</span></label>
+                                                <textarea type="text" class="form-control" name="friend2_address" value="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">සාමාජික ඡායාරූපය(20MB)<span class="required"> *</span></label><br>
+                                                <img id="photo_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist12"></div><br>
+                                                    <div id="file_container12" style="position: relative;">
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/member") ?>" data-id="photo">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="photo" class="dropify" name="photo" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">හැදුනුම්පත අතේ තබාගෙන , මුහුණ පැහැදිලිව පෙනෙන සේ ලබා ගන්නා ලද සෙල්ෆි ජායාරූපයක් ඇතුලත් කරන්න (20MB)<span class="required"> *</span></label><br>
+                                                <img id="selfie_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist9"></div><br>
+                                                    <div id="file_container9" style="position: relative;">
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="selfie" class="dropify" name="selfie" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">ඔබේ මුහුණු පොතෙහි ( Facebook ) තිර රුවක් ( Screen Shot) මෙහි අමුණන්න<br>(20MB)<span class="required"> *</span></label><br>
+                                                <img id="fb_screenshot_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist10"></div><br>
+                                                    <div id="file_container10" style="position: relative;">
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="fb_screenshot" class="dropify" name="fb_screenshot" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">විදුලි බිලෙහි ජායාරූපයක් මෙහි අමුණන්න, (නැතිනම් ලිපිනය තහවුරු කර ගත හැකි ඕනෑම ලියවිල්ලක් ලිපිනය පැහැදිලිව පෙනෙන ලෙස) (20MB)<span class="required"> *</span></label><br>
+                                                <img id="electricity_bill_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist11"></div><br>
+                                                    <div id="file_container11" style="position: relative;">
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/electricity_bill") ?>" data-id="electricity_bill">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="electricity_bill" class="dropify" name="electricity_bill" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <hr>
-                                                <button type="submit" class="btn btn-lg btn-block btn-danger">තහවුරු කරන්න</button>
+                                                <button type="submit" class="btn btn-lg btn-block btn-danger">ඉදිරිපත් කරන්න</button>
                                             </div>
                                         </div>
                                     </div>

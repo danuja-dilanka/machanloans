@@ -311,10 +311,106 @@
                                         </div>
                                     </div>
                                     <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Name of a friend who is not a relative (01)<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="friend1_name" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Telephone number of a friend who is not a relative (01)<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="friend1_phone" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Address of a friend who is not a relative (01)<span class="required"> *</span></label>
+                                                <textarea type="text" class="form-control" name="friend1_address" value="" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Name of a friend who is not a relative (02)<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="friend2_name" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Telephone number of a friend who is not a relative (02)<span class="required"> *</span></label>
+                                                <input type="text" class="form-control" name="friend2_phone" value="" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="control-label">Address of a friend who is not a relative (02)<span class="required"> *</span></label>
+                                                <textarea type="text" class="form-control" name="friend2_address" value="" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">Member Photo (20MB)<span class="required"> *</span></label><br>
+                                                <img id="photo_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist12"></div><br>
+                                                    <div id="file_container12" style="position: relative;">
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles12" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/member") ?>" data-id="photo">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="photo" class="dropify" name="photo" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">Enter a selfie photograph taken with the ID in hand, with the face clearly visible (20MB)<span class="required"> *</span></label><br>
+                                                <img id="selfie_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist9"></div><br>
+                                                    <div id="file_container9" style="position: relative;">
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/selfie") ?>" data-id="selfie">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles9" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="selfie" class="dropify" name="selfie" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">Attach your Facebook Screen Shot here <br>(20MB)<span class="required"> *</span></label><br>
+                                                <img id="fb_screenshot_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist10"></div><br>
+                                                    <div id="file_container10" style="position: relative;">
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/fb_screenshot") ?>" data-id="fb_screenshot">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles10" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="fb_screenshot" class="dropify" name="fb_screenshot" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group text-center">
+                                                <label class="control-label">Attach a photo of the electricity bill here, (otherwise any document that can verify the address so that the address is clearly visible) (20MB)<span class="required"> *</span></label><br>
+                                                <img id="electricity_bill_img" alt="" src="<?= base_url("public/images") . "/no-image.png" ?>" height="150">
+                                                <div style="font: 13px Verdana; background: #eee; color: #333">
+                                                    <div id="filelist11"></div><br>
+                                                    <div id="file_container11" style="position: relative;">
+                                                        <a class="btn btn-lg btn-block btn-danger" id="pickfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/loan_req/electricity_bill") ?>" data-id="electricity_bill">Select</a> 
+                                                        <!--<a class="btn btn-sm btn-primary" id="uploadfiles11" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none">Upload</a>-->
+                                                    </div><br>
+                                                </div>
+                                                <input type="hidden" id="electricity_bill" class="dropify" name="electricity_bill" multiple="false" required="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-12">
                                             <hr>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-lg btn-block btn-danger">Next</button>
+                                                <button type="submit" class="btn btn-lg btn-block btn-danger">Submit</button>
                                             </div>
                                         </div>
                                     </div>

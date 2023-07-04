@@ -213,16 +213,7 @@ class Web extends BaseController {
             'branch_name' => 'trim|required',
             'acc_number' => 'trim|required',
             'bank_name' => 'trim|required',
-            'city' => 'trim|required',
-            'friend1_name' => 'trim|required',
-            'friend1_phone' => 'trim|required',
-            'friend1_address' => 'trim|required',
-            'friend2_name' => 'trim|required',
-            'friend2_phone' => 'trim|required',
-            'friend2_address' => 'trim|required',
-            'selfie' => 'trim|required',
-            'fb_screenshot' => 'trim|required',
-            'electricity_bill' => 'trim|required'
+            'city' => 'trim|required'
         ];
 
         if ($this->request->is('post') && $this->validate($rules)) {
@@ -234,80 +225,56 @@ class Web extends BaseController {
 
             $post_data["payment_method"] = $loan_pro_det->term_per;
 
-            /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION */
-
-            $Member_model = model('Member_model');
-            $member_det = $Member_model->get_mem_data_by(["nic" => $post_data["nic"]]);
-            if (!isset($member_det->id)) {
-                
-                $member_id = $Member_model->add_data([
-                    "first_name" => $post_data["first_name"],
-                    "last_name" => $post_data["last_name"],
-                    "google_location" => $post_data["google_location"],
-                    "name_with_ini" => $post_data["full_name"],
-                    "birthday" => $post_data["birthday"],
-                    "email" => $post_data["email"],
-                    "mobile" => $post_data["phone"],
-                    "whatsapp" => $post_data["whatsapp"],
-                    "address" => $post_data["residential_address"],
-                    "cred_address" => $post_data["current_address"],
-                    "business_name" => $post_data["employment"],
-                    "working_address" => $post_data["employment_address"],
-                    "nic" => $post_data["nic"],
-                    "branch_name" => $post_data["branch_name"],
-                    "acc_number" => $post_data["acc_number"],
-                    "bank_name" => $post_data["bank_name"],
-                    "crowd_name" => $post_data["memberships"],
-                    "spouse_name" => $post_data["spouse_name"],
-                    "spouse_tel_number" => $post_data["spouse_tel_number"],
-                    "nic_back" => $post_data["nic_back"],
-                    "nic_front" => $post_data["nic_front"],
-                    "spouse_nic_front" => $post_data["spouse_nic_front"],
-                    "spouse_nic_back" => $post_data["spouse_nic_back"],
-                    "civil_status" => $post_data["marital_status"],
-                    "gender" => $post_data["gender"],
-                    "city" => $post_data["city"],
-                    'rel_friend1' => $post_data["friend1_name"],
-                    'rel_friend1_phone' => $post_data["friend1_phone"],
-                    'rel_friend1_address' => $post_data["friend1_address"],
-                    'rel_friend2' => $post_data["friend2_name"],
-                    'rel_friend2_phone' => $post_data["friend2_phone"],
-                    'rel_friend2_address' => $post_data["friend2_address"],
-                    'fb_screenshot' => $post_data["fb_screenshot"],
-                    'selfie' => $post_data["selfie"],
-                    'photo' => $post_data["photo"],
-                    'electricity_bill' => $post_data["electricity_bill"]
-                ]);
-                
-                if ($member_id > 0) {
-                    $Member_model->update_data(["member_no" => "MPL-" . $member_id], $member_id);
-                }
-            } else {
-                $member_id = $member_det->id;
-            }
-            
-            $post_data["member"] = $member_id;
-
-            /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
-
             $insert_id = $this->thisModel->add_loan_req_data($post_data);
             if ($insert_id > 0) {
 
-                $this->thisModel->add_loan_guarantor([
-                    "loan" => $insert_id,
-                    "name" => $post_data["friend1_name"],
-                    "phone" => $post_data["friend1_phone"],
-                    "address" => $post_data["friend1_address"]
-                ]);
+                /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION */
 
-                $this->thisModel->add_loan_guarantor([
-                    "loan" => $insert_id,
-                    "name" => $post_data["friend2_name"],
-                    "phone" => $post_data["friend2_phone"],
-                    "address" => $post_data["friend2_address"]
-                ]);
+                $Member_model = model('Member_model');
+                $member_det = $Member_model->get_mem_data_by(["nic" => $post_data["nic"]]);
+                if (!isset($member_det->id)) {
+                    $member_id = $Member_model->add_data([
+                        "first_name" => $post_data["first_name"],
+                        "last_name" => $post_data["last_name"],
+                        "google_location" => $post_data["google_location"],
+                        "name_with_ini" => $post_data["full_name"],
+                        "birthday" => $post_data["birthday"],
+                        "email" => $post_data["email"],
+                        "mobile" => $post_data["phone"],
+                        "whatsapp" => $post_data["whatsapp"],
+                        "address" => $post_data["residential_address"],
+                        "cred_address" => $post_data["current_address"],
+                        "business_name" => $post_data["employment"],
+                        "working_address" => $post_data["employment_address"],
+                        "nic" => $post_data["nic"],
+                        "branch_name" => $post_data["branch_name"],
+                        "acc_number" => $post_data["acc_number"],
+                        "bank_name" => $post_data["bank_name"],
+                        "crowd_name" => $post_data["memberships"],
+                        "spouse_name" => $post_data["spouse_name"],
+                        "spouse_tel_number" => $post_data["spouse_tel_number"],
+                        "nic_back" => $post_data["nic_back"],
+                        "nic_front" => $post_data["nic_front"],
+                        "spouse_nic_front" => $post_data["spouse_nic_front"],
+                        "spouse_nic_back" => $post_data["spouse_nic_back"],
+                        "civil_status" => $post_data["marital_status"],
+                        "gender" => $post_data["gender"],
+                        "city" => $post_data["city"]
+                    ]);
+                    if ($member_id > 0) {
+                        $Member_model->update_data(["member_no" => "MPL-" . $member_id], $member_id);
+                    }
+                } else {
+                    $member_id = $member_det->id;
+                }
 
-                return redirect()->to(base_url("loan_application/done/$lng"));
+//                $loan_periods = get_due_loan_periods($insert_id);
+                $this->thisModel->update_loan_req_data(["member" => $member_id], $insert_id);
+//                $this->thisModel->update_loan_req_data(["member" => $member_id, "shedules" => json_encode($loan_periods["due_dates"]), "loan_period" => count($loan_periods), "period_chrg" => $loan_periods["charge"]], $insert_id);
+
+                return redirect()->to(base_url("loan_application/guarantors/" . $lng . "/" . encode($insert_id)));
+
+                /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
             } else {
                 return redirect()->to(base_url("loan_application/$lng"));
             }
