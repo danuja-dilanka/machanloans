@@ -17,10 +17,11 @@ class Setting extends BaseController {
 
     #SETTINGS MAIN
 
-    public function main($type = "sidebar") {
+    public function main() {
 
         if (has_permission("setting_main", "edit")) {
-            if ($type == "sidebar") {
+            if ($this->request->is('post') && $this->request->getPost("type")) {
+                $type = $this->request->getPost("type");
                 $rules = [
                     'sidbar_image' => 'required',
                     'sidebar_image_height' => 'required',
@@ -28,7 +29,7 @@ class Setting extends BaseController {
                 ];
 
                 $succes = 0;
-                if ($this->request->is('post') && $this->validate($rules)) {
+                if ($this->validate($rules) && $type == "sidebar") {
                     $sidbar_image = get_option("sidbar_image");
                     if ($sidbar_image != null) {
                         if (set_option("sidbar_image", $this->request->getPost("sidbar_image"))) {
@@ -59,8 +60,8 @@ class Setting extends BaseController {
                             $succes++;
                         }
                     }
-                    
-                    if($succes > 0 && $succes < 4){
+
+                    if ($succes > 0 && $succes < 4) {
                         session()->setFlashdata('notify', 'Sidebar Updated');
                     }
 

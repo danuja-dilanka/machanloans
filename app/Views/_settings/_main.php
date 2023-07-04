@@ -17,7 +17,7 @@
                     <br>
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                            <?= form_open_multipart(current_url() . "/sidebar"); ?>
+                            <?= form_open_multipart(current_url()); ?>
                             <div class="col-sm-12 row">
                                 <div class="col-sm-8">
                                     <div class="form-group text-center">
@@ -47,6 +47,7 @@
                             <div class="col-sm-12 row">
                                 <div class="col-sm-10"></div>
                                 <div class="col-sm-2">
+                                    <input type="hidden" name="type" value="sidebar" required readonly/>
                                     <button type="submit" class="btn btn-danger" >Submit</button>
                                 </div>
                             </div>
