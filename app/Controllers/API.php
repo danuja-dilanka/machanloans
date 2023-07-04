@@ -365,4 +365,24 @@ class API extends BaseController {
         echo json_encode(["category" => $category, "amounts" => $amounts, "colors" => $colors]);
     }
 
+    public function update_sms_template() {
+        $status = 0;
+        if (already_logined()) {
+            $data = $this->request->getPost();
+            if (isset($data["sms_template"]) && isset($data["template_id"])) {
+                $template_id = decode($data["template_id"]);
+                $Setting_model = model("Setting_model");
+                $template = $Setting_model->get_sms_template_by(["id" => $template_id]);
+                if (isset($template->id)) {
+                    $response = $Setting_model->update_sms_template(["template" => $data["sms_template"]], $template_id);
+                    if ($response) {
+                        $status = 1;
+                    }
+                }
+            }
+        }
+
+        echo $status;
+    }
+
 }
