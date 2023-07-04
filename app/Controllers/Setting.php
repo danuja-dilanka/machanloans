@@ -68,7 +68,7 @@ class Setting extends BaseController {
                 }
             }
 
-            return view('_setting/_main', ["title" => "Main Settings"]);
+            return view('_settings/_main', ["title" => "Main Settings"]);
         } else {
             session()->setFlashdata('notify', 'error||Access Denied!');
             return redirect()->to(base_url('dashboard'));
