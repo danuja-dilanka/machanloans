@@ -19,7 +19,7 @@ class Setting extends BaseController {
 
     public function main() {
 
-        if (has_permission("setting_main", "edit")) {
+        if (has_permission("system_setting", "edit")) {
             if ($this->request->is('post') && $this->request->getPost("type")) {
                 $type = $this->request->getPost("type");
                 $rules = [
