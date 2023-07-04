@@ -41,11 +41,23 @@
                         <div class="col-md-6">
                             <?= render_custom_select("status", ["Active", "Inactive"], "Status", isset($data) ? $data->status : '', 'required="true"') ?>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <?= render_textarea('address', 'Address', isset($data) ? $data->address : '', ['required' => true]); ?>
                         </div>
                         <div class="col-md-6">
-                            <?= render_textarea('bank_det', 'Bank Details', isset($data) ? $data->bank_det : '', ['required' => true]); ?>
+                            <?= render_input('amount', 'Amount', isset($data) ? $data->amount : '', 'number', []); ?>
+                        </div>
+                        <div class="col-md-6">
+                            <?= render_input('start_date', 'Start Date', isset($data) ? $data->start_date : '', 'date', []); ?>
+                        </div>
+                        <div class="col-md-4">
+                            <?= render_input('bank_name', 'Bank Name', isset($data) ? $data->bank_name : '', 'text', []); ?>
+                        </div>
+                        <div class="col-md-4">
+                            <?= render_input('branch_name', 'Branch Name', isset($data) ? $data->branch_name : '', 'text', []); ?>
+                        </div>
+                        <div class="col-md-4">
+                            <?= render_input('acc_number', 'Account Number', isset($data) ? $data->acc_number : '', 'text', []); ?>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">

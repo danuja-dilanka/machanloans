@@ -22,7 +22,11 @@
                 <th>Phone</th>
                 <th>Profit percentage</th>
                 <th>Status</th>
-                <th>Bank Details</th>
+                <th>Bank Name</th>
+                <th>Branch Name</th>
+                <th>Account Number</th>
+                <th>Amount</th>
+                <th>Start Date</th>
                 <th class="dont_export">Action</th>
             </tr>
         </thead>
@@ -37,7 +41,11 @@
                 <th>Phone</th>
                 <th>Profit percentage</th>
                 <th>Status</th>
-                <th>Bank Details</th>
+                <th>Bank Name</th>
+                <th>Branch Name</th>
+                <th>Account Number</th>
+                <th>Amount</th>
+                <th>Start Date</th>
                 <th class="dont_export">Action</th>
             </tr>
         </tfoot>

@@ -293,7 +293,11 @@ class View_data extends BaseController {
                 $value->phone,
                 $value->profit_perc . "%",
                 $value->status == 1 ? "Active" : "Inactive",
-                $value->bank_det,
+                $value->bank_name,
+                $value->branch_name,
+                $value->acc_number,
+                number_format($value->amount, 2, ".", ","),
+                $value->start_date,
                 (has_permission("invest_acc", "edit") ? "<a href='" . base_url("investment/invest_acc/") . $key_enc . "' class='btn btn-sm btn-primary'>Edit</a>&nbsp;" : "") .
                 (has_permission("invest_acc", "delete") ? "<a href='#' data-id='" . base_url("investment/del_invest_acc/") . $key_enc . "' class='btn btn-sm btn-danger confirm_red_btn'>Delete</a>" : "")
             ];
