@@ -125,7 +125,7 @@ h5, .h5 {
     height: 100vh;
     width: 280px;
     overflow: hidden;
-    background: #273c75;
+    background: #343741;
     box-shadow: 2px 0 32px rgba(0, 0, 0, 0.05);
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -145,7 +145,7 @@ h5, .h5 {
 
 .sidebar-header {
     padding: 19px 24px;
-    background: #273c75;
+    background: #343741;
     border-bottom: 1px solid #273c75;
 }
 
@@ -771,7 +771,7 @@ ul.breadcrumbs {
     align-items: center;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    background: var(--primary-color);
+    background: #343741;
     padding: 17px 38px;
     position: relative;
 }
