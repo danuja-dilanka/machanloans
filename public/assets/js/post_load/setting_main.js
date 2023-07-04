@@ -80,3 +80,10 @@ function save_template() {
     });
 
 }
+
+function add_to_template(element) {
+
+    var template = $("#sms_template").val() + element.innerHTML;
+    $("#sms_template").val(template);
+
+}

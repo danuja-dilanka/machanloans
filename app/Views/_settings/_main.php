@@ -71,7 +71,7 @@
                                             $codes = model("Setting_model")->get_sms_rep_code_by(["template" => $value->id]);
                                             $codes_html = "";
                                             foreach ($codes as $ckey => $cvalue) {
-                                                $codes_html .= "<span>" . $cvalue->short_code . "</span>,&nbsp;";
+                                                $codes_html .= "<span style='cursor:pointer;font-weight:bold' onclick='add_to_template(this)'>" . $cvalue->short_code . "</span>,&nbsp;";
                                             }
                                             ?>
                                             <tr>
