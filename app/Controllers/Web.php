@@ -292,12 +292,12 @@ class Web extends BaseController {
             
             /* TABLE COLOUMN MISMATCH HADLING */
             
-            unset($post_data["rel_friend1"]);
-            unset($post_data["rel_friend1_phone"]);
-            unset($post_data["rel_friend1_address"]);
-            unset($post_data["rel_friend2"]);
-            unset($post_data["rel_friend2_phone"]);
-            unset($post_data["rel_friend2_address"]);
+            unset($post_data["friend1_name"]);
+            unset($post_data["friend1_phone"]);
+            unset($post_data["friend1_address"]);
+            unset($post_data["friend2_name"]);
+            unset($post_data["friend2_phone"]);
+            unset($post_data["friend2_address"]);
             unset($post_data["fb_screenshot"]);
             unset($post_data["selfie"]);
             unset($post_data["photo"]);
