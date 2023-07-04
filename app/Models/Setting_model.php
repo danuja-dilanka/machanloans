@@ -88,13 +88,13 @@ class Setting_model extends Model {
 
     //ADD SMS REPLACEMENT CODES
     public function add_sms_rep_code($data) {
-        $this->db->table(DB_PREFIX . 'sms_rep_code')->insert($data);
+        $this->db->table(DB_PREFIX . 'sms_rep_codes')->insert($data);
         return $this->db->insertID();
     }
 
     //GET SMS REPLACEMENT CODES
     public function get_sms_rep_code_by($where, $result_type = 0) {
-        $result = $this->db->table(DB_PREFIX . 'sms_rep_code');
+        $result = $this->db->table(DB_PREFIX . 'sms_rep_codes');
         $result->select('*');
         $result->where($where);
         
@@ -107,15 +107,15 @@ class Setting_model extends Model {
 
     //UPDATE SMS REPLACEMENT CODES
     public function update_sms_rep_code($data, $id) {
-        return $this->db->table(DB_PREFIX . 'sms_rep_code')->update($data, ["id" => $id]);
+        return $this->db->table(DB_PREFIX . 'sms_rep_codes')->update($data, ["id" => $id]);
     }
 
     //DELETE SMS REPLACEMENT CODES
     public function delete_sms_rep_code($id = 0, $where = []) {
         if ($id == 0) {
-            return $this->db->table(DB_PREFIX . 'sms_rep_code')->delete($where);
+            return $this->db->table(DB_PREFIX . 'sms_rep_codes')->delete($where);
         } else {
-            return $this->db->table(DB_PREFIX . 'sms_rep_code')->delete(["id" => $id]);
+            return $this->db->table(DB_PREFIX . 'sms_rep_codes')->delete(["id" => $id]);
         }
     }
 
