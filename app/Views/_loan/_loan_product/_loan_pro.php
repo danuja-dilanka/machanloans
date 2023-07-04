@@ -47,7 +47,7 @@
                             <?= render_custom_select("status", ["Active", "Inactive"], "Status", isset($data) ? $data->status : '', 'required="true"') ?>
                         </div>
                         <div class="col-md-12">
-                            <?= render_textarea('description', 'Description', isset($data) ? $data->description : '', ['required' => true]); ?>
+                            <?= render_textarea('description', 'Description', isset($data) ? $data->description : ''); ?>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">

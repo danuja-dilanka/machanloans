@@ -28,9 +28,6 @@
                         <li class="nav-item">
                             <a class="nav-link" data-toggle="tab" href="#guarantor">Guarantor</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#new_guarantors">New Guarantor</a>
-                        </li>
                         <!--                        <li class="nav-item">
                                                     <a class="nav-link" data-toggle="tab" href="#collateral">Collateral</a>
                                                 </li>-->
@@ -155,31 +152,6 @@
                             </div>
                         </div>
 
-                        <div class="tab-pane fade mt-4" id="new_guarantors">
-                            <div class="card">
-                                <div class="card-header d-flex align-items-center">
-                                    <span>New Guarantors</span>
-                                    <a class="btn btn-primary btn-xs ml-auto" href="#"  data-toggle="modal" data-target="#gur_model"><i class="ti-plus"></i>Add New</a>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table id="loan_guarantors_table" class="table custom_dt_table table-bordered mt-2">
-                                            <thead>
-                                                <tr>
-                                                    <th>Name</th>
-                                                    <th>NIC</th>
-                                                    <th>Phone</th>
-                                                    <th>Address</th>
-                                                    <th>Uploads</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="tab-pane fade mt-4" id="schedule">
                             <?= view('_loan/_loan_applications/_sections/rpay_shdule_tb', ["data" => $data, "pay_periods" => $pay_periods]) ?>
                         </div>
