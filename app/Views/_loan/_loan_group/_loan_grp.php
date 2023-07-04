@@ -39,7 +39,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6 hide">
+                        <div class="col-md-6" style="display: none">
                             <?= render_custom_select("group_type", ["Loan Group", "Seettu"], "Group Type", isset($data) ? $data->group_type : 1, 'required="true"') ?>
                         </div>
                         <div class="col-md-12">
