@@ -80,3 +80,4 @@ function save_template() {
     });
 
 }
+    $('#smste_model').modal('show');
