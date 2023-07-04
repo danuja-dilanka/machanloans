@@ -138,13 +138,23 @@
                                         <table id="guarantors_table" class="table table-bordered custom_dt_table mt-2">
                                             <thead>
                                                 <tr>
-                                                    <th>Loan ID</th>
-                                                    <th>Guarantor</th>
-                                                    <th>Amount</th>
-                                                    <th class="text-center">Action</th>
+                                                    <th>Name</th>
+                                                    <th>Phone</th>
+                                                    <th>Address</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <?php $member = model("Member_model")->get_data($data->member) ?>
+                                                <tr>
+                                                    <td><?= $member->rel_friend1 ?></td>
+                                                    <td><?= $member->rel_friend1_phone ?></td>
+                                                    <td><?= $member->rel_friend1_address ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><?= $member->rel_friend2 ?></td>
+                                                    <td><?= $member->rel_friend2_phone ?></td>
+                                                    <td><?= $member->rel_friend2_address ?></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
