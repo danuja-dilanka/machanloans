@@ -61,7 +61,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;Submit</button>
+                                <button type="submit" class="btn btn-danger"><i class="ti-check-box"></i>&nbsp;Submit</button>
                             </div>
                         </div>
                     </div>

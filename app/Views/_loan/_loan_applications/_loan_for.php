@@ -14,7 +14,7 @@
                             <?= render_select('member', model("Member_model")->get_mem_data(0, 1), array('id', 'full_name'), 'Member', '', ['required' => true]); ?>
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Continue</button>
+                                    <button type="submit" class="btn btn-danger">Continue</button>
                                 </div>
                             </div>
                         </div>
