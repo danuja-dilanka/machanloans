@@ -5,6 +5,10 @@ namespace App\Controllers;
 class Member extends BaseController {
 
     private $thisModel;
+    
+    public function send_sms() {
+        send_sms("941695904", "TEST");
+    }
 
     public function __construct() {
 

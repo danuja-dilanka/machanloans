@@ -15,6 +15,66 @@ class Setting extends BaseController {
         $this->thisModel = model('Setting_model');
     }
 
+    #SETTINGS MAIN
+
+    public function main($type = "sidebar") {
+
+        if (has_permission("setting_main", "edit")) {
+            if ($type == "sidebar") {
+                $rules = [
+                    'sidbar_image' => 'required',
+                    'sidebar_image_height' => 'required',
+                    'sidebar_image_width' => 'required',
+                ];
+
+                $succes = 0;
+                if ($this->request->is('post') && $this->validate($rules)) {
+                    $sidbar_image = get_option("sidbar_image");
+                    if ($sidbar_image != null) {
+                        if (set_option("sidbar_image", $this->request->getPost("sidbar_image"))) {
+                            $succes++
+                        }
+                    } else {
+                        if (add_option("sidbar_image", $this->request->getPost("sidbar_image"))) {
+                            $succes++
+                        }
+                    }
+                    $sidebar_image_height = get_option("sidebar_image_height");
+                    if ($sidebar_image_height != null) {
+                        if (set_option("sidebar_image_height", $this->request->getPost("sidebar_image_height"))) {
+                            $succes++
+                        }
+                    } else {
+                        if (add_option("sidebar_image_height", $this->request->getPost("sidebar_image_height"))) {
+                            $succes++
+                        }
+                    }
+                    $sidebar_image_width = get_option("sidebar_image_width");
+                    if ($sidebar_image_width != null) {
+                        if (set_option("sidebar_image_width", $this->request->getPost("sidebar_image_width"))) {
+                            $succes++
+                        }
+                    } else {
+                        if (add_option("sidebar_image_width", $this->request->getPost("sidebar_image_width"))) {
+                            $succes++
+                        }
+                    }
+                    
+                    if($succes <= 3){
+                        session()->setFlashdata('notify', 'Sidebar Updated');
+                    }
+
+                    return redirect()->to(base_url('setting/main'));
+                }
+            }
+
+            return view('_setting/_main', ["title" => "Main Settings"]);
+        } else {
+            session()->setFlashdata('notify', 'error||Access Denied!');
+            return redirect()->to(base_url('dashboard'));
+        }
+    }
+
     #ACCESS CONTROL
 
     public function access() {
