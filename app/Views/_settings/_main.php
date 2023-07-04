@@ -78,7 +78,7 @@
                                                 <td><?= $key + 1 ?></td>
                                                 <td><?= $value->name ?></td>
                                                 <td><?= $value->template ?></td>
-                                                <td><button type="button" class="btn btn-primary" onclick="edit_setting('<?= encode($value->id) ?>', <?= $codes_html ?>', '<?= $value->template ?>')"></button></td>
+                                                <td><button type="button" class="btn btn-primary" onclick="edit_setting('<?= encode($value->id) ?>', <?= $codes_html ?>', '<?= $value->template ?>')">Edit</button></td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
