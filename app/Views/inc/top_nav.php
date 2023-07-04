@@ -37,7 +37,7 @@
                             <a class="dropdown-item" href="<?= base_url("setting/user/") . session()->ml_user ?>"><i class="ti-pencil text-muted mr-2"></i>&nbsp;Profile Settings</a>
                             <a class="dropdown-item" href="<?= base_url("setting/user/") . session()->ml_user ?>"><i class="ti-exchange-vertical text-muted mr-2"></i>&nbsp;Change Password</a>
                             <?php if (is_admin()) { ?>
-                                <a class="dropdown-item" href="<?= base_url("setting/access") ?>"><i class="ti-settings text-muted mr-2"></i>&nbsp;System Settings</a>
+                                <a class="dropdown-item" href="<?= base_url("setting/main") ?>"><i class="ti-settings text-muted mr-2"></i>&nbsp;System Settings</a>
                             <?php } ?>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<?= base_url("logout") ?>"><i class="ti-power-off text-muted mr-2"></i>&nbsp;Logout</a>

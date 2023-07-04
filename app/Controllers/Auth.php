@@ -83,7 +83,7 @@ class Auth extends BaseController {
                         }
 
                         $tot_child++;
-                        $navabar .= '<li class="nav-item"><a class="nav-link" href="' . (base_url($pvalue->class . "/" . $cvalue->method)) . '">' . ($cvalue->name) . '</a></li>';
+                        $navabar .= '<li class="nav-item"><i class="fa-regular fa-square"></i>&nbsp;<a class="nav-link" href="' . (base_url($pvalue->class . "/" . $cvalue->method)) . '">' . ($cvalue->name) . '</a></li>';
                     }
 
                     if ($tot_child > 0) {
