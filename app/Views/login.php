@@ -33,6 +33,11 @@
                                             <?= validation_list_errors() ?>
                                         </div>
                                     <?php } ?>
+                                    <?php if (session()->getFlashdata('wrong_cre')) { ?>
+                                        <div class="alert alert-danger">
+                                            <?= session()->getFlashdata('wrong_cre') ?>
+                                        </div>
+                                    <?php } ?>
                                     <?= form_open_multipart(base_url("login"), array('data-parsley-validate' => 'true')); ?>
                                     <div class="form-group row">
                                         <div class="col-md-12">
