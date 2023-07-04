@@ -65,7 +65,6 @@ function do_upload(index, upload_path) {
 do_upload(1, "sidbar_imgs");
 
 function edit_setting(element) {
-    element.setAttribute("disabled", true);
     $("#sms_rep_codes").html(element.getAttribute("data-code"));
     $("#sms_template").val(element.getAttribute("data-template"));
     $("#template_id").val(element.getAttribute("data-id"));
