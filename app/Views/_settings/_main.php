@@ -30,7 +30,7 @@
                                                 <a class="btn btn-lg btn-block btn-danger" id="pickfiles1" href="javascript:;" style="position: relative; z-index: 1;text-decoration: none" data-src="<?= base_url("public/images/sidbar_imgs") ?>" data-id="sidbar_image">Select</a> 
                                             </div><br>
                                         </div>
-                                        <input type="hidden" id="sidbar_image" value="<?= $sidbar_image ?>" name="sidbar_imgs" multiple="false">
+                                        <input type="hidden" id="sidbar_image" value="<?= $sidbar_image ?>" name="sidbar_image" multiple="false">
                                     </div>
                                 </div>
                                 <div class="col-sm-4">
