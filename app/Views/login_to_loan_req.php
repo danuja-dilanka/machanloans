@@ -27,15 +27,15 @@
                             <div class="card">
                                 <div class="card-body">
                                     <img class="logo" src="<?= base_url() ?>public/uploads/media/logo.png">
-                                    <div class="alert alert-success text-center">
+                                    <div class="alert alert-danger text-center">
                                         <?php if ($lng != 'si') { ?>
                                             <h4>You Are Already Registered member</h4>
                                             <p>Please login To Request New Loan</p>
-                                            <a href="<?= base_url() ?>" class="btn btn-primary btn-block">Back To Login</a>
+                                            <a href="<?= base_url() ?>" class="btn btn-danger btn-block">Back To Login</a>
                                         <?php } else { ?>
                                             <h4>ඔබ දැනටමත් ලියාපදිංචි සාමාජිකයෙකි</h4>
                                             <p>කරුණාකර නව ණයක් ඉල්ලීමට පුරනය වන්න</p>
-                                            <a href="<?= base_url() ?>" class="btn btn-primary btn-block">ප්‍රධාන පිටුවට</a>
+                                            <a href="<?= base_url() ?>" class="btn btn-danger btn-block">ප්‍රධාන පිටුවට</a>
                                         <?php } ?>
                                     </div>
                                 </div>

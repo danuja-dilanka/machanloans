@@ -30,7 +30,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group"><hr>
-                            <button type="submit" class="btn btn-primary"><i class="ti-check-box"></i>&nbsp;Save Changes</button>
+                            <button type="submit" class="btn btn-danger"><i class="ti-check-box"></i>&nbsp;Save Changes</button>
                         </div>
                     </div>
                 </div>
