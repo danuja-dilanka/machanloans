@@ -60,7 +60,7 @@
                                                     <span class="required"> *</span></label>
                                                 <select class="form-control" name="loan_type" id="loan_type" required="">
                                                     <?php foreach ($products as $key => $value) { ?>
-                                                        <option value="<?= $value->id ?>"><?= $value->loan_name ?></option>
+                                                        <option value="<?= $value->id ?>"><?= $value->loan_name . " (LKR. " . $value->last_amount . ")" ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>

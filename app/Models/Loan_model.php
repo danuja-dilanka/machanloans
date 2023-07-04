@@ -21,7 +21,7 @@ class Loan_model extends Model {
     //GET LOAN PRODUCT
     public function get_pro_data($id = 0, $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'loan_product');
-        $result->select('CONCAT(loan_name, " (LKR.", last_amount, ")") AS loan_name');
+        $result->select('*');
         if ($id > 0) {
             return $result->where(["id" => $id])->get()->getRow();
         } else {

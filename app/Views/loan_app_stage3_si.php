@@ -50,9 +50,9 @@
                                                     ලබා ගැනීමට බලාපොරොත්තු වන ණය සැලසුම. <br>
                                                     <span>(නිද- ඔබ ලබා ගන්නේ රු. 20,000/= මුදලක් මාස දෙකෙන් සති පතා ගෙවීමට නම් එහිදී ණය  සැලසුම ලෙස ඔබ සටහන් කල යුත්තේ D 4 ලෙසය.</span>
                                                     <span class="required"> *</span></label>
-                                                    <select class="form-control" name="loan_type" id="loan_type" required="">
+                                                <select class="form-control" name="loan_type" id="loan_type" required="">
                                                     <?php foreach ($products as $key => $value) { ?>
-                                                        <option value="<?= $value->id ?>"><?= $value->loan_name ?></option>
+                                                        <option value="<?= $value->id ?>"><?= $value->loan_name . " (LKR. " . $value->last_amount . ")" ?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -327,6 +327,6 @@
         <script type="text/javascript" src="<?= base_url() ?>public/assets/js/plupload.full.min.js"></script>
         <script src="<?= base_url() ?>public/assets/js/upload.js?v=2.0"></script>
         <script src="<?= base_url() ?>public/assets/js/public_loan_app.js?v=1.2"></script>
-        
+
     </body>
 </html>

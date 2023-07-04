@@ -256,7 +256,18 @@
                                         <?= render_input('', 'Loan ID', isset($data->id) ? "L-#" . $data->id : "L-#" . model("Loan_model")->get_nxt_loan_id(), 'text', ['readonly' => true]); ?>
                                     </div>
                                     <div class="col-md-6">
-                                        <?= render_select('loan_type', model("Loan_model")->get_pro_data(0, 1), array('id', 'loan_name'), 'Loan Product', isset($data) ? $data->loan_type : '', ['required' => true]); ?>
+
+                                        <div class="form-group">
+                                            <label class="control-label">Loan Product<span class="required"> *</span></label>
+                                            <select class="form-control" name="loan_type" id="loan_type" required="">
+                                                <?php
+                                                $products = model("Loan_model")->get_pro_data();
+                                                foreach ($products as $key => $value) {
+                                                    ?>
+                                                    <option value="<?= $value->id ?>" <?= isset($data->loan_type) && $data->loan_type == $value->id ? "selected" : null ?>><?= $value->loan_name . " (LKR. " . $value->last_amount . ")" ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
                                         <?= render_textarea('description', 'Description', isset($data) ? $data->description : '', []); ?>
