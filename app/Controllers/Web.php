@@ -289,6 +289,21 @@ class Web extends BaseController {
             $post_data["member"] = $member_id;
 
             /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION - END */
+            
+            /* TABLE COLOUMN MISMATCH HADLING */
+            
+            unset($post_data["rel_friend1"]);
+            unset($post_data["rel_friend1_phone"]);
+            unset($post_data["rel_friend1_address"]);
+            unset($post_data["rel_friend2"]);
+            unset($post_data["rel_friend2_phone"]);
+            unset($post_data["rel_friend2_address"]);
+            unset($post_data["fb_screenshot"]);
+            unset($post_data["selfie"]);
+            unset($post_data["photo"]);
+            unset($post_data["electricity_bill"]);
+            
+            /* end - TABLE COLOUMN MISMATCH HADLING */
 
             $insert_id = $this->thisModel->add_loan_req_data($post_data);
             if ($insert_id > 0) {
