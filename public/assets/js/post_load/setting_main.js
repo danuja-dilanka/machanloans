@@ -64,8 +64,8 @@ function do_upload(index, upload_path) {
 
 do_upload(1, "sidbar_imgs");
 
-function edit_setting(template_id, codes, template) {
-    $("#sms_rep_codes").html(codes);
+function edit_setting(element, template_id, template) {
+    $("#sms_rep_codes").html(element.getAttribute("data-code"));
     $("#sms_template").val(template);
     $("#template_id").val(template_id);
     $('#smste_model').modal('show');
