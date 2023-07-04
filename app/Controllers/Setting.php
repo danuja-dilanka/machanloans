@@ -32,31 +32,31 @@ class Setting extends BaseController {
                     $sidbar_image = get_option("sidbar_image");
                     if ($sidbar_image != null) {
                         if (set_option("sidbar_image", $this->request->getPost("sidbar_image"))) {
-                            $succes++
+                            $succes++;
                         }
                     } else {
                         if (add_option("sidbar_image", $this->request->getPost("sidbar_image"))) {
-                            $succes++
+                            $succes++;
                         }
                     }
                     $sidebar_image_height = get_option("sidebar_image_height");
                     if ($sidebar_image_height != null) {
                         if (set_option("sidebar_image_height", $this->request->getPost("sidebar_image_height"))) {
-                            $succes++
+                            $succes++;
                         }
                     } else {
                         if (add_option("sidebar_image_height", $this->request->getPost("sidebar_image_height"))) {
-                            $succes++
+                            $succes++;
                         }
                     }
                     $sidebar_image_width = get_option("sidebar_image_width");
                     if ($sidebar_image_width != null) {
                         if (set_option("sidebar_image_width", $this->request->getPost("sidebar_image_width"))) {
-                            $succes++
+                            $succes++;
                         }
                     } else {
                         if (add_option("sidebar_image_width", $this->request->getPost("sidebar_image_width"))) {
-                            $succes++
+                            $succes++;
                         }
                     }
                     
