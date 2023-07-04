@@ -104,7 +104,7 @@ class Auth extends BaseController {
                     return redirect()->to(base_url('loan/loan_list'));
                 }
             } else {
-                Services::validation()->setRuleErrorMessage('wrong_cre', 'Wrong Credentials');
+                Services::validation()->setError('wrong_cre', "Wrong Credentials");
                 return redirect()->to(base_url('login'));
             }
         }
