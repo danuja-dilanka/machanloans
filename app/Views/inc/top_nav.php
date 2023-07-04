@@ -22,7 +22,7 @@
                             <i class="fa fa-angle-down"></i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="selectLanguage">
-                            <a class="dropdown-item" href="https://machan.quicksoft.lk/switch_language?language=English">English</a>
+                            <a class="dropdown-item" href="#">English</a>
                         </div>
                     </div>
                 </li>
