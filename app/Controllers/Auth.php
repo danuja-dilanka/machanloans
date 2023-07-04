@@ -70,7 +70,7 @@ class Auth extends BaseController {
                         continue;
                     }
 
-                    $navabar .= '<li><a href="' . ($pvalue->method != "" ? base_url($pvalue->class . "/" . $pvalue->method) : "javascript: void(0);") . '"><i class="fas fa-user-friends"></i><span>' . ($pvalue->name) . '</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>';
+                    $navabar .= '<li><a href="' . ($pvalue->method != "" ? base_url($pvalue->class . "/" . $pvalue->method) : "javascript: void(0);") . '"><i class="fa '.$pvalue->icon.'"></i><span>' . ($pvalue->name) . '</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>';
                     $one_time = true;
 
                     foreach ($childs as $ckey => $cvalue) {

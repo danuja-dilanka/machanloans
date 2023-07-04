@@ -74,6 +74,7 @@
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
+                                                            <th><?= $lng == 'si' ? "නම" : "Name" ?></th>
                                                             <th><?= $lng == 'si' ? "බැංකුවේ නම" : "Bank Name" ?></th>
                                                             <th><?= $lng == 'si' ? "ශාඛාවේ නම" : "Branch Name" ?></th>
                                                             <th><?= $lng == 'si' ? "ගිණුම් අංකය" : "Account Number" ?></th>
@@ -81,9 +82,10 @@
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td><?= $member->bank_name ?> </td>
-                                                            <td><?= $member->branch_name ?> </td>
-                                                            <td><?= $member->acc_number ?> </td>
+                                                            <td>Ruvini Dilrukshi</td>
+                                                            <td>Peoples Bank</td>
+                                                            <td>Rattota</td>
+                                                            <td>128-2-004-0-0038998</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
