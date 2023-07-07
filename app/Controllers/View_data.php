@@ -22,9 +22,9 @@ class View_data extends BaseController {
             $login_cre = model("Auth_model")->get_user_by_member($value->id);
             if (isset($login_cre->id)) {
                 if ($login_cre->status == 0) {
-                    $a_ia_toggle = '<input type="checkbox" data-toggle="toggle" data-on="Active" data-off="Inactive" data-onstyle="success" data-offstyle="danger">';
+                    $a_ia_toggle = '<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"></div>';
                 } else {
-                    $a_ia_toggle = '<input type="checkbox" checked data-toggle="toggle" data-on="Active" data-off="Inactive" data-onstyle="success" data-offstyle="danger">';
+                    $a_ia_toggle = '<div class="form-check form-check-inline"><input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2"></div>';
                 }
             }
 
@@ -43,7 +43,7 @@ class View_data extends BaseController {
               </div>';
 
             $data[] = [
-                $value->member_no."<br>".'<input id="toggle-trigger" type="checkbox" data-toggle="toggle">',
+                $value->member_no,
                 $value->nic,
                 ($value->photo != "" ? "<a href='" . base_url("public/images/member/") . $value->photo . "' target='_blank'><img src='" . base_url("public/images/member/") . $value->photo . "' width='100'/></a>" : "<img src='" . base_url("public/uploads/profile/") . "default.png" . "' width='100'/>") . '&nbsp;<i class="fa fa-solid fa-star"></i>&nbsp;<span id="rate_view_' . $key_enc . '">' . $value->rate . "</span>",
                 $value->first_name,
