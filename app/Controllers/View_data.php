@@ -22,9 +22,9 @@ class View_data extends BaseController {
             $login_cre = model("Auth_model")->get_user_by_member($value->id);
             if (isset($login_cre->id)) {
                 if ($login_cre->status == 0) {
-                    $a_ia_toggle = '<input type="checkbox" checked data-toggle="toggle" data-on="Active" data-off="Inactive" data-onstyle="success" data-offstyle="danger">';
+                    $a_ia_toggle = '<input type="checkbox" data-toggle="toggle" data-on="Active" data-off="Inactive" data-onstyle="success" data-offstyle="danger">';
                 } else {
-                    $a_ia_toggle = '<input type="checkbox" checked data-toggle="toggle" data-on="Active" data-off="Inactive" data-onstyle="success" data-offstyle="danger" checked>';
+                    $a_ia_toggle = '<input type="checkbox" checked data-toggle="toggle" data-on="Active" data-off="Inactive" data-onstyle="success" data-offstyle="danger">';
                 }
             }
 
