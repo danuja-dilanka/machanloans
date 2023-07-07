@@ -18,17 +18,17 @@ class View_data extends BaseController {
         $data = [];
         $members = model('Member_model')->get_mem_data();
         foreach ($members as $key => $value) {
+            $key_enc = encode($value->id);
             $a_ia_toggle = "";
             $login_cre = model("Auth_model")->get_user_by_member($value->id);
             if (isset($login_cre->id)) {
                 if ($login_cre->status == 0) {
-                    $a_ia_toggle = '<input type="checkbox" class="js-switch" />';
+                    $a_ia_toggle = '<input type="checkbox" data-id="' . $key_enc . '" class="js-switch" />';
                 } else {
-                    $a_ia_toggle = '<input type="checkbox" class="js-switch" checked />';
+                    $a_ia_toggle = '<input type="checkbox" data-id="' . $key_enc . '" class="js-switch" checked />';
                 }
             }
 
-            $key_enc = encode($value->id);
             $dropdown = '<div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink' . $key . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Action
@@ -42,7 +42,7 @@ class View_data extends BaseController {
               </div>';
 
             $data[] = [
-                (has_permission("member", "edit") ? $a_ia_toggle : "")."&nbsp;".$value->member_no,
+                (has_permission("member", "edit") ? $a_ia_toggle : "") . "&nbsp;" . $value->member_no,
                 $value->nic,
                 ($value->photo != "" ? "<a href='" . base_url("public/images/member/") . $value->photo . "' target='_blank'><img src='" . base_url("public/images/member/") . $value->photo . "' width='100'/></a>" : "<img src='" . base_url("public/uploads/profile/") . "default.png" . "' width='100'/>") . '&nbsp;<i class="fa fa-solid fa-star"></i>&nbsp;<span id="rate_view_' . $key_enc . '">' . $value->rate . "</span>",
                 $value->first_name,

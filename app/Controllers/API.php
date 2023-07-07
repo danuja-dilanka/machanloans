@@ -386,4 +386,23 @@ class API extends BaseController {
         echo $status;
     }
 
+    public function change_user_status() {
+        $status = 0;
+        if (already_logined() && has_permission("member", "edit")) {
+            $data = $this->request->getPost();
+            if (isset($data["status"]) && isset($data["user"])) {
+                $Auth_model = model("Auth_model");
+                $user_det = $Auth_model->get_user_by_member(decode($data["user"]));
+                if (isset($user_det->id)) {
+                    $response = $Auth_model->update_user(["status" => intval($data["status"])], $user_det->id);
+                    if ($response) {
+                        $status = 1;
+                    }
+                }
+            }
+        }
+
+        echo $status;
+    }
+
 }

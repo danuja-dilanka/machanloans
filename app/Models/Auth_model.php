@@ -48,6 +48,11 @@ class Auth_model extends Model {
         return $this->db->table(DB_PREFIX . 'utype_access')->update($data, ["id" => $id]);
     }
 
+    //UPDATE USER
+    public function update_user(array $data, int $id) {
+        return $this->db->table(DB_PREFIX . 'user')->update($data, ["id" => $id]);
+    }
+
     //GET USER ACCESS
     public function get_user_access(int $user, string $module, string $action, int $force = 0) {
         $result = $this->db->table(DB_PREFIX . 'user_access a');
