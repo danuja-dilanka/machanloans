@@ -48,4 +48,14 @@ class Reports extends BaseController {
         return view('_reports/_due_payment', ['title' => "Due Payment Report"]);
     }
 
+    #ACCOUNT CAPITAL REPORT
+
+    public function acc_capital() {
+        if (!has_permission("report_acc_capital", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        return view('_reports/_acc_capital', ['title' => "Account Capital Report"]);
+    }
+
 }

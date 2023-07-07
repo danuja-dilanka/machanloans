@@ -505,4 +505,30 @@ class View_data extends BaseController {
         echo json_encode(["data" => $data]);
     }
 
+    public function acc_capital() {
+        $Loan_model = model("Loan_model");
+        $members = model("Member_model")->get_mem_data_by();
+        
+        $row = 1;
+        foreach ($members as $key => $value) {
+            $pay_det = $Loan_model->get_loan_pay_all_data_by("a.member=".$value->id, "SUM(a.total) AS total_amount");
+            if(isset($pay_det[0]->id)){
+                $debit = $pay_det[0]->total_amount;
+            }
+            $rel_det = $Loan_model->get_loan_release_by("d.id=".$value->id, "SUM(c.last_amount) AS total_amount");
+            if(isset($rel_det[0]->id)){
+                $credit = $rel_det[0]->total_amount;
+            }
+            $data[] = [
+                $row++,
+                $value->name_with_ini,
+                number_format($debit, 2, ".", ","),
+                number_format($credit, 2, ".", ","),
+                number_format($debit - $credit, 2, ".", ","),
+            ];
+        }
+
+        echo json_encode(["data" => $data]);
+    }
+
 }

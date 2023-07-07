@@ -1,0 +1,1 @@
+load_data(BASE_URL + 'get_ajax_data/acc_capital', 0, "#acc_capital_tb");
