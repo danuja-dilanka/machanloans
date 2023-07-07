@@ -27,4 +27,13 @@ class Reports extends BaseController {
         return view('_reports/_investors', ['title' => "Investors Report"]);
     }
 
+    #NET PTOFIT REPORT
+    public function net_profit() {
+        if (!has_permission("report_net_profit", "view")) {
+            die;
+        }
+        
+        return view('_reports/_net_profit', ['title' => "Net Profit Report"]);
+    }
+
 }

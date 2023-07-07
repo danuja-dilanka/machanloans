@@ -438,4 +438,57 @@ class View_data extends BaseController {
         echo json_encode(["data" => $data]);
     }
 
+    public function net_profit_report() {
+
+        $date_from = $date_to = "";
+        $filters = $data = [];
+        if ($this->request->getGet("filters") != "") {
+            $filters = $this->request->getGet("filters");
+        }
+
+        foreach ($filters as $filter => $afilter) {
+            foreach ($afilter as $filter_key => $filter_val) {
+
+                if ($filter_key == "date_from") {
+                    $date_from = trim($filter_val[1]);
+                } elseif ($filter_key == "date_to") {
+                    $due_date = trim($filter_val[1]);
+                }
+            }
+        }
+
+        $loan_model = model('Loan_model');
+        $data = [];
+        $date_summary = [];
+
+        $loan_pays = $loan_model->get_loan_pay_all_data_by("a.pay_date >= '$date_from' AND a.pay_date =< '$date_to'", "SUM(a.total) AS total_amount, pay_date", "a.pay_date");
+        foreach ($loan_pays as $key => $lp_value) {
+            $date_summary[$lp_value->pay_date] = array(
+                "debit" => $lp_value->total_amount
+            );
+        }
+
+        $loan_reles = $loan_model->get_loan_release_by("a.rel_date >= '$date_from' AND a.rel_date =< '$date_to'", "SUM(c.last_amount) AS total_amount, rel_date", "a.rel_date");
+        foreach ($loan_reles as $key => $lr_value) {
+            $date_summary[$lr_value->pay_date] = array(
+                "credit" => $lr_value->total_amount
+            );
+        }
+
+        $row = 1;
+        foreach ($date_summary as $key => $value) {
+            $debit = isset($value["debit"]) ? floatval($value["debit"]) : 0;
+            $credit = isset($value["credit"]) ? floatval($value["credit"]) : 0;
+            $data[] = [
+                $row++,
+                $key,
+                number_format($debit, 2, ".", ","),
+                number_format($credit, 2, ".", ","),
+                number_format($debit - $credit, 2, ".", ","),
+            ];
+        }
+
+        echo json_encode(["data" => $data]);
+    }
+
 }

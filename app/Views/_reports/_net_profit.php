@@ -11,32 +11,24 @@
             <?php // create_link("member", "mem", ["member", "add"], "+ New", "h6") ?>
         </div>
     </div>
-    <table id="dt_tb" class="table" data-action="transactions" style="width:100%">
+    <table id="dt_tb" class="table" data-action="net_profit_report" style="width:100%">
         <thead>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Date</th>
-                <th>Member</th>
-                <th>Account Number</th>
-                <th>Amount</th>
-                <th>Debit/Credit</th>
-                <th>Type</th>
-                <th>Status</th>
-                <th class="dont_export">Action</th>
+                <th>Debit</th>
+                <th>Credit</th>
+                <th>Balance</th>
             </tr>
         </thead>
         <tbody></tbody>
         <tfoot>
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Date</th>
-                <th>Member</th>
-                <th>Account Number</th>
-                <th>Amount</th>
-                <th>Debit/Credit</th>
-                <th>Type</th>
-                <th>Status</th>
-                <th class="dont_export">Action</th>
+                <th>Debit</th>
+                <th>Credit</th>
+                <th>Balance</th>
             </tr>
         </tfoot>
     </table>
