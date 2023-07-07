@@ -553,6 +553,7 @@ class View_data extends BaseController {
     }
 
     public function investors() {
+        $data = [];
         $invesments = model("Investment_model")->get_invest_acc_data_by();
 
         $row = 1;
