@@ -3,36 +3,38 @@
 namespace App\Controllers;
 
 class Reports extends BaseController {
-    
-    #THIS IS INDEX
+
     public function index() {
-        
+        return redirect()->to(base_url('dashboard'));
     }
 
     #TRANSACTION REPORT
+
     public function transactions() {
         if (!has_permission("report_transactions", "view")) {
-            die;
+            return redirect()->to(base_url('dashboard'));
         }
-        
+
         return view('_reports/_transaction', ['title' => "Transaction Report"]);
     }
 
     #INVESTORS REPORT
+
     public function investors() {
         if (!has_permission("report_invest_acc", "view")) {
-            die;
+            return redirect()->to(base_url('dashboard'));
         }
-        
+
         return view('_reports/_investors', ['title' => "Investors Report"]);
     }
 
     #NET PTOFIT REPORT
+
     public function net_profit() {
         if (!has_permission("report_net_profit", "view")) {
-            die;
+            return redirect()->to(base_url('dashboard'));
         }
-        
+
         return view('_reports/_net_profit', ['title' => "Net Profit Report"]);
     }
 
