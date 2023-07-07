@@ -11,6 +11,20 @@
             <?php // create_link("member", "mem", ["member", "add"], "+ New", "h6") ?>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="text-right">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="date" id="date_from" data-id="" data-type="0" class="filter_select form-control" value=""/>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="date" id="date_to" data-id="" data-type="0" class="filter_select form-control" value=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <table id="dt_tb" class="table" data-action="net_profit_report" style="width:100%">
         <thead>
             <tr>
