@@ -449,10 +449,10 @@ class View_data extends BaseController {
         foreach ($filters as $filter => $afilter) {
             foreach ($afilter as $filter_key => $filter_val) {
 
-                if ($filter_key == "date_from") {
+                if ($filter_key == "date_from" && preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $filter_val[1])) {
                     $date_from = trim($filter_val[1]);
-                } elseif ($filter_key == "date_to") {
-                    $due_date = trim($filter_val[1]);
+                } elseif ($filter_key == "date_to" && preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $filter_val[1])) {
+                    $date_to = trim($filter_val[1]);
                 }
             }
         }
@@ -461,14 +461,22 @@ class View_data extends BaseController {
         $data = [];
         $date_summary = [];
 
-        $loan_pays = $loan_model->get_loan_pay_all_data_by("a.pay_date >= '$date_from' AND a.pay_date =< '$date_to'", "SUM(a.total) AS total_amount, pay_date", "a.pay_date");
+        if ($date_from != "" && $date_to != "") {
+            $loan_pays = $loan_model->get_loan_pay_all_data_by("a.pay_date >= '$date_from' AND a.pay_date =< '$date_to'", "SUM(a.total) AS total_amount, pay_date", "a.pay_date");
+        } else {
+            $loan_pays = $loan_model->get_loan_pay_all_data_by([], "SUM(a.total) AS total_amount, pay_date", "a.pay_date");
+        }
         foreach ($loan_pays as $key => $lp_value) {
             $date_summary[$lp_value->pay_date] = array(
                 "debit" => $lp_value->total_amount
             );
         }
 
-        $loan_reles = $loan_model->get_loan_release_by("a.rel_date >= '$date_from' AND a.rel_date =< '$date_to'", "SUM(c.last_amount) AS total_amount, rel_date", "a.rel_date");
+        if ($date_from != "" && $date_to != "") {
+            $loan_reles = $loan_model->get_loan_release_by("a.rel_date >= '$date_from' AND a.rel_date =< '$date_to'", "SUM(c.last_amount) AS total_amount, rel_date", "a.rel_date");
+        } else {
+            $loan_reles = $loan_model->get_loan_release_by([], "SUM(c.last_amount) AS total_amount, rel_date", "a.rel_date");
+        }
         foreach ($loan_reles as $key => $lr_value) {
             $date_summary[$lr_value->pay_date] = array(
                 "credit" => $lr_value->total_amount
