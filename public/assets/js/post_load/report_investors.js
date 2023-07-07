@@ -1,0 +1,1 @@
+load_data(BASE_URL + 'get_ajax_data/investors', 0, "#investors_tb");
