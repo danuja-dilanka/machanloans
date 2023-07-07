@@ -511,6 +511,7 @@ class View_data extends BaseController {
         
         $row = 1;
         foreach ($members as $key => $value) {
+            $debit = $credit = 0;
             $pay_det = $Loan_model->get_loan_pay_all_data_by("a.member=".$value->id, "SUM(a.total) AS total_amount");
             if(isset($pay_det[0]->id)){
                 $debit = $pay_det[0]->total_amount;
