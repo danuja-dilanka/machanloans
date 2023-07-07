@@ -552,4 +552,21 @@ class View_data extends BaseController {
         echo json_encode(["data" => $data]);
     }
 
+    public function investors() {
+        $invesments = model("Investment_model")->get_invest_acc_data_by();
+
+        $row = 1;
+        foreach ($invesments as $key => $value) {
+
+            $data[] = [
+                $row++,
+                $value->investor_name,
+                number_format($value->amount, 2, ".", ","),
+                number_format($value->amount * ($value->profit_perc / 100), 2, ".", ",")
+            ];
+        }
+
+        echo json_encode(["data" => $data]);
+    }
+
 }
