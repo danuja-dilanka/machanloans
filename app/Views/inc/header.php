@@ -34,7 +34,7 @@
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/searchPanes.dataTables.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/select.dataTables.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/css_all.min.css">
-        <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/switcher.css">
+        <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/switchery.min.css">
         
         <!-- DATATABLE CSS -->
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/datatables.min.css">

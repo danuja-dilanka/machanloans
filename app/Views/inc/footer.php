@@ -32,7 +32,7 @@
     <script src="<?= base_url() ?>public/assets/js/bootstrap-select.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/jquery-confirm.min.js"></script>
     
-    <script src="<?= base_url() ?>public/assets/js/jquery.switcher.min.js"></script>
+    <script src="<?= base_url() ?>public/assets/js/switchery.min.js"></script>
 
     <!-- App js -->
     <script src="<?= base_url() ?>public/assets/js/scripts.js?v=1.2"></script>
