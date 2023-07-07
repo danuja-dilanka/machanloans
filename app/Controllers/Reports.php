@@ -38,4 +38,14 @@ class Reports extends BaseController {
         return view('_reports/_net_profit', ['title' => "Net Profit Report"]);
     }
 
+    #DUE PAYMENT REPORT
+
+    public function due_payment() {
+        if (!has_permission("report_due_payment", "view")) {
+            return redirect()->to(base_url('dashboard'));
+        }
+
+        return view('_reports/_due_payment', ['title' => "Due Payment Report"]);
+    }
+
 }
