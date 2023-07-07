@@ -462,7 +462,7 @@ class View_data extends BaseController {
         $date_summary = [];
 
         if ($date_from != "" && $date_to != "") {
-            $loan_pays = $loan_model->get_loan_pay_all_data_by("a.pay_date >= '$date_from' AND a.pay_date =< '$date_to'", "SUM(a.total) AS total_amount, a.pay_date", "pay_date");
+            $loan_pays = $loan_model->get_loan_pay_all_data_by("a.pay_date >= '$date_from' AND a.pay_date =< '$date_to'", "SUM(a.total) AS total_amount, a.pay_date", "a.pay_date");
         } else {
             $loan_pays = $loan_model->get_loan_pay_all_data_by([], "SUM(a.total) AS total_amount, a.pay_date", "a.pay_date");
         }
@@ -473,7 +473,7 @@ class View_data extends BaseController {
         }
 
         if ($date_from != "" && $date_to != "") {
-            $loan_reles = $loan_model->get_loan_release_by("a.rel_date >= '$date_from' AND a.rel_date =< '$date_to'", "SUM(c.last_amount) AS total_amount, rel_date", "rel_date");
+            $loan_reles = $loan_model->get_loan_release_by("a.rel_date >= '$date_from' AND a.rel_date =< '$date_to'", "SUM(c.last_amount) AS total_amount, a.rel_date", "a.rel_date");
         } else {
             $loan_reles = $loan_model->get_loan_release_by([], "SUM(c.last_amount) AS total_amount, a.rel_date", "a.rel_date");
         }
