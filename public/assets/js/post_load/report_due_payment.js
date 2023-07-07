@@ -1,2 +1,1 @@
- $("#due_pay_tb").DataTable();
-
+load_data(BASE_URL + 'get_ajax_data/due_payments', 0, "#due_pay_tb");
