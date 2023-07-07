@@ -6,6 +6,7 @@ elems.forEach(function (html) {
 
 $(document).on('click', ".js-switch", function () {
     var ele = $(this);
+    alert(ele.prop('checked'));
     $.post(BASE_URL + 'api/change_user_status', {status: ele.prop('checked') ? 1 : 0, user: ele.data('id')}, function (data) {
         if (data == '1') {
             $.toast({

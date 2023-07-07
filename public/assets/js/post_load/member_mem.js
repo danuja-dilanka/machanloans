@@ -87,9 +87,3 @@ $(document).on('click', '.remove_file', function () {
         }
     });
 });
-
-var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-
-elems.forEach(function (html) {
-    var switchery = new Switchery(html);
-});
