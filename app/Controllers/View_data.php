@@ -354,7 +354,7 @@ class View_data extends BaseController {
     }
 
     public function repayments() {
-        if (!has_permission("loan", "view")) {
+        if (!has_permission("loan_pay", "view")) {
             die;
         }
 
@@ -398,6 +398,9 @@ class View_data extends BaseController {
     }
 
     public function due_payments() {
+        if (!has_permission("report_due_payment", "view")) {
+            die;
+        }
 
         $due_date = date("Y-m-d");
         $filters = $data = [];
@@ -439,6 +442,9 @@ class View_data extends BaseController {
     }
 
     public function net_profit_report() {
+        if (!has_permission("report_net_profit", "view")) {
+            die;
+        }
 
         $date_from = $date_to = "";
         $filters = $data = [];
@@ -506,6 +512,9 @@ class View_data extends BaseController {
     }
 
     public function acc_capital() {
+        if (!has_permission("report_acc_capital", "view")) {
+            die;
+        }
 
         $member = 0;
         $filters = $data = [];
@@ -553,6 +562,10 @@ class View_data extends BaseController {
     }
 
     public function investors() {
+        if (!has_permission("report_invest_acc", "view")) {
+            die;
+        }
+        
         $data = [];
         $invesments = model("Investment_model")->get_invest_acc_data_by();
 
