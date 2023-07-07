@@ -37,13 +37,12 @@ class View_data extends BaseController {
                   ' . (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='dropdown-item'>Edit</a>" : "") . '
                   ' . ("<a target='_blank' class='dropdown-item' href='" . base_url("member/view_member/") . $key_enc . "'>View</a>") . '
                   ' . ("<button type='button' id='tbl_rate_act_" . $key_enc . "' data-des='" . $value->rate_des . "' data-rate='" . $value->rate . "' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='dropdown-item'>Rate</button>") . '
-                  ' . (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . ',
-                  ' . (has_permission("member", "edit") ? $a_ia_toggle : "") . '
+                  ' . (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . '
                 </div>
               </div>';
 
             $data[] = [
-                $value->member_no,
+                (has_permission("member", "edit") ? $a_ia_toggle : "")."&nbsp;".$value->member_no,
                 $value->nic,
                 ($value->photo != "" ? "<a href='" . base_url("public/images/member/") . $value->photo . "' target='_blank'><img src='" . base_url("public/images/member/") . $value->photo . "' width='100'/></a>" : "<img src='" . base_url("public/uploads/profile/") . "default.png" . "' width='100'/>") . '&nbsp;<i class="fa fa-solid fa-star"></i>&nbsp;<span id="rate_view_' . $key_enc . '">' . $value->rate . "</span>",
                 $value->first_name,
