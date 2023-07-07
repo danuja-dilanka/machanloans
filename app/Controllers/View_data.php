@@ -18,6 +18,16 @@ class View_data extends BaseController {
         $data = [];
         $members = model('Member_model')->get_mem_data();
         foreach ($members as $key => $value) {
+            $a_ia_toggle = "";
+            $login_cre = model("Auth_model")->get_user_by_member($value->id);
+            if (isset($login_cre->id)) {
+                if ($login_cre->status == 0) {
+                    $a_ia_toggle = '<input type="checkbox" checked data-toggle="toggle" data-on="Active" data-off="Inactive" data-onstyle="success" data-offstyle="danger">';
+                } else {
+                    $a_ia_toggle = '<input type="checkbox" checked data-toggle="toggle" data-on="Active" data-off="Inactive" data-onstyle="success" data-offstyle="danger" checked>';
+                }
+            }
+
             $key_enc = encode($value->id);
             $dropdown = '<div class="dropdown">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink' . $key . '" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -27,7 +37,8 @@ class View_data extends BaseController {
                   ' . (has_permission("member", "edit") ? "<a href='" . base_url("member/mem/") . $key_enc . "' class='dropdown-item'>Edit</a>" : "") . '
                   ' . ("<a target='_blank' class='dropdown-item' href='" . base_url("member/view_member/") . $key_enc . "'>View</a>") . '
                   ' . ("<button type='button' id='tbl_rate_act_" . $key_enc . "' data-des='" . $value->rate_des . "' data-rate='" . $value->rate . "' onclick='open_rating(this)' data-key='" . $key_enc . "' data-type='rating' class='dropdown-item'>Rate</button>") . '
-                  ' . (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . '
+                  ' . (has_permission("member", "delete") ? "<a href='#' data-id='" . base_url("member/del_mem/") . $key_enc . "' class='dropdown-item confirm_red_btn'>Delete</a>" : "") . ',
+                  ' . (has_permission("member", "edit") ? $a_ia_toggle : "") . '
                 </div>
               </div>';
 
@@ -565,7 +576,7 @@ class View_data extends BaseController {
         if (!has_permission("report_invest_acc", "view")) {
             die;
         }
-        
+
         $data = [];
         $invesments = model("Investment_model")->get_invest_acc_data_by();
 

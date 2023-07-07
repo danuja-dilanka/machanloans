@@ -101,11 +101,19 @@ class Auth_model extends Model {
     }
 
     //GET USER
-    public function get_user(string $email) {
+    public function get_user(string $email, int $status = 1) {
         $result = $this->db->table(DB_PREFIX . 'user a');
         $result->select('a.*,b.utype AS utype_name');
         $result->join(DB_PREFIX . 'user_type b', 'a.utype = b.id');
-        return $result->where(["a.email" => $email, "a.status" => 1])->get()->getRow();
+        return $result->where(["a.email" => $email, "a.status" => $status])->get()->getRow();
+    }
+
+    //GET USER BY MEMBER
+    public function get_user_by_member(string $member) {
+        $result = $this->db->table(DB_PREFIX . 'user a');
+        $result->select('a.*,b.utype AS utype_name');
+        $result->join(DB_PREFIX . 'user_type b', 'a.utype = b.id');
+        return $result->where(["a.rel_id" => $member, "a.rel_type" => 'member'])->get()->getRow();
     }
 
     //GET USER TYPE

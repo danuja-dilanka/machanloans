@@ -18,6 +18,8 @@
     <script src="<?= base_url() ?>public/assets/js/print.js"></script>
     <script src="<?= base_url() ?>public/plugins/pace/pace.min.js"></script>
     <script src="<?= base_url() ?>public/plugins/moment/moment.js"></script>
+    
+    <script src="<?= base_url() ?>public/assets/js/bootstrap4-toggle.min.js"></script>
 
     <!-- Datatable js -->
     <script src="<?= base_url() ?>public/plugins/datatable/datatables.min.js"></script>
