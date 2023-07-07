@@ -468,7 +468,7 @@ class View_data extends BaseController {
             $loan_reles = $loan_model->get_loan_release_by([], "SUM(c.last_amount) AS total_amount, a.rel_date", "a.rel_date");
             $loan_pays = $loan_model->get_loan_pay_all_data_by([], "SUM(a.total) AS total_amount, a.pay_date", "a.pay_date");
         }
-        
+
         foreach ($loan_pays as $key => $lp_value) {
             $date_summary[$lp_value->pay_date] = array(
                 "debit" => $lp_value->total_amount
@@ -497,9 +497,9 @@ class View_data extends BaseController {
         $data[] = [
             $row++,
             "-",
-            number_format($tot_deb, 2, ".", ","),
-            number_format($tot_cre, 2, ".", ","),
-            number_format($tot_deb - $tot_cre, 2, ".", ","),
+            "<b>" . number_format($tot_deb, 2, ".", ",") . "</b>",
+            "<b>" . number_format($tot_cre, 2, ".", ",") . "</b>",
+            "<b>" . number_format($tot_deb - $tot_cre, 2, ".", ",") . "</b>",
         ];
 
         echo json_encode(["data" => $data]);
