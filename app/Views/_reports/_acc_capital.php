@@ -15,8 +15,8 @@
         <div class="col-sm-4">
             <select class="filter_select form-control" id="member" data-tb='acc_capital_tb' data-type="0" data-live-search="true" data-id="">
                 <option value="0">Select Member</option>
-                <?php foreach ($members as $value) { ?>
-                    <option value="<?= $value->id ?>"><?= $value->name_with_ini ?></option>
+                <?php foreach ($members as $member) { ?>
+                    <option value="<?= $member->id ?>"><?= $member->name_with_ini ?></option>
                 <?php } ?>
             </select>
         </div>
