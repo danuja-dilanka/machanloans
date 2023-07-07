@@ -18,8 +18,6 @@
     <script src="<?= base_url() ?>public/assets/js/print.js"></script>
     <script src="<?= base_url() ?>public/plugins/pace/pace.min.js"></script>
     <script src="<?= base_url() ?>public/plugins/moment/moment.js"></script>
-    
-    <script src="<?= base_url() ?>public/assets/js/jquery.switcher.min.js"></script>
 
     <!-- Datatable js -->
     <script src="<?= base_url() ?>public/plugins/datatable/datatables.min.js"></script>
@@ -33,6 +31,8 @@
     <script src="<?= base_url() ?>public/assets/js/jquery.toast.js"></script>
     <script src="<?= base_url() ?>public/assets/js/bootstrap-select.min.js"></script>
     <script src="<?= base_url() ?>public/assets/js/jquery-confirm.min.js"></script>
+    
+    <script src="<?= base_url() ?>public/assets/js/jquery.switcher.min.js"></script>
 
     <!-- App js -->
     <script src="<?= base_url() ?>public/assets/js/scripts.js?v=1.2"></script>
