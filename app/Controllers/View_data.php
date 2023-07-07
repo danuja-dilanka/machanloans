@@ -506,18 +506,38 @@ class View_data extends BaseController {
     }
 
     public function acc_capital() {
+
+        $member = 0;
+        $filters = $data = [];
+        if ($this->request->getGet("filters") != "") {
+            $filters = $this->request->getGet("filters");
+        }
+
+        foreach ($filters as $filter => $afilter) {
+            foreach ($afilter as $filter_key => $filter_val) {
+
+                if ($filter_key == "member") {
+                    $member = intval($filter_val[1]);
+                }
+            }
+        }
+
         $Loan_model = model("Loan_model");
-        $members = model("Member_model")->get_mem_data_by();
-        
+        if ($member > 0) {
+            $members = model("Member_model")->get_mem_data_by(["id" => $member]);
+        } else {
+            $members = model("Member_model")->get_mem_data_by();
+        }
+
         $row = 1;
         foreach ($members as $key => $value) {
             $debit = $credit = 0;
-            $pay_det = $Loan_model->get_loan_pay_all_data_by("a.member=".$value->id, "SUM(a.total) AS total_amount");
-            if(isset($pay_det[0]->id)){
+            $pay_det = $Loan_model->get_loan_pay_all_data_by("a.member=" . $value->id, "SUM(a.total) AS total_amount");
+            if (isset($pay_det[0]->id)) {
                 $debit = $pay_det[0]->total_amount;
             }
-            $rel_det = $Loan_model->get_loan_release_by("d.id=".$value->id, "SUM(c.last_amount) AS total_amount");
-            if(isset($rel_det[0]->id)){
+            $rel_det = $Loan_model->get_loan_release_by("d.id=" . $value->id, "SUM(c.last_amount) AS total_amount");
+            if (isset($rel_det[0]->id)) {
                 $credit = $rel_det[0]->total_amount;
             }
             $data[] = [
