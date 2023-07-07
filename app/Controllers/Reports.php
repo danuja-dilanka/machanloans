@@ -55,7 +55,7 @@ class Reports extends BaseController {
             return redirect()->to(base_url('dashboard'));
         }
 
-        return view('_reports/_acc_capital', ['title' => "Account Capital Report"]);
+        return view('_reports/_acc_capital', ['title' => "Account Capital Report", "members" => model("Member_model")->get_mem_data_by()]);
     }
 
 }
