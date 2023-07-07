@@ -7,7 +7,7 @@ elems.forEach(function (html) {
 $(".js-switch").on('click', function () {
     var ele = $(this);
     alert(ele.prop('checked'));
-    $.post(BASE_URL + 'api/change_user_status', {status: ele.prop('checked') ? 1 : 0, user: ele.data('id')}, function (data) {
+    $.post(BASE_URL + 'api/change_user_status', {status: ele.is(':checked') ? 1 : 0, user: ele.data('id')}, function (data) {
         if (data == '1') {
             $.toast({
                 heading: 'Alert',
