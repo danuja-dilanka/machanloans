@@ -232,20 +232,6 @@ class Loan_model extends Model {
         return $result->get()->getResult();
     }
 
-    //GET LOAN PAYMENT BY -> where full
-    public function get_loan_pay_all_data_by_group($where = [], $select = "", $group = "") {
-        $result = $this->db->table(DB_PREFIX . 'loan_pay a');
-        $result->select($select != "" ? $select : 'a.*, b.id AS loan_id, c.last_amount, c.int_rate, d.mobile AS mem_phone, CONCAT(d.first_name, d.last_name) AS mem_name');
-        $result->join(DB_PREFIX . 'loan_request b', 'a.loan = b.id');
-        $result->join(DB_PREFIX . 'loan_product c', 'b.loan_type = c.id');
-        $result->join(DB_PREFIX . 'member d', 'a.member = d.id');
-        $result->where($where);
-        if ($group != "") {
-            $result->groupBy($group);
-        }
-        return $result->get()->getResult();
-    }
-
     //GET LOAN PAYMENT BY -> where
     public function get_loan_pay_data_by($where = []) {
         $result = $this->db->table(DB_PREFIX . 'loan_pay a');
@@ -331,21 +317,7 @@ class Loan_model extends Model {
         }
         return $result->get()->getResult();
     }
-
-    //GET LOAN RELEASE BY -> where | group
-    public function get_loan_release_by_with_group($where = [], $select = "", $group = "") {
-        $result = $this->db->table(DB_PREFIX . 'loan_release a');
-        $result->select($select != "" ? $select : 'b.*, a.confirm_by, a.rel_date, c.last_amount AS loan_pro_last_amount, d.name_with_ini AS mem_name, d.acc_number AS mem_acc_number');
-        $result->join(DB_PREFIX . 'loan_request b', 'a.loan = b.id');
-        $result->join(DB_PREFIX . 'loan_product c', 'b.loan_type = c.id');
-        $result->join(DB_PREFIX . 'member d', 'b.member = d.id');
-        $result->where($where);
-        if ($group != "") {
-            $result->groupBy($group);
-        }
-        return $result->findAll();
-    }
-
+    
     //UPDATE LOAN RELEASE
     public function update_loan_release($data, $id) {
         return $this->db->table(DB_PREFIX . 'loan_release')->update($data, ["id" => $id]);
