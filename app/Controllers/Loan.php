@@ -508,7 +508,7 @@ class Loan extends BaseController {
                 $insert_id = $this->thisModel->add_loan_pay_data($post_data);
                 if ($insert_id > 0) {
                     session()->setFlashdata('notify', 'Successfully Inserted');
-                    return redirect()->to(base_url('loan/loan_pay') . "/" . encode($insert_id));
+                    return redirect()->to(base_url('loan/loan_pay_list'));
                 } else {
                     return redirect()->to(base_url('loan/loan_pay'));
                 }
