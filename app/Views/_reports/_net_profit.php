@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-6 mb-2">
             <div class="text-right">
                 <div class="row">
                     <div class="col-sm-6">
