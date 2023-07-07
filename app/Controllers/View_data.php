@@ -464,7 +464,7 @@ class View_data extends BaseController {
         if ($date_from != "" && $date_to != "") {
             $loan_pays = $loan_model->get_loan_pay_all_data_by("a.pay_date >= '$date_from' AND a.pay_date =< '$date_to'", "SUM(a.total) AS total_amount, pay_date", "a.pay_date");
         } else {
-            $loan_pays = $loan_model->get_loan_pay_all_data_by([], "SUM(a.total) AS total_amount, pay_date", "a.pay_date");
+            $loan_pays = $loan_model->get_loan_pay_all_data_by([], "SUM(a.total) AS total_amount, a.pay_date", "a.pay_date");
         }
         foreach ($loan_pays as $key => $lp_value) {
             $date_summary[$lp_value->pay_date] = array(
@@ -475,7 +475,7 @@ class View_data extends BaseController {
         if ($date_from != "" && $date_to != "") {
             $loan_reles = $loan_model->get_loan_release_by("a.rel_date >= '$date_from' AND a.rel_date =< '$date_to'", "SUM(c.last_amount) AS total_amount, rel_date", "a.rel_date");
         } else {
-            $loan_reles = $loan_model->get_loan_release_by([], "SUM(c.last_amount) AS total_amount, rel_date", "a.rel_date");
+            $loan_reles = $loan_model->get_loan_release_by([], "SUM(c.last_amount) AS total_amount, a.rel_date", "a.rel_date");
         }
         foreach ($loan_reles as $key => $lr_value) {
             $date_summary[$lr_value->pay_date] = array(
@@ -484,9 +484,10 @@ class View_data extends BaseController {
         }
 
         $row = 1;
+        $tot_deb = $tot_cre = 0;
         foreach ($date_summary as $key => $value) {
-            $debit = isset($value["debit"]) ? floatval($value["debit"]) : 0;
-            $credit = isset($value["credit"]) ? floatval($value["credit"]) : 0;
+            $tot_deb += $debit = isset($value["debit"]) ? floatval($value["debit"]) : 0;
+            $tot_cre += $credit = isset($value["credit"]) ? floatval($value["credit"]) : 0;
             $data[] = [
                 $row++,
                 $key,
@@ -495,6 +496,14 @@ class View_data extends BaseController {
                 number_format($debit - $credit, 2, ".", ","),
             ];
         }
+
+        $data[] = [
+            $row++,
+            "-",
+            number_format($tot_deb, 2, ".", ","),
+            number_format($tot_cre, 2, ".", ","),
+            number_format($tot_deb - $tot_cre, 2, ".", ","),
+        ];
 
         echo json_encode(["data" => $data]);
     }
