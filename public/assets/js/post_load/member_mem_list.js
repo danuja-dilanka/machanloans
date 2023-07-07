@@ -4,7 +4,7 @@ elems.forEach(function (html) {
     new Switchery(html, {size: 'small'});
 });
 
-$(document).on('click', ".js-switch", function () {
+$(".js-switch").on('click', function () {
     var ele = $(this);
     alert(ele.prop('checked'));
     $.post(BASE_URL + 'api/change_user_status', {status: ele.prop('checked') ? 1 : 0, user: ele.data('id')}, function (data) {
