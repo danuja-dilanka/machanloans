@@ -20,7 +20,7 @@ function isMobile() {
                 $(".menu-inner").css('overflow-y', 'auto');
                 $('.menu-inner').slimScroll({
                     height: '100%',
-                    color: '#1761fd',
+                    color: '#b0a3a2',
                     alwaysVisible: true,
                     barClass: 'sidebarScrollBar',
                 });
