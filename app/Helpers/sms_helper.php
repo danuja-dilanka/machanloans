@@ -51,7 +51,7 @@ function make_sms($short_code, $data) {
             $message = str_replace($value->short_code, isset($data[$value->short_code]) ? $data[$value->short_code] : "", $message);
         }
     }
-    
+
     return $message;
 }
 
@@ -66,6 +66,10 @@ function make_and_send_sms($short_code, $data, $phone) {
             $message = str_replace($value->short_code, isset($data[$value->short_code]) ? $data[$value->short_code] : "", $message);
         }
     }
-    
-    return send_sms($phone, $message);
+
+    if ($message != null) {
+        return send_sms($phone, $message);
+    } else {
+        return json_decode('{"message":"failed", errors":{"phone":["Invalid Message"]}}');
+    }
 }
