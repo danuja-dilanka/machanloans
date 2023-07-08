@@ -43,7 +43,7 @@ function send_sms($to, $message) {
 function make_sms($short_code, $data) {
     $message = null;
     $Setting_model = model('Setting_model');
-    $template = $Setting_model->get_sms_template_by(["short_code" => $short_code]);
+    $template = $Setting_model->get_sms_template_by(["short_code" => strtolower(trim($short_code))]);
     if ($template[0]->id) {
         $rep_codes = $Setting_model->get_sms_rep_code_by(["template" => $template[0]->id]);
         $message = $template[0]->template;
@@ -56,16 +56,7 @@ function make_sms($short_code, $data) {
 }
 
 function make_and_send_sms($short_code, $data, $phone) {
-    $message = null;
-    $Setting_model = model('Setting_model');
-    $template = $Setting_model->get_sms_template_by(["short_code" => $short_code]);
-    if ($template[0]->id) {
-        $rep_codes = $Setting_model->get_sms_rep_code_by(["template" => $template[0]->id]);
-        $message = $template[0]->template;
-        foreach ($rep_codes as $key => $value) {
-            $message = str_replace($value->short_code, isset($data[$value->short_code]) ? $data[$value->short_code] : "", $message);
-        }
-    }
+    $message = make_sms($short_code, $data);
 
     if ($message != null) {
         return send_sms($phone, $message);
