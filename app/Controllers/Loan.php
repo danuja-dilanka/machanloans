@@ -392,6 +392,27 @@ class Loan extends BaseController {
                 $result = $this->thisModel->update_loan_req_data(["status" => 1, 'action_by' => decode(session()->ml_user)], $data->id);
                 if ($result) {
                     make_and_send_sms("loan_approve", ["{{amount}}" => "LKR. " . $data->last_amount, "{{date}}" => date("Y-m-d"), "{{name}}" => $data->mem_name], $data->mem_phone);
+                   
+                    $user = model('Auth_model')->get_user_by_member($data->member);
+                    $Member_model = model('Member_model');
+                    $member = $Member_model->get_data($data->member);
+                    if (!isset($user->id) && $member->new_member == 1) {
+                        $password = $data->mem_email;
+                        $user_id = model('User_model')->add_data([
+                            "name" => $data->mem_name,
+                            "email" => $data->mem_email,
+                            "rel_type" => "member",
+                            "rel_id" => $data->member,
+                            "utype" => 2,
+                            "password" => password_hash($password, PASSWORD_DEFAULT),
+                            "status" => 1
+                        ]);
+                        if ($user_id > 0) {
+                            $Member_model->update_data(["new_member" => 0], $data->member);
+                            make_and_send_sms("login", ["{{login_url}}" => base_url(), "{{password}}" => $password, "{{email}}" => $data->mem_email], $data->mem_phone);
+                        }
+                    }
+
                     session()->setFlashdata('notify', 'Successfully Approved');
                 }
             }
@@ -442,7 +463,7 @@ class Loan extends BaseController {
                         $loan_update["first_pay_dt"] = $data->pay_date;
                     }
                     $this->thisModel->update_loan_req_data($loan_update, $data->loan);
-                    
+
                     make_and_send_sms("payment_mark", ["{{amount_to_pay}}" => "LKR. " . $data->total, "{{date}}" => date("Y-m-d"), "{{balance}}" => "LKR. " . ($data->last_amount - $loan_summary->paid_total)], $data->mem_phone);
                     session()->setFlashdata('notify', 'Successfully Approved');
                 }
