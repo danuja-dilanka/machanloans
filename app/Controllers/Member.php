@@ -87,12 +87,12 @@ class Member extends BaseController {
             'email' => 'required|valid_email',
             'nic' => 'required',
         ];
-        
+
         $try_by_logined_member = false;
         if ($req_id != "" && decode(session()->ml_user_type) == 2 && (decode($req_id) == decode(session()->ml_user_rel_id))) {
             $try_by_logined_member = true;
         }
-        
+
         if ($this->request->is('post') && $this->validate($rules)) {
             $post_data = $this->request->getPost();
             $password = $login_email = null;
@@ -133,7 +133,7 @@ class Member extends BaseController {
                                     "status" => $post_data["status"]
                                 ]);
                                 if ($user_id > 0) {
-                                    send_sms($post_data["mobile"], "Dear " . $post_data["first_name"] . ", (" . $post_data["member_no"] . ")!\nWelcome To Machan Loans!\n\nLogin: " . base_url() . "\nYour Login Email: " . $login_email . "\nYour Login Password: " . $password . "\n\nThanks For Being With Machan Loans");
+                                    make_and_send_sms("login", ["{{login_url}}" => base_url(), "{{password}}" => $password, "{{email}}" => $login_email], $post_data["mobile"]);
                                 }
                             }
                         } else {
@@ -167,7 +167,7 @@ class Member extends BaseController {
                                 "status" => $post_data["status"]
                             ]);
                             if ($user_id > 0) {
-                                send_sms($post_data["mobile"], "Dear " . $post_data["first_name"] . ", (" . $post_data["member_no"] . ")!\nWelcome To Machan Loans!\n\nLogin: " . base_url() . "\nYour Login Email: " . $login_email . "\nYour Login Password: " . $password . "\n\nThanks For Being With Machan Loans");
+                                make_and_send_sms("login", ["{{login_url}}" => base_url(), "{{password}}" => $password, "{{email}}" => $login_email], $post_data["mobile"]);
                             }
                         }
                     }

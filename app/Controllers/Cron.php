@@ -50,7 +50,8 @@ class Cron extends BaseController {
                 for ($i = 0; $i < count($dates); $i++) {
                     $sent_notify = $loan_model->get_due_pay_notify_by("loan=" . $loan_value->id . " AND date='" . $dates[$i] . "'");
                     if ($due_date == $dates[$i] && !isset($sent_notify->id)) {
-                        $response = send_sms($loan_value->mem_phone, "Dear " . $loan_value->mem_name . "!\n\nPlease Pay Your Due Amount LKR. " . $loan_value->period_chrg . " Of Loan, L-#" . $loan_value->id . " On Or Before " . $dates[$i] . ", Otherwise You Will Be Charged LKR. " . $loan_value->late_time_penl);
+                        $loan_summary = $this->thisModel->get_loan_pay_data_summary(["loan" => $loan_value->id]);
+                        $response = make_and_send_sms("loan_repayment_due", ["{{amount_to_pay}}" => "LKR. " . $loan_value->period_chrg, "{{repayment_date}}" => $dates[$i], "{{total_paid}}" => $loan_summary->paid_total, "{{loan_id}}" => "L-#" . $loan_value->id, "{{balance}}" => "LKR. " . ($loan_value->last_amount - $loan_summary->paid_total)], $loan_value->mem_phone);
                         if ($response->message == "success") {
                             $sms_sent = true;
                             $loan_model->add_due_pay_notify([
