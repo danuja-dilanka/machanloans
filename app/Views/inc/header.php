@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="csrf-token" content="ud60emEjZnCcLQ0s7gPJPblE7XE7v1ofszjJVwa7">
         <!-- App favicon -->
-        <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/logo.png">
+        <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/fav.png">
         
         <link href="<?= base_url() ?>public/plugins/dropify/css/dropify.min.css" rel="stylesheet">
         <link href="<?= base_url() ?>public/plugins/sweet-alert2/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
