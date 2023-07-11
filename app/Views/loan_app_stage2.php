@@ -7,7 +7,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/fav.png">
 
-        <title>Machan Loans</title>
+        <title>Amica Project Loans</title>
 
         <!-- Google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Machan Loans</title>
+        <title>Amica Project Loans</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="csrf-token" content="ud60emEjZnCcLQ0s7gPJPblE7XE7v1ofszjJVwa7">

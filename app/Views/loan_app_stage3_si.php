@@ -7,7 +7,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/fav.png">
 
-        <title>Machan Loans</title>
+        <title>Amica Project Loans</title>
 
         <!-- Google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
 
                                     <div class="row">
                                         <div class="col-md-12 text-center mb-5">
-                                            <h3>Machan Project Loan ( මචං ව්‍යාපෘති ණය යෝජනා ක්‍රමය)</h3>
+                                            <h3>Amica Project Loan</h3>
                                         </div>
                                     </div>
 
