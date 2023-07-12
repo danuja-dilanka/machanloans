@@ -248,7 +248,7 @@ class Loan extends BaseController {
             $result = $this->thisModel->update_loan_req_data(["loan_rel_date" => $rel_date], $data->id);
             if ($result) {
                 $loan_periods = $this->get_due_loan_periods($data->id);
-                $up_data["loan_period"] = count($loan_periods);
+                $up_data["loan_period"] = $data->lp_term;
                 $up_data["shedules"] = json_encode($loan_periods["due_dates"]);
                 $up_data["period_chrg"] = $loan_periods["charge"];
                 $result = $this->thisModel->update_loan_req_data($up_data, $data->id);
