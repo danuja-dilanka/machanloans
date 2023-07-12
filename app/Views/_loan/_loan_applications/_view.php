@@ -109,7 +109,7 @@
                                     </tr>
                                     <tr>
                                         <td>Due Amount</td>
-                                        <td class="text-danger"><?= number_format(($data->last_amount + ($data->last_amount * ($data->int_rate / 100))) - floatval($loan_summary->paid_total), 2, ".", ",") ?></td>
+                                        <td class="text-danger"><?= number_format(($data->last_amount + ($data->last_amount * ($data->lp_int_rate / 100))) - floatval($loan_summary->paid_total), 2, ".", ",") ?></td>
                                     </tr>
                                     <tr>
                                         <td>Late Payment Penalties</td>
