@@ -145,7 +145,7 @@ class Web extends BaseController {
                     $avoid_data = $this->thisModel->get_loan_pay_data_summary(['loan' => $value->id]);
                     $avoid_data->loan_details = $value;
                     $avoid_data->p_periods = $value->loan_period - $value->paid_period;
-                    $avoid_data->p_charge = round($value->last_amount / $value->loan_period);
+                    $avoid_data->p_charge = round(($value->last_amount + ($value->last_amount * ($value->lp_int_rate / 100))) / $value->loan_period);
                     $avoid_data->loan_amount = $value->last_amount;
                     $avoid_data->id = $value->id;
                     break;
