@@ -25,7 +25,7 @@
                     <td><?= number_format($data->last_amount, 2, ".", ",") ?></td>
                     <td><?= $data->lp_int_rate ?></td>
                     <td><?= isset($pay_det->total) ? number_format($last_amount - $pay_det->total, 2, ".", ",") : "" ?></td>
-                    <td><?= isset($pay_det->id) ? "Paid" : "Unpaid" ?></td>
+                    <td><?= $data->loan_period == $data->paid_period ? "Paid" : "Unpaid" ?></td>
                 </tr>
                 <?php
                 $last_amount -= (isset($pay_det->total) ? $pay_det->total : 0);
