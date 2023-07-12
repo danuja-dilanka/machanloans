@@ -184,10 +184,10 @@
                                             ?>
                                             <tr>
                                                 <td><?= $payment->pay_date ?></td>
-                                                <td><?= $payment->last_amount ?></td>
+                                                <td><?= number_format($payment->last_amount, 2, ".", ",") ?></td>
                                                 <td><?= $payment->int_rate ?></td>
-                                                <td><?= $payment->pen_amount ?></td>
-                                                <td><?= $payment->total ?></td>
+                                                <td><?= number_format($payment->pen_amount, 2, ".", ",") ?></td>
+                                                <td><?= number_format($payment->total, 2, ".", ",") ?></td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>
