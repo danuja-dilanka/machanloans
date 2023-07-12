@@ -13,18 +13,18 @@
         </thead>
         <tbody>
             <?php
-            $last_amount = $data->last_amount;
+            $last_amount = $data->last_amount + ($data->last_amount * ($data->lp_int_rate / 100));
             $due_dates = $pay_periods["due_dates"];
             for ($i = 0; $i < count($due_dates); $i++) {
                 $pay_det = model('Loan_model')->get_loan_pay_all_data_by("pay_date='" . $due_dates[$i] . "'");
                 ?>
                 <tr>
                     <td><?= $due_dates[$i] ?></td>
-                    <td><?= $pay_periods["charge"]; ?></td>
-                    <td><?= isset($pay_det->pen_amount) ? $pay_det->pen_amount : "-" ?></td>
-                    <td><?= $data->last_amount ?></td>
+                    <td><?= number_format($pay_periods["charge"], 2, ".", ","); ?></td>
+                    <td><?= isset($pay_det->pen_amount) ? number_format($pay_det->pen_amount, 2, ".", ",") : "-" ?></td>
+                    <td><?= number_format($data->last_amount, 2, ".", ",") ?></td>
                     <td><?= $data->lp_int_rate ?></td>
-                    <td><?= isset($pay_det->total) ? $last_amount - $pay_det->total : "" ?></td>
+                    <td><?= isset($pay_det->total) ? number_format($last_amount - $pay_det->total, 2, ".", ",") : "" ?></td>
                     <td><?= isset($pay_det->id) ? "Paid" : "Unpaid" ?></td>
                 </tr>
                 <?php
