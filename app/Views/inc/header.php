@@ -1,13 +1,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Amica Project Loans</title>
+        <title><?= isset($title) ? $title . " | " : "" ?>Amica Project Loans</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="csrf-token" content="ud60emEjZnCcLQ0s7gPJPblE7XE7v1ofszjJVwa7">
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?= base_url() ?>public/uploads/media/fav.png">
-        
+
         <link href="<?= base_url() ?>public/plugins/dropify/css/dropify.min.css" rel="stylesheet">
         <link href="<?= base_url() ?>public/plugins/sweet-alert2/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
         <link href="<?= base_url() ?>public/plugins/animate/animate.css" rel="stylesheet" type="text/css">
@@ -35,13 +35,13 @@
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/select.dataTables.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/css_all.min.css">
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/switchery.min.css">
-        
+
         <!-- DATATABLE CSS -->
         <link rel="stylesheet" href="<?= base_url() ?>public/assets/css/datatables.min.css">
 
         <!-- Modernizr -->
         <script src="<?= base_url() ?>public/assets/js/vendor/modernizr-3.6.0.min.js"></script>    
-        
+
         <!-- Google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -55,35 +55,35 @@
             var _backend_direction = "ltr";
             var _currency = "₨";
             var _base_currency_id = "4";
-            
+
             var $lang_alert_title = "Are you sure?";
-        	var $lang_alert_message = "Once deleted, you will not be able to recover this information !";
-        	var $lang_confirm_button_text = "Yes, delete it!";
-        	var $lang_cancel_button_text = "Cancel";
+            var $lang_alert_message = "Once deleted, you will not be able to recover this information !";
+            var $lang_confirm_button_text = "Yes, delete it!";
+            var $lang_cancel_button_text = "Cancel";
             var $lang_no_data_found = "No Data Found";
-        	var $lang_showing = "Showing";
-        	var $lang_to = "to";
-        	var $lang_of = "of";
-        	var $lang_entries = "Entries";
-        	var $lang_showing_0_to_0_of_0_entries = "Showing 0 To 0 Of 0 Entries";
-        	var $lang_show = "Show";
-        	var $lang_loading = "Loading...";
-        	var $lang_processing = "Processing...";
-        	var $lang_search = "Search";
-        	var $lang_no_matching_records_found = "No matching records found";
-        	var $lang_first = "First";
-        	var $lang_last = "Last";
-        	var $lang_next = "Next";
-        	var $lang_previous = "Previous";
-        	var $lang_copy = "Copy";
-        	var $lang_excel = "Excel";
-        	var $lang_pdf = "PDF";
-        	var $lang_print = "Print";
-        	var $lang_add_new = "Add New";
-        	var $lang_select_one = "Select One";
-        	var $lang_expense_overview = "Expense Overview";
-        	var $lang_deposit = "Deposit";
-        	var $lang_withdraw = "Withdraw";
+            var $lang_showing = "Showing";
+            var $lang_to = "to";
+            var $lang_of = "of";
+            var $lang_entries = "Entries";
+            var $lang_showing_0_to_0_of_0_entries = "Showing 0 To 0 Of 0 Entries";
+            var $lang_show = "Show";
+            var $lang_loading = "Loading...";
+            var $lang_processing = "Processing...";
+            var $lang_search = "Search";
+            var $lang_no_matching_records_found = "No matching records found";
+            var $lang_first = "First";
+            var $lang_last = "Last";
+            var $lang_next = "Next";
+            var $lang_previous = "Previous";
+            var $lang_copy = "Copy";
+            var $lang_excel = "Excel";
+            var $lang_pdf = "PDF";
+            var $lang_print = "Print";
+            var $lang_add_new = "Add New";
+            var $lang_select_one = "Select One";
+            var $lang_expense_overview = "Expense Overview";
+            var $lang_deposit = "Deposit";
+            var $lang_withdraw = "Withdraw";
         </script>	
     </head>
 
@@ -135,16 +135,16 @@
         <div id="preloader" style="display: none;"></div>
         <!-- Preloader area end -->
 
-        <?php if(!isset($no_nav)){ ?>
-        <div class="page-container">
-            <!-- sidebar menu area start -->
-            <?= view('inc/side_nav') ?>
-            <!-- sidebar menu area end -->
+        <?php if (!isset($no_nav)) { ?>
+            <div class="page-container">
+                <!-- sidebar menu area start -->
+                <?= view('inc/side_nav') ?>
+                <!-- sidebar menu area end -->
 
-            <!-- main content area start -->
-            <div class="main-content">
-                <?= view('inc/top_nav') ?>
-            <?php }else{ ?>
-        <div class="page-container sbar_collapsed">
-            <div class="main-content">
-            <?php } ?>
+                <!-- main content area start -->
+                <div class="main-content">
+                    <?= view('inc/top_nav') ?>
+                <?php } else { ?>
+                    <div class="page-container sbar_collapsed">
+                        <div class="main-content">
+                        <?php } ?>
