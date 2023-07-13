@@ -110,6 +110,14 @@ class Member_model extends Model {
         }
     }
 
+    public function delete_unreg_mem_data($id = 0, $where = []) {
+        if ($id == 0) {
+            return $this->db->table(DB_PREFIX . 'unreg_member')->delete($where);
+        } else {
+            return $this->db->table(DB_PREFIX . 'unreg_member')->delete(["id" => $id]);
+        }
+    }
+
     //GET MEMBERS BY -> where
     public function get_mem_data_by($where = []) {
         $result = $this->db->table(DB_PREFIX . 'member');
