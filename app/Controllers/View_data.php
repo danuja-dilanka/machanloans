@@ -62,14 +62,14 @@ class View_data extends BaseController {
               </div>';
 
             $data[] = [
-                ($status > 0) ? ((has_permission("member", "edit") ? $a_ia_toggle : "") . "&nbsp;" . $value->member_no) : "",
+                ($status > 0) ? ((has_permission("member", "edit") ? $a_ia_toggle : "") . "&nbsp;" . $value->member_no) : "-",
                 $value->nic,
                 ($value->photo != "" ? "<a href='" . base_url("public/images/member/") . $value->photo . "' target='_blank'><img src='" . base_url("public/images/member/") . $value->photo . "' width='100'/></a>" : "<img src='" . base_url("public/uploads/profile/") . "default.png" . "' width='100'/>") . '&nbsp;<i class="fa fa-solid fa-star"></i>&nbsp;<span id="rate_view_' . $key_enc . '">' . $value->rate . "</span>",
                 $value->first_name,
                 $value->last_name,
                 $value->mobile,
                 $value->city,
-                ($status > 0) ? $dropdown : ""
+                ($status > 0) ? $dropdown : "-"
             ];
         }
 
