@@ -3,7 +3,7 @@
 function send_sms($to, $message) {
     $token = "ab9874ad49d48134c2ec6823f0f5d7fe83308dcb";
     $mobile = trim($to);
-    $encoded = urlencode(utf8_encode($message));
+    $encoded = urlencode(($message));
 
     $response = "{}";
     if (strlen($mobile) == 11) {

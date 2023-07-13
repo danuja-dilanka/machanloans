@@ -11,6 +11,11 @@ class Member_model extends Model {
         return $this->db->insertID();
     }
 
+    public function add_unreg_member($data) {
+        $this->db->table(DB_PREFIX . 'unreg_member')->insert($data);
+        return $this->db->insertID();
+    }
+
     public function get_data($id = 0, $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'member a');
         $result->select('a.*,b.email AS login_email, CONCAT(a.first_name, " ", a.last_name) AS full_name');
@@ -29,6 +34,71 @@ class Member_model extends Model {
     public function get_mem_data($id = 0, $result_type = 0) {
         $result = $this->db->table(DB_PREFIX . 'member');
         $result->select('*, CONCAT(first_name, " ", last_name, " (", member_no, ")") AS full_name');
+        if ($id > 0) {
+            return $result->where(["id" => $id])->get()->getRow();
+        } else {
+            if ($result_type == 0) {
+                return $result->get()->getResult();
+            } else {
+                return $result->get()->getResultArray();
+            }
+        }
+    }
+
+    public function tranfer_unreg_to_reg_mem($id = 0) {
+        $unreg_mem = $this->get_unreg_mem_data($id);
+        $member_id = 0;
+        if (isset($unreg_mem->id)) {
+            $data = json_decode(json_encode($unreg_mem), TRUE);
+            $ins_id = $this->add_unreg_member([
+                "first_name" => $data["first_name"],
+                "last_name" => $data["last_name"],
+                "google_location" => $data["google_location"],
+                "name_with_ini" => $data["full_name"],
+                "birthday" => $data["birthday"],
+                "email" => $data["email"],
+                "mobile" => $data["phone"],
+                "whatsapp" => $data["whatsapp"],
+                "address" => $data["residential_address"],
+                "cred_address" => $data["current_address"],
+                "business_name" => $data["employment"],
+                "working_address" => $data["employment_address"],
+                "nic" => $data["nic"],
+                "branch_name" => $data["branch_name"],
+                "acc_number" => $data["acc_number"],
+                "bank_name" => $data["bank_name"],
+                "crowd_name" => $data["memberships"],
+                "spouse_name" => $data["spouse_name"],
+                "spouse_tel_number" => $data["spouse_tel_number"],
+                "nic_back" => $data["nic_back"],
+                "nic_front" => $data["nic_front"],
+                "spouse_nic_front" => $data["spouse_nic_front"],
+                "spouse_nic_back" => $data["spouse_nic_back"],
+                "civil_status" => $data["marital_status"],
+                "gender" => $data["gender"],
+                "city" => $data["city"],
+                'rel_friend1' => $data["friend1_name"],
+                'rel_friend1_phone' => $data["friend1_phone"],
+                'rel_friend1_address' => $data["friend1_address"],
+                'rel_friend2' => $data["friend2_name"],
+                'rel_friend2_phone' => $data["friend2_phone"],
+                'rel_friend2_address' => $data["friend2_address"],
+                'fb_screenshot' => $data["fb_screenshot"],
+                'selfie' => $data["selfie"],
+                'photo' => $data["photo"],
+                'electricity_bill' => $data["electricity_bill"]
+            ]);
+            if ($ins_id > 0) {
+                $member_id = $ins_id;
+            }
+        }
+        
+        return $member_id;
+    }
+
+    public function get_unreg_mem_data($id = 0, $result_type = 0) {
+        $result = $this->db->table(DB_PREFIX . 'unreg_member');
+        $result->select('*, CONCAT(first_name, " ", last_name) AS full_name');
         if ($id > 0) {
             return $result->where(["id" => $id])->get()->getRow();
         } else {

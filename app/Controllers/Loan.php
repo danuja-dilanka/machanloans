@@ -389,12 +389,25 @@ class Loan extends BaseController {
         if ($req_id != "" && has_permission("loan", "edit")) {
             $data = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($data->id)) {
-                $result = $this->thisModel->update_loan_req_data(["status" => 1, 'action_by' => decode(session()->ml_user)], $data->id);
+                $Member_model = model('Member_model');
+                $loan_up_data = ["status" => 1, 'action_by' => decode(session()->ml_user)];
+                if ($data->new_mem_req_loan == 1) {
+                    $unreg_member = $Member_model->get_unreg_mem_data($data->member);
+                    if (isset($unreg_member->id)) {
+                        $new_mem_id = $Member_model->tranfer_unreg_to_reg_mem($data->member);
+                        if ($new_mem_id > 0) {
+                            $Member_model->update_data(["member_no" => "MPL-" . $new_mem_id], $new_mem_id);
+                            $loan_up_data["member"] = $new_mem_id;
+                            $data = $this->thisModel->get_loan_req_data($data->id);
+                        }
+                    }
+                    $loan_up_data["new_mem_req_loan"] = 0;
+                }
+                $result = $this->thisModel->update_loan_req_data($loan_up_data, $data->id);
                 if ($result) {
                     make_and_send_sms("loan_approve", ["{{amount}}" => "LKR. " . $data->last_amount, "{{date}}" => date("Y-m-d"), "{{name}}" => $data->mem_name], $data->mem_phone);
-                   
+
                     $user = model('Auth_model')->get_user_by_member($data->member);
-                    $Member_model = model('Member_model');
                     $member = $Member_model->get_data($data->member);
                     if (!isset($user->id) && $member->new_member == 1) {
                         $password = $data->mem_email;

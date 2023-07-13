@@ -233,6 +233,7 @@ class Web extends BaseController {
             }
 
             $post_data["payment_method"] = $loan_pro_det->term_per;
+            $post_data["new_mem_req_loan"] = 0;
 
             /* NEW MEMBER REGISTRATION ON NEW LOAN APPLICATION */
 
@@ -240,7 +241,7 @@ class Web extends BaseController {
             $member_det = $Member_model->get_mem_data_by(["nic" => $post_data["nic"]]);
             if (!isset($member_det->id)) {
 
-                $member_id = $Member_model->add_data([
+                $member_id = $Member_model->add_unreg_member([
                     "first_name" => $post_data["first_name"],
                     "last_name" => $post_data["last_name"],
                     "google_location" => $post_data["google_location"],
@@ -280,7 +281,8 @@ class Web extends BaseController {
                 ]);
 
                 if ($member_id > 0) {
-                    $Member_model->update_data(["member_no" => "MPL-" . $member_id], $member_id);
+                    $post_data["new_mem_req_loan"] = 1;
+//                    $Member_model->update_data(["member_no" => "MPL-" . $member_id], $member_id);
                 }
             } else {
                 $member_id = $member_det->id;
