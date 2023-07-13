@@ -11,6 +11,11 @@
             <?= create_link("member", "mem", ["member", "add"], "+ New", "h6") ?>
         </div>
     </div>
+    <div class="row mt-1 ml-1">
+        <button type="button" id="status" data-unic="1" data-id="1" data-type="0" class="filter btn btn-secondary" style="border: 1px solid green;">Registered</button>&nbsp;
+        <button type="button" id="status" data-unic="1" data-id="0" data-type="0" class="filter btn btn-danger">Unregistered</button>&nbsp;
+    </div>
+    <hr>
     <div class="table-responsive">
         <table id="dt_tb" class="table table-bordered" data-action="members" style="width:100%">
             <thead>

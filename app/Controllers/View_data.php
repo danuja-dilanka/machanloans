@@ -15,8 +15,28 @@ class View_data extends BaseController {
             die;
         }
 
+        $status = 1;
+
+        $filters = $data = [];
+        if ($this->request->getGet("filters") != "") {
+            $filters = $this->request->getGet("filters");
+        }
+
+        foreach ($filters as $filter => $afilter) {
+            foreach ($afilter as $filter_key => $filter_val) {
+
+                if ($filter_key == "status") {
+                    $status = intval($filter_val[1]);
+                }
+            }
+        }
+
         $data = [];
-        $members = model('Member_model')->get_mem_data();
+        if ($status > 0) {
+            $members = model('Member_model')->get_mem_data();
+        } else {
+            $members = model('Member_model')->get_unreg_mem_data();
+        }
         foreach ($members as $key => $value) {
             $key_enc = encode($value->id);
             $a_ia_toggle = "";
@@ -42,14 +62,14 @@ class View_data extends BaseController {
               </div>';
 
             $data[] = [
-                (has_permission("member", "edit") ? $a_ia_toggle : "") . "&nbsp;" . $value->member_no,
+                ($status > 0) ? ((has_permission("member", "edit") ? $a_ia_toggle : "") . "&nbsp;" . $value->member_no) : "",
                 $value->nic,
                 ($value->photo != "" ? "<a href='" . base_url("public/images/member/") . $value->photo . "' target='_blank'><img src='" . base_url("public/images/member/") . $value->photo . "' width='100'/></a>" : "<img src='" . base_url("public/uploads/profile/") . "default.png" . "' width='100'/>") . '&nbsp;<i class="fa fa-solid fa-star"></i>&nbsp;<span id="rate_view_' . $key_enc . '">' . $value->rate . "</span>",
                 $value->first_name,
                 $value->last_name,
                 $value->mobile,
                 $value->city,
-                $dropdown
+                ($status > 0) ? $dropdown : ""
             ];
         }
 
