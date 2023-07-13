@@ -22,10 +22,6 @@ class Loan extends BaseController {
         }
         return redirect()->route('loan/loan_pro_list');
     }
-    
-    public function send_sms() {
-        send_sms('94761695904', 'මව');
-    }
 
     //CREATE/ UPDATE VIEW
     public function loan_pro($req_id = "") {
