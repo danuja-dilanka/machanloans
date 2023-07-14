@@ -67,7 +67,7 @@ class Member_model extends Model {
                 "branch_name" => $data["branch_name"],
                 "acc_number" => $data["acc_number"],
                 "bank_name" => $data["bank_name"],
-                "crowd_name" => $data["memberships"],
+                "crowd_name" => $data["crowd_name"],
                 "spouse_name" => $data["spouse_name"],
                 "spouse_tel_number" => $data["spouse_tel_number"],
                 "nic_back" => $data["nic_back"],
