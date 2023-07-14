@@ -57,7 +57,7 @@ class Member_model extends Model {
                 "name_with_ini" => $data["full_name"],
                 "birthday" => $data["birthday"],
                 "email" => $data["email"],
-                "mobile" => $data["phone"],
+                "mobile" => $data["mobile"],
                 "whatsapp" => $data["whatsapp"],
                 "address" => $data["residential_address"],
                 "cred_address" => $data["current_address"],
