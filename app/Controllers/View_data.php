@@ -147,12 +147,21 @@ class View_data extends BaseController {
             } else {
                 $status_txt = "<span class='badge badge-danger'>Rejected</span>";
             }
+            
+            $membership_no = "MPL-" . $value->member;
+            if ($data->new_mem_req_loan == 1) {
+                $unreg_member = model("Member_model")->get_unreg_mem_data($value->member);
+                if (isset($unreg_member->id)) {
+                    $membership_no = "";
+                    $value->mem_name = $unreg_member->full_name;
+                }
+            }
 
             $data[] = [
                 "L-#" . $value->id,
                 $value->loan_product,
                 $value->full_name != null ? $value->full_name : $value->mem_name,
-                "MPL-" . $value->member,
+                $membership_no,
                 $value->loan_rel_date,
                 number_format($value->last_amount, 2, ".", ","),
                 $status_txt,
