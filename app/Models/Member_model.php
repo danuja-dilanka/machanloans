@@ -50,7 +50,7 @@ class Member_model extends Model {
         $member_id = 0;
         if (isset($unreg_mem->id)) {
             $data = json_decode(json_encode($unreg_mem), TRUE);
-            $ins_id = $this->add_unreg_member([
+            $ins_id = $this->add_data([
                 "first_name" => $data["first_name"],
                 "last_name" => $data["last_name"],
                 "google_location" => $data["google_location"],

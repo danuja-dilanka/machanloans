@@ -389,10 +389,10 @@ class Loan extends BaseController {
         if ($req_id != "" && has_permission("loan", "edit")) {
             $data = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($data->id)) {
-                $result = false;
                 $Member_model = model('Member_model');
                 $loan_up_data = ["status" => 1, 'action_by' => decode(session()->ml_user)];
-                if ($data->new_mem_req_loan == 1) {
+                $new_mem_req_loan = $data->new_mem_req_loan;
+                if ($new_mem_req_loan == 1) {
                     $unreg_member = $Member_model->get_unreg_mem_data($data->member);
                     if (isset($unreg_member->id)) {
                         $new_mem_id = $Member_model->tranfer_unreg_to_reg_mem($data->member);
@@ -400,16 +400,16 @@ class Loan extends BaseController {
                             $Member_model->update_data(["member_no" => "MPL-" . $new_mem_id], $new_mem_id);
                             $Member_model->update_doc_by_mem(["member" => $new_mem_id], $data->member);
                             $loan_up_data["member"] = $new_mem_id;
-
-                            $loan_up_data["new_mem_req_loan"] = 0;
-                            $result = $this->thisModel->update_loan_req_data($loan_up_data, $data->id);
-                            $data = $this->thisModel->get_loan_req_data($data->id);
-
                             $Member_model->delete_unreg_mem_data($unreg_member->id);
                         }
                     }
+                    $loan_up_data["new_mem_req_loan"] = 0;
                 }
+                $result = $this->thisModel->update_loan_req_data($loan_up_data, $data->id);
                 if ($result) {
+                    if ($new_mem_req_loan == 1) {
+                        $data = $this->thisModel->get_loan_req_data($data->id);
+                    }
                     make_and_send_sms("loan_approve", ["{{amount}}" => "LKR. " . $data->last_amount, "{{date}}" => date("Y-m-d"), "{{name}}" => $data->mem_name], $data->mem_phone);
 
                     $user = model('Auth_model')->get_user_by_member($data->member);
