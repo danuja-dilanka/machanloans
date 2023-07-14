@@ -399,13 +399,15 @@ class Loan extends BaseController {
                             $Member_model->update_data(["member_no" => "MPL-" . $new_mem_id], $new_mem_id);
                             $Member_model->update_doc_by_mem(["member" => $new_mem_id], $data->member);
                             $loan_up_data["member"] = $new_mem_id;
+                            
+                            $loan_up_data["new_mem_req_loan"] = 0;
+                            $result = $this->thisModel->update_loan_req_data($loan_up_data, $data->id);
                             $data = $this->thisModel->get_loan_req_data($data->id);
+                            
                             $Member_model->delete_unreg_mem_data($unreg_member->id);
                         }
                     }
-                    $loan_up_data["new_mem_req_loan"] = 0;
                 }
-                $result = $this->thisModel->update_loan_req_data($loan_up_data, $data->id);
                 if ($result) {
                     make_and_send_sms("loan_approve", ["{{amount}}" => "LKR. " . $data->last_amount, "{{date}}" => date("Y-m-d"), "{{name}}" => $data->mem_name], $data->mem_phone);
 
