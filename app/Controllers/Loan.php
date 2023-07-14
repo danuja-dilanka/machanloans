@@ -389,6 +389,7 @@ class Loan extends BaseController {
         if ($req_id != "" && has_permission("loan", "edit")) {
             $data = $this->thisModel->get_loan_req_data(decode($req_id));
             if (isset($data->id)) {
+                $result = false;
                 $Member_model = model('Member_model');
                 $loan_up_data = ["status" => 1, 'action_by' => decode(session()->ml_user)];
                 if ($data->new_mem_req_loan == 1) {
@@ -399,11 +400,11 @@ class Loan extends BaseController {
                             $Member_model->update_data(["member_no" => "MPL-" . $new_mem_id], $new_mem_id);
                             $Member_model->update_doc_by_mem(["member" => $new_mem_id], $data->member);
                             $loan_up_data["member"] = $new_mem_id;
-                            
+
                             $loan_up_data["new_mem_req_loan"] = 0;
                             $result = $this->thisModel->update_loan_req_data($loan_up_data, $data->id);
                             $data = $this->thisModel->get_loan_req_data($data->id);
-                            
+
                             $Member_model->delete_unreg_mem_data($unreg_member->id);
                         }
                     }
