@@ -97,10 +97,11 @@ class Member_model extends Model {
     }
 
     public function get_unreg_mem_data($id = 0, $result_type = 0) {
-        $result = $this->db->table(DB_PREFIX . 'unreg_member');
-        $result->select('*, CONCAT(first_name, " ", last_name) AS full_name');
+        $result = $this->db->table(DB_PREFIX . 'unreg_member a');
+        $result->select('a.*,b.email AS login_email, CONCAT(a.first_name, " ", a.last_name) AS full_name');
+        $result->join(DB_PREFIX . 'user b', 'a.id = b.rel_id', 'left');
         if ($id > 0) {
-            return $result->where(["id" => $id])->get()->getRow();
+            return $result->where(["a.id" => $id])->get()->getRow();
         } else {
             if ($result_type == 0) {
                 return $result->get()->getResult();
