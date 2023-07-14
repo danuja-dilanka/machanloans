@@ -28,15 +28,15 @@
                                 <div class="card-body">
                                     <img class="logo" src="<?= base_url() ?>public/uploads/media/logo.png">
                                     <h5 class="text-center py-4"><?= $lng != 'si' ? "Thank You!" : "ස්තූතියි!" ?></h5> 
-                                    <div class="alert alert-success text-center">
+                                    <div class="alert alert-danger text-center">
                                         <?php if ($lng != 'si') { ?>
                                             <h4>Your Loan Is Under Approval</h4>
                                             <p>We'll Let You Know When It Will Be Approved!</p>
-                                            <a href="<?= base_url() ?>" class="btn btn-primary btn-block">Back To Login</a>
+                                            <a href="<?= base_url() ?>" class="btn btn-danger btn-block">Back To Login</a>
                                         <?php } else { ?>
                                             <h4>ඔබගේ ණය අනුමැතිය යටතේ පවතී</h4>
                                             <p>එය අනුමත වූ පසු අපි ඔබට දන්වන්නෙමු!</p>
-                                            <a href="<?= base_url() ?>" class="btn btn-primary btn-block">ප්‍රධාන පිටුවට</a>
+                                            <a href="<?= base_url() ?>" class="btn btn-danger btn-block">ප්‍රධාන පිටුවට</a>
                                         <?php } ?>
                                     </div>
                                 </div>
