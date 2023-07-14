@@ -149,7 +149,7 @@ class View_data extends BaseController {
             }
             
             $membership_no = "MPL-" . $value->member;
-            if ($data->new_mem_req_loan == 1) {
+            if ($value->new_mem_req_loan == 1) {
                 $unreg_member = model("Member_model")->get_unreg_mem_data($value->member);
                 if (isset($unreg_member->id)) {
                     $membership_no = "";
