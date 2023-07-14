@@ -397,6 +397,7 @@ class Loan extends BaseController {
                         $new_mem_id = $Member_model->tranfer_unreg_to_reg_mem($data->member);
                         if ($new_mem_id > 0) {
                             $Member_model->update_data(["member_no" => "MPL-" . $new_mem_id], $new_mem_id);
+                            $Member_model->update_doc_by_mem(["member" => $new_mem_id], $data->member);
                             $loan_up_data["member"] = $new_mem_id;
                             $data = $this->thisModel->get_loan_req_data($data->id);
                             $Member_model->delete_unreg_mem_data($unreg_member->id);

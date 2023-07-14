@@ -155,6 +155,11 @@ class Member_model extends Model {
         return $this->db->table(DB_PREFIX . 'member_doc')->update($data, ["id" => $id]);
     }
 
+    //UPDATE MEMBER DOCUMENT BY MEMBER
+    public function update_doc_by_mem($data, $member) {
+        return $this->db->table(DB_PREFIX . 'member_doc')->update($data, ["member" => $member]);
+    }
+
     //GET MEMBER DOCUMENTS BY -> where
     public function get_docs_by($where = []) {
         $result = $this->db->table(DB_PREFIX . 'member_doc');
