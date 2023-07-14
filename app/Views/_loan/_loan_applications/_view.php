@@ -38,7 +38,7 @@
                             <a class="nav-link" data-toggle="tab" href="#repayments">Repayments</a>
                         </li>
                         <!--                        <li class="nav-item">
-                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id                         ?>">Edit</a>
+                                                    <a class="nav-link" href="<?php // base_url("loan/loan/") . $req_id                           ?>">Edit</a>
                                                 </li>-->
                     </ul>
                     <!-- Tab panes -->
@@ -144,7 +144,13 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php $member = model("Member_model")->get_data($data->member) ?>
+                                                <?php
+                                                if ($data->new_mem_req_loan == 1) {
+                                                    $member = model("Member_model")->get_unreg_mem_data($data->member);
+                                                } else {
+                                                    $member = model("Member_model")->get_data($data->member);
+                                                }
+                                                ?>
                                                 <tr>
                                                     <td><?= $member->rel_friend1 ?></td>
                                                     <td><?= $member->rel_friend1_phone ?></td>
